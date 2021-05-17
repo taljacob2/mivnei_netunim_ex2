@@ -7,13 +7,76 @@
 
 /**
  * @brief this class bundles together all the algorithm
- *        methods of the program.
+ *        methods in the program.
  *
  * @author Tal Yacob, ID: 208632778.
- * @version 1.0
+ * @version 2.0
  */
 class my_algorithms {
   public:
+    /**
+     * @brief Compares two elements pointed out from two pointers, by their
+     *        given indexes, and returns the index to the pointer that points
+     *        to the larger element out of them.
+     *
+     * @note if element is a `nullptr`, prioritize to return the index of the
+     *       *other* element given.
+     *       If both element are `nullptr`, return the index of the *first*
+     *       element.
+     * @param array an array of pointers to elements.
+     * @param indexToElement1 index of pointer to first element to compare.
+     * @param indexToElement2 index of pointer to second element to compare.
+     * @return the index of the pointer that points to the larger element.
+     */
+    template<class T>
+    static int max(T **array, int indexToElement1, int indexToElement2) {
+
+        if (array[indexToElement2] == nullptr) {
+            return indexToElement1;
+        } else if (array[indexToElement2] != nullptr) {
+            if (array[indexToElement1] == nullptr) {
+                return indexToElement2;
+            } else {
+
+                // Both elements are not nullptr. Compare regularly.
+                return (*array[indexToElement1]) > (*array[indexToElement2])
+                               ? indexToElement1
+                               : indexToElement2;
+            }
+        }
+    }
+
+    /**
+     * @brief Compares two elements pointed out from two pointers, by their
+     *        given indexes, and returns the index to the pointer that points
+     *        to the smaller element out of them.
+     *
+     * @note if element is a `nullptr`, prioritize to return the index of the
+     *       *other* element given.
+     *       If both element are `nullptr`, return the index of the *first*
+     *       element.
+     * @param array an array of pointers to elements.
+     * @param indexToElement1 index of pointer to first element to compare.
+     * @param indexToElement2 index of pointer to second element to compare.
+     * @return the index of the pointer that points to the smaller element.
+     */
+    template<class T>
+    static int min(T **array, int indexToElement1, int indexToElement2) {
+
+        if (array[indexToElement2] == nullptr) {
+            return indexToElement1;
+        } else if (array[indexToElement2] != nullptr) {
+            if (array[indexToElement1] == nullptr) {
+                return indexToElement2;
+            } else {
+
+                // Both elements are not nullptr. Compare regularly.
+                return (*array[indexToElement1]) < (*array[indexToElement2])
+                               ? indexToElement1
+                               : indexToElement2;
+            }
+        }
+    }
 
     /**
      * @brief generic algorithm to copy an array.

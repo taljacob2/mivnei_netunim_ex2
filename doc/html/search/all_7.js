@@ -1,5 +1,4 @@
 var searchData =
     [
-        ['partition_14', ['partition', ['../classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff', 1, 'my_algorithms']]],
-        ['printmeasure_15', ['printMeasure', ['../class_input_output.html#ab35a93245e4ca6c5fc46ebd1c1392188', 1, 'InputOutput::printMeasure(T *array, int size, const std::function&lt; void(T *, int, char *&amp;)&gt; &amp;functionToMeasure)'], ['../class_input_output.html#a3f6399704cadf4cad0bff97dbb270a2b', 1, 'InputOutput::printMeasure(T *array, int size, int serialSizeOfTheElementToLookFor, const std::function&lt; T(T *, int, int, char *&amp;)&gt; &amp;functionToMeasure)']]]
+        ['operator_3e_3e_15', ['operator&gt;&gt;', ['../classmy__string.html#af4ab5e6c0b9077cff2b5b0e67e745751', 1, 'my_string']]]
     ];
