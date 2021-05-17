@@ -1,9 +1,6 @@
-//
-// Created by Tal on 26-Mar-21.
-//
 
-#ifndef MIVNEI_NETUNIM_EX1_INPUTOUTPUT_H
-#define MIVNEI_NETUNIM_EX1_INPUTOUTPUT_H
+#ifndef MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H
+#define MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H
 
 #include "my_algorithms.h"
 #include "my_string.h"
@@ -218,4 +215,4 @@ class InputOutput {
     }
 };
 
-#endif //MIVNEI_NETUNIM_EX1_INPUTOUTPUT_H
+#endif //MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H

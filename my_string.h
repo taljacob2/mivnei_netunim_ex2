@@ -1,9 +1,6 @@
-//
-// Created by Tal on 30-Mar-21.
-//
 
-#ifndef MIVNEI_NETUNIM_EX1_MY_STRING_H
-#define MIVNEI_NETUNIM_EX1_MY_STRING_H
+#ifndef MIVNEI_NETUNIM_EX2_MY_STRING_H
+#define MIVNEI_NETUNIM_EX2_MY_STRING_H
 
 #include <cstring>
 #include <fstream>
@@ -167,4 +164,4 @@ class my_string {
     iterator end() { return iterator(*this, this->getLength()); }
 };
 
-#endif //MIVNEI_NETUNIM_EX1_MY_STRING_H
+#endif //MIVNEI_NETUNIM_EX2_MY_STRING_H

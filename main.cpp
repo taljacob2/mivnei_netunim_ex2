@@ -3,7 +3,7 @@
 #include <string>
 
 /**
- * @mainpage mivnei_netunim targil tichnuti 1
+ * @mainpage mivnei_netunim targil tichnuti 2
  *
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0

@@ -1,9 +1,6 @@
-//
-// Created by Tal on 27-Mar-21.
-//
 
-#ifndef MIVNEI_NETUNIM_EX1_MY_ALGORITHMS_H
-#define MIVNEI_NETUNIM_EX1_MY_ALGORITHMS_H
+#ifndef MIVNEI_NETUNIM_EX2_MY_ALGORITHMS_H
+#define MIVNEI_NETUNIM_EX2_MY_ALGORITHMS_H
 
 #include <exception>
 #include <iostream>
@@ -465,4 +462,4 @@ class my_algorithms {
     }
 };
 
-#endif //MIVNEI_NETUNIM_EX1_MY_ALGORITHMS_H
+#endif //MIVNEI_NETUNIM_EX2_MY_ALGORITHMS_H
