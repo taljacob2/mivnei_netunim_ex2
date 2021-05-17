@@ -88,6 +88,15 @@
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapAdt.h">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>

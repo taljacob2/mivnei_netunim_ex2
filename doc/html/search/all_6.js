@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['load_15', ['load', ['../classmy__string.html#a3e719a3d81e6e5f1255da683f8bc1b14', 1, 'my_string']]]
+        ['operator_3e_3e_13', ['operator&gt;&gt;', ['../classmy__string.html#af4ab5e6c0b9077cff2b5b0e67e745751', 1, 'my_string']]]
     ];

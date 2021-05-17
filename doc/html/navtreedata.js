@@ -24,30 +24,26 @@
 */
 var NAVTREE =
     [
-        ["mivnei_netunim targil tichnuti 1", "index.html", [
+        ["mivnei_netunim targil tichnuti 2", "index.html", [
             ["Classes", "annotated.html", [
                 ["Class List", "annotated.html", "annotated_dup"],
                 ["Class Index", "classes.html", null],
+                ["Class Hierarchy", "hierarchy.html", "hierarchy"],
                 ["Class Members", "functions.html", [
                     ["All", "functions.html", null],
                     ["Functions", "functions_func.html", null],
-                    ["Typedefs", "functions_type.html", null],
                     ["Related Functions", "functions_rela.html", null]
                 ]]
             ]],
             ["Files", "files.html", [
-                ["File List", "files.html", "files_dup"],
-                ["File Members", "globals.html", [
-                    ["All", "globals.html", null],
-                    ["Functions", "globals_func.html", null]
-                ]]
+                ["File List", "files.html", "files_dup"]
             ]]
         ]]
     ];
 
 var NAVTREEINDEX =
     [
-        "_input_output_8cpp.html"
+        "_input_output_8h_source.html"
     ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

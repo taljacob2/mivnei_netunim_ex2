@@ -1,5 +1,5 @@
 var searchData =
     [
-        ['different_5ftype_4', ['different_type', ['../classmy__string_1_1iterator.html#a4088e3e8d2fadd112e33558019c3e4e0', 1, 'my_string::iterator']]],
-        ['division_5ftheithelementinitssize_5', ['division_TheIthElementInItsSize', ['../classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee', 1, 'my_algorithms']]]
+        ['deletemin_2', ['deleteMin', ['../class_min_heap.html#a1d82a62be26da31f54316d95e57bcccc', 1, 'MinHeap::deleteMin()'], ['../class_min_heap_a_d_t.html#a038153aeceed434ab24e012cb2133ce5', 1, 'MinHeapADT::deleteMin()']]],
+        ['division_5ftheithelementinitssize_3', ['division_TheIthElementInItsSize', ['../classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee', 1, 'my_algorithms']]]
     ];
