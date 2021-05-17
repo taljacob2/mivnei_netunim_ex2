@@ -6,27 +6,32 @@
 #define MIVNEI_NETUNIM_EX2_MINHEAPADT_H
 
 /**
- * This class represents an *abstract* **Minimum-Heap**.
+ * @brief This class represents an *abstract* **Minimum-Heap**.
  *
  * @tparam T type of element in the *Heap*.
+ * @author Tal Yacob, ID: 208632778.
+ * @version 1.0
  */
 template<typename T> class MinHeapADT {
 
   public:
     /**
      * @brief Deletes the *minimal element* in the heap, and returns it.
+     *
      * @return the *minimal element* removed from the heap.
      */
-    virtual T deleteMin() = 0;
+    virtual T *deleteMin() = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.
+     *
      * @param elementToInsert the element to insert to the heap.
      */
     virtual void insert(T elementToInsert) = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.
+     *
      * @param indexToFixFrom fixes the heap from this index downwards until the
      *                       leaves of the heap.
      * @note this method will continue to run until the root is no longer
@@ -35,9 +40,11 @@ template<typename T> class MinHeapADT {
     virtual void fixHeap(int indexToFixFrom) = 0;
 
     /**
-     * @brief Builds a **Minimum-Heap** by giving an array of elements as a
-     *        parameter.
-     * @param arrayToBuildFrom the given array of elements to build the heap from.
+     * @brief Builds a **Minimum-Heap** by giving an arrayToBuildFrom of
+     *        elements as a parameter.
+     *
+     * @param arrayToBuildFrom the given array of elements to build the
+     *                         heap from.
      */
     virtual void buildHeap(T *arrayToBuildFrom) = 0;
 };
