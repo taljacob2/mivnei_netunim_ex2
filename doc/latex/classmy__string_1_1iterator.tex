@@ -1,0 +1,79 @@
+\hypertarget{classmy__string_1_1iterator}{}\doxysection{my\+\_\+string\+::iterator Class Reference}
+\label{classmy__string_1_1iterator}\index{my\_string::iterator@{my\_string::iterator}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a7827a7673aae42bb70f84efb3f847540}\label{classmy__string_1_1iterator_a7827a7673aae42bb70f84efb3f847540}} 
+using {\bfseries iterator\+\_\+category} = std\+::bidirectional\+\_\+iterator\+\_\+tag
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a4088e3e8d2fadd112e33558019c3e4e0}\label{classmy__string_1_1iterator_a4088e3e8d2fadd112e33558019c3e4e0}} 
+using {\bfseries different\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a67848bb4188793158c366888c86e9ce0}\label{classmy__string_1_1iterator_a67848bb4188793158c366888c86e9ce0}} 
+using {\bfseries value\+\_\+type} = char
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a98fd62ad4826678482d8f4403c611ff4}\label{classmy__string_1_1iterator_a98fd62ad4826678482d8f4403c611ff4}} 
+using {\bfseries pointer} = char $\ast$
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_aa7704901c0bce9aa3acdf4fb975b0ba7}\label{classmy__string_1_1iterator_aa7704901c0bce9aa3acdf4fb975b0ba7}} 
+using {\bfseries reference} = char \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a8213802212436149ed6be2bfe1b7e295}\label{classmy__string_1_1iterator_a8213802212436149ed6be2bfe1b7e295}} 
+{\bfseries iterator} (\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&my\+String, int i)
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a60a5fd8f51ca300bbacf9adca242ffbe}\label{classmy__string_1_1iterator_a60a5fd8f51ca300bbacf9adca242ffbe}} 
+{\bfseries iterator} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other)
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a41fc410e83cb7fdd63d12af1e1221ba1}\label{classmy__string_1_1iterator_a41fc410e83cb7fdd63d12af1e1221ba1}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \& {\bfseries operator=} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other)
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a12a8ba0fc11cb8911502aa35330f730a}\label{classmy__string_1_1iterator_a12a8ba0fc11cb8911502aa35330f730a}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_ae54b932b6e89a1a5d0c78b1f32eedd36}\label{classmy__string_1_1iterator_ae54b932b6e89a1a5d0c78b1f32eedd36}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a37da17745d7f71339e31743392520667}\label{classmy__string_1_1iterator_a37da17745d7f71339e31743392520667}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a5e3ac515ba1f30ec194d0cb4c55049a2}\label{classmy__string_1_1iterator_a5e3ac515ba1f30ec194d0cb4c55049a2}} 
+bool {\bfseries operator$>$} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a68d6cbc31efc9d31543aaa3f6177cd76}\label{classmy__string_1_1iterator_a68d6cbc31efc9d31543aaa3f6177cd76}} 
+bool {\bfseries operator$<$=} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a1425d2b8f67bd7a10528a08eb2aa049b}\label{classmy__string_1_1iterator_a1425d2b8f67bd7a10528a08eb2aa049b}} 
+bool {\bfseries operator$>$=} (const \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_afdcb890b4a9505c76668c09425874ecb}\label{classmy__string_1_1iterator_afdcb890b4a9505c76668c09425874ecb}} 
+reference {\bfseries operator$\ast$} ()
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a94c1ea782ede292f2d087c452368bd80}\label{classmy__string_1_1iterator_a94c1ea782ede292f2d087c452368bd80}} 
+pointer {\bfseries operator-\/$>$} ()
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_afc61a11cba556c084d3d1cbed5a71501}\label{classmy__string_1_1iterator_afc61a11cba556c084d3d1cbed5a71501}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} {\bfseries operator+} (int num) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_abe72cf5698b97b58bc1d57cae2abe6ee}\label{classmy__string_1_1iterator_abe72cf5698b97b58bc1d57cae2abe6ee}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} {\bfseries operator-\/} (int num) const
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a98df3b9f3c52dcdef3f09b8607ce603e}\label{classmy__string_1_1iterator_a98df3b9f3c52dcdef3f09b8607ce603e}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \& {\bfseries operator++} ()
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a60b5589d8cc7667dd9463bc544d91fd9}\label{classmy__string_1_1iterator_a60b5589d8cc7667dd9463bc544d91fd9}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} {\bfseries operator++} (int)
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a0e9fd1678eb496a55306cf42e3caad41}\label{classmy__string_1_1iterator_a0e9fd1678eb496a55306cf42e3caad41}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} \& {\bfseries operator-\/-\/} ()
+\item 
+\mbox{\Hypertarget{classmy__string_1_1iterator_a3575905c1573f018f30cce0b52e45d20}\label{classmy__string_1_1iterator_a3575905c1573f018f30cce0b52e45d20}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} {\bfseries operator-\/-\/} (int)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+\_\+string.\+h\end{DoxyCompactItemize}

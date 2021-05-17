@@ -1,0 +1,65 @@
+\hypertarget{class_min_heap_a_d_t}{}\doxysection{Min\+Heap\+ADT$<$ T $>$ Class Template Reference}
+\label{class_min_heap_a_d_t}\index{MinHeapADT$<$ T $>$@{MinHeapADT$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Min\+Heap\+ADT.\+h$>$}
+
+Inheritance diagram for Min\+Heap\+ADT$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_min_heap_a_d_t}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual T \mbox{\hyperlink{class_min_heap_a_d_t_a038153aeceed434ab24e012cb2133ce5}{delete\+Min}} ()=0
+\begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} in the heap, and returns it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_min_heap_a_d_t_a99c7462568a148c0ece6b65c38a845e8}\label{class_min_heap_a_d_t_a99c7462568a148c0ece6b65c38a845e8}} 
+virtual void \mbox{\hyperlink{class_min_heap_a_d_t_a99c7462568a148c0ece6b65c38a845e8}{insert}} (T element\+To\+Insert)=0
+\begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_min_heap_a_d_t_a64538c6ebe1333cc4754ed246762c8ee}\label{class_min_heap_a_d_t_a64538c6ebe1333cc4754ed246762c8ee}} 
+virtual void {\bfseries fix\+Heap} (int index\+To\+Fix\+From)=0
+\item 
+\mbox{\Hypertarget{class_min_heap_a_d_t_ad0e06ffb3d2aee82abe5d531e6cf6d76}\label{class_min_heap_a_d_t_ad0e06ffb3d2aee82abe5d531e6cf6d76}} 
+virtual void {\bfseries build\+Heap} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Min\+Heap\+ADT$<$ T $>$}
+
+This class represents an {\itshape abstract} {\bfseries{Minimum-\/\+Heap}}.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of element in the {\itshape Heap}. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_min_heap_a_d_t_a038153aeceed434ab24e012cb2133ce5}\label{class_min_heap_a_d_t_a038153aeceed434ab24e012cb2133ce5}} 
+\index{MinHeapADT$<$ T $>$@{MinHeapADT$<$ T $>$}!deleteMin@{deleteMin}}
+\index{deleteMin@{deleteMin}!MinHeapADT$<$ T $>$@{MinHeapADT$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual T \mbox{\hyperlink{class_min_heap_a_d_t}{Min\+Heap\+ADT}}$<$ T $>$\+::delete\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Deletes the {\itshape minimal element} in the heap, and returns it. 
+
+\begin{DoxyReturn}{Returns}
+the {\itshape minimal element} removed from the heap. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_min_heap_a1d82a62be26da31f54316d95e57bcccc}{Min\+Heap$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Min\+Heap\+ADT.\+h\end{DoxyCompactItemize}

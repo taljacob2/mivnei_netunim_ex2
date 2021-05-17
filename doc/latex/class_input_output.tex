@@ -1,0 +1,138 @@
+\hypertarget{class_input_output}{}\doxysection{Input\+Output Class Reference}
+\label{class_input_output}\index{InputOutput@{InputOutput}}
+
+
+this class bundles together all the input / output methods of the program.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Output.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$ \mbox{\hyperlink{class_input_output_a7403f35be5673fbd37f96ef970d5e904}{get\+All\+Inputs}} (int \&size, int \&serial\+Size\+Of\+The\+Element\+To\+Look\+For) noexcept(false)
+\begin{DoxyCompactList}\small\item\em gets all inputs from the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\static T $\ast$ \mbox{\hyperlink{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}{print\+Measure}} (T $\ast$array, int size, const std\+::function$<$ void(T $\ast$, int, char $\ast$\&)$>$ \&function\+To\+Measure)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}{print\+Measure}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, const std\+::function$<$ T(T $\ast$, int, int, char $\ast$\&)$>$ \&function\+To\+Measure)
+\item 
+\mbox{\Hypertarget{class_input_output_a408062257e63734b0bf07b79d43b2959}\label{class_input_output_a408062257e63734b0bf07b79d43b2959}} 
+{\footnotesize template$<$class T $>$ }\\static void {\bfseries set\+Sorts} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, T $\ast$\&insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested)
+\item 
+\mbox{\Hypertarget{class_input_output_a8f8537166733f58fd5262ca01a700dbc}\label{class_input_output_a8f8537166733f58fd5262ca01a700dbc}} 
+{\footnotesize template$<$class T $>$ }\\static void {\bfseries print\+Elements} (T $\ast$insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this class bundles together all the input / output methods of the program. 
+
+\begin{DoxyAuthor}{Author}
+Tal Yacob, ID\+: 208632778. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_output_a7403f35be5673fbd37f96ef970d5e904}\label{class_input_output_a7403f35be5673fbd37f96ef970d5e904}} 
+\index{InputOutput@{InputOutput}!getAllInputs@{getAllInputs}}
+\index{getAllInputs@{getAllInputs}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{getAllInputs()}{getAllInputs()}}
+{\footnotesize\ttfamily double $\ast$ Input\+Output\+::get\+All\+Inputs (\begin{DoxyParamCaption}\item[{int \&}]{size,  }\item[{int \&}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+gets all inputs from the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the size of the array. \\
+\hline
+{\em serial\+Size\+Of\+The\+Element\+To\+Look\+For} & the index to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\ttfamily new} created array. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & \\
+\hline
+{\em std\+::range\+\_\+error} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}\label{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}} 
+\index{InputOutput@{InputOutput}!printMeasure@{printMeasure}}
+\index{printMeasure@{printMeasure}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printMeasure()}{printMeasure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static T$\ast$ Input\+Output\+::print\+Measure (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{const std\+::function$<$ void(T $\ast$, int, char $\ast$\&)$>$ \&}]{function\+To\+Measure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+this {\itshape static} method measures the time it takes to a given {\ttfamily function\+To\+Measure} to work on the {\ttfamily array} given. the method outputs the measures to the {\ttfamily this\+::file\+Name} {\ttfamily Measure} file.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & element of the array. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & array to be manipulated. \\
+\hline
+{\em size} & size of the given array. \\
+\hline
+{\em function\+To\+Measure} & the method that manipulates the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\ttfamily new} allocated manipulated array. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmy__algorithms}{my\+\_\+algorithms}} 
+
+{\ttfamily this\+::file\+Name} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}\label{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}} 
+\index{InputOutput@{InputOutput}!printMeasure@{printMeasure}}
+\index{printMeasure@{printMeasure}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printMeasure()}{printMeasure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static T Input\+Output\+::print\+Measure (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For,  }\item[{const std\+::function$<$ T(T $\ast$, int, int, char $\ast$\&)$>$ \&}]{function\+To\+Measure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+this {\itshape static} method measures the time it takes to a given {\ttfamily function\+To\+Measure} to work on the {\ttfamily array} given. the method outputs the measures to the {\ttfamily this\+::file\+Name} {\ttfamily Measure} file.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & element of the array. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & array to be manipulated. \\
+\hline
+{\em size} & size of the given array. \\
+\hline
+{\em function\+To\+Measure} & the method that manipulates the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\ttfamily new} allocated manipulated array. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmy__algorithms}{my\+\_\+algorithms}} 
+
+{\ttfamily this\+::file\+Name} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Input\+Output.\+h\item 
+Input\+Output.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,154 @@
+\hypertarget{classmy__string}{}\doxysection{my\+\_\+string Class Reference}
+\label{classmy__string}\index{my\_string@{my\_string}}
+
+
+this is my implementation of the {\ttfamily string} class.  
+
+
+
+
+{\ttfamily \#include $<$my\+\_\+string.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmy__string_1_1iterator}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmy__string_a2e28c117af5c765f990ae981d6a52574}\label{classmy__string_a2e28c117af5c765f990ae981d6a52574}} 
+{\bfseries my\+\_\+string} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other)
+\item 
+\mbox{\Hypertarget{classmy__string_a28fcad5cc3a0d57b44ba42ef9b2903b5}\label{classmy__string_a28fcad5cc3a0d57b44ba42ef9b2903b5}} 
+{\bfseries my\+\_\+string} (const char $\ast$other)
+\item 
+\mbox{\Hypertarget{classmy__string_a5e6e1689eec2666da55ebdc4bb69b92f}\label{classmy__string_a5e6e1689eec2666da55ebdc4bb69b92f}} 
+char $\ast$\& {\bfseries get\+Str} ()
+\item 
+\mbox{\Hypertarget{classmy__string_a928913c2d1fddf2d3203de67122c489f}\label{classmy__string_a928913c2d1fddf2d3203de67122c489f}} 
+char $\ast$ {\bfseries get\+Str} () const
+\item 
+\mbox{\Hypertarget{classmy__string_a3f1ba9542f17cee34a207e9535887798}\label{classmy__string_a3f1ba9542f17cee34a207e9535887798}} 
+int {\bfseries get\+Length} () const
+\item 
+\mbox{\Hypertarget{classmy__string_a70bdc95a1d8e97424b99aa039b7cddee}\label{classmy__string_a70bdc95a1d8e97424b99aa039b7cddee}} 
+{\bfseries operator char $\ast$} ()
+\item 
+\mbox{\Hypertarget{classmy__string_aab4f4cc237fa71444b1d01c3a68dd176}\label{classmy__string_aab4f4cc237fa71444b1d01c3a68dd176}} 
+{\bfseries operator char $\ast$} () const
+\item 
+\mbox{\Hypertarget{classmy__string_a2fca9c23dfcde950b99af2bf29279a7f}\label{classmy__string_a2fca9c23dfcde950b99af2bf29279a7f}} 
+{\bfseries operator std\+::string} () const
+\item 
+\mbox{\Hypertarget{classmy__string_abce2bb16ef81e5420ca3cebeec5e12eb}\label{classmy__string_abce2bb16ef81e5420ca3cebeec5e12eb}} 
+\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \& {\bfseries operator=} (const char $\ast$other)
+\item 
+\mbox{\Hypertarget{classmy__string_a3c7db336903b6e6afb4899c880abf5c4}\label{classmy__string_a3c7db336903b6e6afb4899c880abf5c4}} 
+\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \& {\bfseries operator=} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other)
+\item 
+\mbox{\Hypertarget{classmy__string_a4e67386cdcef64774465f6c8e9751b72}\label{classmy__string_a4e67386cdcef64774465f6c8e9751b72}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_a5c4b83d4b873daf2d58fcae39a2081d1}\label{classmy__string_a5c4b83d4b873daf2d58fcae39a2081d1}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_a85054741e89afd4701d42d7ae9716ebe}\label{classmy__string_a85054741e89afd4701d42d7ae9716ebe}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_aaf99da43786fe10f521a1dfe84e69f66}\label{classmy__string_aaf99da43786fe10f521a1dfe84e69f66}} 
+bool {\bfseries operator$<$=} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_a7b9bb8a668b609d2cc1b9f308e0e80d0}\label{classmy__string_a7b9bb8a668b609d2cc1b9f308e0e80d0}} 
+bool {\bfseries operator$>$} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_aee1af608d913de54605b030651c291e5}\label{classmy__string_aee1af608d913de54605b030651c291e5}} 
+bool {\bfseries operator$>$=} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&other) const
+\item 
+\mbox{\Hypertarget{classmy__string_a9972b709fbd876cac55029885633dbdf}\label{classmy__string_a9972b709fbd876cac55029885633dbdf}} 
+bool {\bfseries save} (std\+::ostream \&out) const
+\item 
+\mbox{\Hypertarget{classmy__string_a3e719a3d81e6e5f1255da683f8bc1b14}\label{classmy__string_a3e719a3d81e6e5f1255da683f8bc1b14}} 
+bool {\bfseries load} (std\+::istream \&in)
+\item 
+\mbox{\Hypertarget{classmy__string_a9c5dbcc7b751d16a915703e717e8a9cf}\label{classmy__string_a9c5dbcc7b751d16a915703e717e8a9cf}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classmy__string_afeae7931ac4b94bd1c194ec2cb892c3b}\label{classmy__string_afeae7931ac4b94bd1c194ec2cb892c3b}} 
+\mbox{\hyperlink{classmy__string_1_1iterator}{iterator}} {\bfseries end} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmy__string_a36d7ca20ffce895d0c9c2621555f2170}\label{classmy__string_a36d7ca20ffce895d0c9c2621555f2170}} 
+static int {\bfseries compare} (const char $\ast$\&str1, const char $\ast$\&str2)
+\item 
+\mbox{\Hypertarget{classmy__string_aa1d01b745bef9e559eccf349aef23070}\label{classmy__string_aa1d01b745bef9e559eccf349aef23070}} 
+static int {\bfseries compare} (const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&str1, const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&str2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmy__string_a9b427181566c373a0bfb1736936b1023}\label{classmy__string_a9b427181566c373a0bfb1736936b1023}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&my\+\_\+str)
+\item 
+std\+::istream \& \mbox{\hyperlink{classmy__string_af4ab5e6c0b9077cff2b5b0e67e745751}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&my\+\_\+str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this is my implementation of the {\ttfamily string} class. 
+
+\begin{DoxyNote}{Note}
+the class is {\ttfamily iterable}. 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Tal Yacob, ID\+: 208632778. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classmy__string_af4ab5e6c0b9077cff2b5b0e67e745751}\label{classmy__string_af4ab5e6c0b9077cff2b5b0e67e745751}} 
+\index{my\_string@{my\_string}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!my\_string@{my\_string}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&}]{my\+\_\+str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyAttention}{Attention}
+\begin{DoxyItemize}
+\item this implementation enforces the {\ttfamily string} to {\bfseries{ignore}} the following {\ttfamily white-\/spaces}\+:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{charliteral}{' '}, \textcolor{charliteral}{'\(\backslash\)t'}, \textcolor{charliteral}{'\(\backslash\)n'}}
+
+\end{DoxyCode}
+. and receives only {\ttfamily non-\/white-\/spaces}. \end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item the method does {\bfseries{not}} include the last
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{charliteral}{'\(\backslash\)n'}}
+
+\end{DoxyCode}
+ in the {\ttfamily string} and does {\bfseries{not}} leave it in the {\ttfamily is} {\ttfamily istream}. instead, the method reads it but {\bfseries{ignores}} it. \end{DoxyItemize}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em is} & the {\ttfamily istream} to read from. \\
+\hline
+{\em my\+\_\+str} & the {\ttfamily string} to read into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the given {\ttfamily is} {\ttfamily istream}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+my\+\_\+string.\+h\item 
+my\+\_\+string.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\hypertarget{class_min_heap}{}\doxysection{Min\+Heap$<$ T $>$ Class Template Reference}
+\label{class_min_heap}\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+Inheritance diagram for Min\+Heap$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_min_heap}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_min_heap_aa5de3a032452cf32b2488af5b46a6fff}{Min\+Heap}} (int number\+Of\+Elements)
+\begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_min_heap_a1d82a62be26da31f54316d95e57bcccc}{delete\+Min}} () override
+\begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} in the heap, and returns it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_min_heap_a83a9ee9935bfd6c3a21a4e94395f2e2c}\label{class_min_heap_a83a9ee9935bfd6c3a21a4e94395f2e2c}} 
+void \mbox{\hyperlink{class_min_heap_a83a9ee9935bfd6c3a21a4e94395f2e2c}{insert}} (T element\+To\+Insert) override
+\begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_min_heap_a810d4ad939e0fab89f314473a9d0d1b5}\label{class_min_heap_a810d4ad939e0fab89f314473a9d0d1b5}} 
+void {\bfseries fix\+Heap} (int index\+To\+Fix\+From) override
+\item 
+\mbox{\Hypertarget{class_min_heap_ad42a1f329d0bda79b46e0d343fdf57e5}\label{class_min_heap_ad42a1f329d0bda79b46e0d343fdf57e5}} 
+void {\bfseries build\+Heap} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_min_heap_aa5de3a032452cf32b2488af5b46a6fff}\label{class_min_heap_aa5de3a032452cf32b2488af5b46a6fff}} 
+\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!MinHeap@{MinHeap}}
+\index{MinHeap@{MinHeap}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initializes the {\itshape array}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+Of\+Elements} & the number of elements to set the {\itshape array}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_min_heap_a1d82a62be26da31f54316d95e57bcccc}\label{class_min_heap_a1d82a62be26da31f54316d95e57bcccc}} 
+\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!deleteMin@{deleteMin}}
+\index{deleteMin@{deleteMin}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::delete\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deletes the {\itshape minimal element} in the heap, and returns it. 
+
+\begin{DoxyNote}{Note}
+After removing the {\itshape minimal element} from the heap, this method calls the {\itshape fix\+Heap(0)} method, in order to fix the heap afterwards. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the {\itshape minimal element} removed from the heap. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+fix\+Heap(int) 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_a038153aeceed434ab24e012cb2133ce5}{Min\+Heap\+ADT$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Min\+Heap.\+h\end{DoxyCompactItemize}
