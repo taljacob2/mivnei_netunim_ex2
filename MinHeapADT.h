@@ -2,8 +2,8 @@
 // Created by Tal on 17-May-21.
 //
 
-#ifndef MIVNEI_NETUNIM_EX1_MINHEAPADT_H
-#define MIVNEI_NETUNIM_EX1_MINHEAPADT_H
+#ifndef MIVNEI_NETUNIM_EX2_MINHEAPADT_H
+#define MIVNEI_NETUNIM_EX2_MINHEAPADT_H
 
 /**
  * This class represents an *abstract* **Minimum-Heap**.
@@ -43,4 +43,4 @@ template<typename T> class MinHeapADT {
 };
 
 
-#endif //MIVNEI_NETUNIM_EX1_MINHEAPADT_H
+#endif //MIVNEI_NETUNIM_EX2_MINHEAPADT_H

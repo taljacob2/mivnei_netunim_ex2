@@ -2,8 +2,8 @@
 // Created by Tal on 17-May-21.
 //
 
-#ifndef MIVNEI_NETUNIM_EX1_MINHEAP_H
-#define MIVNEI_NETUNIM_EX1_MINHEAP_H
+#ifndef MIVNEI_NETUNIM_EX2_MINHEAP_H
+#define MIVNEI_NETUNIM_EX2_MINHEAP_H
 
 #include "MinHeapADT.h"
 
@@ -58,4 +58,4 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
     void buildHeap(T *arrayToBuildFrom) override {}
 };
 
-#endif //MIVNEI_NETUNIM_EX1_MINHEAP_H
+#endif //MIVNEI_NETUNIM_EX2_MINHEAP_H
