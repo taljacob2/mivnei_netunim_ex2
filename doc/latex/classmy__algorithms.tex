@@ -2,7 +2,7 @@
 \label{classmy__algorithms}\index{my\_algorithms@{my\_algorithms}}
 
 
-this class bundles together all the algorithm methods of the program.  
+this class bundles together all the algorithm methods in the program.  
 
 
 
@@ -12,6 +12,10 @@ this class bundles together all the algorithm methods of the program.
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$class T $>$ }\\static int \mbox{\hyperlink{classmy__algorithms_a7d1861e540c0919d8f151f0c66f5f777}{max}} (T $\ast$$\ast$array, int index\+To\+Element1, int index\+To\+Element2)
+\begin{DoxyCompactList}\small\item\em Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the larger element out of them. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\static int \mbox{\hyperlink{classmy__algorithms_aaba7dbd8f8e911fd944a6ec8aced88c2}{min}} (T $\ast$$\ast$array, int index\+To\+Element1, int index\+To\+Element2)
+\begin{DoxyCompactList}\small\item\em Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the smaller element out of them. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static T $\ast$ \mbox{\hyperlink{classmy__algorithms_a69c56c853f1240b910ec0e49cfc32623}{copy\+Array}} (const T $\ast$array, int size)
 \begin{DoxyCompactList}\small\item\em generic algorithm to copy an array. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a10c7c5677d44a82850f99867bc0be126}{swap}} (T $\ast$array, int index1, int index2)
@@ -39,13 +43,13 @@ this class bundles together all the algorithm methods of the program.
 
 
 \doxysubsection{Detailed Description}
-this class bundles together all the algorithm methods of the program. 
+this class bundles together all the algorithm methods in the program. 
 
 \begin{DoxyAuthor}{Author}
 Tal Yacob, ID\+: 208632778. 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0 
+2.\+0 
 \end{DoxyVersion}
 
 
@@ -116,6 +120,58 @@ this method searches for the {\ttfamily I\textquotesingle{}th element in its siz
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 the {\itshape value} of the element which {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is its {\bfseries{serial size}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy__algorithms_a7d1861e540c0919d8f151f0c66f5f777}\label{classmy__algorithms_a7d1861e540c0919d8f151f0c66f5f777}} 
+\index{my\_algorithms@{my\_algorithms}!max@{max}}
+\index{max@{max}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static int my\+\_\+algorithms\+::max (\begin{DoxyParamCaption}\item[{T $\ast$$\ast$}]{array,  }\item[{int}]{index\+To\+Element1,  }\item[{int}]{index\+To\+Element2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the larger element out of them. 
+
+\begin{DoxyNote}{Note}
+if element is a {\ttfamily nullptr}, prioritize to return the index of the {\itshape other} element given. If both element are {\ttfamily nullptr}, return the index of the {\itshape first} element. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & an array of pointers to elements. \\
+\hline
+{\em index\+To\+Element1} & index of pointer to first element to compare. \\
+\hline
+{\em index\+To\+Element2} & index of pointer to second element to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the pointer that points to the larger element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy__algorithms_aaba7dbd8f8e911fd944a6ec8aced88c2}\label{classmy__algorithms_aaba7dbd8f8e911fd944a6ec8aced88c2}} 
+\index{my\_algorithms@{my\_algorithms}!min@{min}}
+\index{min@{min}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static int my\+\_\+algorithms\+::min (\begin{DoxyParamCaption}\item[{T $\ast$$\ast$}]{array,  }\item[{int}]{index\+To\+Element1,  }\item[{int}]{index\+To\+Element2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the smaller element out of them. 
+
+\begin{DoxyNote}{Note}
+if element is a {\ttfamily nullptr}, prioritize to return the index of the {\itshape other} element given. If both element are {\ttfamily nullptr}, return the index of the {\itshape first} element. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & an array of pointers to elements. \\
+\hline
+{\em index\+To\+Element1} & index of pointer to first element to compare. \\
+\hline
+{\em index\+To\+Element2} & index of pointer to second element to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the pointer that points to the smaller element. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classmy__algorithms_a98317c4e662536b0c93636ceaf3934ff}\label{classmy__algorithms_a98317c4e662536b0c93636ceaf3934ff}} 
 \index{my\_algorithms@{my\_algorithms}!partition@{partition}}
