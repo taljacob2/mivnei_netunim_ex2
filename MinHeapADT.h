@@ -29,14 +29,14 @@ template<typename K, typename V> class MinHeapADT {
      *
      * @return the *minimal element* removed from the heap.
      */
-    virtual Entry<K, V> deleteMin() = 0;
+    virtual Entry<K, V> *deleteMin() = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.
      *
      * @param elementToInsert the element to insert to the heap.
      */
-    virtual void insert(Entry<K, V> &elementToInsert) = 0;
+    virtual void insert(Entry<K, V> *elementToInsert) = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.

@@ -93,6 +93,21 @@ class my_algorithms {
     }
 
     /**
+     * @brief generic algorithm to create an array of pointers to each
+     *        element provided in the @p array given.
+     *
+     * @returns the `new` created array of pointers.
+     */
+    template<class T>
+    static T **createArrayOfPointers(const T *array, int size) {
+        auto **pointingArray = new T *[size];
+        for (int i = 0; i < size; ++i) {
+            pointingArray[i] = const_cast<T *>(&array[i]);
+        }
+        return pointingArray;
+    }
+
+    /**
      * @brief generic `swap` algorithm of two elements in an array.
      *
      * @tparam T elements to be swapped.

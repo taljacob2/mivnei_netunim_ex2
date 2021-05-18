@@ -14,11 +14,12 @@
 
 /**
  * @brief This class implements a **Minimum-Heap** which its elements are
- *        *Entries* that are composed by a *key* and a *value*.
+ *        pointers to *Entries* that are composed by a *key* and a *value*.
  *
  * The heap compares its elements to each other, by the comparable `key` field
  * located in each `Entry` element.
- * @tparam E is an @link Entry @endlink type of element in the *Heap*.
+ * @tparam K the type of *key* in the entry.
+ * @tparam V the type of *value* in the entry.
  * @note The terms `element`, `node` and 'entry' are synonyms.
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0
@@ -27,10 +28,10 @@
 template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
   private:
     /**
-     * Array of `Entries` that serve as `elements`.
+     * Array of pointers to `Entries` that serve as `elements`.
      * Initialized to `nullptr`.
      */
-    Entry<K, V> *array = nullptr;
+    Entry<K, V> **array = nullptr;
 
     /// The *physical-size* of the *array*.
     int physicalSize = 0;
@@ -71,14 +72,14 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @return the *minimal element* removed from the heap.
      * @see fixHeap(int)
      */
-    Entry<K, V> deleteMin() override {
+    Entry<K, V> *deleteMin() override {
 
         /*
          * Returns the `first` element in the array (= the `minimal` element).
          * In case the `logicalSize` of the array is 0,
          * this method returns `nullptr`.
          */
-        Entry<K, V> returnElement = nullptr;
+        Entry<K, V> *returnElement = nullptr;
         if (logicalSize > 0) { returnElement = array[0]; }
 
         /* Set the `first` element in the array to be the `last` element. */
@@ -102,7 +103,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @param elementToInsert the element to insert to the heap.
      * @throws std::runtime_error in case the heap is already full.
      */
-    void insert(Entry<K, V> &elementToInsert) override {
+    void insert(Entry<K, V> *elementToInsert) override {
 
         /* If there is enough space in the array. */
         if (physicalSize > logicalSize) {
@@ -125,7 +126,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
                  * them, in order to ensure validity of the heap, as a
                  * `Minimum-Heap`.
                  */
-                if (array[currentIndex] < array[(currentIndex - 1) / 2]) {
+                if (*array[currentIndex] < *array[(currentIndex - 1) / 2]) {
                     my_algorithms::swap(array, currentIndex,
                                         (currentIndex - 1) / 2);
 
@@ -212,8 +213,8 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
                  * There is a living entry.
                  * Compare by keys.
                  */
-                if (array[currentIndex] >
-                    array[indexOfMinimalChildOfCurrentRoot]) {
+                if (*array[currentIndex] >
+                    *array[indexOfMinimalChildOfCurrentRoot]) {
                     my_algorithms::swap(array, currentIndex,
                                         indexOfMinimalChildOfCurrentRoot);
                     currentIndex = indexOfMinimalChildOfCurrentRoot;
@@ -244,7 +245,39 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         /* Delete the old array if there is any. */
         delete[] array;
 
-        /* Initialize a `new` empty array. */
+        /* Initialize a `new` empty array of pointers. */
+        physicalSize = sizeOfArrayToBuildFrom;
+        logicalSize  = sizeOfArrayToBuildFrom;
+        array        = my_algorithms::createArrayOfPointers<Entry<K, V>>(
+                arrayToBuildFrom, sizeOfArrayToBuildFrom);
+
+        /*
+         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
+         * Note: the almost last level has `(logicalSize / 2)` `nodes`.
+         */
+        int lastIndex = logicalSize - 1;
+        for (int currentIndex = (lastIndex - 1) / 2; currentIndex >= 0;
+             currentIndex--) {
+            fixHeap(currentIndex);
+        }
+    }
+
+    /**
+     * @brief Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
+     *        elements as a parameter.
+     *
+     * @param arrayToBuildFrom the given array of elements to build the
+     *                         heap from.
+     * @param sizeOfArrayToBuildFrom the size of the array to build the
+     *                               heap from.
+     */
+    void buildHeap(Entry<K, V> **arrayToBuildFrom, int sizeOfArrayToBuildFrom) {
+        // TODO: check this method.
+
+        /* Delete the old array if there is any. */
+        delete[] array;
+
+        /* Initialize a `new` empty array of pointers. */
         physicalSize = sizeOfArrayToBuildFrom;
         logicalSize  = sizeOfArrayToBuildFrom;
         array        = my_algorithms::copyArray<Entry<K, V>>(arrayToBuildFrom,
@@ -279,13 +312,13 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @brief std::ostream `operator <<` print method.
      */
     friend std::ostream &operator<<(std::ostream &os, const MinHeap &heap) {
-        os << " array: ";
+        os << "array{\n";
         for (int i = 0; i < heap.logicalSize; i++) {
-            os << heap.array[i];
-            os << " ";
+            os << *heap.array[i];
+            os << "\n";
         }
-        os << ", logicalSize: " << heap.logicalSize
-           << ", physicalSize: " << heap.physicalSize << '\n';
+        os << "logicalSize: " << heap.logicalSize
+           << ", physicalSize: " << heap.physicalSize << "\n}" << '\n';
         return os;
     }
 };
