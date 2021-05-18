@@ -1,0 +1,226 @@
+\hypertarget{class_entry}{}\doxysection{Entry$<$ K, V $>$ Class Template Reference}
+\label{class_entry}\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+
+
+This class represents a general {\itshape entry}, which is composed from a {\itshape key} and a {\itshape value}.  
+
+
+
+
+{\ttfamily \#include $<$Entry.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entry_a82da84e98e788f321b0e5e969ebe7501}{Entry}} (K \mbox{\hyperlink{class_entry_a1a9d3eb85017a25b3365cf3920f34282}{key}}, V \mbox{\hyperlink{class_entry_afb034c5a062161937891750ef054c63b}{value}})
+\begin{DoxyCompactList}\small\item\em Initializer constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entry_ac799c4ef2762137b37348d7af6adfcc8}{Entry}} ()=default
+\begin{DoxyCompactList}\small\item\em Empty default constructor. \end{DoxyCompactList}\item 
+K \mbox{\hyperlink{class_entry_a61500654198dacda3120c6cc0d644298}{get\+Key}} () const
+\item 
+void \mbox{\hyperlink{class_entry_a449bc0df2c11c1c7805920f0eaec7f30}{set\+Key}} (K \mbox{\hyperlink{class_entry_a1a9d3eb85017a25b3365cf3920f34282}{key}})
+\item 
+V \mbox{\hyperlink{class_entry_a4278dda2b25de410992701fcf589f511}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_entry_acbb4d35842aebb3abd57d4615a6772f8}{set\+Value}} (V \mbox{\hyperlink{class_entry_afb034c5a062161937891750ef054c63b}{value}})
+\item 
+bool \mbox{\hyperlink{class_entry_a9d5192da08d2f7e8de9a330dff7e87b3}{operator$<$}} (const \mbox{\hyperlink{class_entry}{Entry}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_entry_a95751e03b4b7a493916be90d61a01eb5}{operator$>$}} (const \mbox{\hyperlink{class_entry}{Entry}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_entry_aea2336f5f206a1f43326e21471585858}{operator$<$=}} (const \mbox{\hyperlink{class_entry}{Entry}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_entry_a7b3643229f885df6916f3034e2e05f8e}{operator$>$=}} (const \mbox{\hyperlink{class_entry}{Entry}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_entry_a97cebebb62941bfd542418937ad86b54}{operator==}} (const \mbox{\hyperlink{class_entry}{Entry}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_entry_aab278ccd8c0e5ede4ab6dee06b0b5699}{operator!=}} (const \mbox{\hyperlink{class_entry}{Entry}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+K \mbox{\hyperlink{class_entry_a1a9d3eb85017a25b3365cf3920f34282}{key}}
+\begin{DoxyCompactList}\small\item\em The {\itshape key} of the entry. \end{DoxyCompactList}\item 
+V \mbox{\hyperlink{class_entry_afb034c5a062161937891750ef054c63b}{value}}
+\begin{DoxyCompactList}\small\item\em The {\itshape value} of the entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_entry_a9e76d0ea660b96a4485a97f0d840a599}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_entry}{Entry}} \&entry)
+\begin{DoxyCompactList}\small\item\em std\+::ostream {\ttfamily operator $<$$<$} print method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$\newline
+class Entry$<$ K, V $>$}
+
+This class represents a general {\itshape entry}, which is composed from a {\itshape key} and a {\itshape value}. 
+
+{\ttfamily Entries} are compared to each other, by the comparable {\ttfamily key} field located in each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} element. \begin{DoxyAttention}{Attention}
+the {\ttfamily key} {\bfseries{must}} be {\ttfamily comparable}. 
+\end{DoxyAttention}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em K} & the type of {\itshape key} in the entry. \\
+\hline
+{\em V} & the type of {\itshape value} in the entry. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyAuthor}{Author}
+Tal Yacob, ID\+: 208632778. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entry_a82da84e98e788f321b0e5e969ebe7501}\label{class_entry_a82da84e98e788f321b0e5e969ebe7501}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!Entry@{Entry}}
+\index{Entry@{Entry}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Entry()}{Entry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::\mbox{\hyperlink{class_entry}{Entry}} (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{V}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializer constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to set the entry with. \\
+\hline
+{\em value} & the value to set the entry with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_entry_ac799c4ef2762137b37348d7af6adfcc8}\label{class_entry_ac799c4ef2762137b37348d7af6adfcc8}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!Entry@{Entry}}
+\index{Entry@{Entry}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Entry()}{Entry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::\mbox{\hyperlink{class_entry}{Entry}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Empty default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entry_a61500654198dacda3120c6cc0d644298}\label{class_entry_a61500654198dacda3120c6cc0d644298}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!getKey@{getKey}}
+\index{getKey@{getKey}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{getKey()}{getKey()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+K \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::get\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_a4278dda2b25de410992701fcf589f511}\label{class_entry_a4278dda2b25de410992701fcf589f511}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+V \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_aab278ccd8c0e5ede4ab6dee06b0b5699}\label{class_entry_aab278ccd8c0e5ede4ab6dee06b0b5699}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+bool \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_a9d5192da08d2f7e8de9a330dff7e87b3}\label{class_entry_a9d5192da08d2f7e8de9a330dff7e87b3}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+bool \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_aea2336f5f206a1f43326e21471585858}\label{class_entry_aea2336f5f206a1f43326e21471585858}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+bool \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_a97cebebb62941bfd542418937ad86b54}\label{class_entry_a97cebebb62941bfd542418937ad86b54}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+bool \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_a95751e03b4b7a493916be90d61a01eb5}\label{class_entry_a95751e03b4b7a493916be90d61a01eb5}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+bool \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_a7b3643229f885df6916f3034e2e05f8e}\label{class_entry_a7b3643229f885df6916f3034e2e05f8e}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+bool \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_a449bc0df2c11c1c7805920f0eaec7f30}\label{class_entry_a449bc0df2c11c1c7805920f0eaec7f30}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!setKey@{setKey}}
+\index{setKey@{setKey}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{setKey()}{setKey()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::set\+Key (\begin{DoxyParamCaption}\item[{K}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_entry_acbb4d35842aebb3abd57d4615a6772f8}\label{class_entry_acbb4d35842aebb3abd57d4615a6772f8}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!setValue@{setValue}}
+\index{setValue@{setValue}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::set\+Value (\begin{DoxyParamCaption}\item[{V}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_entry_a9e76d0ea660b96a4485a97f0d840a599}\label{class_entry_a9e76d0ea660b96a4485a97f0d840a599}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+std\+::ostream {\ttfamily operator $<$$<$} print method. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_entry_a1a9d3eb85017a25b3365cf3920f34282}\label{class_entry_a1a9d3eb85017a25b3365cf3920f34282}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!key@{key}}
+\index{key@{key}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+K \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::key\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The {\itshape key} of the entry. 
+
+\begin{DoxyAttention}{Attention}
+{\bfseries{Must}} be {\ttfamily comparable}. 
+\end{DoxyAttention}
+\mbox{\Hypertarget{class_entry_afb034c5a062161937891750ef054c63b}\label{class_entry_afb034c5a062161937891750ef054c63b}} 
+\index{Entry$<$ K, V $>$@{Entry$<$ K, V $>$}!value@{value}}
+\index{value@{value}!Entry$<$ K, V $>$@{Entry$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+V \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$\+::value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The {\itshape value} of the entry. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entry_8h}{Entry.\+h}}\end{DoxyCompactItemize}

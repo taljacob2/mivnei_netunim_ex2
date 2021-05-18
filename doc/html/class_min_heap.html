@@ -191,7 +191,7 @@
             </tr>
             <tr class="memdesc:a6f4be46b00c888580c5f3afe41865930">
                 <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">Deletes the <em>minimal element</em> in
+                <td class="mdescRight">Deletes the <em>minimal element</em> from
                     the heap, and returns it. <a
                             href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">More...</a><br/>
                 </td>
@@ -269,9 +269,9 @@
             </tr>
             <tr class="memdesc:a7edac6f943f3e143fbf45b529e70a8e4">
                 <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">boolean value whether this heap empty or
-                    not.
-                    <a href="class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4">More...</a><br/>
+                <td class="mdescRight">returns a boolean value that determines
+                    whether this heap is empty or not. <a
+                            href="class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4">More...</a><br/>
                 </td>
             </tr>
             <tr class="separator:a7edac6f943f3e143fbf45b529e70a8e4">
@@ -367,9 +367,9 @@
             </tr>
             <tr class="memdesc:a81a7799f8217c5db84b7eec767932d2f">
                 <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">std::ostream *operator &lt;&lt;* print
-                    method. <a
-                            href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">More...</a><br/>
+                <td class="mdescRight">std::ostream <code>operator
+                    &lt;&lt;</code> print method. <a
+                        href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">More...</a><br/>
                 </td>
             </tr>
             <tr class="separator:a81a7799f8217c5db84b7eec767932d2f">
@@ -479,9 +479,10 @@
 
                 <p>Constructor, initializes the <em>array</em>. </p>
                 <p>Builds a <b>Minimum-Heap</b> by giving an <code>arrayToBuildFrom</code>
-                    of elements as a parameter, by invoking the <a class="el"
-                                                                   href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">buildHeap</a>
-                    method.</p>
+                    of elements as a parameter. Done by invoking the <a
+                            class="el"
+                            href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">buildHeap</a>
+                    method. </p>
                 <dl class="params">
                     <dt>Parameters</dt>
                     <dd>
@@ -673,8 +674,8 @@
             </div>
             <div class="memdoc">
 
-                <p>Deletes the <em>minimal element</em> in the heap, and returns
-                    it. </p>
+                <p>Deletes the <em>minimal element</em> from the heap, and
+                    returns it. </p>
                 <dl class="section note">
                     <dt>Note</dt>
                     <dd>After removing the <em>minimal element</em> from the
@@ -893,11 +894,12 @@
             </div>
             <div class="memdoc">
 
-                <p>boolean value whether this heap empty or not. </p>
+                <p>returns a boolean value that determines whether this heap is
+                    empty or not. </p>
                 <dl class="section return">
                     <dt>Returns</dt>
-                    <dd>boolean value. <em>true</em> if the heap is empty, <em>false</em>
-                        if the heap is not empty.
+                    <dd>boolean value of <em>true</em> if the heap is empty, or
+                        else, <em>false</em> if the heap is not empty.
                     </dd>
                 </dl>
 
@@ -1000,7 +1002,8 @@
             </div>
             <div class="memdoc">
 
-                <p>std::ostream *operator &lt;&lt;* print method. </p>
+                <p>std::ostream <code>operator &lt;&lt;</code> print method.
+                </p>
 
             </div>
         </div>

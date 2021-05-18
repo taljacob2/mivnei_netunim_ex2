@@ -1,0 +1,54 @@
+\hypertarget{my__string_8cpp}{}\doxysection{my\+\_\+string.\+cpp File Reference}
+\label{my__string_8cpp}\index{my\_string.cpp@{my\_string.cpp}}
+{\ttfamily \#include \char`\"{}my\+\_\+string.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{my__string_8cpp_a9b427181566c373a0bfb1736936b1023}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&my\+\_\+str)
+\item 
+std\+::istream \& \mbox{\hyperlink{my__string_8cpp_af4ab5e6c0b9077cff2b5b0e67e745751}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&my\+\_\+str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{my__string_8cpp_a9b427181566c373a0bfb1736936b1023}\label{my__string_8cpp_a9b427181566c373a0bfb1736936b1023}} 
+\index{my\_string.cpp@{my\_string.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!my\_string.cpp@{my\_string.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&}]{my\+\_\+str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{my__string_8cpp_af4ab5e6c0b9077cff2b5b0e67e745751}\label{my__string_8cpp_af4ab5e6c0b9077cff2b5b0e67e745751}} 
+\index{my\_string.cpp@{my\_string.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!my\_string.cpp@{my\_string.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&}]{my\+\_\+str }\end{DoxyParamCaption})}
+
+\begin{DoxyAttention}{Attention}
+\begin{DoxyItemize}
+\item this implementation enforces the {\ttfamily string} to {\bfseries{ignore}} the following {\ttfamily white-\/spaces}\+:
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{charliteral}{' '}, \textcolor{charliteral}{'\(\backslash\)t'}, \textcolor{charliteral}{'\(\backslash\)n'}}
+
+\end{DoxyCode}
+. and receives only {\ttfamily non-\/white-\/spaces}. \end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item the method does {\bfseries{not}} include the last
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{charliteral}{'\(\backslash\)n'}}
+
+\end{DoxyCode}
+ in the {\ttfamily string} and does {\bfseries{not}} leave it in the {\ttfamily is} {\ttfamily istream}. instead, the method reads it but {\bfseries{ignores}} it. \end{DoxyItemize}
+
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em is} & the {\ttfamily istream} to read from. \\
+\hline
+{\em my\+\_\+str} & the {\ttfamily string} to read into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the given {\ttfamily is} {\ttfamily istream}. 
+\end{DoxyReturn}
