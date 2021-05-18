@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['copyarray_2', ['copyArray', ['../classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623', 1, 'my_algorithms']]]
+        ['array_3', ['array', ['../class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f', 1, 'MinHeap']]]
     ];

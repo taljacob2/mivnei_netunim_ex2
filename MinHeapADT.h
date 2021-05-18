@@ -5,29 +5,38 @@
 #ifndef MIVNEI_NETUNIM_EX2_MINHEAPADT_H
 #define MIVNEI_NETUNIM_EX2_MINHEAPADT_H
 
+#include "Entry.h"
+
 /**
- * @brief This class represents an *abstract* **Minimum-Heap**.
+ * @brief This class represents an *abstract* **Minimum-Heap**,
+ *        which its elements are *Entries* that are composed by a
+ *        *key* and a *value*.
  *
- * @tparam T type of element in the *Heap*.
+ * The heap compares its elements to each other, by the comparable `key` field
+ * located in each `Entry` element.*
+ * @tparam K the type of *key* in the entry.
+ * @tparam V the type of *value* in the entry.
+ * @note The terms `element`, `node` and 'entry' are synonyms.
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0
+ * @see Entry
  */
-template<typename T> class MinHeapADT {
+template<typename K, typename V> class MinHeapADT {
 
   public:
     /**
-     * @brief Deletes the *minimal element* in the heap, and returns it.
+     * @brief Deletes the *minimal element* from the heap, and returns it.
      *
      * @return the *minimal element* removed from the heap.
      */
-    virtual T *deleteMin() = 0;
+    virtual Entry<K, V> *deleteMin() = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.
      *
      * @param elementToInsert the element to insert to the heap.
      */
-    virtual void insert(T &elementToInsert) = 0;
+    virtual void insert(Entry<K, V> &elementToInsert) = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.
@@ -46,10 +55,12 @@ template<typename T> class MinHeapADT {
      * @param arrayToBuildFrom the given array of elements to build the
      *                         heap from.
      */
-    virtual void buildHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) = 0;
+    virtual void buildHeap(Entry<K, V> *arrayToBuildFrom,
+                           int          sizeOfArrayToBuildFrom) = 0;
 
     /**
      * @brief boolean value whether this heap empty or not.
+     *
      * @return boolean value. *true* if the heap is empty, *false* if the
      *         heap is not empty.
      */

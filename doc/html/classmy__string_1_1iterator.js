@@ -22,5 +22,7 @@ var classmy__string_1_1iterator =
         ["operator=", "classmy__string_1_1iterator.html#a41fc410e83cb7fdd63d12af1e1221ba1", null],
         ["operator==", "classmy__string_1_1iterator.html#a12a8ba0fc11cb8911502aa35330f730a", null],
         ["operator>", "classmy__string_1_1iterator.html#a5e3ac515ba1f30ec194d0cb4c55049a2", null],
-        ["operator>=", "classmy__string_1_1iterator.html#a1425d2b8f67bd7a10528a08eb2aa049b", null]
+        ["operator>=", "classmy__string_1_1iterator.html#a1425d2b8f67bd7a10528a08eb2aa049b", null],
+        ["_i", "classmy__string_1_1iterator.html#ac59676612c02d641a88fcc911c215d67", null],
+        ["_myString", "classmy__string_1_1iterator.html#ac736f2f4efa62df8946119b220ebccc3", null]
     ];

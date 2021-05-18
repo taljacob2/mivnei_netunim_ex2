@@ -40,6 +40,21 @@ this class bundles together all the algorithm methods in the program.
 \item 
 {\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_afe367498c8e46a9b4e7107151f0a3604}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size\+\_\+}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, char $\ast$\&output\+Parameter\+For\+This\+Function\+Name)
 \begin{DoxyCompactList}\small\item\em this method is made for getting the {\ttfamily sort\+\_\+quintuplet\+\_\+} method name by reflection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T , int DIVISION$>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a64f6801e29ed8116d9433bb61e004922}{while\+Of\+Bubble\+Sort\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, int size, int \&division\+Counter, int \&division\+Integer, int \&last\+Divided\+Array\+Size)
+\item 
+{\footnotesize template$<$class T , int DIVISION$>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a0c99008229b4de5eabb510f9afbdef3f}{get\+Middle\+Array\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, T $\ast$taken\+Middles\+Array, int division\+Counter, int last\+Divided\+Array\+Size)
+\item 
+{\footnotesize template$<$class T , int DIVISION$>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a75dba142631a3c5a7a8a3cb595447b4a}{get\+Taken\+Middles\+Array\+Pivot\+Element\+And\+Index\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, int size, T $\ast$taken\+Middles\+Array, int division\+Counter, int \&taken\+Middles\+Array\+\_\+median\+Pivot\+Element\+\_\+index\+In\+Array)
+\item 
+{\footnotesize template$<$class T , int DIVISION$>$ }\\static T \mbox{\hyperlink{classmy__algorithms_a47fa1a3e54c4babbdc766e9d892489e4}{return\+Of\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, int size, int i, int k\+\_\+index)
+\item 
+{\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_a33ef55e9a30603a9170275afb71be875}{select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured}} (T $\ast$array, int lowest\+Index\+To\+Search\+At, int highest\+Index\+To\+Search\+At, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
+\begin{DoxyCompactList}\small\item\em this method searches for the {\ttfamily I\textquotesingle{}th element in its size} by giving a parameter of {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_ac2204a67bf555e89a2245e492a2016fc}{get\+Middle\+Element\+In\+ASorted\+Array}} (T $\ast$array, int size)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -121,6 +136,27 @@ this method searches for the {\ttfamily I\textquotesingle{}th element in its siz
 \begin{DoxyReturn}{Returns}
 the {\itshape value} of the element which {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is its {\bfseries{serial size}}. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy__algorithms_a0c99008229b4de5eabb510f9afbdef3f}\label{classmy__algorithms_a0c99008229b4de5eabb510f9afbdef3f}} 
+\index{my\_algorithms@{my\_algorithms}!getMiddleArray\_division\_TheIthElementInItsSize@{getMiddleArray\_division\_TheIthElementInItsSize}}
+\index{getMiddleArray\_division\_TheIthElementInItsSize@{getMiddleArray\_division\_TheIthElementInItsSize}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{getMiddleArray\_division\_TheIthElementInItsSize()}{getMiddleArray\_division\_TheIthElementInItsSize()}}
+{\footnotesize\ttfamily template$<$class T , int DIVISION$>$ \\
+static void my\+\_\+algorithms\+::get\+Middle\+Array\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{T $\ast$}]{taken\+Middles\+Array,  }\item[{int}]{division\+Counter,  }\item[{int}]{last\+Divided\+Array\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmy__algorithms_ac2204a67bf555e89a2245e492a2016fc}\label{classmy__algorithms_ac2204a67bf555e89a2245e492a2016fc}} 
+\index{my\_algorithms@{my\_algorithms}!getMiddleElementInASortedArray@{getMiddleElementInASortedArray}}
+\index{getMiddleElementInASortedArray@{getMiddleElementInASortedArray}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{getMiddleElementInASortedArray()}{getMiddleElementInASortedArray()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static T my\+\_\+algorithms\+::get\+Middle\+Element\+In\+ASorted\+Array (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmy__algorithms_a75dba142631a3c5a7a8a3cb595447b4a}\label{classmy__algorithms_a75dba142631a3c5a7a8a3cb595447b4a}} 
+\index{my\_algorithms@{my\_algorithms}!getTakenMiddlesArrayPivotElementAndIndex\_division\_TheIthElementInItsSize@{getTakenMiddlesArrayPivotElementAndIndex\_division\_TheIthElementInItsSize}}
+\index{getTakenMiddlesArrayPivotElementAndIndex\_division\_TheIthElementInItsSize@{getTakenMiddlesArrayPivotElementAndIndex\_division\_TheIthElementInItsSize}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{getTakenMiddlesArrayPivotElementAndIndex\_division\_TheIthElementInItsSize()}{getTakenMiddlesArrayPivotElementAndIndex\_division\_TheIthElementInItsSize()}}
+{\footnotesize\ttfamily template$<$class T , int DIVISION$>$ \\
+static void my\+\_\+algorithms\+::get\+Taken\+Middles\+Array\+Pivot\+Element\+And\+Index\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{T $\ast$}]{taken\+Middles\+Array,  }\item[{int}]{division\+Counter,  }\item[{int \&}]{taken\+Middles\+Array\+\_\+median\+Pivot\+Element\+\_\+index\+In\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
 \mbox{\Hypertarget{classmy__algorithms_a7d1861e540c0919d8f151f0c66f5f777}\label{classmy__algorithms_a7d1861e540c0919d8f151f0c66f5f777}} 
 \index{my\_algorithms@{my\_algorithms}!max@{max}}
 \index{max@{max}!my\_algorithms@{my\_algorithms}}
@@ -215,9 +251,9 @@ this method places the {\ttfamily pivot} in the {\bfseries{earliest}} index poss
 the pivot\textquotesingle{}s index. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-swap(\+K $\ast$, int, int) -\/ for swapping the elements in the array. 
+swap(\+E $\ast$, int, int) -\/ for swapping the elements in the array. 
 
-swap(\+K \&, K \&) -\/ for swapping the elements\textquotesingle{} indexes in the array. 
+swap(\+E \&, E \&) -\/ for swapping the elements\textquotesingle{} indexes in the array. 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_aa2254406e1a518653134735938fcaa61}\label{classmy__algorithms_aa2254406e1a518653134735938fcaa61}} 
 \index{my\_algorithms@{my\_algorithms}!quintuplet\_TheIthElementInItsSize@{quintuplet\_TheIthElementInItsSize}}
@@ -227,7 +263,7 @@ swap(\+K \&, K \&) -\/ for swapping the elements\textquotesingle{} indexes in th
 static T my\+\_\+algorithms\+::quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 implements {\ttfamily quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size} as {\itshape DIVISION} = 5. \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (K $\ast$, int, int) 
+\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (E $\ast$, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_afe367498c8e46a9b4e7107151f0a3604}\label{classmy__algorithms_afe367498c8e46a9b4e7107151f0a3604}} 
 \index{my\_algorithms@{my\_algorithms}!quintuplet\_TheIthElementInItsSize\_@{quintuplet\_TheIthElementInItsSize\_}}
@@ -246,8 +282,15 @@ this method is made for getting the {\ttfamily sort\+\_\+quintuplet\+\_\+} metho
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (K $\ast$, int, int) 
+\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (E $\ast$, int, int) 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{classmy__algorithms_a47fa1a3e54c4babbdc766e9d892489e4}\label{classmy__algorithms_a47fa1a3e54c4babbdc766e9d892489e4}} 
+\index{my\_algorithms@{my\_algorithms}!returnOf\_division\_TheIthElementInItsSize@{returnOf\_division\_TheIthElementInItsSize}}
+\index{returnOf\_division\_TheIthElementInItsSize@{returnOf\_division\_TheIthElementInItsSize}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{returnOf\_division\_TheIthElementInItsSize()}{returnOf\_division\_TheIthElementInItsSize()}}
+{\footnotesize\ttfamily template$<$class T , int DIVISION$>$ \\
+static T my\+\_\+algorithms\+::return\+Of\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{i,  }\item[{int}]{k\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
 \mbox{\Hypertarget{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}\label{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}} 
 \index{my\_algorithms@{my\_algorithms}!selection\_TheIthElementInItsSize@{selection\_TheIthElementInItsSize}}
 \index{selection\_TheIthElementInItsSize@{selection\_TheIthElementInItsSize}!my\_algorithms@{my\_algorithms}}
@@ -277,7 +320,7 @@ implemented with the {\bfseries{secured}} {\itshape constant} parameters\+:
 the {\itshape value} of the element which {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is its {\bfseries{serial size}}. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured(\+K $\ast$, int, int, int) 
+select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured(\+E $\ast$, int, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_a1a9d0ae0126d0fdbb10b7d03813d3708}\label{classmy__algorithms_a1a9d0ae0126d0fdbb10b7d03813d3708}} 
 \index{my\_algorithms@{my\_algorithms}!selection\_TheIthElementInItsSize\_@{selection\_TheIthElementInItsSize\_}}
@@ -296,7 +339,47 @@ this method is made for getting the {\ttfamily select\+The\+Ith\+Element\+In\+It
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}{selection\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (K $\ast$, int, int) 
+\mbox{\hyperlink{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}{selection\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (E $\ast$, int, int) 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classmy__algorithms_a33ef55e9a30603a9170275afb71be875}\label{classmy__algorithms_a33ef55e9a30603a9170275afb71be875}} 
+\index{my\_algorithms@{my\_algorithms}!selectTheIthElementInItsSize\_UnSecured@{selectTheIthElementInItsSize\_UnSecured}}
+\index{selectTheIthElementInItsSize\_UnSecured@{selectTheIthElementInItsSize\_UnSecured}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{selectTheIthElementInItsSize\_UnSecured()}{selectTheIthElementInItsSize\_UnSecured()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static T my\+\_\+algorithms\+::select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{lowest\+Index\+To\+Search\+At,  }\item[{int}]{highest\+Index\+To\+Search\+At,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+this method searches for the {\ttfamily I\textquotesingle{}th element in its size} by giving a parameter of {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For}. 
+
+Recursively implemented.
+
+\begin{DoxyAttention}{Attention}
+this method {\itshape modifies} the given {\ttfamily array} and ruins it in order to make the search. 
+\end{DoxyAttention}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & element of the array. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the array to be sorted. \\
+\hline
+{\em lowest\+Index\+To\+Search\+At} & the highest index to search the {\ttfamily I\textquotesingle{}th element in its size} at {\ttfamily pivot} index ({\itshape including} the {\ttfamily pivot} index). \\
+\hline
+{\em highest\+Index\+To\+Search\+At} & size of the {\ttfamily array} given -\/ derives the high partition to the {\ttfamily pivot} index ({\itshape excluding} the {\ttfamily pivot} index). \\
+\hline
+{\em serial\+Size\+Of\+The\+Element\+To\+Look\+For} & The {\bfseries{serial size}} of the element to look for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\itshape value} of the element which {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is its {\bfseries{serial size}}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+partition(\+E $\ast$, int, int) 
+
+select\+The\+Ith\+Element\+In\+Its\+Size(\+E $\ast$, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}\label{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}} 
 \index{my\_algorithms@{my\_algorithms}!sort\_insertion@{sort\_insertion}}
@@ -333,7 +416,7 @@ this method is made for getting the {\ttfamily sort\+\_\+insertion\+\_\+} method
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}{sort\+\_\+insertion}} (K $\ast$, int) 
+\mbox{\hyperlink{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}{sort\+\_\+insertion}} (E $\ast$, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_a98c8a2353897ea85926c8f3cf5a57a5d}\label{classmy__algorithms_a98c8a2353897ea85926c8f3cf5a57a5d}} 
 \index{my\_algorithms@{my\_algorithms}!swap@{swap}}
@@ -383,8 +466,15 @@ generic {\ttfamily swap} algorithm of two elements in an array.
 {\em index2} & the second element index to be swapped. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classmy__algorithms_a64f6801e29ed8116d9433bb61e004922}\label{classmy__algorithms_a64f6801e29ed8116d9433bb61e004922}} 
+\index{my\_algorithms@{my\_algorithms}!whileOfBubbleSort\_division\_TheIthElementInItsSize@{whileOfBubbleSort\_division\_TheIthElementInItsSize}}
+\index{whileOfBubbleSort\_division\_TheIthElementInItsSize@{whileOfBubbleSort\_division\_TheIthElementInItsSize}!my\_algorithms@{my\_algorithms}}
+\doxysubsubsection{\texorpdfstring{whileOfBubbleSort\_division\_TheIthElementInItsSize()}{whileOfBubbleSort\_division\_TheIthElementInItsSize()}}
+{\footnotesize\ttfamily template$<$class T , int DIVISION$>$ \\
+static void my\+\_\+algorithms\+::while\+Of\+Bubble\+Sort\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int \&}]{division\+Counter,  }\item[{int \&}]{division\+Integer,  }\item[{int \&}]{last\+Divided\+Array\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-my\+\_\+algorithms.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{my__algorithms_8h}{my\+\_\+algorithms.\+h}}\end{DoxyCompactItemize}

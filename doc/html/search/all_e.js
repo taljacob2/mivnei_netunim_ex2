@@ -1,6 +1,5 @@
 var searchData =
     [
-        ['_7einputoutput_56', ['~InputOutput', ['../class_input_output.html#a6925ac56858a476dbe0819586448a25d', 1, 'InputOutput']]],
-        ['_7eiterator_57', ['~iterator', ['../classmy__string_1_1iterator.html#acbf86faa44a13141f1f5edc73684c159', 1, 'my_string::iterator']]],
-        ['_7emy_5fstring_58', ['~my_string', ['../classmy__string.html#ac7ab1a847c54d04a241a176668d93f5c', 1, 'my_string']]]
+        ['quintuplet_5ftheithelementinitssize_77', ['quintuplet_TheIthElementInItsSize', ['../classmy__algorithms.html#aa2254406e1a518653134735938fcaa61', 1, 'my_algorithms']]],
+        ['quintuplet_5ftheithelementinitssize_5f_78', ['quintuplet_TheIthElementInItsSize_', ['../classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604', 1, 'my_algorithms']]]
     ];

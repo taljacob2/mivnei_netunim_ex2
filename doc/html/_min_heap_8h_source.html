@@ -106,6 +106,7 @@
         </div>
     </div><!--header-->
     <div class="contents">
+        <a href="_min_heap_8h.html">Go to the documentation of this file.</a>
         <div class="fragment">
             <div class="line"><a name="l00001"></a><span
                     class="lineno">    1</span>&#160;<span
@@ -129,10 +130,13 @@
                     class="lineno">    7</span>&#160;
             </div>
             <div class="line"><a name="l00008"></a><span
-                    class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;MinHeapADT.h&quot;</span>
+                    class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a
+                    class="code" href="_min_heap_a_d_t_8h.html">MinHeapADT.h</a>&quot;</span>
             </div>
             <div class="line"><a name="l00009"></a><span
-                    class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;my_algorithms.h&quot;</span>
+                    class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a
+                    class="code"
+                    href="my__algorithms_8h.html">my_algorithms.h</a>&quot;</span>
             </div>
             <div class="line"><a name="l00010"></a><span
                     class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span>
@@ -149,549 +153,624 @@
             <div class="line"><a name="l00014"></a><span
                     class="lineno">   14</span>&#160;
             </div>
-            <div class="line"><a name="l00023"></a><span class="lineno"><a
-                    class="line" href="class_min_heap.html">   23</a></span>&#160;<span
+            <div class="line"><a name="l00027"></a><span class="lineno"><a
+                    class="line" href="class_min_heap.html">   27</a></span>&#160;<span
                     class="keyword">template</span>&lt;<span class="keyword">typename</span>
-                K&gt; <span class="keyword">class </span><a class="code"
-                                                            href="class_min_heap.html">MinHeap</a>
+                K, <span class="keyword">typename</span> V&gt; <span
+                        class="keyword">class </span><a class="code"
+                                                        href="class_min_heap.html">MinHeap</a>
                 : <span class="keyword">public</span> <a class="code"
-                                                         href="class_min_heap_a_d_t.html">MinHeapADT</a>&lt;K&gt;
-                {
+                                                         href="class_min_heap_a_d_t.html">MinHeapADT</a>&lt;K,
+                V&gt; {
             </div>
-            <div class="line"><a name="l00024"></a><span
-                    class="lineno">   24</span>&#160; <span class="keyword">private</span>:
+            <div class="line"><a name="l00028"></a><span
+                    class="lineno">   28</span>&#160; <span class="keyword">private</span>:
             </div>
-            <div class="line"><a name="l00026"></a><span
-                    class="lineno">   26</span>&#160; K **array = <span
-                    class="keyword">nullptr</span>;
-            </div>
-            <div class="line"><a name="l00027"></a><span
-                    class="lineno">   27</span>&#160;
-            </div>
-            <div class="line"><a name="l00029"></a><span
-                    class="lineno">   29</span>&#160; <span class="keywordtype">int</span>
-                physicalSize = 0;
-            </div>
-            <div class="line"><a name="l00030"></a><span
-                    class="lineno">   30</span>&#160;
-            </div>
-            <div class="line"><a name="l00032"></a><span
-                    class="lineno">   32</span>&#160; <span class="keywordtype">int</span>
-                logicalSize = 0;
-            </div>
-            <div class="line"><a name="l00033"></a><span
-                    class="lineno">   33</span>&#160;
+            <div class="line"><a name="l00033"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">   33</a></span>&#160;
+                <a class="code" href="class_entry.html">Entry&lt;K, V&gt;</a>
+                *<a class="code"
+                    href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>
+                = <span class="keyword">nullptr</span>;
             </div>
             <div class="line"><a name="l00034"></a><span
-                    class="lineno">   34</span>&#160; <span class="keyword">public</span>:
+                    class="lineno">   34</span>&#160;
             </div>
-            <div class="line"><a name="l00040"></a><span class="lineno"><a
+            <div class="line"><a name="l00036"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7">   40</a></span>&#160;
-                <span class="keyword">explicit</span> <a class="code"
-                                                         href="class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7">MinHeap</a>(K
-                *arrayToBuildFrom, <span class="keywordtype">int</span>
-                sizeOfArrayToBuildFrom) {
+                    href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">   36</a></span>&#160;
+                <span class="keywordtype">int</span> <a class="code"
+                                                        href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">physicalSize</a>
+                = 0;
+            </div>
+            <div class="line"><a name="l00037"></a><span
+                    class="lineno">   37</span>&#160;
+            </div>
+            <div class="line"><a name="l00039"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">   39</a></span>&#160;
+                <span class="keywordtype">int</span> <a class="code"
+                                                        href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                = 0;
+            </div>
+            <div class="line"><a name="l00040"></a><span
+                    class="lineno">   40</span>&#160;
             </div>
             <div class="line"><a name="l00041"></a><span
-                    class="lineno">   41</span>&#160; <a class="code"
-                                                         href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">buildHeap</a>(arrayToBuildFrom,
+                    class="lineno">   41</span>&#160; <span class="keyword">public</span>:
+            </div>
+            <div class="line"><a name="l00054"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#ad33a31874c9406b784c3c40a158cd501">   54</a></span>&#160;
+                <span class="keyword">explicit</span> <a class="code"
+                                                         href="class_min_heap.html#ad33a31874c9406b784c3c40a158cd501">MinHeap</a>(<a
+                        class="code" href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> *arrayToBuildFrom,
+            </div>
+            <div class="line"><a name="l00055"></a><span
+                    class="lineno">   55</span>&#160; <span class="keywordtype">int</span>
+                sizeOfArrayToBuildFrom) {
+            </div>
+            <div class="line"><a name="l00056"></a><span
+                    class="lineno">   56</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">buildHeap</a>(arrayToBuildFrom,
                 sizeOfArrayToBuildFrom);
             </div>
-            <div class="line"><a name="l00042"></a><span
-                    class="lineno">   42</span>&#160; }
+            <div class="line"><a name="l00057"></a><span
+                    class="lineno">   57</span>&#160; }
             </div>
-            <div class="line"><a name="l00043"></a><span
-                    class="lineno">   43</span>&#160;
+            <div class="line"><a name="l00058"></a><span
+                    class="lineno">   58</span>&#160;
             </div>
-            <div class="line"><a name="l00047"></a><span class="lineno"><a
+            <div class="line"><a name="l00062"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap.html#aa29b514e11414ea045d5c4e14f5c6bc7">   47</a></span>&#160;
+                    href="class_min_heap.html#a6041d18dee6992810ede4a3444b31738">   62</a></span>&#160;
                 <span class="keyword">virtual</span> <a class="code"
-                                                        href="class_min_heap.html#aa29b514e11414ea045d5c4e14f5c6bc7">~MinHeap</a>()
-                { <span class="keyword">delete</span>[] array; }
-            </div>
-            <div class="line"><a name="l00048"></a><span
-                    class="lineno">   48</span>&#160;
-            </div>
-            <div class="line"><a name="l00059"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap.html#a4455aa1c5a79cfb41dbc2f414547adcb">   59</a></span>&#160;
-                K *<a class="code"
-                      href="class_min_heap.html#a4455aa1c5a79cfb41dbc2f414547adcb">deleteMin</a>()<span
-                        class="keyword"> override </span>{
-            </div>
-            <div class="line"><a name="l00060"></a><span
-                    class="lineno">   60</span>&#160;
-            </div>
-            <div class="line"><a name="l00061"></a><span
-                    class="lineno">   61</span>&#160; <span
-                    class="comment">/*</span></div>
-            <div class="line"><a name="l00062"></a><span
-                    class="lineno">   62</span>&#160;<span class="comment">         * Returns the first element in the array (= the minimal element).</span>
+                                                        href="class_min_heap.html#a6041d18dee6992810ede4a3444b31738">~MinHeap</a>()
+                { <span class="keyword">delete</span>[] <a class="code"
+                                                           href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>;
+                }
             </div>
             <div class="line"><a name="l00063"></a><span
-                    class="lineno">   63</span>&#160;<span class="comment">         * In case the `logicalSize` of the array is 0,</span>
+                    class="lineno">   63</span>&#160;
             </div>
-            <div class="line"><a name="l00064"></a><span
-                    class="lineno">   64</span>&#160;<span class="comment">         * this method returns `null_ptr`.</span>
-            </div>
-            <div class="line"><a name="l00065"></a><span
-                    class="lineno">   65</span>&#160;<span class="comment">         */</span>
-            </div>
-            <div class="line"><a name="l00066"></a><span
-                    class="lineno">   66</span>&#160; K *returnElement = <span
-                    class="keyword">nullptr</span>;
-            </div>
-            <div class="line"><a name="l00067"></a><span
-                    class="lineno">   67</span>&#160; <span class="keywordflow">if</span>
-                (logicalSize &gt; 0) { returnElement = array[0]; }
-            </div>
-            <div class="line"><a name="l00068"></a><span
-                    class="lineno">   68</span>&#160;
-            </div>
-            <div class="line"><a name="l00069"></a><span
-                    class="lineno">   69</span>&#160; <span class="comment">/* Set the first element in the array to be the last element. */</span>
-            </div>
-            <div class="line"><a name="l00070"></a><span
-                    class="lineno">   70</span>&#160; array[0] =
-                array[logicalSize - 1];
-            </div>
-            <div class="line"><a name="l00071"></a><span
-                    class="lineno">   71</span>&#160;
-            </div>
-            <div class="line"><a name="l00072"></a><span
-                    class="lineno">   72</span>&#160; <span class="comment">/* Set the last element to be `null_ptr`. */</span>
-            </div>
-            <div class="line"><a name="l00073"></a><span
-                    class="lineno">   73</span>&#160; array[logicalSize - 1] =
-                <span class="keyword">nullptr</span>;
-            </div>
-            <div class="line"><a name="l00074"></a><span
-                    class="lineno">   74</span>&#160;
+            <div class="line"><a name="l00074"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">   74</a></span>&#160;
+                <a class="code" href="class_entry.html">Entry&lt;K, V&gt;</a>
+                *<a class="code"
+                    href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">deleteMin</a>()<span
+                        class="keyword"> override </span>{
             </div>
             <div class="line"><a name="l00075"></a><span
-                    class="lineno">   75</span>&#160; <span class="comment">/* Decrease the `logicalSize` of the array by 1. */</span>
+                    class="lineno">   75</span>&#160;
             </div>
             <div class="line"><a name="l00076"></a><span
-                    class="lineno">   76</span>&#160; logicalSize--;
-            </div>
+                    class="lineno">   76</span>&#160; <span
+                    class="comment">/*</span></div>
             <div class="line"><a name="l00077"></a><span
-                    class="lineno">   77</span>&#160;
+                    class="lineno">   77</span>&#160;<span class="comment">         * Returns the first element in the array (= the minimal element).</span>
             </div>
             <div class="line"><a name="l00078"></a><span
-                    class="lineno">   78</span>&#160; <span class="comment">/* Invoke fixHeap(0) to fix the heap. */</span>
+                    class="lineno">   78</span>&#160;<span class="comment">         * In case the `logicalSize` of the array is 0,</span>
             </div>
             <div class="line"><a name="l00079"></a><span
-                    class="lineno">   79</span>&#160; <a class="code"
-                                                         href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">fixHeap</a>(0);
+                    class="lineno">   79</span>&#160;<span class="comment">         * this method returns `null_ptr`.</span>
             </div>
             <div class="line"><a name="l00080"></a><span
-                    class="lineno">   80</span>&#160;
+                    class="lineno">   80</span>&#160;<span class="comment">         */</span>
             </div>
             <div class="line"><a name="l00081"></a><span
-                    class="lineno">   81</span>&#160; <span class="keywordflow">return</span>
-                returnElement;
+                    class="lineno">   81</span>&#160; <a class="code"
+                                                         href="class_entry.html">Entry&lt;K,
+                V&gt;</a> *returnElement = <span class="keyword">nullptr</span>;
             </div>
             <div class="line"><a name="l00082"></a><span
-                    class="lineno">   82</span>&#160; }
+                    class="lineno">   82</span>&#160; <span class="keywordflow">if</span>
+                (<a class="code"
+                    href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                &gt; 0) { returnElement = <a class="code"
+                                             href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[0];
+                }
             </div>
             <div class="line"><a name="l00083"></a><span
                     class="lineno">   83</span>&#160;
             </div>
-            <div class="line"><a name="l00090"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2">   90</a></span>&#160;
-                <span class="keywordtype">void</span> <a class="code"
-                                                         href="class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2">insert</a>(K
-                &amp;elementToInsert)<span class="keyword"> override </span>{
+            <div class="line"><a name="l00084"></a><span
+                    class="lineno">   84</span>&#160; <span class="comment">/* Set the first element in the array to be the last element. */</span>
+            </div>
+            <div class="line"><a name="l00085"></a><span
+                    class="lineno">   85</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[0]
+                = <a class="code"
+                     href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[<a
+                        class="code"
+                        href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                - 1];
+            </div>
+            <div class="line"><a name="l00086"></a><span
+                    class="lineno">   86</span>&#160;
+            </div>
+            <div class="line"><a name="l00087"></a><span
+                    class="lineno">   87</span>&#160; <span class="comment">/* Set the last element to be `null_ptr`. */</span>
+            </div>
+            <div class="line"><a name="l00088"></a><span
+                    class="lineno">   88</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[<a
+                    class="code"
+                    href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                - 1] = <span class="keyword">nullptr</span>;
+            </div>
+            <div class="line"><a name="l00089"></a><span
+                    class="lineno">   89</span>&#160;
+            </div>
+            <div class="line"><a name="l00090"></a><span
+                    class="lineno">   90</span>&#160; <span class="comment">/* Decrease the `logicalSize` of the array by 1. */</span>
             </div>
             <div class="line"><a name="l00091"></a><span
-                    class="lineno">   91</span>&#160;
+                    class="lineno">   91</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>--;
             </div>
             <div class="line"><a name="l00092"></a><span
-                    class="lineno">   92</span>&#160; <span class="comment">/* If there is enough space in the array. */</span>
+                    class="lineno">   92</span>&#160;
             </div>
             <div class="line"><a name="l00093"></a><span
-                    class="lineno">   93</span>&#160; <span class="keywordflow">if</span>
-                (physicalSize &gt; logicalSize) {
+                    class="lineno">   93</span>&#160; <span class="comment">/* Invoke fixHeap(0) to fix the heap. */</span>
             </div>
             <div class="line"><a name="l00094"></a><span
-                    class="lineno">   94</span>&#160;
+                    class="lineno">   94</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap</a>(0);
             </div>
             <div class="line"><a name="l00095"></a><span
-                    class="lineno">   95</span>&#160; <span
-                    class="comment">/*</span></div>
+                    class="lineno">   95</span>&#160;
+            </div>
             <div class="line"><a name="l00096"></a><span
-                    class="lineno">   96</span>&#160;<span class="comment">             * Add a pointer to `elementToInsert`</span>
+                    class="lineno">   96</span>&#160; <span class="keywordflow">return</span>
+                returnElement;
             </div>
             <div class="line"><a name="l00097"></a><span
-                    class="lineno">   97</span>&#160;<span class="comment">             * as the last element in the array.</span>
+                    class="lineno">   97</span>&#160; }
             </div>
             <div class="line"><a name="l00098"></a><span
-                    class="lineno">   98</span>&#160;<span class="comment">             */</span>
+                    class="lineno">   98</span>&#160;
             </div>
-            <div class="line"><a name="l00099"></a><span
-                    class="lineno">   99</span>&#160; array[logicalSize++] =
-                &amp;elementToInsert;
-            </div>
-            <div class="line"><a name="l00100"></a><span
-                    class="lineno">  100</span>&#160;
-            </div>
-            <div class="line"><a name="l00101"></a><span
-                    class="lineno">  101</span>&#160; <span class="keywordtype">int</span>
-                currentIndex = logicalSize - 1;
-            </div>
-            <div class="line"><a name="l00102"></a><span
-                    class="lineno">  102</span>&#160;
-            </div>
-            <div class="line"><a name="l00103"></a><span
-                    class="lineno">  103</span>&#160; <span class="comment">/* While there is at least 1 child in the array. */</span>
-            </div>
-            <div class="line"><a name="l00104"></a><span
-                    class="lineno">  104</span>&#160; <span class="keywordflow">while</span>
-                (0 &lt; currentIndex) {
-            </div>
-            <div class="line"><a name="l00105"></a><span
-                    class="lineno">  105</span>&#160; <span class="keywordflow">if</span>
-                (*array[currentIndex] &lt; *array[(currentIndex - 1) / 2]) {
+            <div class="line"><a name="l00105"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#a4be6c262d5fdb48feb4ce8d41603cac8">  105</a></span>&#160;
+                <span class="keywordtype">void</span> <a class="code"
+                                                         href="class_min_heap.html#a4be6c262d5fdb48feb4ce8d41603cac8">insert</a>(<a
+                        class="code" href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> &amp;elementToInsert)<span class="keyword"> override </span>{
             </div>
             <div class="line"><a name="l00106"></a><span
-                    class="lineno">  106</span>&#160; <a class="code"
-                                                         href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">my_algorithms::swap</a>(array,
-                currentIndex,
+                    class="lineno">  106</span>&#160;
             </div>
             <div class="line"><a name="l00107"></a><span
-                    class="lineno">  107</span>&#160; (currentIndex - 1) / 2);
+                    class="lineno">  107</span>&#160; <span class="comment">/* If there is enough space in the array. */</span>
             </div>
             <div class="line"><a name="l00108"></a><span
-                    class="lineno">  108</span>&#160; currentIndex =
-                (currentIndex - 1) / 2;
+                    class="lineno">  108</span>&#160; <span class="keywordflow">if</span>
+                (<a class="code"
+                    href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">physicalSize</a>
+                &gt; <a class="code"
+                        href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>)
+                {
             </div>
             <div class="line"><a name="l00109"></a><span
-                    class="lineno">  109</span>&#160; } <span
-                    class="keywordflow">else</span> {
+                    class="lineno">  109</span>&#160;
             </div>
             <div class="line"><a name="l00110"></a><span
-                    class="lineno">  110</span>&#160; <span class="keywordflow">break</span>;
-            </div>
+                    class="lineno">  110</span>&#160; <span
+                    class="comment">/*</span></div>
             <div class="line"><a name="l00111"></a><span
-                    class="lineno">  111</span>&#160; }
+                    class="lineno">  111</span>&#160;<span class="comment">             * Add a pointer to `elementToInsert`</span>
             </div>
             <div class="line"><a name="l00112"></a><span
-                    class="lineno">  112</span>&#160; }
+                    class="lineno">  112</span>&#160;<span class="comment">             * as the last element in the array.</span>
             </div>
             <div class="line"><a name="l00113"></a><span
-                    class="lineno">  113</span>&#160; } <span
-                    class="keywordflow">else</span> {
+                    class="lineno">  113</span>&#160;<span class="comment">             */</span>
             </div>
             <div class="line"><a name="l00114"></a><span
-                    class="lineno">  114</span>&#160;
+                    class="lineno">  114</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[<a
+                    class="code"
+                    href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>++]
+                = &amp;elementToInsert;
             </div>
             <div class="line"><a name="l00115"></a><span
-                    class="lineno">  115</span>&#160; <span class="comment">/* The heap is already full. Throw message. */</span>
+                    class="lineno">  115</span>&#160;
             </div>
             <div class="line"><a name="l00116"></a><span
-                    class="lineno">  116</span>&#160; std::string message;
+                    class="lineno">  116</span>&#160; <span class="keywordtype">int</span>
+                currentIndex = <a class="code"
+                                  href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                - 1;
             </div>
             <div class="line"><a name="l00117"></a><span
-                    class="lineno">  117</span>&#160; message.append(<span
-                    class="stringliteral">&quot;The heap is already full, and contains &quot;</span>);
+                    class="lineno">  117</span>&#160;
             </div>
             <div class="line"><a name="l00118"></a><span
-                    class="lineno">  118</span>&#160;
-                message.append(std::to_string(physicalSize));
+                    class="lineno">  118</span>&#160; <span class="comment">/* While there is at least 1 child in the array. */</span>
             </div>
             <div class="line"><a name="l00119"></a><span
-                    class="lineno">  119</span>&#160; message.append(<span
-                    class="stringliteral">&quot; elements.&quot;</span>);
+                    class="lineno">  119</span>&#160; <span class="keywordflow">while</span>
+                (0 &lt; currentIndex) {
             </div>
             <div class="line"><a name="l00120"></a><span
-                    class="lineno">  120</span>&#160;
+                    class="lineno">  120</span>&#160; <span class="keywordflow">if</span>
+                (*<a class="code"
+                     href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[currentIndex]
+                &lt; *<a class="code"
+                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[(currentIndex
+                - 1) / 2]) {
             </div>
             <div class="line"><a name="l00121"></a><span
-                    class="lineno">  121</span>&#160; <span class="comment">// TODO: change to `wrong input`</span>
+                    class="lineno">  121</span>&#160; <a class="code"
+                                                         href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">my_algorithms::swap</a>(<a
+                    class="code"
+                    href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>,
+                currentIndex,
             </div>
             <div class="line"><a name="l00122"></a><span
-                    class="lineno">  122</span>&#160; <span class="keywordflow">throw</span>
-                std::runtime_error(message);
+                    class="lineno">  122</span>&#160; (currentIndex - 1) / 2);
             </div>
             <div class="line"><a name="l00123"></a><span
-                    class="lineno">  123</span>&#160; }
+                    class="lineno">  123</span>&#160; currentIndex =
+                (currentIndex - 1) / 2;
             </div>
             <div class="line"><a name="l00124"></a><span
-                    class="lineno">  124</span>&#160; }
+                    class="lineno">  124</span>&#160; } <span
+                    class="keywordflow">else</span> {
             </div>
             <div class="line"><a name="l00125"></a><span
-                    class="lineno">  125</span>&#160;
+                    class="lineno">  125</span>&#160; <span class="keywordflow">break</span>;
             </div>
-            <div class="line"><a name="l00141"></a><span class="lineno"><a
+            <div class="line"><a name="l00126"></a><span
+                    class="lineno">  126</span>&#160; }
+            </div>
+            <div class="line"><a name="l00127"></a><span
+                    class="lineno">  127</span>&#160; }
+            </div>
+            <div class="line"><a name="l00128"></a><span
+                    class="lineno">  128</span>&#160; } <span
+                    class="keywordflow">else</span> {
+            </div>
+            <div class="line"><a name="l00129"></a><span
+                    class="lineno">  129</span>&#160;
+            </div>
+            <div class="line"><a name="l00130"></a><span
+                    class="lineno">  130</span>&#160; <span class="comment">/* The heap is already full. Throw message. */</span>
+            </div>
+            <div class="line"><a name="l00131"></a><span
+                    class="lineno">  131</span>&#160; std::string message;
+            </div>
+            <div class="line"><a name="l00132"></a><span
+                    class="lineno">  132</span>&#160; message.append(<span
+                    class="stringliteral">&quot;The heap is already full, and contains &quot;</span>);
+            </div>
+            <div class="line"><a name="l00133"></a><span
+                    class="lineno">  133</span>&#160;
+                message.append(std::to_string(<a class="code"
+                                                 href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">physicalSize</a>));
+            </div>
+            <div class="line"><a name="l00134"></a><span
+                    class="lineno">  134</span>&#160; message.append(<span
+                    class="stringliteral">&quot; elements.&quot;</span>);
+            </div>
+            <div class="line"><a name="l00135"></a><span
+                    class="lineno">  135</span>&#160;
+            </div>
+            <div class="line"><a name="l00136"></a><span
+                    class="lineno">  136</span>&#160; <span class="comment">// TODO: change to `wrong input`</span>
+            </div>
+            <div class="line"><a name="l00137"></a><span
+                    class="lineno">  137</span>&#160; <span class="keywordflow">throw</span>
+                std::runtime_error(message);
+            </div>
+            <div class="line"><a name="l00138"></a><span
+                    class="lineno">  138</span>&#160; }
+            </div>
+            <div class="line"><a name="l00139"></a><span
+                    class="lineno">  139</span>&#160; }
+            </div>
+            <div class="line"><a name="l00140"></a><span
+                    class="lineno">  140</span>&#160;
+            </div>
+            <div class="line"><a name="l00156"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">  141</a></span>&#160;
+                    href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">  156</a></span>&#160;
                 <span class="keywordtype">void</span> <a class="code"
-                                                         href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">fixHeap</a>(<span
+                                                         href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap</a>(<span
                         class="keywordtype">int</span> indexToFixFrom)<span
                         class="keyword"> override </span>{
             </div>
-            <div class="line"><a name="l00142"></a><span
-                    class="lineno">  142</span>&#160;
-            </div>
-            <div class="line"><a name="l00143"></a><span
-                    class="lineno">  143</span>&#160; <span class="comment">/* Check that `indexToFixFrom` is a legal index. */</span>
-            </div>
-            <div class="line"><a name="l00144"></a><span
-                    class="lineno">  144</span>&#160; <span class="keywordflow">if</span>
-                ((indexToFixFrom &lt; 0) || (logicalSize &lt;= indexToFixFrom))
-                {
-            </div>
-            <div class="line"><a name="l00145"></a><span
-                    class="lineno">  145</span>&#160;
-            </div>
-            <div class="line"><a name="l00146"></a><span
-                    class="lineno">  146</span>&#160; <span class="comment">/* The `indexToFixFrom` is out of range. Throw message. */</span>
-            </div>
-            <div class="line"><a name="l00147"></a><span
-                    class="lineno">  147</span>&#160; std::string message;
-            </div>
-            <div class="line"><a name="l00148"></a><span
-                    class="lineno">  148</span>&#160; message.append(<span
-                    class="stringliteral">&quot;The index provided is out of range. There are &quot;</span>);
-            </div>
-            <div class="line"><a name="l00149"></a><span
-                    class="lineno">  149</span>&#160;
-                message.append(std::to_string(logicalSize));
-            </div>
-            <div class="line"><a name="l00150"></a><span
-                    class="lineno">  150</span>&#160; message.append(<span
-                    class="stringliteral">&quot; elements in the heap.&quot;</span>);
-            </div>
-            <div class="line"><a name="l00151"></a><span
-                    class="lineno">  151</span>&#160;
-            </div>
-            <div class="line"><a name="l00152"></a><span
-                    class="lineno">  152</span>&#160; <span class="comment">// TODO: change to `wrong input`</span>
-            </div>
-            <div class="line"><a name="l00153"></a><span
-                    class="lineno">  153</span>&#160; <span class="keywordflow">throw</span>
-                std::out_of_range(message);
-            </div>
-            <div class="line"><a name="l00154"></a><span
-                    class="lineno">  154</span>&#160; }
-            </div>
-            <div class="line"><a name="l00155"></a><span
-                    class="lineno">  155</span>&#160;
-            </div>
-            <div class="line"><a name="l00156"></a><span
-                    class="lineno">  156</span>&#160; <span
-                    class="comment">/*</span></div>
             <div class="line"><a name="l00157"></a><span
-                    class="lineno">  157</span>&#160;<span class="comment">         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.</span>
+                    class="lineno">  157</span>&#160;
             </div>
             <div class="line"><a name="l00158"></a><span
-                    class="lineno">  158</span>&#160;<span class="comment">         *</span>
+                    class="lineno">  158</span>&#160; <span class="comment">/* Check that `indexToFixFrom` is a legal index. */</span>
             </div>
             <div class="line"><a name="l00159"></a><span
-                    class="lineno">  159</span>&#160;<span class="comment">         * Note: the almost last level has `(logicalSize / 2)` `nodes`.</span>
+                    class="lineno">  159</span>&#160; <span class="keywordflow">if</span>
+                ((indexToFixFrom &lt; 0) || (<a class="code"
+                                                href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                &lt;= indexToFixFrom)) {
             </div>
             <div class="line"><a name="l00160"></a><span
-                    class="lineno">  160</span>&#160;<span class="comment">         * Attention: there is no use to give `indexToFixFrom` that is larger</span>
+                    class="lineno">  160</span>&#160;
             </div>
             <div class="line"><a name="l00161"></a><span
-                    class="lineno">  161</span>&#160;<span class="comment">         *            than `(logicalSize / 2)`.</span>
+                    class="lineno">  161</span>&#160; <span class="comment">/* The `indexToFixFrom` is out of range. Throw message. */</span>
             </div>
             <div class="line"><a name="l00162"></a><span
-                    class="lineno">  162</span>&#160;<span class="comment">         */</span>
+                    class="lineno">  162</span>&#160; std::string message;
             </div>
             <div class="line"><a name="l00163"></a><span
-                    class="lineno">  163</span>&#160; <span class="keywordtype">int</span>
-                currentIndex = indexToFixFrom;
+                    class="lineno">  163</span>&#160; message.append(<span
+                    class="stringliteral">&quot;The index provided is out of range. There are &quot;</span>);
             </div>
             <div class="line"><a name="l00164"></a><span
-                    class="lineno">  164</span>&#160; <span class="keywordflow">while</span>
-                ((0 &lt;= currentIndex) &amp;&amp; (currentIndex &lt;
-                (logicalSize / 2))) {
+                    class="lineno">  164</span>&#160;
+                message.append(std::to_string(<a class="code"
+                                                 href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>));
             </div>
             <div class="line"><a name="l00165"></a><span
-                    class="lineno">  165</span>&#160; <span class="keywordtype">int</span>
+                    class="lineno">  165</span>&#160; message.append(<span
+                    class="stringliteral">&quot; elements in the heap.&quot;</span>);
+            </div>
+            <div class="line"><a name="l00166"></a><span
+                    class="lineno">  166</span>&#160;
+            </div>
+            <div class="line"><a name="l00167"></a><span
+                    class="lineno">  167</span>&#160; <span class="comment">// TODO: change to `wrong input`</span>
+            </div>
+            <div class="line"><a name="l00168"></a><span
+                    class="lineno">  168</span>&#160; <span class="keywordflow">throw</span>
+                std::out_of_range(message);
+            </div>
+            <div class="line"><a name="l00169"></a><span
+                    class="lineno">  169</span>&#160; }
+            </div>
+            <div class="line"><a name="l00170"></a><span
+                    class="lineno">  170</span>&#160;
+            </div>
+            <div class="line"><a name="l00171"></a><span
+                    class="lineno">  171</span>&#160; <span
+                    class="comment">/*</span></div>
+            <div class="line"><a name="l00172"></a><span
+                    class="lineno">  172</span>&#160;<span class="comment">         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.</span>
+            </div>
+            <div class="line"><a name="l00173"></a><span
+                    class="lineno">  173</span>&#160;<span class="comment">         *</span>
+            </div>
+            <div class="line"><a name="l00174"></a><span
+                    class="lineno">  174</span>&#160;<span class="comment">         * Note: the almost last level has `(logicalSize / 2)` `nodes`.</span>
+            </div>
+            <div class="line"><a name="l00175"></a><span
+                    class="lineno">  175</span>&#160;<span class="comment">         * Attention: there is no use to give `indexToFixFrom` that is larger</span>
+            </div>
+            <div class="line"><a name="l00176"></a><span
+                    class="lineno">  176</span>&#160;<span class="comment">         *            than `(logicalSize / 2)`.</span>
+            </div>
+            <div class="line"><a name="l00177"></a><span
+                    class="lineno">  177</span>&#160;<span class="comment">         */</span>
+            </div>
+            <div class="line"><a name="l00178"></a><span
+                    class="lineno">  178</span>&#160; <span class="keywordtype">int</span>
+                currentIndex = indexToFixFrom;
+            </div>
+            <div class="line"><a name="l00179"></a><span
+                    class="lineno">  179</span>&#160; <span class="keywordflow">while</span>
+                ((0 &lt;= currentIndex) &amp;&amp; (currentIndex &lt; (<a
+                        class="code"
+                        href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                / 2))) {
+            </div>
+            <div class="line"><a name="l00180"></a><span
+                    class="lineno">  180</span>&#160; <span class="keywordtype">int</span>
                 indexOfMinimalChildOfCurrentRoot = <a class="code"
                                                       href="classmy__algorithms.html#aaba7dbd8f8e911fd944a6ec8aced88c2">my_algorithms::min</a>(
             </div>
-            <div class="line"><a name="l00166"></a><span
-                    class="lineno">  166</span>&#160; array, currentIndex * 2 +
-                1, currentIndex * 2 + 2);
+            <div class="line"><a name="l00181"></a><span
+                    class="lineno">  181</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>,
+                currentIndex * 2 + 1, currentIndex * 2 + 2);
             </div>
-            <div class="line"><a name="l00167"></a><span
-                    class="lineno">  167</span>&#160; <span class="keywordflow">if</span>
-                (array[indexOfMinimalChildOfCurrentRoot] != <span
-                        class="keyword">nullptr</span>) {
+            <div class="line"><a name="l00182"></a><span
+                    class="lineno">  182</span>&#160; <span class="keywordflow">if</span>
+                (<a class="code"
+                    href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[indexOfMinimalChildOfCurrentRoot]
+                != <span class="keyword">nullptr</span>) {
             </div>
-            <div class="line"><a name="l00168"></a><span
-                    class="lineno">  168</span>&#160; <span class="keywordflow">if</span>
-                (*array[currentIndex] &gt;
+            <div class="line"><a name="l00183"></a><span
+                    class="lineno">  183</span>&#160; <span class="keywordflow">if</span>
+                (*<a class="code"
+                     href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[currentIndex]
+                &gt;
             </div>
-            <div class="line"><a name="l00169"></a><span
-                    class="lineno">  169</span>&#160;
-                *array[indexOfMinimalChildOfCurrentRoot]) {
+            <div class="line"><a name="l00184"></a><span
+                    class="lineno">  184</span>&#160; *<a class="code"
+                                                          href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[indexOfMinimalChildOfCurrentRoot])
+                {
             </div>
-            <div class="line"><a name="l00170"></a><span
-                    class="lineno">  170</span>&#160; <a class="code"
-                                                         href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">my_algorithms::swap</a>(array,
+            <div class="line"><a name="l00185"></a><span
+                    class="lineno">  185</span>&#160; <a class="code"
+                                                         href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">my_algorithms::swap</a>(<a
+                    class="code"
+                    href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>,
                 currentIndex,
             </div>
-            <div class="line"><a name="l00171"></a><span
-                    class="lineno">  171</span>&#160;
+            <div class="line"><a name="l00186"></a><span
+                    class="lineno">  186</span>&#160;
                 indexOfMinimalChildOfCurrentRoot);
             </div>
-            <div class="line"><a name="l00172"></a><span
-                    class="lineno">  172</span>&#160; currentIndex =
+            <div class="line"><a name="l00187"></a><span
+                    class="lineno">  187</span>&#160; currentIndex =
                 indexOfMinimalChildOfCurrentRoot;
             </div>
-            <div class="line"><a name="l00173"></a><span
-                    class="lineno">  173</span>&#160; } <span
+            <div class="line"><a name="l00188"></a><span
+                    class="lineno">  188</span>&#160; } <span
                     class="keywordflow">else</span> {
             </div>
-            <div class="line"><a name="l00174"></a><span
-                    class="lineno">  174</span>&#160; <span class="keywordflow">break</span>;
+            <div class="line"><a name="l00189"></a><span
+                    class="lineno">  189</span>&#160; <span class="keywordflow">break</span>;
             </div>
-            <div class="line"><a name="l00175"></a><span
-                    class="lineno">  175</span>&#160; }
+            <div class="line"><a name="l00190"></a><span
+                    class="lineno">  190</span>&#160; }
             </div>
-            <div class="line"><a name="l00176"></a><span
-                    class="lineno">  176</span>&#160; } <span
+            <div class="line"><a name="l00191"></a><span
+                    class="lineno">  191</span>&#160; } <span
                     class="keywordflow">else</span> {
-            </div>
-            <div class="line"><a name="l00177"></a><span
-                    class="lineno">  177</span>&#160; <span class="keywordflow">break</span>;
-            </div>
-            <div class="line"><a name="l00178"></a><span
-                    class="lineno">  178</span>&#160; }
-            </div>
-            <div class="line"><a name="l00179"></a><span
-                    class="lineno">  179</span>&#160; } <span class="comment">// FIXME: doesn&#39;t work good.</span>
-            </div>
-            <div class="line"><a name="l00180"></a><span
-                    class="lineno">  180</span>&#160; }
-            </div>
-            <div class="line"><a name="l00181"></a><span
-                    class="lineno">  181</span>&#160;
-            </div>
-            <div class="line"><a name="l00191"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">  191</a></span>&#160;
-                <span class="keywordtype">void</span> <a class="code"
-                                                         href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">buildHeap</a>(K
-                *arrayToBuildFrom, <span class="keywordtype">int</span>
-                sizeOfArrayToBuildFrom)<span class="keyword"> override </span>{
             </div>
             <div class="line"><a name="l00192"></a><span
-                    class="lineno">  192</span>&#160;
+                    class="lineno">  192</span>&#160; <span class="keywordflow">break</span>;
             </div>
             <div class="line"><a name="l00193"></a><span
-                    class="lineno">  193</span>&#160; <span class="comment">/* Delete the old array if there is any. */</span>
+                    class="lineno">  193</span>&#160; }
             </div>
             <div class="line"><a name="l00194"></a><span
-                    class="lineno">  194</span>&#160; <span class="keyword">delete</span>[]
-                array;
+                    class="lineno">  194</span>&#160; } <span class="comment">// FIXME: doesn&#39;t work good.</span>
             </div>
             <div class="line"><a name="l00195"></a><span
-                    class="lineno">  195</span>&#160;
+                    class="lineno">  195</span>&#160; }
             </div>
             <div class="line"><a name="l00196"></a><span
-                    class="lineno">  196</span>&#160; <span class="comment">/* Initialize a `new` empty array. */</span>
+                    class="lineno">  196</span>&#160;
             </div>
-            <div class="line"><a name="l00197"></a><span
-                    class="lineno">  197</span>&#160; array = <span
-                    class="keyword">new</span> K *[sizeOfArrayToBuildFrom];
-            </div>
-            <div class="line"><a name="l00198"></a><span
-                    class="lineno">  198</span>&#160; physicalSize =
-                sizeOfArrayToBuildFrom;
-            </div>
-            <div class="line"><a name="l00199"></a><span
-                    class="lineno">  199</span>&#160; logicalSize =
-                sizeOfArrayToBuildFrom;
-            </div>
-            <div class="line"><a name="l00200"></a><span
-                    class="lineno">  200</span>&#160;
-            </div>
-            <div class="line"><a name="l00201"></a><span
-                    class="lineno">  201</span>&#160; <span class="keywordflow">for</span>
-                (<span class="keywordtype">int</span> i = 0; i &lt;
-                sizeOfArrayToBuildFrom; ++i) {
-            </div>
-            <div class="line"><a name="l00202"></a><span
-                    class="lineno">  202</span>&#160; array[i] = &amp;arrayToBuildFrom[i];
-            </div>
-            <div class="line"><a name="l00203"></a><span
-                    class="lineno">  203</span>&#160; }
-            </div>
-            <div class="line"><a name="l00204"></a><span
-                    class="lineno">  204</span>&#160;
-            </div>
-            <div class="line"><a name="l00205"></a><span
-                    class="lineno">  205</span>&#160; <span
-                    class="comment">/*</span></div>
-            <div class="line"><a name="l00206"></a><span
-                    class="lineno">  206</span>&#160;<span class="comment">         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.</span>
+            <div class="line"><a name="l00206"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">  206</a></span>&#160;
+                <span class="keywordtype">void</span> <a class="code"
+                                                         href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">buildHeap</a>(<a
+                        class="code" href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> *arrayToBuildFrom,
             </div>
             <div class="line"><a name="l00207"></a><span
-                    class="lineno">  207</span>&#160;<span class="comment">         *</span>
+                    class="lineno">  207</span>&#160; <span class="keywordtype">int</span>
+                sizeOfArrayToBuildFrom)<span class="keyword"> override </span>{
             </div>
             <div class="line"><a name="l00208"></a><span
-                    class="lineno">  208</span>&#160;<span class="comment">         * Note: the almost last level has `(logicalSize / 2)` `nodes`.</span>
+                    class="lineno">  208</span>&#160;
             </div>
             <div class="line"><a name="l00209"></a><span
-                    class="lineno">  209</span>&#160;<span class="comment">         */</span>
+                    class="lineno">  209</span>&#160; <span class="comment">/* Delete the old array if there is any. */</span>
             </div>
             <div class="line"><a name="l00210"></a><span
-                    class="lineno">  210</span>&#160; <span class="keywordtype">int</span>
-                lastIndex = logicalSize - 1;
+                    class="lineno">  210</span>&#160; <span class="keyword">delete</span>[]
+                <a class="code"
+                   href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>;
             </div>
             <div class="line"><a name="l00211"></a><span
-                    class="lineno">  211</span>&#160; <span class="keywordflow">for</span>
-                (<span class="keywordtype">int</span> currentIndex = (lastIndex
-                - 1) / 2; currentIndex &gt;= 0;
+                    class="lineno">  211</span>&#160;
             </div>
             <div class="line"><a name="l00212"></a><span
-                    class="lineno">  212</span>&#160; currentIndex--) {
+                    class="lineno">  212</span>&#160; <span class="comment">/* Initialize a `new` empty array. */</span>
             </div>
             <div class="line"><a name="l00213"></a><span
                     class="lineno">  213</span>&#160; <a class="code"
-                                                         href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">fixHeap</a>(currentIndex);
+                                                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>
+                = <span class="keyword">new</span> <a class="code"
+                                                      href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> *[sizeOfArrayToBuildFrom];
             </div>
             <div class="line"><a name="l00214"></a><span
-                    class="lineno">  214</span>&#160; }
+                    class="lineno">  214</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">physicalSize</a>
+                = sizeOfArrayToBuildFrom;
             </div>
             <div class="line"><a name="l00215"></a><span
-                    class="lineno">  215</span>&#160; }
+                    class="lineno">  215</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                = sizeOfArrayToBuildFrom;
             </div>
             <div class="line"><a name="l00216"></a><span
                     class="lineno">  216</span>&#160;
             </div>
-            <div class="line"><a name="l00222"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e">  222</a></span>&#160;
-                <span class="keywordtype">bool</span> <a class="code"
-                                                         href="class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e">isEmpty</a>()<span
-                        class="keyword"> override </span>{ <span
-                        class="keywordflow">return</span> logicalSize; }
+            <div class="line"><a name="l00217"></a><span
+                    class="lineno">  217</span>&#160; <span class="keywordflow">for</span>
+                (<span class="keywordtype">int</span> i = 0; i &lt;
+                sizeOfArrayToBuildFrom; ++i) {
+            </div>
+            <div class="line"><a name="l00218"></a><span
+                    class="lineno">  218</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[i]
+                = &amp;arrayToBuildFrom[i];
+            </div>
+            <div class="line"><a name="l00219"></a><span
+                    class="lineno">  219</span>&#160; }
+            </div>
+            <div class="line"><a name="l00220"></a><span
+                    class="lineno">  220</span>&#160;
+            </div>
+            <div class="line"><a name="l00221"></a><span
+                    class="lineno">  221</span>&#160; <span
+                    class="comment">/*</span></div>
+            <div class="line"><a name="l00222"></a><span
+                    class="lineno">  222</span>&#160;<span class="comment">         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.</span>
             </div>
             <div class="line"><a name="l00223"></a><span
-                    class="lineno">  223</span>&#160;
+                    class="lineno">  223</span>&#160;<span class="comment">         * Note: the almost last level has `(logicalSize / 2)` `nodes`.</span>
             </div>
-            <div class="line"><a name="l00227"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap.html#a30c28c8b66c9ba532466690c4731ca39">  227</a></span>&#160;
-                <span class="keywordtype">void</span> <a class="code"
-                                                         href="class_min_heap.html#a30c28c8b66c9ba532466690c4731ca39">makeEmpty</a>()<span
-                        class="keyword"> override </span>{ logicalSize = 0; }
+            <div class="line"><a name="l00224"></a><span
+                    class="lineno">  224</span>&#160;<span class="comment">         */</span>
+            </div>
+            <div class="line"><a name="l00225"></a><span
+                    class="lineno">  225</span>&#160; <span class="keywordtype">int</span>
+                lastIndex = <a class="code"
+                               href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                - 1;
+            </div>
+            <div class="line"><a name="l00226"></a><span
+                    class="lineno">  226</span>&#160; <span class="keywordflow">for</span>
+                (<span class="keywordtype">int</span> currentIndex = (lastIndex
+                - 1) / 2; currentIndex &gt;= 0;
+            </div>
+            <div class="line"><a name="l00227"></a><span
+                    class="lineno">  227</span>&#160; currentIndex--) {
             </div>
             <div class="line"><a name="l00228"></a><span
-                    class="lineno">  228</span>&#160;
+                    class="lineno">  228</span>&#160; <a class="code"
+                                                         href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap</a>(currentIndex);
             </div>
-            <div class="line"><a name="l00232"></a><span class="lineno"><a
+            <div class="line"><a name="l00229"></a><span
+                    class="lineno">  229</span>&#160; }
+            </div>
+            <div class="line"><a name="l00230"></a><span
+                    class="lineno">  230</span>&#160; }
+            </div>
+            <div class="line"><a name="l00231"></a><span
+                    class="lineno">  231</span>&#160;
+            </div>
+            <div class="line"><a name="l00237"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">  232</a></span>&#160;
+                    href="class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4">  237</a></span>&#160;
+                <span class="keywordtype">bool</span> <a class="code"
+                                                         href="class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4">isEmpty</a>()<span
+                        class="keyword"> override </span>{ <span
+                        class="keywordflow">return</span> <a class="code"
+                                                             href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>;
+                }
+            </div>
+            <div class="line"><a name="l00238"></a><span
+                    class="lineno">  238</span>&#160;
+            </div>
+            <div class="line"><a name="l00242"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#ae6f21519950cc55c5b470d07ee01a062">  242</a></span>&#160;
+                <span class="keywordtype">void</span> <a class="code"
+                                                         href="class_min_heap.html#ae6f21519950cc55c5b470d07ee01a062">makeEmpty</a>()<span
+                        class="keyword"> override </span>{ <a class="code"
+                                                              href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
+                = 0; }
+            </div>
+            <div class="line"><a name="l00243"></a><span
+                    class="lineno">  243</span>&#160;
+            </div>
+            <div class="line"><a name="l00247"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">  247</a></span>&#160;
                 <span class="keyword">friend</span> std::ostream &amp;<a
                         class="code"
                         href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">operator&lt;&lt;</a>(std::ostream
@@ -699,121 +778,152 @@
                                                                href="class_min_heap.html">MinHeap</a>
                 &amp;heap) {
             </div>
-            <div class="line"><a name="l00233"></a><span
-                    class="lineno">  233</span>&#160; os &lt;&lt; <span
+            <div class="line"><a name="l00248"></a><span
+                    class="lineno">  248</span>&#160; os &lt;&lt; <span
                     class="stringliteral">&quot; array: &quot;</span>;
             </div>
-            <div class="line"><a name="l00234"></a><span
-                    class="lineno">  234</span>&#160; <span class="keywordflow">for</span>
-                (<span class="keywordtype">int</span> i = 0; i &lt;
-                heap.logicalSize; i++) {
+            <div class="line"><a name="l00249"></a><span
+                    class="lineno">  249</span>&#160; <span class="keywordflow">for</span>
+                (<span class="keywordtype">int</span> i = 0; i &lt; heap.<a
+                        class="code"
+                        href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>;
+                i++) {
             </div>
-            <div class="line"><a name="l00235"></a><span
-                    class="lineno">  235</span>&#160; os &lt;&lt;
-                *heap.array[i];
+            <div class="line"><a name="l00250"></a><span
+                    class="lineno">  250</span>&#160; os &lt;&lt; *heap.<a
+                    class="code"
+                    href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">array</a>[i];
             </div>
-            <div class="line"><a name="l00236"></a><span
-                    class="lineno">  236</span>&#160; os &lt;&lt; <span
+            <div class="line"><a name="l00251"></a><span
+                    class="lineno">  251</span>&#160; os &lt;&lt; <span
                     class="stringliteral">&quot; &quot;</span>;
             </div>
-            <div class="line"><a name="l00237"></a><span
-                    class="lineno">  237</span>&#160; }
+            <div class="line"><a name="l00252"></a><span
+                    class="lineno">  252</span>&#160; }
             </div>
-            <div class="line"><a name="l00238"></a><span
-                    class="lineno">  238</span>&#160; os &lt;&lt; <span
+            <div class="line"><a name="l00253"></a><span
+                    class="lineno">  253</span>&#160; os &lt;&lt; <span
                     class="stringliteral">&quot;, logicalSize: &quot;</span>
-                &lt;&lt; heap.logicalSize
+                &lt;&lt; heap.<a class="code"
+                                 href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
             </div>
-            <div class="line"><a name="l00239"></a><span
-                    class="lineno">  239</span>&#160; &lt;&lt; <span
+            <div class="line"><a name="l00254"></a><span
+                    class="lineno">  254</span>&#160; &lt;&lt; <span
                     class="stringliteral">&quot;, physicalSize: &quot;</span>
-                &lt;&lt; heap.physicalSize &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;
+                &lt;&lt; heap.<a class="code"
+                                 href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">physicalSize</a>
+                &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;
             </div>
-            <div class="line"><a name="l00240"></a><span
-                    class="lineno">  240</span>&#160; <span class="keywordflow">return</span>
+            <div class="line"><a name="l00255"></a><span
+                    class="lineno">  255</span>&#160; <span class="keywordflow">return</span>
                 os;
             </div>
-            <div class="line"><a name="l00241"></a><span
-                    class="lineno">  241</span>&#160; }
+            <div class="line"><a name="l00256"></a><span
+                    class="lineno">  256</span>&#160; }
             </div>
-            <div class="line"><a name="l00242"></a><span
-                    class="lineno">  242</span>&#160;};
+            <div class="line"><a name="l00257"></a><span
+                    class="lineno">  257</span>&#160;};
             </div>
-            <div class="line"><a name="l00243"></a><span
-                    class="lineno">  243</span>&#160;
+            <div class="line"><a name="l00258"></a><span
+                    class="lineno">  258</span>&#160;
             </div>
-            <div class="line"><a name="l00244"></a><span
-                    class="lineno">  244</span>&#160;<span class="preprocessor">#endif </span><span
+            <div class="line"><a name="l00259"></a><span
+                    class="lineno">  259</span>&#160;<span class="preprocessor">#endif </span><span
                     class="comment">//MIVNEI_NETUNIM_EX2_MINHEAP_H</span></div>
+            <div class="ttc" id="a_min_heap_a_d_t_8h_html">
+                <div class="ttname"><a href="_min_heap_a_d_t_8h.html">MinHeapADT.h</a>
+                </div>
+            </div>
+            <div class="ttc" id="aclass_entry_html">
+                <div class="ttname"><a href="class_entry.html">Entry</a></div>
+                <div class="ttdoc">This class represents a general entry, which
+                    is composed from a key and a value.
+                </div>
+                <div class="ttdef"><b>Definition:</b> Entry.h:18</div>
+            </div>
             <div class="ttc" id="aclass_min_heap_a_d_t_html">
                 <div class="ttname"><a href="class_min_heap_a_d_t.html">MinHeapADT</a>
                 </div>
                 <div class="ttdoc">This class represents an abstract
-                    Minimum-Heap.
+                    Minimum-Heap, which its elements are Entries that are
+                    composed by a...
                 </div>
-                <div class="ttdef"><b>Definition:</b> MinHeapADT.h:15</div>
+                <div class="ttdef"><b>Definition:</b> MinHeapADT.h:24</div>
             </div>
             <div class="ttc" id="aclass_min_heap_html">
                 <div class="ttname"><a href="class_min_heap.html">MinHeap</a>
                 </div>
-                <div class="ttdoc">This class implements a Minimum-Heap.</div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:23</div>
+                <div class="ttdoc">This class implements a Minimum-Heap which
+                    its elements are Entries that are composed by a key and a
+                    ...
+                </div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:27</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_html_a1768c62930568dc766d1144b0f540cdd">
+                 id="aclass_min_heap_html_a3aeffb1e6116afdbc3981e0b2280ecb3">
                 <div class="ttname"><a
-                        href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">MinHeap::buildHeap</a>
+                        href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">MinHeap::buildHeap</a>
                 </div>
-                <div class="ttdeci">void buildHeap(K *arrayToBuildFrom, int
-                    sizeOfArrayToBuildFrom) override
+                <div class="ttdeci">void buildHeap(Entry&lt; K, V &gt;
+                    *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override
                 </div>
                 <div class="ttdoc">Builds a Minimum-Heap by giving an
                     arrayToBuildFrom of elements as a parameter.
                 </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:191</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:206</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_html_a30c28c8b66c9ba532466690c4731ca39">
+                 id="aclass_min_heap_html_a4be6c262d5fdb48feb4ce8d41603cac8">
                 <div class="ttname"><a
-                        href="class_min_heap.html#a30c28c8b66c9ba532466690c4731ca39">MinHeap::makeEmpty</a>
+                        href="class_min_heap.html#a4be6c262d5fdb48feb4ce8d41603cac8">MinHeap::insert</a>
                 </div>
-                <div class="ttdeci">void makeEmpty() override</div>
-                <div class="ttdoc">clears the heap from elements.</div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:227</div>
+                <div class="ttdeci">void insert(Entry&lt; K, V &gt; &amp;elementToInsert)
+                    override
+                </div>
+                <div class="ttdoc">Inserts the elementToInsert to the heap.
+                </div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:105</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_html_a353fc44a9e53bd044b2c596f6016f99e">
+                 id="aclass_min_heap_html_a6041d18dee6992810ede4a3444b31738">
                 <div class="ttname"><a
-                        href="class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e">MinHeap::isEmpty</a>
+                        href="class_min_heap.html#a6041d18dee6992810ede4a3444b31738">MinHeap::~MinHeap</a>
+                </div>
+                <div class="ttdeci">virtual ~MinHeap()</div>
+                <div class="ttdoc">Destructor.</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:62</div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_html_a6e37d28efb033ff005ad704809af28b4">
+                <div class="ttname"><a
+                        href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">MinHeap::physicalSize</a>
+                </div>
+                <div class="ttdeci">int physicalSize</div>
+                <div class="ttdoc">The physical-size of the array.</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:36</div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_html_a6f4be46b00c888580c5f3afe41865930">
+                <div class="ttname"><a
+                        href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">MinHeap::deleteMin</a>
+                </div>
+                <div class="ttdeci">Entry&lt; K, V &gt; * deleteMin() override
+                </div>
+                <div class="ttdoc">Deletes the minimal element in the heap, and
+                    returns it.
+                </div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:74</div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_html_a7edac6f943f3e143fbf45b529e70a8e4">
+                <div class="ttname"><a
+                        href="class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4">MinHeap::isEmpty</a>
                 </div>
                 <div class="ttdeci">bool isEmpty() override</div>
                 <div class="ttdoc">boolean value whether this heap empty or
                     not.
                 </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:222</div>
-            </div>
-            <div class="ttc"
-                 id="aclass_min_heap_html_a4455aa1c5a79cfb41dbc2f414547adcb">
-                <div class="ttname"><a
-                        href="class_min_heap.html#a4455aa1c5a79cfb41dbc2f414547adcb">MinHeap::deleteMin</a>
-                </div>
-                <div class="ttdeci">K * deleteMin() override</div>
-                <div class="ttdoc">Deletes the minimal element in the heap, and
-                    returns it.
-                </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:59</div>
-            </div>
-            <div class="ttc"
-                 id="aclass_min_heap_html_a6add4589f1a3dad4755d67e59296c76f">
-                <div class="ttname"><a
-                        href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">MinHeap::fixHeap</a>
-                </div>
-                <div class="ttdeci">void fixHeap(int indexToFixFrom) override
-                </div>
-                <div class="ttdoc">This method handles a heap that is valid from
-                    the root downwards until the indexToFixFrom,...
-                </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:141</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:237</div>
             </div>
             <div class="ttc"
                  id="aclass_min_heap_html_a81a7799f8217c5db84b7eec767932d2f">
@@ -826,39 +936,56 @@
                 <div class="ttdoc">std::ostream *operator &lt;&lt;* print
                     method.
                 </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:232</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:247</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_html_a977646622eb07e4e320d6c57e5b28cc7">
+                 id="aclass_min_heap_html_aa5f4e762e12a9ea582b476c9520f2e91">
                 <div class="ttname"><a
-                        href="class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7">MinHeap::MinHeap</a>
+                        href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">MinHeap::logicalSize</a>
                 </div>
-                <div class="ttdeci">MinHeap(K *arrayToBuildFrom, int
-                    sizeOfArrayToBuildFrom)
+                <div class="ttdeci">int logicalSize</div>
+                <div class="ttdoc">The logical-size of the array.</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:39</div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_html_aac2fdfeffb2831f053bda9ed5308246f">
+                <div class="ttname"><a
+                        href="class_min_heap.html#aac2fdfeffb2831f053bda9ed5308246f">MinHeap::array</a>
+                </div>
+                <div class="ttdeci">Entry&lt; K, V &gt; * array</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:33</div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_html_ab5f16032e4084a73454be12e70ee3878">
+                <div class="ttname"><a
+                        href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">MinHeap::fixHeap</a>
+                </div>
+                <div class="ttdeci">void fixHeap(int indexToFixFrom) override
+                </div>
+                <div class="ttdoc">This method handles a heap that is valid from
+                    the root downwards until the indexToFixFrom,...
+                </div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:156</div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_html_ad33a31874c9406b784c3c40a158cd501">
+                <div class="ttname"><a
+                        href="class_min_heap.html#ad33a31874c9406b784c3c40a158cd501">MinHeap::MinHeap</a>
+                </div>
+                <div class="ttdeci">MinHeap(Entry&lt; K, V &gt;
+                    *arrayToBuildFrom, int sizeOfArrayToBuildFrom)
                 </div>
                 <div class="ttdoc">Constructor, initializes the array.</div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:40</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:54</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_html_aa29b514e11414ea045d5c4e14f5c6bc7">
+                 id="aclass_min_heap_html_ae6f21519950cc55c5b470d07ee01a062">
                 <div class="ttname"><a
-                        href="class_min_heap.html#aa29b514e11414ea045d5c4e14f5c6bc7">MinHeap::~MinHeap</a>
+                        href="class_min_heap.html#ae6f21519950cc55c5b470d07ee01a062">MinHeap::makeEmpty</a>
                 </div>
-                <div class="ttdeci">virtual ~MinHeap()</div>
-                <div class="ttdoc">Destructor.</div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:47</div>
-            </div>
-            <div class="ttc"
-                 id="aclass_min_heap_html_ae07bc19f40d54b22a2cb846e9a9f2ac2">
-                <div class="ttname"><a
-                        href="class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2">MinHeap::insert</a>
-                </div>
-                <div class="ttdeci">void insert(K &amp;elementToInsert)
-                    override
-                </div>
-                <div class="ttdoc">Inserts the elementToInsert to the heap.
-                </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:90</div>
+                <div class="ttdeci">void makeEmpty() override</div>
+                <div class="ttdoc">clears the heap from elements.</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:242</div>
             </div>
             <div class="ttc"
                  id="aclassmy__algorithms_html_a10c7c5677d44a82850f99867bc0be126">
@@ -887,12 +1014,17 @@
                 </div>
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:66</div>
             </div>
+            <div class="ttc" id="amy__algorithms_8h_html">
+                <div class="ttname"><a href="my__algorithms_8h.html">my_algorithms.h</a>
+                </div>
+            </div>
         </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-        <li class="navelem"><b>MinHeap.h</b></li>
+        <li class="navelem"><a class="el" href="_min_heap_8h.html">MinHeap.h</a>
+        </li>
         <li class="footer">Generated by <a
                 href="https://www.doxygen.org/index.html"><img class="footer"
                                                                src="doxygen.svg"

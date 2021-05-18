@@ -10,14 +10,17 @@
  * @brief This class represents a general *entry*, which is composed from a
  * *key* and a *value*.
  *
- * @tparam K the *key* of the entry.
- * @tparam V the *value* of the entry.
+ * `Entries` are compared to each other, by the comparable `key` field
+ * located in each `Entry` element.
+ * @attention the `key` **must** be `comparable`.
+ * @tparam K the type of *key* in the entry.
+ * @tparam V the type of *value* in the entry.
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0
  */
 template<typename K, typename V> class Entry {
   private:
-    /// The *key* of the entry.
+    /// The *key* of the entry. @attention **Must** be `comparable`.
     K key;
 
     /// The *value* of the entry.
@@ -40,6 +43,8 @@ template<typename K, typename V> class Entry {
      */
     Entry() = default;
 
+    /* -- Getters & Setters -- */
+
     K getKey() const { return key; }
 
     void setKey(K key) { this->key = key; }
@@ -48,13 +53,27 @@ template<typename K, typename V> class Entry {
 
     void setValue(V value) { this->value = value; }
 
+    /* -- Operators -- */
+
     /**
-     * @brief std::ostream *operator <<* print method.
+     * @brief std::ostream `operator <<` print method.
      */
     friend std::ostream &operator<<(std::ostream &os, const Entry &entry) {
         os << "key: " << entry.key << ", value: " << entry.value;
         return os;
     }
+
+    bool operator<(const Entry &other) const { return (key < other.key); }
+
+    bool operator>(const Entry &other) const { return (key > other.key); }
+
+    bool operator<=(const Entry &other) const { return !(other < *this); }
+
+    bool operator>=(const Entry &other) const { return !(*this < other); }
+
+    bool operator==(const Entry &other) const { return key == other.key; }
+
+    bool operator!=(const Entry &other) const { return !(other == *this); }
 };
 
 

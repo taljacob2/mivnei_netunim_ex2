@@ -12,6 +12,10 @@ this class bundles together all the input / output methods of the program.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_input_output_ae05048b59854178af0331b7efd0f5edf}{Input\+Output}} ()
+\item 
+\mbox{\hyperlink{class_input_output_a6925ac56858a476dbe0819586448a25d}{$\sim$\+Input\+Output}} ()
+\item 
 double $\ast$ \mbox{\hyperlink{class_input_output_a7403f35be5673fbd37f96ef970d5e904}{get\+All\+Inputs}} (int \&size, int \&serial\+Size\+Of\+The\+Element\+To\+Look\+For) noexcept(false)
 \begin{DoxyCompactList}\small\item\em gets all inputs from the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
@@ -21,12 +25,38 @@ double $\ast$ \mbox{\hyperlink{class_input_output_a7403f35be5673fbd37f96ef970d5e
 \item 
 {\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}{print\+Measure}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, const std\+::function$<$ T(T $\ast$, int, int, char $\ast$\&)$>$ \&function\+To\+Measure)
 \item 
-\mbox{\Hypertarget{class_input_output_a408062257e63734b0bf07b79d43b2959}\label{class_input_output_a408062257e63734b0bf07b79d43b2959}} 
-{\footnotesize template$<$class T $>$ }\\static void {\bfseries set\+Sorts} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, T $\ast$\&insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested)
+{\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_input_output_a408062257e63734b0bf07b79d43b2959}{set\+Sorts}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, T $\ast$\&insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested)
 \item 
-\mbox{\Hypertarget{class_input_output_a8f8537166733f58fd5262ca01a700dbc}\label{class_input_output_a8f8537166733f58fd5262ca01a700dbc}} 
-{\footnotesize template$<$class T $>$ }\\static void {\bfseries print\+Elements} (T $\ast$insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
+{\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_input_output_a8f8537166733f58fd5262ca01a700dbc}{print\+Elements}} (T $\ast$insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_input_output_aa62db776cb59a96fcda59c5045610771}{get\+Size}} ()
+\item 
+int \mbox{\hyperlink{class_input_output_af0819764147ca033abb80abf5fc3d3b6}{get\+Serial\+Size\+Of\+The\+Element\+To\+Look\+For}} (int size)
+\begin{DoxyCompactList}\small\item\em this method gets the {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} from the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_output_af5b2df278b468d22f9a6c87694552591}{set\+Array\+Contents}} (double array\mbox{[}$\,$\mbox{]}, int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_input_output_adbb54d295a037e6ce0ef1e4ebb3641ca}{check\+Legal\+Unsigned\+Int\+Input}} (\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&input)
+\item 
+static bool \mbox{\hyperlink{class_input_output_a2421f7839ae66cb99dd364a325e0e03c}{check\+Legal\+Double\+Input}} (\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&input)
+\item 
+static void \mbox{\hyperlink{class_input_output_a96c902d441eb36942449b259454678fb}{calculate\+Total\+Time\+Taken\+By\+The\+Program}} (std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ start, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ end, const char $\ast$name\+Of\+Function\+To\+Measure)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \mbox{\hyperlink{class_input_output_ac751010552e2daf9089bcb767f950d00}{\+\_\+input}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr char $\ast$ \mbox{\hyperlink{class_input_output_a98a2de3d18e5093c7c6311e2542b5ef6}{file\+Name}} = (char $\ast$) \char`\"{}Measure.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em The name of the \textquotesingle{}Measure\textquotesingle{} file\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -40,7 +70,40 @@ Tal Yacob, ID\+: 208632778.
 \end{DoxyVersion}
 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_input_output_ae05048b59854178af0331b7efd0f5edf}\label{class_input_output_ae05048b59854178af0331b7efd0f5edf}} 
+\index{InputOutput@{InputOutput}!InputOutput@{InputOutput}}
+\index{InputOutput@{InputOutput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{InputOutput()}{InputOutput()}}
+{\footnotesize\ttfamily Input\+Output\+::\+Input\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_input_output_a6925ac56858a476dbe0819586448a25d}\label{class_input_output_a6925ac56858a476dbe0819586448a25d}} 
+\index{InputOutput@{InputOutput}!````~InputOutput@{$\sim$InputOutput}}
+\index{````~InputOutput@{$\sim$InputOutput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputOutput()}{~InputOutput()}}
+{\footnotesize\ttfamily Input\+Output\+::$\sim$\+Input\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_output_a96c902d441eb36942449b259454678fb}\label{class_input_output_a96c902d441eb36942449b259454678fb}} 
+\index{InputOutput@{InputOutput}!calculateTotalTimeTakenByTheProgram@{calculateTotalTimeTakenByTheProgram}}
+\index{calculateTotalTimeTakenByTheProgram@{calculateTotalTimeTakenByTheProgram}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{calculateTotalTimeTakenByTheProgram()}{calculateTotalTimeTakenByTheProgram()}}
+{\footnotesize\ttfamily static void Input\+Output\+::calculate\+Total\+Time\+Taken\+By\+The\+Program (\begin{DoxyParamCaption}\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$}]{start,  }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$}]{end,  }\item[{const char $\ast$}]{name\+Of\+Function\+To\+Measure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_input_output_a2421f7839ae66cb99dd364a325e0e03c}\label{class_input_output_a2421f7839ae66cb99dd364a325e0e03c}} 
+\index{InputOutput@{InputOutput}!checkLegalDoubleInput@{checkLegalDoubleInput}}
+\index{checkLegalDoubleInput@{checkLegalDoubleInput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{checkLegalDoubleInput()}{checkLegalDoubleInput()}}
+{\footnotesize\ttfamily bool Input\+Output\+::check\+Legal\+Double\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_input_output_adbb54d295a037e6ce0ef1e4ebb3641ca}\label{class_input_output_adbb54d295a037e6ce0ef1e4ebb3641ca}} 
+\index{InputOutput@{InputOutput}!checkLegalUnsignedIntInput@{checkLegalUnsignedIntInput}}
+\index{checkLegalUnsignedIntInput@{checkLegalUnsignedIntInput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{checkLegalUnsignedIntInput()}{checkLegalUnsignedIntInput()}}
+{\footnotesize\ttfamily bool Input\+Output\+::check\+Legal\+Unsigned\+Int\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_input_output_a7403f35be5673fbd37f96ef970d5e904}\label{class_input_output_a7403f35be5673fbd37f96ef970d5e904}} 
 \index{InputOutput@{InputOutput}!getAllInputs@{getAllInputs}}
 \index{getAllInputs@{getAllInputs}!InputOutput@{InputOutput}}
@@ -68,6 +131,47 @@ the {\ttfamily new} created array.
 {\em std\+::range\+\_\+error} & \\
 \hline
 \end{DoxyExceptions}
+\mbox{\Hypertarget{class_input_output_af0819764147ca033abb80abf5fc3d3b6}\label{class_input_output_af0819764147ca033abb80abf5fc3d3b6}} 
+\index{InputOutput@{InputOutput}!getSerialSizeOfTheElementToLookFor@{getSerialSizeOfTheElementToLookFor}}
+\index{getSerialSizeOfTheElementToLookFor@{getSerialSizeOfTheElementToLookFor}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{getSerialSizeOfTheElementToLookFor()}{getSerialSizeOfTheElementToLookFor()}}
+{\footnotesize\ttfamily int Input\+Output\+::get\+Serial\+Size\+Of\+The\+Element\+To\+Look\+For (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+this method gets the {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} from the user. 
+
+\begin{DoxyNote}{Note}
+the {\ttfamily index} of the {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is actually {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For -\/ 1}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em size} & size of the array to search in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+serial\+Size\+Of\+The\+Element\+To\+Look\+For 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::range\+\_\+error} & if {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is out of range. \\
+\hline
+{\em std\+::runtime\+\_\+error} & if the {\ttfamily input} is in an illegal format. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_input_output_aa62db776cb59a96fcda59c5045610771}\label{class_input_output_aa62db776cb59a96fcda59c5045610771}} 
+\index{InputOutput@{InputOutput}!getSize@{getSize}}
+\index{getSize@{getSize}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int Input\+Output\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_input_output_a8f8537166733f58fd5262ca01a700dbc}\label{class_input_output_a8f8537166733f58fd5262ca01a700dbc}} 
+\index{InputOutput@{InputOutput}!printElements@{printElements}}
+\index{printElements@{printElements}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printElements()}{printElements()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static void Input\+Output\+::print\+Elements (\begin{DoxyParamCaption}\item[{T $\ast$}]{insertion\+Sorted\+Array,  }\item[{T \&}]{selection\+Element\+Requested,  }\item[{T \&}]{quintuplet\+Element\+Requested,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 \mbox{\Hypertarget{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}\label{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}} 
 \index{InputOutput@{InputOutput}!printMeasure@{printMeasure}}
 \index{printMeasure@{printMeasure}!InputOutput@{InputOutput}}
@@ -130,9 +234,41 @@ the {\ttfamily new} allocated manipulated array.
 
 {\ttfamily this\+::file\+Name} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_input_output_af5b2df278b468d22f9a6c87694552591}\label{class_input_output_af5b2df278b468d22f9a6c87694552591}} 
+\index{InputOutput@{InputOutput}!setArrayContents@{setArrayContents}}
+\index{setArrayContents@{setArrayContents}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{setArrayContents()}{setArrayContents()}}
+{\footnotesize\ttfamily void Input\+Output\+::set\+Array\+Contents (\begin{DoxyParamCaption}\item[{double}]{array\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_input_output_a408062257e63734b0bf07b79d43b2959}\label{class_input_output_a408062257e63734b0bf07b79d43b2959}} 
+\index{InputOutput@{InputOutput}!setSorts@{setSorts}}
+\index{setSorts@{setSorts}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{setSorts()}{setSorts()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+static void Input\+Output\+::set\+Sorts (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For,  }\item[{T $\ast$\&}]{insertion\+Sorted\+Array,  }\item[{T \&}]{selection\+Element\+Requested,  }\item[{T \&}]{quintuplet\+Element\+Requested }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_input_output_ac751010552e2daf9089bcb767f950d00}\label{class_input_output_ac751010552e2daf9089bcb767f950d00}} 
+\index{InputOutput@{InputOutput}!\_input@{\_input}}
+\index{\_input@{\_input}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{\_input}{\_input}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmy__string}{my\+\_\+string}} Input\+Output\+::\+\_\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_input_output_a98a2de3d18e5093c7c6311e2542b5ef6}\label{class_input_output_a98a2de3d18e5093c7c6311e2542b5ef6}} 
+\index{InputOutput@{InputOutput}!fileName@{fileName}}
+\index{fileName@{fileName}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily constexpr char$\ast$ Input\+Output\+::file\+Name = (char $\ast$) \char`\"{}Measure.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The name of the \textquotesingle{}Measure\textquotesingle{} file\+: 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Input\+Output.\+h\item 
-Input\+Output.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_input_output_8h}{Input\+Output.\+h}}\item 
+\mbox{\hyperlink{_input_output_8cpp}{Input\+Output.\+cpp}}\end{DoxyCompactItemize}

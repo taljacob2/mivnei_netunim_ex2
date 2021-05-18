@@ -13,17 +13,24 @@
 #include <string>
 
 /**
- * @brief This class implements a **Minimum-Heap**.
+ * @brief This class implements a **Minimum-Heap** which its elements are
+ *        *Entries* that are composed by a *key* and a *value*.
  *
- * @tparam K **key** type of element in the *Heap*.
- * @note in this implementation, the terms `element` and `node` are synonyms.
+ * The heap compares its elements to each other, by the comparable `key` field
+ * located in each `Entry` element.
+ * @tparam E is an @link Entry @endlink type of element in the *Heap*.
+ * @note The terms `element`, `node` and 'entry' are synonyms.
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0
+ * @see Entry
  */
-template<typename K> class MinHeap : public MinHeapADT<K> {
+template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
   private:
-    /// Array of pointers to all elements provided. Initialize to `nullptr`.
-    K **array = nullptr;
+    /**
+     * Array of `Entries` that serve as `elements`.
+     * Initialized to `nullptr`.
+     */
+    Entry<K, V> *array = nullptr;
 
     /// The *physical-size* of the *array*.
     int physicalSize = 0;
@@ -35,9 +42,17 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
     /**
      * @brief Constructor, initializes the *array*.
      *
-     * @param numberOfElements the number of elements to set the *array*.
+     * Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
+     * elements as a parameter. Done by invoking the @link buildHeap @endlink
+     * method.
+     * @param arrayToBuildFrom the given array of elements to build the
+     *                         heap from.
+     * @param sizeOfArrayToBuildFrom the size of the array to build the
+     *                               heap from.
+     * @see buildHeap
      */
-    explicit MinHeap(K *arrayToBuildFrom, int sizeOfArrayToBuildFrom) {
+    explicit MinHeap(Entry<K, V> *arrayToBuildFrom,
+                     int          sizeOfArrayToBuildFrom) {
         buildHeap(arrayToBuildFrom, sizeOfArrayToBuildFrom);
     }
 
@@ -47,7 +62,7 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
     virtual ~MinHeap() { delete[] array; }
 
     /**
-     * @brief Deletes the *minimal element* in the heap, and returns it.
+     * @brief Deletes the *minimal element* from the heap, and returns it.
      *
      * @note After removing the *minimal element* from the heap, this method
      *       calls the *fixHeap(0)* method, in order to fix the heap afterwards.
@@ -56,20 +71,20 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
      * @return the *minimal element* removed from the heap.
      * @see fixHeap(int)
      */
-    K *deleteMin() override {
+    Entry<K, V> *deleteMin() override {
 
         /*
-         * Returns the first element in the array (= the minimal element).
+         * Returns the `first` element in the array (= the `minimal` element).
          * In case the `logicalSize` of the array is 0,
          * this method returns `null_ptr`.
          */
-        K *returnElement = nullptr;
+        Entry<K, V> *returnElement = nullptr;
         if (logicalSize > 0) { returnElement = array[0]; }
 
-        /* Set the first element in the array to be the last element. */
+        /* Set the `first` element in the array to be the `last` element. */
         array[0] = array[logicalSize - 1];
 
-        /* Set the last element to be `null_ptr`. */
+        /* Set the `last` element to be `null_ptr`. */
         array[logicalSize - 1] = nullptr;
 
         /* Decrease the `logicalSize` of the array by 1. */
@@ -87,7 +102,7 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
      * @param elementToInsert the element to insert to the heap.
      * @throws std::runtime_error in case the heap is already full.
      */
-    void insert(K &elementToInsert) override {
+    void insert(Entry<K, V> &elementToInsert) override {
 
         /* If there is enough space in the array. */
         if (physicalSize > logicalSize) {
@@ -156,7 +171,7 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
         /*
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
          *
-         * Note: the almost last level has `(logicalSize / 2)` `nodes`.
+         * Note: the `almost last` level has `(logicalSize / 2)` `nodes`.
          * Attention: there is no use to give `indexToFixFrom` that is larger
          *            than `(logicalSize / 2)`.
          */
@@ -188,13 +203,14 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
      * @param sizeOfArrayToBuildFrom the size of the array to build the
      *                               heap from.
      */
-    void buildHeap(K *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override {
+    void buildHeap(Entry<K, V> *arrayToBuildFrom,
+                   int          sizeOfArrayToBuildFrom) override {
 
         /* Delete the old array if there is any. */
         delete[] array;
 
         /* Initialize a `new` empty array. */
-        array        = new K *[sizeOfArrayToBuildFrom];
+        array        = new Entry<K, V> *[sizeOfArrayToBuildFrom];
         physicalSize = sizeOfArrayToBuildFrom;
         logicalSize  = sizeOfArrayToBuildFrom;
 
@@ -204,7 +220,6 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
 
         /*
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
-         *
          * Note: the almost last level has `(logicalSize / 2)` `nodes`.
          */
         int lastIndex = logicalSize - 1;
@@ -215,9 +230,11 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
     }
 
     /**
-     * @brief boolean value whether this heap empty or not.
-     * @return boolean value. *true* if the heap is empty, *false* if the
-     *         heap is not empty.
+     * @brief returns a boolean value that determines whether this heap is
+     *        empty or not.
+     *
+     * @return boolean value of *true* if the heap is empty, or else, *false* if
+     *         the heap is not empty.
      */
     bool isEmpty() override { return logicalSize; }
 
@@ -227,7 +244,7 @@ template<typename K> class MinHeap : public MinHeapADT<K> {
     void makeEmpty() override { logicalSize = 0; }
 
     /**
-     * @brief std::ostream *operator <<* print method.
+     * @brief std::ostream `operator <<` print method.
      */
     friend std::ostream &operator<<(std::ostream &os, const MinHeap &heap) {
         os << " array: ";

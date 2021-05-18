@@ -1,7 +1,7 @@
 var searchData =
     [
-        ['makeempty_50', ['makeEmpty', ['../class_min_heap.html#a30c28c8b66c9ba532466690c4731ca39', 1, 'MinHeap::makeEmpty()'], ['../class_min_heap_a_d_t.html#a65a43062b39bbee2485ca947a7a3cde1', 1, 'MinHeapADT::makeEmpty()']]],
-        ['max_51', ['max', ['../classmy__algorithms.html#a7d1861e540c0919d8f151f0c66f5f777', 1, 'my_algorithms']]],
-        ['min_52', ['min', ['../classmy__algorithms.html#aaba7dbd8f8e911fd944a6ec8aced88c2', 1, 'my_algorithms']]],
-        ['minheap_53', ['MinHeap', ['../class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7', 1, 'MinHeap']]]
+        ['inputoutput_139', ['InputOutput', ['../class_input_output.html#ae05048b59854178af0331b7efd0f5edf', 1, 'InputOutput']]],
+        ['insert_140', ['insert', ['../class_min_heap.html#a4be6c262d5fdb48feb4ce8d41603cac8', 1, 'MinHeap::insert()'], ['../class_min_heap_a_d_t.html#a2a12a7585f1327f7b8a79c7a0a3d3886', 1, 'MinHeapADT::insert()']]],
+        ['isempty_141', ['isEmpty', ['../class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4', 1, 'MinHeap::isEmpty()'], ['../class_min_heap_a_d_t.html#a5a10590c084fd8d559e55ff9b7ba57c5', 1, 'MinHeapADT::isEmpty()']]],
+        ['iterator_142', ['iterator', ['../classmy__string_1_1iterator.html#a8213802212436149ed6be2bfe1b7e295', 1, 'my_string::iterator::iterator(my_string &amp;myString, int i)'], ['../classmy__string_1_1iterator.html#a60a5fd8f51ca300bbacf9adca242ffbe', 1, 'my_string::iterator::iterator(const iterator &amp;other)']]]
     ];

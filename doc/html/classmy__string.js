@@ -24,5 +24,6 @@ var classmy__string =
         ["operator>=", "classmy__string.html#aee1af608d913de54605b030651c291e5", null],
         ["save", "classmy__string.html#a9972b709fbd876cac55029885633dbdf", null],
         ["operator<<", "classmy__string.html#a9b427181566c373a0bfb1736936b1023", null],
-        ["operator>>", "classmy__string.html#af4ab5e6c0b9077cff2b5b0e67e745751", null]
+        ["operator>>", "classmy__string.html#af4ab5e6c0b9077cff2b5b0e67e745751", null],
+        ["str", "classmy__string.html#a83affb178faa4976938769abc152f7dd", null]
     ];

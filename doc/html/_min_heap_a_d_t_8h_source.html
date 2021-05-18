@@ -106,6 +106,8 @@
         </div>
     </div><!--header-->
     <div class="contents">
+        <a href="_min_heap_a_d_t_8h.html">Go to the documentation of this
+            file.</a>
         <div class="fragment">
             <div class="line"><a name="l00001"></a><span
                     class="lineno">    1</span>&#160;<span
@@ -128,108 +130,145 @@
             <div class="line"><a name="l00007"></a><span
                     class="lineno">    7</span>&#160;
             </div>
-            <div class="line"><a name="l00015"></a><span class="lineno"><a
+            <div class="line"><a name="l00008"></a><span
+                    class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a
+                    class="code" href="_entry_8h.html">Entry.h</a>&quot;</span>
+            </div>
+            <div class="line"><a name="l00009"></a><span
+                    class="lineno">    9</span>&#160;
+            </div>
+            <div class="line"><a name="l00024"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap_a_d_t.html">   15</a></span>&#160;<span
+                    href="class_min_heap_a_d_t.html">   24</a></span>&#160;<span
                     class="keyword">template</span>&lt;<span class="keyword">typename</span>
-                T&gt; <span class="keyword">class </span><a class="code"
-                                                            href="class_min_heap_a_d_t.html">MinHeapADT</a>
+                K, <span class="keyword">typename</span> V&gt; <span
+                        class="keyword">class </span><a class="code"
+                                                        href="class_min_heap_a_d_t.html">MinHeapADT</a>
                 {
             </div>
-            <div class="line"><a name="l00016"></a><span
-                    class="lineno">   16</span>&#160;
+            <div class="line"><a name="l00025"></a><span
+                    class="lineno">   25</span>&#160;
             </div>
-            <div class="line"><a name="l00017"></a><span
-                    class="lineno">   17</span>&#160; <span class="keyword">public</span>:
+            <div class="line"><a name="l00026"></a><span
+                    class="lineno">   26</span>&#160; <span class="keyword">public</span>:
             </div>
-            <div class="line"><a name="l00023"></a><span class="lineno"><a
+            <div class="line"><a name="l00032"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap_a_d_t.html#adb9eaff03712a11ba5737905ec60fd24">   23</a></span>&#160;
-                <span class="keyword">virtual</span> T *<a class="code"
-                                                           href="class_min_heap_a_d_t.html#adb9eaff03712a11ba5737905ec60fd24">deleteMin</a>()
+                    href="class_min_heap_a_d_t.html#aad46f6fbc56041d20c3130dcf5b42d5e">   32</a></span>&#160;
+                <span class="keyword">virtual</span> <a class="code"
+                                                        href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> *<a class="code"
+                                  href="class_min_heap_a_d_t.html#aad46f6fbc56041d20c3130dcf5b42d5e">deleteMin</a>()
                 = 0;
             </div>
-            <div class="line"><a name="l00024"></a><span
-                    class="lineno">   24</span>&#160;
+            <div class="line"><a name="l00033"></a><span
+                    class="lineno">   33</span>&#160;
             </div>
-            <div class="line"><a name="l00030"></a><span class="lineno"><a
+            <div class="line"><a name="l00039"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap_a_d_t.html#aa05d5e8f1d0cbf2c377f211673b2db3a">   30</a></span>&#160;
+                    href="class_min_heap_a_d_t.html#a2a12a7585f1327f7b8a79c7a0a3d3886">   39</a></span>&#160;
                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>
                 <a class="code"
-                   href="class_min_heap_a_d_t.html#aa05d5e8f1d0cbf2c377f211673b2db3a">insert</a>(T
-                &amp;elementToInsert) = 0;
+                   href="class_min_heap_a_d_t.html#a2a12a7585f1327f7b8a79c7a0a3d3886">insert</a>(<a
+                        class="code" href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> &amp;elementToInsert) = 0;
             </div>
-            <div class="line"><a name="l00031"></a><span
-                    class="lineno">   31</span>&#160;
-            </div>
-            <div class="line"><a name="l00040"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap_a_d_t.html#a64538c6ebe1333cc4754ed246762c8ee">   40</a></span>&#160;
-                <span class="keyword">virtual</span> <span class="keywordtype">void</span>
-                <a class="code"
-                   href="class_min_heap_a_d_t.html#a64538c6ebe1333cc4754ed246762c8ee">fixHeap</a>(<span
-                        class="keywordtype">int</span> indexToFixFrom) = 0;
-            </div>
-            <div class="line"><a name="l00041"></a><span
-                    class="lineno">   41</span>&#160;
+            <div class="line"><a name="l00040"></a><span
+                    class="lineno">   40</span>&#160;
             </div>
             <div class="line"><a name="l00049"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap_a_d_t.html#af0b299a6add7dc8535fc73843dbc9e94">   49</a></span>&#160;
+                    href="class_min_heap_a_d_t.html#a448c7198ad5aa4f525d017cce6cb5237">   49</a></span>&#160;
                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>
                 <a class="code"
-                   href="class_min_heap_a_d_t.html#af0b299a6add7dc8535fc73843dbc9e94">buildHeap</a>(T
-                *arrayToBuildFrom, <span class="keywordtype">int</span>
-                sizeOfArrayToBuildFrom) = 0;
+                   href="class_min_heap_a_d_t.html#a448c7198ad5aa4f525d017cce6cb5237">fixHeap</a>(<span
+                        class="keywordtype">int</span> indexToFixFrom) = 0;
             </div>
             <div class="line"><a name="l00050"></a><span
                     class="lineno">   50</span>&#160;
             </div>
-            <div class="line"><a name="l00056"></a><span class="lineno"><a
+            <div class="line"><a name="l00058"></a><span class="lineno"><a
                     class="line"
-                    href="class_min_heap_a_d_t.html#a9d109fdc463892e5fe33c97380f92716">   56</a></span>&#160;
-                <span class="keyword">virtual</span> <span class="keywordtype">bool</span>
-                <a class="code"
-                   href="class_min_heap_a_d_t.html#a9d109fdc463892e5fe33c97380f92716">isEmpty</a>()
-                = 0;
-            </div>
-            <div class="line"><a name="l00057"></a><span
-                    class="lineno">   57</span>&#160;
-            </div>
-            <div class="line"><a name="l00061"></a><span class="lineno"><a
-                    class="line"
-                    href="class_min_heap_a_d_t.html#a65a43062b39bbee2485ca947a7a3cde1">   61</a></span>&#160;
+                    href="class_min_heap_a_d_t.html#aa726874d27400106be78034fcee2e130">   58</a></span>&#160;
                 <span class="keyword">virtual</span> <span class="keywordtype">void</span>
                 <a class="code"
-                   href="class_min_heap_a_d_t.html#a65a43062b39bbee2485ca947a7a3cde1">makeEmpty</a>()
+                   href="class_min_heap_a_d_t.html#aa726874d27400106be78034fcee2e130">buildHeap</a>(<a
+                        class="code" href="class_entry.html">Entry&lt;K,
+                    V&gt;</a> *arrayToBuildFrom,
+            </div>
+            <div class="line"><a name="l00059"></a><span
+                    class="lineno">   59</span>&#160; <span class="keywordtype">int</span>
+                sizeOfArrayToBuildFrom) = 0;
+            </div>
+            <div class="line"><a name="l00060"></a><span
+                    class="lineno">   60</span>&#160;
+            </div>
+            <div class="line"><a name="l00067"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap_a_d_t.html#a5a10590c084fd8d559e55ff9b7ba57c5">   67</a></span>&#160;
+                <span class="keyword">virtual</span> <span class="keywordtype">bool</span>
+                <a class="code"
+                   href="class_min_heap_a_d_t.html#a5a10590c084fd8d559e55ff9b7ba57c5">isEmpty</a>()
                 = 0;
             </div>
-            <div class="line"><a name="l00062"></a><span
-                    class="lineno">   62</span>&#160;};
+            <div class="line"><a name="l00068"></a><span
+                    class="lineno">   68</span>&#160;
             </div>
-            <div class="line"><a name="l00063"></a><span
-                    class="lineno">   63</span>&#160;
+            <div class="line"><a name="l00072"></a><span class="lineno"><a
+                    class="line"
+                    href="class_min_heap_a_d_t.html#a772c058414cf8c8abb5ab6796d3d09d9">   72</a></span>&#160;
+                <span class="keyword">virtual</span> <span class="keywordtype">void</span>
+                <a class="code"
+                   href="class_min_heap_a_d_t.html#a772c058414cf8c8abb5ab6796d3d09d9">makeEmpty</a>()
+                = 0;
             </div>
-            <div class="line"><a name="l00064"></a><span
-                    class="lineno">   64</span>&#160;
+            <div class="line"><a name="l00073"></a><span
+                    class="lineno">   73</span>&#160;};
             </div>
-            <div class="line"><a name="l00065"></a><span
-                    class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span
+            <div class="line"><a name="l00074"></a><span
+                    class="lineno">   74</span>&#160;
+            </div>
+            <div class="line"><a name="l00075"></a><span
+                    class="lineno">   75</span>&#160;
+            </div>
+            <div class="line"><a name="l00076"></a><span
+                    class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span
                     class="comment">//MIVNEI_NETUNIM_EX2_MINHEAPADT_H</span>
+            </div>
+            <div class="ttc" id="a_entry_8h_html">
+                <div class="ttname"><a href="_entry_8h.html">Entry.h</a></div>
+            </div>
+            <div class="ttc" id="aclass_entry_html">
+                <div class="ttname"><a href="class_entry.html">Entry</a></div>
+                <div class="ttdoc">This class represents a general entry, which
+                    is composed from a key and a value.
+                </div>
+                <div class="ttdef"><b>Definition:</b> Entry.h:18</div>
             </div>
             <div class="ttc" id="aclass_min_heap_a_d_t_html">
                 <div class="ttname"><a href="class_min_heap_a_d_t.html">MinHeapADT</a>
                 </div>
                 <div class="ttdoc">This class represents an abstract
-                    Minimum-Heap.
+                    Minimum-Heap, which its elements are Entries that are
+                    composed by a...
                 </div>
-                <div class="ttdef"><b>Definition:</b> MinHeapADT.h:15</div>
+                <div class="ttdef"><b>Definition:</b> MinHeapADT.h:24</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_a_d_t_html_a64538c6ebe1333cc4754ed246762c8ee">
+                 id="aclass_min_heap_a_d_t_html_a2a12a7585f1327f7b8a79c7a0a3d3886">
                 <div class="ttname"><a
-                        href="class_min_heap_a_d_t.html#a64538c6ebe1333cc4754ed246762c8ee">MinHeapADT::fixHeap</a>
+                        href="class_min_heap_a_d_t.html#a2a12a7585f1327f7b8a79c7a0a3d3886">MinHeapADT::insert</a>
+                </div>
+                <div class="ttdeci">virtual void insert(Entry&lt; K, V &gt;
+                    &amp;elementToInsert)=0
+                </div>
+                <div class="ttdoc">Inserts the elementToInsert to the heap.
+                </div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_a_d_t_html_a448c7198ad5aa4f525d017cce6cb5237">
+                <div class="ttname"><a
+                        href="class_min_heap_a_d_t.html#a448c7198ad5aa4f525d017cce6cb5237">MinHeapADT::fixHeap</a>
                 </div>
                 <div class="ttdeci">virtual void fixHeap(int indexToFixFrom)=0
                 </div>
@@ -237,17 +276,9 @@
                 </div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_a_d_t_html_a65a43062b39bbee2485ca947a7a3cde1">
+                 id="aclass_min_heap_a_d_t_html_a5a10590c084fd8d559e55ff9b7ba57c5">
                 <div class="ttname"><a
-                        href="class_min_heap_a_d_t.html#a65a43062b39bbee2485ca947a7a3cde1">MinHeapADT::makeEmpty</a>
-                </div>
-                <div class="ttdeci">virtual void makeEmpty()=0</div>
-                <div class="ttdoc">clears the heap from elements.</div>
-            </div>
-            <div class="ttc"
-                 id="aclass_min_heap_a_d_t_html_a9d109fdc463892e5fe33c97380f92716">
-                <div class="ttname"><a
-                        href="class_min_heap_a_d_t.html#a9d109fdc463892e5fe33c97380f92716">MinHeapADT::isEmpty</a>
+                        href="class_min_heap_a_d_t.html#a5a10590c084fd8d559e55ff9b7ba57c5">MinHeapADT::isEmpty</a>
                 </div>
                 <div class="ttdeci">virtual bool isEmpty()=0</div>
                 <div class="ttdoc">boolean value whether this heap empty or
@@ -255,34 +286,35 @@
                 </div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_a_d_t_html_aa05d5e8f1d0cbf2c377f211673b2db3a">
+                 id="aclass_min_heap_a_d_t_html_a772c058414cf8c8abb5ab6796d3d09d9">
                 <div class="ttname"><a
-                        href="class_min_heap_a_d_t.html#aa05d5e8f1d0cbf2c377f211673b2db3a">MinHeapADT::insert</a>
+                        href="class_min_heap_a_d_t.html#a772c058414cf8c8abb5ab6796d3d09d9">MinHeapADT::makeEmpty</a>
                 </div>
-                <div class="ttdeci">virtual void insert(T &amp;elementToInsert)=0</div>
-                <div class="ttdoc">Inserts the elementToInsert to the heap.
-                </div>
+                <div class="ttdeci">virtual void makeEmpty()=0</div>
+                <div class="ttdoc">clears the heap from elements.</div>
             </div>
             <div class="ttc"
-                 id="aclass_min_heap_a_d_t_html_adb9eaff03712a11ba5737905ec60fd24">
+                 id="aclass_min_heap_a_d_t_html_aa726874d27400106be78034fcee2e130">
                 <div class="ttname"><a
-                        href="class_min_heap_a_d_t.html#adb9eaff03712a11ba5737905ec60fd24">MinHeapADT::deleteMin</a>
+                        href="class_min_heap_a_d_t.html#aa726874d27400106be78034fcee2e130">MinHeapADT::buildHeap</a>
                 </div>
-                <div class="ttdeci">virtual T * deleteMin()=0</div>
-                <div class="ttdoc">Deletes the minimal element in the heap, and
-                    returns it.
-                </div>
-            </div>
-            <div class="ttc"
-                 id="aclass_min_heap_a_d_t_html_af0b299a6add7dc8535fc73843dbc9e94">
-                <div class="ttname"><a
-                        href="class_min_heap_a_d_t.html#af0b299a6add7dc8535fc73843dbc9e94">MinHeapADT::buildHeap</a>
-                </div>
-                <div class="ttdeci">virtual void buildHeap(T *arrayToBuildFrom,
-                    int sizeOfArrayToBuildFrom)=0
+                <div class="ttdeci">virtual void buildHeap(Entry&lt; K, V &gt;
+                    *arrayToBuildFrom, int sizeOfArrayToBuildFrom)=0
                 </div>
                 <div class="ttdoc">Builds a Minimum-Heap by giving an
                     arrayToBuildFrom of elements as a parameter.
+                </div>
+            </div>
+            <div class="ttc"
+                 id="aclass_min_heap_a_d_t_html_aad46f6fbc56041d20c3130dcf5b42d5e">
+                <div class="ttname"><a
+                        href="class_min_heap_a_d_t.html#aad46f6fbc56041d20c3130dcf5b42d5e">MinHeapADT::deleteMin</a>
+                </div>
+                <div class="ttdeci">virtual Entry&lt; K, V &gt; *
+                    deleteMin()=0
+                </div>
+                <div class="ttdoc">Deletes the minimal element from the heap,
+                    and returns it.
                 </div>
             </div>
         </div><!-- fragment --></div><!-- contents -->
@@ -290,7 +322,8 @@
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-        <li class="navelem"><b>MinHeapADT.h</b></li>
+        <li class="navelem"><a class="el" href="_min_heap_a_d_t_8h.html">MinHeapADT.h</a>
+        </li>
         <li class="footer">Generated by <a
                 href="https://www.doxygen.org/index.html"><img class="footer"
                                                                src="doxygen.svg"
