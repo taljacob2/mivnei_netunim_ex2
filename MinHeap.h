@@ -164,16 +164,19 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
         while ((0 <= currentIndex) && (currentIndex < (logicalSize / 2))) {
             int indexOfMinimalChildOfCurrentRoot = my_algorithms::min(
                     array, currentIndex * 2, currentIndex * 2 + 1);
-            if ((array[indexOfMinimalChildOfCurrentRoot] != nullptr) &&
-                (array[currentIndex] >
-                 array[indexOfMinimalChildOfCurrentRoot])) {
-                my_algorithms::swap(array, currentIndex,
-                                    indexOfMinimalChildOfCurrentRoot);
-                currentIndex = indexOfMinimalChildOfCurrentRoot;
+            if (array[indexOfMinimalChildOfCurrentRoot] != nullptr) {
+                if (array[currentIndex] >
+                    array[indexOfMinimalChildOfCurrentRoot]) {
+                    my_algorithms::swap(array, currentIndex,
+                                        indexOfMinimalChildOfCurrentRoot);
+                    currentIndex = indexOfMinimalChildOfCurrentRoot;
+                } else {
+                    break;
+                }
             } else {
                 break;
             }
-        }
+        } // FIXME: doesn't work good.
     }
 
     /**
@@ -204,11 +207,24 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
          *
          * Note: the almost last level has `(logicalSize / 2)` `nodes`.
          */
-        for (int currentIndex = (logicalSize - 1) / 2; currentIndex >= 0;
+        int lastIndex = logicalSize - 1;
+        for (int currentIndex = (lastIndex - 1) / 2; currentIndex >= 0;
              currentIndex--) {
             fixHeap(currentIndex);
         }
     }
+
+    /**
+     * @brief boolean value whether this heap empty or not.
+     * @return boolean value. *true* if the heap is empty, *false* if the
+     *         heap is not empty.
+     */
+    bool isEmpty() override { return logicalSize; }
+
+    /**
+     * @brief clears the heap from elements.
+     */
+    void makeEmpty() override { logicalSize = 0; }
 
     /**
      * @brief std::ostream *operator <<* print method.

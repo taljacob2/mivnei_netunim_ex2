@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.cpp
-InputOutput.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
-my_algorithms.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
-my_string.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h
-chrono
--
-fstream
--
-functional
--
-iomanip
--
-iostream
--
-
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
 MinHeapADT.h
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
@@ -50,14 +30,6 @@ iostream
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
 exception
--
-iostream
--
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h
-cstring
--
-fstream
 -
 iostream
 -

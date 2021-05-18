@@ -9,10 +9,11 @@
  * @version 1.0
  */
 int main() {
-    int arrayToBuildFrom[10];
-    for (int i = 0; i < 10; i++) { arrayToBuildFrom[i] = 10 - i; }
+    int N = 3;
+    int arrayToBuildFrom[N];
+    for (int i = 0; i < N; i++) { arrayToBuildFrom[i] = N - i; }
 
-    MinHeap<int> minHeap(arrayToBuildFrom, 10);
+    MinHeap<int> minHeap(arrayToBuildFrom, N);
     std::cout << minHeap;
 
 

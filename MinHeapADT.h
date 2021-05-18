@@ -47,6 +47,18 @@ template<typename T> class MinHeapADT {
      *                         heap from.
      */
     virtual void buildHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) = 0;
+
+    /**
+     * @brief boolean value whether this heap empty or not.
+     * @return boolean value. *true* if the heap is empty, *false* if the
+     *         heap is not empty.
+     */
+    virtual bool isEmpty() = 0;
+
+    /**
+     * @brief clears the heap from elements.
+     */
+    virtual void makeEmpty() = 0;
 };
 
 
