@@ -21,14 +21,14 @@
  */
 template<typename T> class MinHeap : public MinHeapADT<T> {
   private:
-    /// Array of pointers to all elements provided.
-    T **array;
+    /// Array of pointers to all elements provided. Initialize to `nullptr`.
+    T **array = nullptr;
 
     /// The *physical-size* of the *array*.
-    int physicalSize;
+    int physicalSize = 0;
 
     /// The *logical-size* of the *array*.
-    int logicalSize;
+    int logicalSize = 0;
 
   public:
     /**
@@ -36,10 +36,8 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
      *
      * @param numberOfElements the number of elements to set the *array*.
      */
-    explicit MinHeap(int numberOfElements) {
-        array        = new T[numberOfElements];
-        physicalSize = numberOfElements;
-        logicalSize  = numberOfElements;
+    explicit MinHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) {
+        buildHeap(arrayToBuildFrom, sizeOfArrayToBuildFrom);
     }
 
     /**
@@ -99,7 +97,18 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
              */
             array[logicalSize++] = &elementToInsert;
 
-            //     TODO : need to implement.
+            int currentIndex = logicalSize - 1;
+
+            /* While there is at least 1 child in the array. */
+            while (0 < currentIndex) {
+                if (array[currentIndex] < array[(currentIndex - 1) / 2]) {
+                    my_algorithms::swap(array, currentIndex,
+                                        (currentIndex - 1) / 2);
+                    currentIndex = (currentIndex - 1) / 2;
+                } else {
+                    break;
+                }
+            }
         } else {
 
             /* The heap is already full. Throw message. */
@@ -154,20 +163,51 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
         while ((0 <= currentIndex) && (currentIndex < (logicalSize / 2))) {
             int indexOfMinimalChildOfCurrentRoot = my_algorithms::min(
                     array, currentIndex * 2, currentIndex * 2 + 1);
-            my_algorithms::swap(array, currentIndex,
-                                indexOfMinimalChildOfCurrentRoot);
-            currentIndex = indexOfMinimalChildOfCurrentRoot;
+            if ((array[indexOfMinimalChildOfCurrentRoot] != nullptr) &&
+                (array[currentIndex] >
+                 array[indexOfMinimalChildOfCurrentRoot])) {
+                my_algorithms::swap(array, currentIndex,
+                                    indexOfMinimalChildOfCurrentRoot);
+                currentIndex = indexOfMinimalChildOfCurrentRoot;
+            } else {
+                break;
+            }
         }
     }
 
     /**
-     * @brief Builds a **Minimum-Heap** by giving an arrayToBuildFrom of
+     * @brief Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
      *        elements as a parameter.
      *
      * @param arrayToBuildFrom the given array of elements to build the
      *                         heap from.
+     * @param sizeOfArrayToBuildFrom the size of the array to build the
+     *                               heap from.
      */
-    void buildHeap(T *arrayToBuildFrom) override {}
+    void buildHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override {
+
+        /* Delete the old array if there is any. */
+        delete[] array;
+
+        /* Initialize a `new` empty array. */
+        array        = new T *[sizeOfArrayToBuildFrom];
+        physicalSize = sizeOfArrayToBuildFrom;
+        logicalSize  = sizeOfArrayToBuildFrom;
+
+        for (int i = 0; i < sizeOfArrayToBuildFrom; ++i) {
+            array[i] = &arrayToBuildFrom[i];
+        }
+
+        /*
+         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
+         *
+         * Note: the almost last level has `(logicalSize / 2)` `nodes`.
+         */
+        for (int currentIndex = (logicalSize - 1) / 2; currentIndex >= 0;
+             currentIndex--) {
+            fixHeap(currentIndex);
+        }
+    }
 };
 
 #endif //MIVNEI_NETUNIM_EX2_MINHEAP_H
