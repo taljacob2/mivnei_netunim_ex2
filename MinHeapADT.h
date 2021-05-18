@@ -27,7 +27,7 @@ template<typename T> class MinHeapADT {
      *
      * @param elementToInsert the element to insert to the heap.
      */
-    virtual void insert(T elementToInsert) = 0;
+    virtual void insert(T &elementToInsert) = 0;
 
     /**
      * @brief Inserts the @p elementToInsert to the heap.
@@ -46,7 +46,7 @@ template<typename T> class MinHeapADT {
      * @param arrayToBuildFrom the given array of elements to build the
      *                         heap from.
      */
-    virtual void buildHeap(T *arrayToBuildFrom) = 0;
+    virtual void buildHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) = 0;
 };
 
 

@@ -26,12 +26,26 @@ iomanip
 iostream
 -
 
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp
-InputOutput.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
-iostream
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
+MinHeapADT.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
+my_algorithms.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
+exception
+-
+ostream
+-
+stdexcept
 -
 string
+-
+
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
+
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp
+MinHeap.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
+iostream
 -
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
@@ -39,10 +53,6 @@ exception
 -
 iostream
 -
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.cpp
-my_string.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h
 cstring

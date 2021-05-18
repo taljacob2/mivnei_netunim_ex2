@@ -8,6 +8,7 @@
 #include "MinHeapADT.h"
 #include "my_algorithms.h"
 #include <exception>
+#include <ostream>
 #include <stdexcept>
 #include <string>
 
@@ -207,6 +208,20 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
              currentIndex--) {
             fixHeap(currentIndex);
         }
+    }
+
+    /**
+     * @brief std::ostream *operator <<* print method.
+     */
+    friend std::ostream &operator<<(std::ostream &os, const MinHeap &heap) {
+        os << " array: ";
+        for (int i = 0; i < heap.logicalSize; i++) {
+            os << *heap.array[i];
+            os << " ";
+        }
+        os << ", logicalSize: " << heap.logicalSize
+           << ", physicalSize: " << heap.physicalSize << '\n';
+        return os;
     }
 };
 

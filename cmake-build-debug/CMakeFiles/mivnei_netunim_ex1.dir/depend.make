@@ -6,10 +6,10 @@ CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.o: ../InputOutput.h
 CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.o: ../my_algorithms.h
 CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.o: ../my_string.h
 
-CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o: ../InputOutput.h
+CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o: ../MinHeap.h
+CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o: ../MinHeapADT.h
 CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o: ../main.cpp
 CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o: ../my_algorithms.h
-CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o: ../my_string.h
 
 CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.o: ../my_string.cpp
 CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.o: ../my_string.h

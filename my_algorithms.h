@@ -59,6 +59,8 @@ class my_algorithms {
      * @param indexToElement1 index of pointer to first element to compare.
      * @param indexToElement2 index of pointer to second element to compare.
      * @return the index of the pointer that points to the smaller element.
+     * @throws std::runtime_error in case there is a problem with
+     *         comparing between the elements. This should not happen.
      */
     template<class T>
     static int min(T **array, int indexToElement1, int indexToElement2) {
@@ -76,6 +78,7 @@ class my_algorithms {
                                : indexToElement2;
             }
         }
+        throw std::runtime_error("Could not compare between elements.");
     }
 
     /**
