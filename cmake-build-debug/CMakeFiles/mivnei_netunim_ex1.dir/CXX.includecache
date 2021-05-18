@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h
+ostream
+-
+
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
 MinHeapADT.h
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
@@ -21,6 +25,8 @@ string
 -
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
+Entry.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp
 MinHeap.h
