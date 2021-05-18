@@ -107,19 +107,29 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         /* If there is enough space in the array. */
         if (physicalSize > logicalSize) {
 
-            /*
-             * Add a pointer to `elementToInsert`
-             * as the last element in the array.
-             */
-            array[logicalSize++] = &elementToInsert;
+            /* Add the `elementToInsert` as the `last` element in the array. */
+            array[logicalSize++] = elementToInsert;
 
             int currentIndex = logicalSize - 1;
 
-            /* While there is at least 1 child in the array. */
+            /*
+             * Check upwards the heap, whether there is a need to `swap` the
+             * elements according to the insertion, to ensure the heap is valid.
+             * While there is at least `1` child in the array.
+             */
             while (0 < currentIndex) {
-                if (*array[currentIndex] < *array[(currentIndex - 1) / 2]) {
+
+                /*
+                 * Beginning with the inserted element, compare each child to
+                 * its parent, to check if there is a need to `swap` between
+                 * them, in order to ensure validity of the heap, as a
+                 * `Minimum-Heap`.
+                 */
+                if (array[currentIndex] < array[(currentIndex - 1) / 2]) {
                     my_algorithms::swap(array, currentIndex,
                                         (currentIndex - 1) / 2);
+
+                    /* Step upwards to the parent of the element. */
                     currentIndex = (currentIndex - 1) / 2;
                 } else {
                     break;
@@ -176,19 +186,44 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
          *            than `(logicalSize / 2)`.
          */
         int currentIndex = indexToFixFrom;
+        if (array[currentIndex] == nullptr) {
+
+            /*
+             * The `indexToFixFrom` is out of range. Throw message.
+             * Note: should not be happening here, thanks to already checked
+             * scenario.
+             */
+            std::string message;
+            message.append(
+                    "The index provided is out of range. The element "
+                    "you have provided is `nullptr`. Thus, in-comparable.");
+
+            // TODO: change to `wrong input`
+            throw std::out_of_range(message);
+        }
+
+        /* array[currentIndex] is not `nullptr`. Thus, comparable. */
         while ((0 <= currentIndex) && (currentIndex < (logicalSize / 2))) {
             int indexOfMinimalChildOfCurrentRoot = my_algorithms::min(
                     array, currentIndex * 2 + 1, currentIndex * 2 + 2);
             if (array[indexOfMinimalChildOfCurrentRoot] != nullptr) {
-                if (*array[currentIndex] >
-                    *array[indexOfMinimalChildOfCurrentRoot]) {
+
+                /*
+                 * There is a living entry.
+                 * Compare by keys.
+                 */
+                if (array[currentIndex] >
+                    array[indexOfMinimalChildOfCurrentRoot]) {
                     my_algorithms::swap(array, currentIndex,
                                         indexOfMinimalChildOfCurrentRoot);
                     currentIndex = indexOfMinimalChildOfCurrentRoot;
-                } else {
-                    break;
                 }
             } else {
+
+                /*
+                 * There is no entry to compare with.
+                 * Thus, we have reached a leaf.
+                 */
                 break;
             }
         } // FIXME: doesn't work good.
@@ -210,13 +245,10 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         delete[] array;
 
         /* Initialize a `new` empty array. */
-        array        = new Entry<K, V> *[sizeOfArrayToBuildFrom];
         physicalSize = sizeOfArrayToBuildFrom;
         logicalSize  = sizeOfArrayToBuildFrom;
-
-        for (int i = 0; i < sizeOfArrayToBuildFrom; ++i) {
-            array[i] = &arrayToBuildFrom[i];
-        }
+        array        = my_algorithms::copyArray<Entry<K, V>>(arrayToBuildFrom,
+                                                      sizeOfArrayToBuildFrom);
 
         /*
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
