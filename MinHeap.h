@@ -71,26 +71,26 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @return the *minimal element* removed from the heap.
      * @see fixHeap(int)
      */
-    Entry<K, V> *deleteMin() override {
+    Entry<K, V> deleteMin() override {
 
         /*
          * Returns the `first` element in the array (= the `minimal` element).
          * In case the `logicalSize` of the array is 0,
-         * this method returns `null_ptr`.
+         * this method returns `nullptr`.
          */
-        Entry<K, V> *returnElement = nullptr;
+        Entry<K, V> returnElement = nullptr;
         if (logicalSize > 0) { returnElement = array[0]; }
 
         /* Set the `first` element in the array to be the `last` element. */
         array[0] = array[logicalSize - 1];
 
-        /* Set the `last` element to be `null_ptr`. */
+        /* Set the `last` element to be `nullptr`. */
         array[logicalSize - 1] = nullptr;
 
-        /* Decrease the `logicalSize` of the array by 1. */
+        /* Decrease the `logicalSize` of the array by `1`. */
         logicalSize--;
 
-        /* Invoke fixHeap(0) to fix the heap. */
+        /* Invoke `fixHeap(0)` to fix the heap. */
         fixHeap(0);
 
         return returnElement;
@@ -281,7 +281,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     friend std::ostream &operator<<(std::ostream &os, const MinHeap &heap) {
         os << " array: ";
         for (int i = 0; i < heap.logicalSize; i++) {
-            os << *heap.array[i];
+            os << heap.array[i];
             os << " ";
         }
         os << ", logicalSize: " << heap.logicalSize
