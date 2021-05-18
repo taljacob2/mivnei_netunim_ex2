@@ -892,6 +892,20 @@
                         element.
                     </dd>
                 </dl>
+                <dl class="exception">
+                    <dt>Exceptions</dt>
+                    <dd>
+                        <table class="exception">
+                            <tr>
+                                <td class="paramname">std::runtime_error</td>
+                                <td>in case there is a problem with comparing
+                                    between the elements. This should not
+                                    happen.
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
 
             </div>
         </div>
@@ -1020,17 +1034,11 @@
                 </dl>
                 <dl class="section see">
                     <dt>See also</dt>
-                    <dd><a class="el"
-                           href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126"
-                           title="generic swap algorithm of two elements in an array.">swap(T
-                        *, int, int)</a> - for swapping the elements in the
+                    <dd>swap(K *, int, int) - for swapping the elements in the
                         array.
                     </dd>
                     <dd>
-                        <a class="el"
-                           href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d"
-                           title="generic swap algorithm of two elements.">swap(T
-                            &amp;, T &amp;)</a> - for swapping the elements'
+                        swap(K &amp;, K &amp;) - for swapping the elements'
                         indexes in the array.
                     </dd>
                 </dl>
@@ -1094,7 +1102,7 @@
                     <dt>See also</dt>
                     <dd><a class="el"
                            href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">quintuplet_TheIthElementInItsSize</a>
-                        (T *, int, int)
+                        (K *, int, int)
                     </dd>
                 </dl>
 
@@ -1181,7 +1189,7 @@
                     <dt>See also</dt>
                     <dd><a class="el"
                            href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">quintuplet_TheIthElementInItsSize</a>
-                        (T *, int, int)
+                        (K *, int, int)
                     </dd>
                 </dl>
 
@@ -1286,7 +1294,7 @@
                 </dl>
                 <dl class="section see">
                     <dt>See also</dt>
-                    <dd>selectTheIthElementInItsSize_UnSecured(T *, int, int,
+                    <dd>selectTheIthElementInItsSize_UnSecured(K *, int, int,
                         int)
                     </dd>
                 </dl>
@@ -1374,7 +1382,7 @@
                     <dd><a class="el"
                            href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9"
                            title="this method is the public method for the selectTheIthElementInItsSize_UnSecured method.">selection_TheIthElementInItsSize</a>
-                        (T *, int, int)
+                        (K *, int, int)
                     </dd>
                 </dl>
 
@@ -1519,7 +1527,7 @@
                     <dd><a class="el"
                            href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb"
                            title="sorts the array given array.">sort_insertion</a>
-                        (T *, int)
+                        (K *, int)
                     </dd>
                 </dl>
 

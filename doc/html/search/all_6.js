@@ -1,10 +1,7 @@
 var searchData =
     [
-            ['max_10', ['max', ['../classmy__algorithms.html#a7d1861e540c0919d8f151f0c66f5f777', 1, 'my_algorithms']]],
-            ['min_11', ['min', ['../classmy__algorithms.html#aaba7dbd8f8e911fd944a6ec8aced88c2', 1, 'my_algorithms']]],
-            ['minheap_12', ['MinHeap', ['../class_min_heap.html', 1, 'MinHeap&lt; T &gt;'], ['../class_min_heap.html#aa5de3a032452cf32b2488af5b46a6fff', 1, 'MinHeap::MinHeap()']]],
-            ['minheapadt_13', ['MinHeapADT', ['../class_min_heap_a_d_t.html', 1, '']]],
-            ['mivnei_5fnetunim_20targil_20tichnuti_202_14', ['mivnei_netunim targil tichnuti 2', ['../index.html', 1, '']]],
-            ['my_5falgorithms_15', ['my_algorithms', ['../classmy__algorithms.html', 1, '']]],
-            ['my_5fstring_16', ['my_string', ['../classmy__string.html', 1, '']]]
+        ['inputoutput_8', ['InputOutput', ['../class_input_output.html', 1, '']]],
+        ['insert_9', ['insert', ['../class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2', 1, 'MinHeap::insert()'], ['../class_min_heap_a_d_t.html#aa05d5e8f1d0cbf2c377f211673b2db3a', 1, 'MinHeapADT::insert()']]],
+        ['isempty_10', ['isEmpty', ['../class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e', 1, 'MinHeap::isEmpty()'], ['../class_min_heap_a_d_t.html#a9d109fdc463892e5fe33c97380f92716', 1, 'MinHeapADT::isEmpty()']]],
+        ['iterator_11', ['iterator', ['../classmy__string_1_1iterator.html', 1, 'my_string']]]
     ];

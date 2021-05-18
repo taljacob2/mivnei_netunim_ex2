@@ -173,6 +173,11 @@ if element is a {\ttfamily nullptr}, prioritize to return the index of the {\its
 \begin{DoxyReturn}{Returns}
 the index of the pointer that points to the smaller element. 
 \end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & in case there is a problem with comparing between the elements. This should not happen. \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classmy__algorithms_a98317c4e662536b0c93636ceaf3934ff}\label{classmy__algorithms_a98317c4e662536b0c93636ceaf3934ff}} 
 \index{my\_algorithms@{my\_algorithms}!partition@{partition}}
 \index{partition@{partition}!my\_algorithms@{my\_algorithms}}
@@ -210,9 +215,9 @@ this method places the {\ttfamily pivot} in the {\bfseries{earliest}} index poss
 the pivot\textquotesingle{}s index. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_a10c7c5677d44a82850f99867bc0be126}{swap(\+T $\ast$, int, int)}} -\/ for swapping the elements in the array. 
+swap(\+K $\ast$, int, int) -\/ for swapping the elements in the array. 
 
-\mbox{\hyperlink{classmy__algorithms_a98c8a2353897ea85926c8f3cf5a57a5d}{swap(\+T \&, T \&)}} -\/ for swapping the elements\textquotesingle{} indexes in the array. 
+swap(\+K \&, K \&) -\/ for swapping the elements\textquotesingle{} indexes in the array. 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_aa2254406e1a518653134735938fcaa61}\label{classmy__algorithms_aa2254406e1a518653134735938fcaa61}} 
 \index{my\_algorithms@{my\_algorithms}!quintuplet\_TheIthElementInItsSize@{quintuplet\_TheIthElementInItsSize}}
@@ -222,7 +227,7 @@ the pivot\textquotesingle{}s index.
 static T my\+\_\+algorithms\+::quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 implements {\ttfamily quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size} as {\itshape DIVISION} = 5. \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$, int, int) 
+\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (K $\ast$, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_afe367498c8e46a9b4e7107151f0a3604}\label{classmy__algorithms_afe367498c8e46a9b4e7107151f0a3604}} 
 \index{my\_algorithms@{my\_algorithms}!quintuplet\_TheIthElementInItsSize\_@{quintuplet\_TheIthElementInItsSize\_}}
@@ -241,7 +246,7 @@ this method is made for getting the {\ttfamily sort\+\_\+quintuplet\+\_\+} metho
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$, int, int) 
+\mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (K $\ast$, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}\label{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}} 
 \index{my\_algorithms@{my\_algorithms}!selection\_TheIthElementInItsSize@{selection\_TheIthElementInItsSize}}
@@ -272,7 +277,7 @@ implemented with the {\bfseries{secured}} {\itshape constant} parameters\+:
 the {\itshape value} of the element which {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For} is its {\bfseries{serial size}}. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured(\+T $\ast$, int, int, int) 
+select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured(\+K $\ast$, int, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_a1a9d0ae0126d0fdbb10b7d03813d3708}\label{classmy__algorithms_a1a9d0ae0126d0fdbb10b7d03813d3708}} 
 \index{my\_algorithms@{my\_algorithms}!selection\_TheIthElementInItsSize\_@{selection\_TheIthElementInItsSize\_}}
@@ -291,7 +296,7 @@ this method is made for getting the {\ttfamily select\+The\+Ith\+Element\+In\+It
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}{selection\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$, int, int) 
+\mbox{\hyperlink{classmy__algorithms_a23545ccc3e6aec01c1b054c9ebba1da9}{selection\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (K $\ast$, int, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}\label{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}} 
 \index{my\_algorithms@{my\_algorithms}!sort\_insertion@{sort\_insertion}}
@@ -328,7 +333,7 @@ this method is made for getting the {\ttfamily sort\+\_\+insertion\+\_\+} method
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}{sort\+\_\+insertion}} (T $\ast$, int) 
+\mbox{\hyperlink{classmy__algorithms_ae5d12081b519c2eebed31bdee42c7ffb}{sort\+\_\+insertion}} (K $\ast$, int) 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classmy__algorithms_a98c8a2353897ea85926c8f3cf5a57a5d}\label{classmy__algorithms_a98c8a2353897ea85926c8f3cf5a57a5d}} 
 \index{my\_algorithms@{my\_algorithms}!swap@{swap}}

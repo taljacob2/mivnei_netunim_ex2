@@ -1,27 +1,27 @@
 var indexSectionsWithContent =
     {
-            0: "bcdfgimopqs~",
-            1: "im",
-            2: "bcdfgimpqs~",
-            3: "o",
-            4: "m"
+        0: "bcdefgimopqs~",
+        1: "eim",
+        2: "bcdfgimpqs~",
+        3: "o",
+        4: "m"
     };
 
 var indexSectionNames =
     {
-            0: "all",
-            1: "classes",
-            2: "functions",
-            3: "related",
-            4: "pages"
+        0: "all",
+        1: "classes",
+        2: "functions",
+        3: "related",
+        4: "pages"
     };
 
 var indexSectionLabels =
     {
-            0: "All",
-            1: "Classes",
-            2: "Functions",
-            3: "Friends",
-            4: "Pages"
+        0: "All",
+        1: "Classes",
+        2: "Functions",
+        3: "Friends",
+        4: "Pages"
     };
 

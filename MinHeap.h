@@ -15,15 +15,15 @@
 /**
  * @brief This class implements a **Minimum-Heap**.
  *
- * @tparam T type of element in the *Heap*.
+ * @tparam K **key** type of element in the *Heap*.
  * @note in this implementation, the terms `element` and `node` are synonyms.
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0
  */
-template<typename T> class MinHeap : public MinHeapADT<T> {
+template<typename K> class MinHeap : public MinHeapADT<K> {
   private:
     /// Array of pointers to all elements provided. Initialize to `nullptr`.
-    T **array = nullptr;
+    K **array = nullptr;
 
     /// The *physical-size* of the *array*.
     int physicalSize = 0;
@@ -37,7 +37,7 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
      *
      * @param numberOfElements the number of elements to set the *array*.
      */
-    explicit MinHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) {
+    explicit MinHeap(K *arrayToBuildFrom, int sizeOfArrayToBuildFrom) {
         buildHeap(arrayToBuildFrom, sizeOfArrayToBuildFrom);
     }
 
@@ -56,14 +56,14 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
      * @return the *minimal element* removed from the heap.
      * @see fixHeap(int)
      */
-    T *deleteMin() override {
+    K *deleteMin() override {
 
         /*
          * Returns the first element in the array (= the minimal element).
          * In case the `logicalSize` of the array is 0,
          * this method returns `null_ptr`.
          */
-        T *returnElement = nullptr;
+        K *returnElement = nullptr;
         if (logicalSize > 0) { returnElement = array[0]; }
 
         /* Set the first element in the array to be the last element. */
@@ -87,7 +87,7 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
      * @param elementToInsert the element to insert to the heap.
      * @throws std::runtime_error in case the heap is already full.
      */
-    void insert(T &elementToInsert) override {
+    void insert(K &elementToInsert) override {
 
         /* If there is enough space in the array. */
         if (physicalSize > logicalSize) {
@@ -102,7 +102,7 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
 
             /* While there is at least 1 child in the array. */
             while (0 < currentIndex) {
-                if (array[currentIndex] < array[(currentIndex - 1) / 2]) {
+                if (*array[currentIndex] < *array[(currentIndex - 1) / 2]) {
                     my_algorithms::swap(array, currentIndex,
                                         (currentIndex - 1) / 2);
                     currentIndex = (currentIndex - 1) / 2;
@@ -163,10 +163,10 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
         int currentIndex = indexToFixFrom;
         while ((0 <= currentIndex) && (currentIndex < (logicalSize / 2))) {
             int indexOfMinimalChildOfCurrentRoot = my_algorithms::min(
-                    array, currentIndex * 2, currentIndex * 2 + 1);
+                    array, currentIndex * 2 + 1, currentIndex * 2 + 2);
             if (array[indexOfMinimalChildOfCurrentRoot] != nullptr) {
-                if (array[currentIndex] >
-                    array[indexOfMinimalChildOfCurrentRoot]) {
+                if (*array[currentIndex] >
+                    *array[indexOfMinimalChildOfCurrentRoot]) {
                     my_algorithms::swap(array, currentIndex,
                                         indexOfMinimalChildOfCurrentRoot);
                     currentIndex = indexOfMinimalChildOfCurrentRoot;
@@ -188,13 +188,13 @@ template<typename T> class MinHeap : public MinHeapADT<T> {
      * @param sizeOfArrayToBuildFrom the size of the array to build the
      *                               heap from.
      */
-    void buildHeap(T *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override {
+    void buildHeap(K *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override {
 
         /* Delete the old array if there is any. */
         delete[] array;
 
         /* Initialize a `new` empty array. */
-        array        = new T *[sizeOfArrayToBuildFrom];
+        array        = new K *[sizeOfArrayToBuildFrom];
         physicalSize = sizeOfArrayToBuildFrom;
         logicalSize  = sizeOfArrayToBuildFrom;
 

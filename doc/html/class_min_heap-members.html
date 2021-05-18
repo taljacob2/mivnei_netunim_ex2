@@ -102,80 +102,100 @@
 
     <div class="header">
         <div class="headertitle">
-            <div class="title">MinHeap&lt; T &gt; Member List</div>
+            <div class="title">MinHeap&lt; K &gt; Member List</div>
         </div>
     </div><!--header-->
     <div class="contents">
 
         <p>This is the complete list of members for <a class="el"
                                                        href="class_min_heap.html">MinHeap&lt;
-            T &gt;</a>, including all inherited members.</p>
+            K &gt;</a>, including all inherited members.</p>
         <table class="directory">
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_min_heap.html#ad9859527259ab5721e97f14b1af8e7b5">buildHeap</a>(T
-                    *arrayToBuildFrom) override
+                                     href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">buildHeap</a>(K
+                    *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override
                 </td>
                 <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
-                    T &gt;</a></td>
+                    K &gt;</a></td>
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">virtual</span></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_min_heap.html#ac8a319d6e78b23a047c12897cc4ae021">deleteMin</a>()
+                                     href="class_min_heap.html#a4455aa1c5a79cfb41dbc2f414547adcb">deleteMin</a>()
                     override
                 </td>
                 <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
-                    T &gt;</a></td>
+                    K &gt;</a></td>
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">virtual</span></td>
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_min_heap.html#a810d4ad939e0fab89f314473a9d0d1b5">fixHeap</a>(int
+                                     href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">fixHeap</a>(int
                     indexToFixFrom) override
                 </td>
                 <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
-                    T &gt;</a></td>
+                    K &gt;</a></td>
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">virtual</span></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_min_heap.html#af40f9ea29e5f76b07d17efabf3ebeb2c">insert</a>(T
+                                     href="class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2">insert</a>(K
                     &amp;elementToInsert) override
                 </td>
                 <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
-                    T &gt;</a></td>
-                <td class="entry"><span class="mlabel">inline</span></td>
+                    K &gt;</a></td>
+                <td class="entry"><span class="mlabel">inline</span><span
+                        class="mlabel">virtual</span></td>
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_min_heap_a_d_t.html#a99c7462568a148c0ece6b65c38a845e8">MinHeapADT::insert</a>(T
-                    elementToInsert)=0
+                                     href="class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e">isEmpty</a>()
+                    override
                 </td>
-                <td class="entry"><a class="el"
-                                     href="class_min_heap_a_d_t.html">MinHeapADT&lt;
-                    T &gt;</a></td>
-                <td class="entry"><span class="mlabel">pure virtual</span></td>
+                <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
+                    K &gt;</a></td>
+                <td class="entry"><span class="mlabel">inline</span><span
+                        class="mlabel">virtual</span></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_min_heap.html#aa5de3a032452cf32b2488af5b46a6fff">MinHeap</a>(int
-                    numberOfElements)
+                                     href="class_min_heap.html#a30c28c8b66c9ba532466690c4731ca39">makeEmpty</a>()
+                    override
                 </td>
                 <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
-                    T &gt;</a></td>
+                    K &gt;</a></td>
                 <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">explicit</span></td>
+                        class="mlabel">virtual</span></td>
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_min_heap.html#a85395adbfda7cfb809081cbfb587c68e">~MinHeap</a>()
+                                     href="class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7">MinHeap</a>(K
+                    *arrayToBuildFrom, int sizeOfArrayToBuildFrom)
                 </td>
                 <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
-                    T &gt;</a></td>
+                    K &gt;</a></td>
+                <td class="entry"><span class="mlabel">inline</span><span
+                        class="mlabel">explicit</span></td>
+            </tr>
+            <tr>
+                <td class="entry"><a class="el"
+                                     href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">operator&lt;&lt;</a>(std::ostream
+                    &amp;os, const MinHeap &amp;heap)
+                </td>
+                <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
+                    K &gt;</a></td>
+                <td class="entry"><span class="mlabel">friend</span></td>
+            </tr>
+            <tr class="even">
+                <td class="entry"><a class="el"
+                                     href="class_min_heap.html#aa29b514e11414ea045d5c4e14f5c6bc7">~MinHeap</a>()
+                </td>
+                <td class="entry"><a class="el" href="class_min_heap.html">MinHeap&lt;
+                    K &gt;</a></td>
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">virtual</span></td>
             </tr>

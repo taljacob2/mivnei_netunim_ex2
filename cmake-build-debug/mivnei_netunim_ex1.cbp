@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.cpp">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>

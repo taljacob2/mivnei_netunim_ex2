@@ -148,7 +148,7 @@ class my_algorithms {
      *
      * @param outputParameterForThisFunctionName output parameter
      *                                           to get this function's name.
-     * @see sort_insertion (T *, int)
+     * @see sort_insertion (K *, int)
      */
     template<class T>
     static void sort_insertion_(T *array, int size,
@@ -175,8 +175,8 @@ class my_algorithms {
      *                                     desired `index` for the `pivot`
      *                                     to be found.
      * @returns the pivot's index.
-     * @see swap(T *, int, int) - for swapping the elements in the array.
-     * @see swap(T &, T &) - for swapping the elements' indexes in the array.
+     * @see swap(K *, int, int) - for swapping the elements in the array.
+     * @see swap(K &, K &) - for swapping the elements' indexes in the array.
      */
     template<class T>
     static int partition(T *array, int lowestIndexPossible,
@@ -234,7 +234,7 @@ class my_algorithms {
      * @param serialSizeOfTheElementToLookFor The **serial size** of the element to look for.
      * @return the *value* of the element which
      *         @p serialSizeOfTheElementToLookFor is its **serial size**.
-     * @see  selectTheIthElementInItsSize_UnSecured(T *, int, int, int)
+     * @see  selectTheIthElementInItsSize_UnSecured(K *, int, int, int)
      */
     template<class T>
     static T
@@ -250,7 +250,7 @@ class my_algorithms {
      *
      * @param outputParameterForThisFunctionName output parameter
      *                                           to get this function's name.
-     * @see selection_TheIthElementInItsSize (T *, int, int)
+     * @see selection_TheIthElementInItsSize (K *, int, int)
      */
     template<class T>
     static T selection_TheIthElementInItsSize_(
@@ -322,7 +322,7 @@ class my_algorithms {
 
     /**
      * implements `quintuplet_TheIthElementInItsSize` as @e DIVISION = 5.
-     * @see quintuplet_TheIthElementInItsSize (T *, int, int)
+     * @see quintuplet_TheIthElementInItsSize (K *, int, int)
      */
     template<class T>
     static T
@@ -338,7 +338,7 @@ class my_algorithms {
      *
      * @param outputParameterForThisFunctionName output parameter
      *                                           to get this function's name.
-     * @see quintuplet_TheIthElementInItsSize (T *, int, int)
+     * @see quintuplet_TheIthElementInItsSize (K *, int, int)
      */
     template<class T>
     static T quintuplet_TheIthElementInItsSize_(
@@ -487,8 +487,8 @@ class my_algorithms {
      *                                        element to look for.
      * @return the *value* of the element which
      *         @p serialSizeOfTheElementToLookFor is its **serial size**.
-     * @see partition(T *, int, int)
-     * @see selectTheIthElementInItsSize(T *, int, int)
+     * @see partition(K *, int, int)
+     * @see selectTheIthElementInItsSize(K *, int, int)
      */
     template<class T>
     static T selectTheIthElementInItsSize_UnSecured(

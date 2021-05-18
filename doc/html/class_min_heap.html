@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9"/>
     <meta name="generator" content="Doxygen 1.9.1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>mivnei_netunim targil tichnuti 2: MinHeap&lt; T &gt; Class Template
+    <title>mivnei_netunim targil tichnuti 2: MinHeap&lt; K &gt; Class Template
         Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
@@ -104,9 +104,10 @@
     <div class="header">
         <div class="summary">
             <a href="#pub-methods">Public Member Functions</a> &#124;
+            <a href="#friends">Friends</a> &#124;
             <a href="class_min_heap-members.html">List of all members</a></div>
         <div class="headertitle">
-            <div class="title">MinHeap&lt; T &gt; Class Template Reference</div>
+            <div class="title">MinHeap&lt; K &gt; Class Template Reference</div>
         </div>
     </div><!--header-->
     <div class="contents">
@@ -117,18 +118,17 @@
         <p><code>#include &lt;<a class="el" href="_min_heap_8h_source.html">MinHeap.h</a>&gt;</code>
         </p>
         <div class="dynheader">
-            Inheritance diagram for MinHeap&lt; T &gt;:
+            Inheritance diagram for MinHeap&lt; K &gt;:
         </div>
         <div class="dyncontent">
             <div class="center">
-                <img src="class_min_heap.png" usemap="#MinHeap_3C_20T_20_3E_map"
+                <img src="class_min_heap.png" usemap="#MinHeap_3C_20K_20_3E_map"
                      alt=""/>
-                <map id="MinHeap_3C_20T_20_3E_map"
-                     name="MinHeap_3C_20T_20_3E_map">
+                <map id="MinHeap_3C_20K_20_3E_map"
+                     name="MinHeap_3C_20K_20_3E_map">
                     <area href="class_min_heap_a_d_t.html"
-                          title="This class represents an abstract Minimum-Heap."
-                          alt="MinHeapADT&lt; T &gt;" shape="rect"
-                          coords="0,0,119,24"/>
+                          alt="MinHeapADT&lt; K &gt;" shape="rect"
+                          coords="0,0,120,24"/>
                 </map>
             </div>
         </div>
@@ -138,85 +138,85 @@
                         name="pub-methods"></a>
                     Public Member Functions</h2></td>
             </tr>
-            <tr class="memitem:aa5de3a032452cf32b2488af5b46a6fff">
+            <tr class="memitem:a977646622eb07e4e320d6c57e5b28cc7">
                 <td class="memItemLeft" align="right" valign="top">&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap.html#aa5de3a032452cf32b2488af5b46a6fff">MinHeap</a>
-                    (int numberOfElements)
+                                                            href="class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7">MinHeap</a>
+                    (K *arrayToBuildFrom, int sizeOfArrayToBuildFrom)
                 </td>
             </tr>
-            <tr class="memdesc:aa5de3a032452cf32b2488af5b46a6fff">
+            <tr class="memdesc:a977646622eb07e4e320d6c57e5b28cc7">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">Constructor, initializes the
                     <em>array</em>. <a
-                            href="class_min_heap.html#aa5de3a032452cf32b2488af5b46a6fff">More...</a><br/>
+                            href="class_min_heap.html#a977646622eb07e4e320d6c57e5b28cc7">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:aa5de3a032452cf32b2488af5b46a6fff">
+            <tr class="separator:a977646622eb07e4e320d6c57e5b28cc7">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:a85395adbfda7cfb809081cbfb587c68e">
+            <tr class="memitem:aa29b514e11414ea045d5c4e14f5c6bc7">
                 <td class="memItemLeft" align="right" valign="top"><a
-                        id="a85395adbfda7cfb809081cbfb587c68e"></a>
+                        id="aa29b514e11414ea045d5c4e14f5c6bc7"></a>
                     virtual&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap.html#a85395adbfda7cfb809081cbfb587c68e">~MinHeap</a>
+                                                            href="class_min_heap.html#aa29b514e11414ea045d5c4e14f5c6bc7">~MinHeap</a>
                     ()
                 </td>
             </tr>
-            <tr class="memdesc:a85395adbfda7cfb809081cbfb587c68e">
+            <tr class="memdesc:aa29b514e11414ea045d5c4e14f5c6bc7">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">Destructor. <br/></td>
             </tr>
-            <tr class="separator:a85395adbfda7cfb809081cbfb587c68e">
+            <tr class="separator:aa29b514e11414ea045d5c4e14f5c6bc7">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:ac8a319d6e78b23a047c12897cc4ae021">
-                <td class="memItemLeft" align="right" valign="top">T *&#160;
+            <tr class="memitem:a4455aa1c5a79cfb41dbc2f414547adcb">
+                <td class="memItemLeft" align="right" valign="top">K *&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap.html#ac8a319d6e78b23a047c12897cc4ae021">deleteMin</a>
+                                                            href="class_min_heap.html#a4455aa1c5a79cfb41dbc2f414547adcb">deleteMin</a>
                     () override
                 </td>
             </tr>
-            <tr class="memdesc:ac8a319d6e78b23a047c12897cc4ae021">
+            <tr class="memdesc:a4455aa1c5a79cfb41dbc2f414547adcb">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">Deletes the <em>minimal element</em> in
                     the heap, and returns it. <a
-                            href="class_min_heap.html#ac8a319d6e78b23a047c12897cc4ae021">More...</a><br/>
+                            href="class_min_heap.html#a4455aa1c5a79cfb41dbc2f414547adcb">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:ac8a319d6e78b23a047c12897cc4ae021">
+            <tr class="separator:a4455aa1c5a79cfb41dbc2f414547adcb">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:af40f9ea29e5f76b07d17efabf3ebeb2c">
+            <tr class="memitem:ae07bc19f40d54b22a2cb846e9a9f2ac2">
                 <td class="memItemLeft" align="right" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap.html#af40f9ea29e5f76b07d17efabf3ebeb2c">insert</a>
-                    (T &amp;elementToInsert) override
+                                                            href="class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2">insert</a>
+                    (K &amp;elementToInsert) override
                 </td>
             </tr>
-            <tr class="memdesc:af40f9ea29e5f76b07d17efabf3ebeb2c">
+            <tr class="memdesc:ae07bc19f40d54b22a2cb846e9a9f2ac2">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">Inserts the <code>elementToInsert</code>
                     to the heap. <a
-                            href="class_min_heap.html#af40f9ea29e5f76b07d17efabf3ebeb2c">More...</a><br/>
+                            href="class_min_heap.html#ae07bc19f40d54b22a2cb846e9a9f2ac2">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:af40f9ea29e5f76b07d17efabf3ebeb2c">
+            <tr class="separator:ae07bc19f40d54b22a2cb846e9a9f2ac2">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:a810d4ad939e0fab89f314473a9d0d1b5">
+            <tr class="memitem:a6add4589f1a3dad4755d67e59296c76f">
                 <td class="memItemLeft" align="right" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap.html#a810d4ad939e0fab89f314473a9d0d1b5">fixHeap</a>
+                                                            href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">fixHeap</a>
                     (int indexToFixFrom) override
                 </td>
             </tr>
-            <tr class="memdesc:a810d4ad939e0fab89f314473a9d0d1b5">
+            <tr class="memdesc:a6add4589f1a3dad4755d67e59296c76f">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">This method handles a heap that is <em>valid</em>
                     from the root downwards until the
@@ -224,60 +224,96 @@
                     downwards, the heap is <em>invalid</em> - means: that the
                     <code>node</code> in the <code>indexToFixFrom</code> is no
                     smaller than both of its children. <a
-                            href="class_min_heap.html#a810d4ad939e0fab89f314473a9d0d1b5">More...</a><br/>
+                            href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:a810d4ad939e0fab89f314473a9d0d1b5">
+            <tr class="separator:a6add4589f1a3dad4755d67e59296c76f">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:ad9859527259ab5721e97f14b1af8e7b5">
+            <tr class="memitem:a1768c62930568dc766d1144b0f540cdd">
                 <td class="memItemLeft" align="right" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap.html#ad9859527259ab5721e97f14b1af8e7b5">buildHeap</a>
-                    (T *arrayToBuildFrom) override
+                                                            href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">buildHeap</a>
+                    (K *arrayToBuildFrom, int sizeOfArrayToBuildFrom) override
                 </td>
             </tr>
-            <tr class="memdesc:ad9859527259ab5721e97f14b1af8e7b5">
+            <tr class="memdesc:a1768c62930568dc766d1144b0f540cdd">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">Builds a <b>Minimum-Heap</b> by giving an
-                    arrayToBuildFrom of elements as a parameter. <a
-                            href="class_min_heap.html#ad9859527259ab5721e97f14b1af8e7b5">More...</a><br/>
+                    <code>arrayToBuildFrom</code> of elements as a parameter. <a
+                            href="class_min_heap.html#a1768c62930568dc766d1144b0f540cdd">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:ad9859527259ab5721e97f14b1af8e7b5">
+            <tr class="separator:a1768c62930568dc766d1144b0f540cdd">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="inherit_header pub_methods_class_min_heap_a_d_t">
-                <td colspan="2"
-                    onclick="javascript:toggleInherit('pub_methods_class_min_heap_a_d_t')">
-                    <img src="closed.png" alt="-"/>&#160;Public Member Functions
-                    inherited from <a class="el"
-                                      href="class_min_heap_a_d_t.html">MinHeapADT&lt;
-                    T &gt;</a></td>
-            </tr>
-            <tr class="memitem:a99c7462568a148c0ece6b65c38a845e8 inherit pub_methods_class_min_heap_a_d_t">
-                <td class="memItemLeft" align="right" valign="top">virtual void&#160;</td>
+            <tr class="memitem:a353fc44a9e53bd044b2c596f6016f99e">
+                <td class="memItemLeft" align="right" valign="top">bool&#160;
+                </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_min_heap_a_d_t.html#a99c7462568a148c0ece6b65c38a845e8">insert</a>
-                    (T elementToInsert)=0
+                                                            href="class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e">isEmpty</a>
+                    () override
                 </td>
             </tr>
-            <tr class="memdesc:a99c7462568a148c0ece6b65c38a845e8 inherit pub_methods_class_min_heap_a_d_t">
+            <tr class="memdesc:a353fc44a9e53bd044b2c596f6016f99e">
                 <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">Inserts the <code>elementToInsert</code>
-                    to the heap. <a
-                            href="class_min_heap_a_d_t.html#a99c7462568a148c0ece6b65c38a845e8">More...</a><br/>
+                <td class="mdescRight">boolean value whether this heap empty or
+                    not.
+                    <a href="class_min_heap.html#a353fc44a9e53bd044b2c596f6016f99e">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:a99c7462568a148c0ece6b65c38a845e8 inherit pub_methods_class_min_heap_a_d_t">
+            <tr class="separator:a353fc44a9e53bd044b2c596f6016f99e">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a30c28c8b66c9ba532466690c4731ca39">
+                <td class="memItemLeft" align="right" valign="top"><a
+                        id="a30c28c8b66c9ba532466690c4731ca39"></a>
+                    void&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_min_heap.html#a30c28c8b66c9ba532466690c4731ca39">makeEmpty</a>
+                    () override
+                </td>
+            </tr>
+            <tr class="memdesc:a30c28c8b66c9ba532466690c4731ca39">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">clears the heap from elements. <br/></td>
+            </tr>
+            <tr class="separator:a30c28c8b66c9ba532466690c4731ca39">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+        </table>
+        <table class="memberdecls">
+            <tr class="heading">
+                <td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+                    Friends</h2></td>
+            </tr>
+            <tr class="memitem:a81a7799f8217c5db84b7eec767932d2f">
+                <td class="memItemLeft" align="right" valign="top"><a
+                        id="a81a7799f8217c5db84b7eec767932d2f"></a>
+                    std::ostream &amp;&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f">operator&lt;&lt;</a>
+                    (std::ostream &amp;os, const <a class="el"
+                                                    href="class_min_heap.html">MinHeap</a>
+                    &amp;heap)
+                </td>
+            </tr>
+            <tr class="memdesc:a81a7799f8217c5db84b7eec767932d2f">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">std::ostream *operator &lt;&lt;* print
+                    method. <br/></td>
+            </tr>
+            <tr class="separator:a81a7799f8217c5db84b7eec767932d2f">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
         <a name="details" id="details"></a>
         <h2 class="groupheader">Detailed Description</h2>
-        <div class="textblock"><h3>template&lt;typename T&gt;<br/>
-            class MinHeap&lt; T &gt;</h3>
+        <div class="textblock"><h3>template&lt;typename K&gt;<br/>
+            class MinHeap&lt; K &gt;</h3>
 
             <p>This class implements a <b>Minimum-Heap</b>. </p>
             <dl class="tparams">
@@ -285,8 +321,9 @@
                 <dd>
                     <table class="tparams">
                         <tr>
-                            <td class="paramname">T</td>
-                            <td>type of element in the <em>Heap</em>.</td>
+                            <td class="paramname">K</td>
+                            <td><b>key</b> type of element in the <em>Heap</em>.
+                            </td>
                         </tr>
                     </table>
                 </dd>
@@ -307,15 +344,15 @@
             </dl>
         </div>
         <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-        <a id="aa5de3a032452cf32b2488af5b46a6fff"></a>
+        <a id="a977646622eb07e4e320d6c57e5b28cc7"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#aa5de3a032452cf32b2488af5b46a6fff">&#9670;&nbsp;</a></span>MinHeap()
+                href="#a977646622eb07e4e320d6c57e5b28cc7">&#9670;&nbsp;</a></span>MinHeap()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
                 <div class="memtemplate">
-                    template&lt;typename T &gt;
+                    template&lt;typename K &gt;
                 </div>
                 <table class="mlabels">
                     <tr>
@@ -324,14 +361,26 @@
                                 <tr>
                                     <td class="memname"><a class="el"
                                                            href="class_min_heap.html">MinHeap</a>&lt;
-                                        T &gt;::<a class="el"
+                                        K &gt;::<a class="el"
                                                    href="class_min_heap.html">MinHeap</a>
                                     </td>
                                     <td>(</td>
-                                    <td class="paramtype">int&#160;</td>
+                                    <td class="paramtype">K *&#160;</td>
                                     <td class="paramname">
-                                        <em>numberOfElements</em></td>
+                                        <em>arrayToBuildFrom</em>,
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">int&#160;</td>
+                                    <td class="paramname"><em>sizeOfArrayToBuildFrom</em>&#160;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
                                     <td>)</td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                             </table>
@@ -363,15 +412,15 @@
             </div>
         </div>
         <h2 class="groupheader">Member Function Documentation</h2>
-        <a id="ad9859527259ab5721e97f14b1af8e7b5"></a>
+        <a id="a1768c62930568dc766d1144b0f540cdd"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#ad9859527259ab5721e97f14b1af8e7b5">&#9670;&nbsp;</a></span>buildHeap()
+                href="#a1768c62930568dc766d1144b0f540cdd">&#9670;&nbsp;</a></span>buildHeap()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
                 <div class="memtemplate">
-                    template&lt;typename T &gt;
+                    template&lt;typename K &gt;
                 </div>
                 <table class="mlabels">
                     <tr>
@@ -380,13 +429,25 @@
                                 <tr>
                                     <td class="memname">void <a class="el"
                                                                 href="class_min_heap.html">MinHeap</a>&lt;
-                                        T &gt;::buildHeap
+                                        K &gt;::buildHeap
                                     </td>
                                     <td>(</td>
-                                    <td class="paramtype">T *&#160;</td>
+                                    <td class="paramtype">K *&#160;</td>
                                     <td class="paramname">
-                                        <em>arrayToBuildFrom</em></td>
+                                        <em>arrayToBuildFrom</em>,
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">int&#160;</td>
+                                    <td class="paramname"><em>sizeOfArrayToBuildFrom</em>&#160;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
                                     <td>)</td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                             </table>
@@ -401,8 +462,8 @@
             </div>
             <div class="memdoc">
 
-                <p>Builds a <b>Minimum-Heap</b> by giving an arrayToBuildFrom of
-                    elements as a parameter. </p>
+                <p>Builds a <b>Minimum-Heap</b> by giving an <code>arrayToBuildFrom</code>
+                    of elements as a parameter. </p>
                 <dl class="params">
                     <dt>Parameters</dt>
                     <dd>
@@ -413,34 +474,41 @@
                                     heap from.
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="paramname">sizeOfArrayToBuildFrom
+                                </td>
+                                <td>the size of the array to build the heap
+                                    from.
+                                </td>
+                            </tr>
                         </table>
                     </dd>
                 </dl>
 
                 <p>Implements <a class="el"
-                                 href="class_min_heap_a_d_t.html#a554c8d13216f2d7213de778de20f00f5">MinHeapADT&lt;
-                    T &gt;</a>.</p>
+                                 href="class_min_heap_a_d_t.html#af0b299a6add7dc8535fc73843dbc9e94">MinHeapADT&lt;
+                    K &gt;</a>.</p>
 
             </div>
         </div>
-        <a id="ac8a319d6e78b23a047c12897cc4ae021"></a>
+        <a id="a4455aa1c5a79cfb41dbc2f414547adcb"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#ac8a319d6e78b23a047c12897cc4ae021">&#9670;&nbsp;</a></span>deleteMin()
+                href="#a4455aa1c5a79cfb41dbc2f414547adcb">&#9670;&nbsp;</a></span>deleteMin()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
                 <div class="memtemplate">
-                    template&lt;typename T &gt;
+                    template&lt;typename K &gt;
                 </div>
                 <table class="mlabels">
                     <tr>
                         <td class="mlabels-left">
                             <table class="memname">
                                 <tr>
-                                    <td class="memname">T* <a class="el"
+                                    <td class="memname">K* <a class="el"
                                                               href="class_min_heap.html">MinHeap</a>&lt;
-                                        T &gt;::deleteMin
+                                        K &gt;::deleteMin
                                     </td>
                                     <td>(</td>
                                     <td class="paramname"></td>
@@ -482,26 +550,26 @@
                 <dl class="section see">
                     <dt>See also</dt>
                     <dd><a class="el"
-                           href="class_min_heap.html#a810d4ad939e0fab89f314473a9d0d1b5"
+                           href="class_min_heap.html#a6add4589f1a3dad4755d67e59296c76f"
                            title="This method handles a heap that is valid from the root downwards until the indexToFixFrom,...">fixHeap(int)</a>
                     </dd>
                 </dl>
 
                 <p>Implements <a class="el"
                                  href="class_min_heap_a_d_t.html#adb9eaff03712a11ba5737905ec60fd24">MinHeapADT&lt;
-                    T &gt;</a>.</p>
+                    K &gt;</a>.</p>
 
             </div>
         </div>
-        <a id="a810d4ad939e0fab89f314473a9d0d1b5"></a>
+        <a id="a6add4589f1a3dad4755d67e59296c76f"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#a810d4ad939e0fab89f314473a9d0d1b5">&#9670;&nbsp;</a></span>fixHeap()
+                href="#a6add4589f1a3dad4755d67e59296c76f">&#9670;&nbsp;</a></span>fixHeap()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
                 <div class="memtemplate">
-                    template&lt;typename T &gt;
+                    template&lt;typename K &gt;
                 </div>
                 <table class="mlabels">
                     <tr>
@@ -510,7 +578,7 @@
                                 <tr>
                                     <td class="memname">void <a class="el"
                                                                 href="class_min_heap.html">MinHeap</a>&lt;
-                                        T &gt;::fixHeap
+                                        K &gt;::fixHeap
                                     </td>
                                     <td>(</td>
                                     <td class="paramtype">int&#160;</td>
@@ -568,19 +636,19 @@
 
                 <p>Implements <a class="el"
                                  href="class_min_heap_a_d_t.html#a64538c6ebe1333cc4754ed246762c8ee">MinHeapADT&lt;
-                    T &gt;</a>.</p>
+                    K &gt;</a>.</p>
 
             </div>
         </div>
-        <a id="af40f9ea29e5f76b07d17efabf3ebeb2c"></a>
+        <a id="ae07bc19f40d54b22a2cb846e9a9f2ac2"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#af40f9ea29e5f76b07d17efabf3ebeb2c">&#9670;&nbsp;</a></span>insert()
+                href="#ae07bc19f40d54b22a2cb846e9a9f2ac2">&#9670;&nbsp;</a></span>insert()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
                 <div class="memtemplate">
-                    template&lt;typename T &gt;
+                    template&lt;typename K &gt;
                 </div>
                 <table class="mlabels">
                     <tr>
@@ -589,10 +657,10 @@
                                 <tr>
                                     <td class="memname">void <a class="el"
                                                                 href="class_min_heap.html">MinHeap</a>&lt;
-                                        T &gt;::insert
+                                        K &gt;::insert
                                     </td>
                                     <td>(</td>
-                                    <td class="paramtype">T &amp;&#160;</td>
+                                    <td class="paramtype">K &amp;&#160;</td>
                                     <td class="paramname">
                                         <em>elementToInsert</em></td>
                                     <td>)</td>
@@ -603,7 +671,8 @@
                         <td class="mlabels-right">
                             <span class="mlabels"><span
                                     class="mlabel">inline</span><span
-                                    class="mlabel">override</span></span></td>
+                                    class="mlabel">override</span><span
+                                    class="mlabel">virtual</span></span></td>
                     </tr>
                 </table>
             </div>
@@ -632,6 +701,60 @@
                         </table>
                     </dd>
                 </dl>
+
+                <p>Implements <a class="el"
+                                 href="class_min_heap_a_d_t.html#aa05d5e8f1d0cbf2c377f211673b2db3a">MinHeapADT&lt;
+                    K &gt;</a>.</p>
+
+            </div>
+        </div>
+        <a id="a353fc44a9e53bd044b2c596f6016f99e"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a353fc44a9e53bd044b2c596f6016f99e">&#9670;&nbsp;</a></span>isEmpty()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <div class="memtemplate">
+                    template&lt;typename K &gt;
+                </div>
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">bool <a class="el"
+                                                                href="class_min_heap.html">MinHeap</a>&lt;
+                                        K &gt;::isEmpty
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramname"></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">override</span><span
+                                    class="mlabel">virtual</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>boolean value whether this heap empty or not. </p>
+                <dl class="section return">
+                    <dt>Returns</dt>
+                    <dd>boolean value. <em>true</em> if the heap is empty, <em>false</em>
+                        if the heap is not empty.
+                    </dd>
+                </dl>
+
+                <p>Implements <a class="el"
+                                 href="class_min_heap_a_d_t.html#a9d109fdc463892e5fe33c97380f92716">MinHeapADT&lt;
+                    K &gt;</a>.</p>
 
             </div>
         </div>

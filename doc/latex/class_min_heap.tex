@@ -1,5 +1,5 @@
-\hypertarget{class_min_heap}{}\doxysection{Min\+Heap$<$ T $>$ Class Template Reference}
-\label{class_min_heap}\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\hypertarget{class_min_heap}{}\doxysection{Min\+Heap$<$ K $>$ Class Template Reference}
+\label{class_min_heap}\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
 
 
 This class implements a {\bfseries{Minimum-\/\+Heap}}.  
@@ -9,7 +9,7 @@ This class implements a {\bfseries{Minimum-\/\+Heap}}.
 
 {\ttfamily \#include $<$Min\+Heap.\+h$>$}
 
-Inheritance diagram for Min\+Heap$<$ T $>$\+:\begin{figure}[H]
+Inheritance diagram for Min\+Heap$<$ K $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_min_heap}
@@ -18,30 +18,41 @@ Inheritance diagram for Min\+Heap$<$ T $>$\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_min_heap_aa5de3a032452cf32b2488af5b46a6fff}{Min\+Heap}} (int number\+Of\+Elements)
+\mbox{\hyperlink{class_min_heap_a977646622eb07e4e320d6c57e5b28cc7}{Min\+Heap}} (K $\ast$array\+To\+Build\+From, int size\+Of\+Array\+To\+Build\+From)
 \begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_min_heap_a85395adbfda7cfb809081cbfb587c68e}\label{class_min_heap_a85395adbfda7cfb809081cbfb587c68e}} 
-virtual \mbox{\hyperlink{class_min_heap_a85395adbfda7cfb809081cbfb587c68e}{$\sim$\+Min\+Heap}} ()
+\mbox{\Hypertarget{class_min_heap_aa29b514e11414ea045d5c4e14f5c6bc7}\label{class_min_heap_aa29b514e11414ea045d5c4e14f5c6bc7}} 
+virtual \mbox{\hyperlink{class_min_heap_aa29b514e11414ea045d5c4e14f5c6bc7}{$\sim$\+Min\+Heap}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-T $\ast$ \mbox{\hyperlink{class_min_heap_ac8a319d6e78b23a047c12897cc4ae021}{delete\+Min}} () override
+K $\ast$ \mbox{\hyperlink{class_min_heap_a4455aa1c5a79cfb41dbc2f414547adcb}{delete\+Min}} () override
 \begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} in the heap, and returns it. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_min_heap_af40f9ea29e5f76b07d17efabf3ebeb2c}{insert}} (T \&element\+To\+Insert) override
+void \mbox{\hyperlink{class_min_heap_ae07bc19f40d54b22a2cb846e9a9f2ac2}{insert}} (K \&element\+To\+Insert) override
 \begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_min_heap_a810d4ad939e0fab89f314473a9d0d1b5}{fix\+Heap}} (int index\+To\+Fix\+From) override
+void \mbox{\hyperlink{class_min_heap_a6add4589f1a3dad4755d67e59296c76f}{fix\+Heap}} (int index\+To\+Fix\+From) override
 \begin{DoxyCompactList}\small\item\em This method handles a heap that is {\itshape valid} from the root downwards until the {\ttfamily index\+To\+Fix\+From}, which from there and on downwards, the heap is {\itshape invalid} -\/ means\+: that the {\ttfamily node} in the {\ttfamily index\+To\+Fix\+From} is no smaller than both of its children. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_min_heap_ad9859527259ab5721e97f14b1af8e7b5}{build\+Heap}} (T $\ast$array\+To\+Build\+From) override
-\begin{DoxyCompactList}\small\item\em Builds a {\bfseries{Minimum-\/\+Heap}} by giving an array\+To\+Build\+From of elements as a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_min_heap_a1768c62930568dc766d1144b0f540cdd}{build\+Heap}} (K $\ast$array\+To\+Build\+From, int size\+Of\+Array\+To\+Build\+From) override
+\begin{DoxyCompactList}\small\item\em Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\+From} of elements as a parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_min_heap_a353fc44a9e53bd044b2c596f6016f99e}{is\+Empty}} () override
+\begin{DoxyCompactList}\small\item\em boolean value whether this heap empty or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_min_heap_a30c28c8b66c9ba532466690c4731ca39}\label{class_min_heap_a30c28c8b66c9ba532466690c4731ca39}} 
+void \mbox{\hyperlink{class_min_heap_a30c28c8b66c9ba532466690c4731ca39}{make\+Empty}} () override
+\begin{DoxyCompactList}\small\item\em clears the heap from elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_min_heap_a81a7799f8217c5db84b7eec767932d2f}\label{class_min_heap_a81a7799f8217c5db84b7eec767932d2f}} 
+std\+::ostream \& \mbox{\hyperlink{class_min_heap_a81a7799f8217c5db84b7eec767932d2f}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_min_heap}{Min\+Heap}} \&heap)
+\begin{DoxyCompactList}\small\item\em std\+::ostream $\ast$operator $<$$<$$\ast$ print method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$typename T$>$\newline
-class Min\+Heap$<$ T $>$}
+\subsubsection*{template$<$typename K$>$\newline
+class Min\+Heap$<$ K $>$}
 
 This class implements a {\bfseries{Minimum-\/\+Heap}}. 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em T} & type of element in the {\itshape Heap}. \\
+{\em K} & {\bfseries{key}} type of element in the {\itshape Heap}. \\
 \hline
 \end{DoxyTemplParams}
 \begin{DoxyNote}{Note}
@@ -56,12 +67,12 @@ Tal Yacob, ID\+: 208632778.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_min_heap_aa5de3a032452cf32b2488af5b46a6fff}\label{class_min_heap_aa5de3a032452cf32b2488af5b46a6fff}} 
-\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!MinHeap@{MinHeap}}
-\index{MinHeap@{MinHeap}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\mbox{\Hypertarget{class_min_heap_a977646622eb07e4e320d6c57e5b28cc7}\label{class_min_heap_a977646622eb07e4e320d6c57e5b28cc7}} 
+\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}!MinHeap@{MinHeap}}
+\index{MinHeap@{MinHeap}!MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
 \doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}\item[{K $\ast$}]{array\+To\+Build\+From,  }\item[{int}]{size\+Of\+Array\+To\+Build\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -75,32 +86,34 @@ Constructor, initializes the {\itshape array}.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_min_heap_ad9859527259ab5721e97f14b1af8e7b5}\label{class_min_heap_ad9859527259ab5721e97f14b1af8e7b5}} 
-\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!buildHeap@{buildHeap}}
-\index{buildHeap@{buildHeap}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\mbox{\Hypertarget{class_min_heap_a1768c62930568dc766d1144b0f540cdd}\label{class_min_heap_a1768c62930568dc766d1144b0f540cdd}} 
+\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}!buildHeap@{buildHeap}}
+\index{buildHeap@{buildHeap}!MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
 \doxysubsubsection{\texorpdfstring{buildHeap()}{buildHeap()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::build\+Heap (\begin{DoxyParamCaption}\item[{T $\ast$}]{array\+To\+Build\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K $>$\+::build\+Heap (\begin{DoxyParamCaption}\item[{K $\ast$}]{array\+To\+Build\+From,  }\item[{int}]{size\+Of\+Array\+To\+Build\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Builds a {\bfseries{Minimum-\/\+Heap}} by giving an array\+To\+Build\+From of elements as a parameter. 
+Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\+From} of elements as a parameter. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em array\+To\+Build\+From} & the given array of elements to build the heap from. \\
 \hline
+{\em size\+Of\+Array\+To\+Build\+From} & the size of the array to build the heap from. \\
+\hline
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{class_min_heap_a_d_t_a554c8d13216f2d7213de778de20f00f5}{Min\+Heap\+ADT$<$ T $>$}}.
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_af0b299a6add7dc8535fc73843dbc9e94}{Min\+Heap\+ADT$<$ K $>$}}.
 
-\mbox{\Hypertarget{class_min_heap_ac8a319d6e78b23a047c12897cc4ae021}\label{class_min_heap_ac8a319d6e78b23a047c12897cc4ae021}} 
-\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!deleteMin@{deleteMin}}
-\index{deleteMin@{deleteMin}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\mbox{\Hypertarget{class_min_heap_a4455aa1c5a79cfb41dbc2f414547adcb}\label{class_min_heap_a4455aa1c5a79cfb41dbc2f414547adcb}} 
+\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}!deleteMin@{deleteMin}}
+\index{deleteMin@{deleteMin}!MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
 \doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-T$\ast$ \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::delete\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+K$\ast$ \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K $>$\+::delete\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -116,18 +129,18 @@ in case the {\ttfamily logical\+Size} of the {\itshape array} is 0, this method 
 the {\itshape minimal element} removed from the heap. 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_min_heap_a810d4ad939e0fab89f314473a9d0d1b5}{fix\+Heap(int)}} 
+\mbox{\hyperlink{class_min_heap_a6add4589f1a3dad4755d67e59296c76f}{fix\+Heap(int)}} 
 \end{DoxySeeAlso}
 
 
-Implements \mbox{\hyperlink{class_min_heap_a_d_t_adb9eaff03712a11ba5737905ec60fd24}{Min\+Heap\+ADT$<$ T $>$}}.
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_adb9eaff03712a11ba5737905ec60fd24}{Min\+Heap\+ADT$<$ K $>$}}.
 
-\mbox{\Hypertarget{class_min_heap_a810d4ad939e0fab89f314473a9d0d1b5}\label{class_min_heap_a810d4ad939e0fab89f314473a9d0d1b5}} 
-\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!fixHeap@{fixHeap}}
-\index{fixHeap@{fixHeap}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\mbox{\Hypertarget{class_min_heap_a6add4589f1a3dad4755d67e59296c76f}\label{class_min_heap_a6add4589f1a3dad4755d67e59296c76f}} 
+\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}!fixHeap@{fixHeap}}
+\index{fixHeap@{fixHeap}!MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
 \doxysubsubsection{\texorpdfstring{fixHeap()}{fixHeap()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::fix\+Heap (\begin{DoxyParamCaption}\item[{int}]{index\+To\+Fix\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K $>$\+::fix\+Heap (\begin{DoxyParamCaption}\item[{int}]{index\+To\+Fix\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -146,14 +159,14 @@ there is no use to give {\ttfamily index\+To\+Fix\+From} that is larger than {\t
 \end{DoxyAttention}
 
 
-Implements \mbox{\hyperlink{class_min_heap_a_d_t_a64538c6ebe1333cc4754ed246762c8ee}{Min\+Heap\+ADT$<$ T $>$}}.
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_a64538c6ebe1333cc4754ed246762c8ee}{Min\+Heap\+ADT$<$ K $>$}}.
 
-\mbox{\Hypertarget{class_min_heap_af40f9ea29e5f76b07d17efabf3ebeb2c}\label{class_min_heap_af40f9ea29e5f76b07d17efabf3ebeb2c}} 
-\index{MinHeap$<$ T $>$@{MinHeap$<$ T $>$}!insert@{insert}}
-\index{insert@{insert}!MinHeap$<$ T $>$@{MinHeap$<$ T $>$}}
+\mbox{\Hypertarget{class_min_heap_ae07bc19f40d54b22a2cb846e9a9f2ac2}\label{class_min_heap_ae07bc19f40d54b22a2cb846e9a9f2ac2}} 
+\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}!insert@{insert}}
+\index{insert@{insert}!MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T \&}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K $>$\+::insert (\begin{DoxyParamCaption}\item[{K \&}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -169,6 +182,28 @@ Inserts the {\ttfamily element\+To\+Insert} to the heap.
 {\em std\+::runtime\+\_\+error} & in case the heap is already full. \\
 \hline
 \end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_aa05d5e8f1d0cbf2c377f211673b2db3a}{Min\+Heap\+ADT$<$ K $>$}}.
+
+\mbox{\Hypertarget{class_min_heap_a353fc44a9e53bd044b2c596f6016f99e}\label{class_min_heap_a353fc44a9e53bd044b2c596f6016f99e}} 
+\index{MinHeap$<$ K $>$@{MinHeap$<$ K $>$}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!MinHeap$<$ K $>$@{MinHeap$<$ K $>$}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+bool \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+boolean value whether this heap empty or not. 
+
+\begin{DoxyReturn}{Returns}
+boolean value. {\itshape true} if the heap is empty, {\itshape false} if the heap is not empty. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_a9d109fdc463892e5fe33c97380f92716}{Min\+Heap\+ADT$<$ K $>$}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
