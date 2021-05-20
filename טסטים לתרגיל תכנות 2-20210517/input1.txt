@@ -1,4 +1,0 @@
-5
-5
-input_file_1.txt
-output_file_1.txt

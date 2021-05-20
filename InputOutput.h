@@ -36,9 +36,12 @@ class InputOutput {
     /// The name of the 'Measure' file:
     static constexpr char *fileName = (char *) "Measure.txt";
 
+
     static bool checkLegalUnsignedIntInput(my_string &input);
 
     static bool checkLegalDoubleInput(my_string &input);
+
+    static bool checkLegalIntInput(my_string &input);
 
     int getSize();
 
@@ -68,6 +71,13 @@ class InputOutput {
     }
 
     ~InputOutput();
+
+    /* -- Getters & Setters -- */
+
+    int                getN() const;
+    int                getK() const;
+    const std::string &getInputFileName() const;
+    const std::string &getOutputFileName() const;
 
     /**
      * @brief gets all inputs from the user.
@@ -279,6 +289,49 @@ class InputOutput {
         /* Create InputOutput object */
         return new InputOutput(N, K, INPUT_FILE_NAME, OUTPUT_FILE_NAME);
     }
+
+    /**
+     * @brief This method gets the `array` specified in the *INPUT_FILE*
+     *        provided by the *INPUT_FILE_NAME*.
+     *
+     * @return the *int* array specified in the *INPUT_FILE* .
+     * @throws std::runtime_error in case the *file* specified by the
+     *         name: `INPUT_FILE_NAME` could not be found.
+     */
+    int *getIntArrayFromInputFile() {
+        std::ifstream file(INPUT_FILE_NAME);
+        if (!file) {
+
+            /* Could not find the file. Throw a message. */
+            std::string message;
+            message.append("Could not find the file: ");
+            message.append(INPUT_FILE_NAME);
+            message.append("\n");
+
+            // TODO: change to `wrong input`
+            throw std::runtime_error(message);
+        }
+
+        auto *array = new int[N];
+        int   i     = 0;
+        while (i < N) {
+            try {
+                array[i] = getInt(file);
+            } catch (std::exception &e) {
+                delete[] array;
+                throw;
+            }
+            i++;
+        }
+        // TODO: check the loop stop condition - check `eof`?
+
+        file.close();
+        return array;
+    }
+
+    int         getUnsignedInt(std::istream &is, int size);
+    int         getInt(std::istream &is);
+    static bool checkLegalIntInput(std::string &input);
 };
 
 #endif //MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H

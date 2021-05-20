@@ -1,4 +1,0 @@
-5
--3
-input_file_3error.txt
-output_file_3error.txt

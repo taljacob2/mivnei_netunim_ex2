@@ -27,12 +27,16 @@ int InputOutput::getSize() noexcept(false) {
 }
 
 int InputOutput::getSerialSizeOfTheElementToLookFor(int size) noexcept(false) {
+    return getUnsignedInt(std::cin, size);
+}
+
+int InputOutput::getUnsignedInt(std::istream &is, int size) noexcept(false) {
 
     // get the serialSizeOfTheElementToLookFor:
     /* std::cout << "Please input the serialSizeOfTheElementToLookFor in the "
                  "Array: "; */
     int serialSizeOfTheElementToLookFor;
-    std::cin >> _input;
+    is >> _input;
     if (checkLegalUnsignedIntInput(_input)) {
 
         // if this is a legal input, set as the size of the array:
@@ -48,6 +52,23 @@ int InputOutput::getSerialSizeOfTheElementToLookFor(int size) noexcept(false) {
                     "wrong input";
             throw std::range_error(msg.getStr());
         }
+    } else {
+        my_string msg =
+                /*"Found an illegal input: " + _input + "\nExiting program...";*/
+                "wrong input";
+        throw std::runtime_error(msg.getStr());
+    }
+}
+
+int InputOutput::getInt(std::istream &is) noexcept(false) {
+
+    // get the intNumber.
+    std::string stringInput;
+    std::getline(is, stringInput);
+    if (checkLegalIntInput(stringInput)) {
+
+        // if this is a legal input, return it.
+        return atoi(stringInput.c_str());
     } else {
         my_string msg =
                 /*"Found an illegal input: " + _input + "\nExiting program...";*/
@@ -106,6 +127,54 @@ bool InputOutput::checkLegalUnsignedIntInput(my_string &input) {
     return true; // input is valid.
 }
 
+bool InputOutput::checkLegalIntInput(my_string &input) {
+    bool returnValue = false;
+    int  i           = 0;
+    for (; i < input.getLength(); i++) {
+        if ((input[i] == '+') || (input[i] == '-')) {
+            if (i == 0) {
+
+                /* Okay, only if this is the `first` char in the string. */
+                continue;
+            } else {
+
+                /* This is not the `first` char in the string. */
+                break;
+            }
+        } else if (!(('0' <= input[i]) && (input[i] <= '9'))) {
+
+            /* If this is not a number. */
+            break;
+        }
+    }
+    if (i == input.getLength()) { returnValue = true; }
+    return returnValue;
+}
+
+bool InputOutput::checkLegalIntInput(std::string &input) {
+    bool returnValue = false;
+    int  i           = 0;
+    for (; i < input.length(); i++) {
+        if ((input[i] == '+') || (input[i] == '-')) {
+            if (i == 0) {
+
+                /* Okay, only if this is the `first` char in the string. */
+                continue;
+            } else {
+
+                /* This is not the `first` char in the string. */
+                break;
+            }
+        } else if (!(('0' <= input[i]) && (input[i] <= '9'))) {
+
+            /* If this is not a number. */
+            break;
+        }
+    }
+    if (i == input.length()) { returnValue = true; }
+    return returnValue;
+}
+
 bool InputOutput::checkLegalDoubleInput(my_string &input) {
     unsigned char precision  = 0; // current digits after the dot.
     bool          dotPassed  = false;
@@ -139,4 +208,18 @@ bool InputOutput::checkLegalDoubleInput(my_string &input) {
         return false;
     }
     return true;
+}
+
+/* -- Getters & Setters -- */
+
+int InputOutput::getN() const { return N; }
+
+int InputOutput::getK() const { return K; }
+
+const std::string &InputOutput::getInputFileName() const {
+    return INPUT_FILE_NAME;
+}
+
+const std::string &InputOutput::getOutputFileName() const {
+    return OUTPUT_FILE_NAME;
 }

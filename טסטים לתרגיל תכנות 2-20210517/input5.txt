@@ -1,4 +1,0 @@
-370
-3
-input_file_5.txt
-output_file_5.txt

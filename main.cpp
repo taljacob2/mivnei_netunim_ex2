@@ -12,7 +12,24 @@
 int main() {
 
     /* Receive input, and create an InputOutput object */
-    InputOutput *inputOutput = InputOutput::factoryInputOutput();
+    InputOutput *inputOutput                = InputOutput::factoryInputOutput();
+    int *        arrayReceivedFromInputFile = nullptr;
+    try {
+        arrayReceivedFromInputFile = inputOutput->getIntArrayFromInputFile();
+    } catch (std::exception &e) {
+        std::cerr << e.what();
+
+        /* Exit program with an error. */
+        delete inputOutput;
+        return 2;
+    }
+
+    /* check: print array received: */
+    for (int i = 0; i < inputOutput->getN(); i++) {
+        std::cout << arrayReceivedFromInputFile[i] << " ";
+    }
+    std::cout << "\n";
+
 
     // /* Create a `Minimum-Heap` from the array. */
     // MinHeap<int, std::string> minHeap(arrayToBuildFrom, N);
@@ -20,6 +37,7 @@ int main() {
     //
     // delete[] arrayToBuildFrom;
 
+    delete[] arrayReceivedFromInputFile;
     delete inputOutput;
     return 0;
 }
