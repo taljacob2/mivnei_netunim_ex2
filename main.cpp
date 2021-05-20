@@ -12,7 +12,7 @@ int main() {
 
     /* XXX MY TEST: Generating an Input Array */
 
-    int   N                = 10;
+    int   N                = 1;
     auto *arrayToBuildFrom = new Entry<int, std::string>[N];
     for (int i = 0; i < N; i++) {
         arrayToBuildFrom[i] =
@@ -25,6 +25,18 @@ int main() {
 
     /* XXX MY TEST: printing heap */
     std::cout << minHeap;
+
+    /* checking deletion: */
+    Entry<int, std::string> *deletedElement = minHeap.deleteMin();
+    std::cout << "Removed Element: " << *deletedElement << "\n";
+
+
+    std::cout << "heap after deletion: \n" << minHeap;
+
+    Entry<int, std::string> *deletedElement2 = minHeap.deleteMin();
+    std::cout << "Removed Element: " << *deletedElement2 << "\n";
+
+    std::cout << "heap after deletion2: \n" << minHeap;
 
 
     delete[] arrayToBuildFrom;

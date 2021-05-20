@@ -75,30 +75,53 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @attention in case the `logicalSize` of the *array* is 0,
      *            this method returns `null_ptr`.
      * @return the *minimal element* removed from the heap.
+     * @throws std::logic_error in case the heap is already empty.
      * @see fixHeap(int)
      */
     Entry<K, V> *deleteMin() override {
 
-        /*
-         * Returns the `first` element in the array (= the `minimal` element).
-         * In case the `logicalSize` of the array is 0,
-         * this method returns `nullptr`.
-         */
-        Entry<K, V> *returnElement = nullptr;
-        if (logicalSize > 0) { returnElement = array[0]; }
+        /* Save the value of `array[0]` to return in the end of the method. */
+        Entry<K, V> *returnElement = array[0];
 
-        /* Set the `first` element in the array to be the `last` element. */
-        array[0] = array[logicalSize - 1];
+        if (logicalSize >= 2) {
 
-        /* Set the `last` element to be `nullptr`. */
-        array[logicalSize - 1] = nullptr;
+            /*
+             * There is at least `2` elements in the heap,
+             * so we are able to delete an element.
+             */
 
-        /* Decrease the `logicalSize` of the array by `1`. */
-        logicalSize--;
+            /* Set the `first` element in the array to be the `last` element. */
+            array[0] = array[logicalSize - 1];
 
-        /* Invoke `fixHeap(0)` to fix the heap. */
-        fixHeap(0);
+            /* Set the `last` element to be `nullptr`. */
+            array[logicalSize - 1] = nullptr;
 
+            /*
+             * Decrease the `logicalSize` of the array by `1`,
+             * before invoking `fixHeap(0)`.
+             */
+            logicalSize--;
+
+            /*
+             * After deletion,
+             * invoke `fixHeap(0)` to fix the heap.
+             */
+            fixHeap(0);
+        } else if (logicalSize > 0) {
+
+            /* Delete `array[0]` manually. */
+            array[0] = nullptr;
+
+            /* Decrease the `logicalSize` of the array by `1`. */
+            logicalSize--;
+        } else {
+
+            /* `logicalSize` is 0. */
+
+            // TODO: change to `wrong input`
+            throw std::logic_error("You have tried to delete an element from "
+                                   "an empty heap.\n");
+        }
         return returnElement;
     }
 
@@ -147,7 +170,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             std::string message;
             message.append("The heap is already full, and contains ");
             message.append(std::to_string(physicalSize));
-            message.append(" elements.");
+            message.append(" elements.\n");
 
             // TODO: change to `wrong input`
             throw std::runtime_error(message);
@@ -179,7 +202,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             std::string message;
             message.append("The index provided is out of range. There are ");
             message.append(std::to_string(logicalSize));
-            message.append(" elements in the heap.");
+            message.append(" elements in the heap.\n");
 
             // TODO: change to `wrong input`
             throw std::out_of_range(message);
@@ -203,7 +226,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             std::string message;
             message.append(
                     "The index provided is out of range. The element "
-                    "you have provided is `nullptr`. Thus, in-comparable.");
+                    "you have provided is `nullptr`. Thus, in-comparable.\n");
 
             // TODO: change to `wrong input`
             throw std::out_of_range(message);
@@ -318,12 +341,21 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      */
     friend std::ostream &operator<<(std::ostream &os, const MinHeap &heap) {
         os << "array{\n";
+
+        /* In case the array is empty, print a message instead of elements. */
+        if (heap.logicalSize == 0) {
+            os << "The array is empty."
+               << "\n";
+        }
         for (int i = 0; i < heap.logicalSize; i++) {
-            os << *heap.array[i];
+            os << *heap.array[i] << ";";
             os << "\n";
         }
+        os << "}; ";
+
         os << "logicalSize: " << heap.logicalSize
-           << ", physicalSize: " << heap.physicalSize << "\n}" << '\n';
+           << ", physicalSize: " << heap.physicalSize << ";"
+           << "\n";
         return os;
     }
 };

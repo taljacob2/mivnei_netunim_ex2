@@ -21,7 +21,7 @@ Inheritance diagram for Min\+Heap$<$ K, V $>$\+:\begin{figure}[H]
 \mbox{\hyperlink{class_min_heap_ad33a31874c9406b784c3c40a158cd501}{Min\+Heap}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$array\+To\+Build\+From, int size\+Of\+Array\+To\+Build\+From)
 \begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}{Min\+Heap}} ()=default
-\begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default empty constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_min_heap_a6041d18dee6992810ede4a3444b31738}{$\sim$\+Min\+Heap}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$ \mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{delete\+Min}} () override
@@ -115,18 +115,8 @@ Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\
 
 
 
-Constructor, initializes the {\itshape array}. 
+Default empty constructor. 
 
-Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\+From} of elements as a parameter. Done by invoking the \mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} method. 
-\begin{DoxyParams}{Parameters}
-{\em array\+To\+Build\+From} & the given array of elements to build the heap from. \\
-\hline
-{\em size\+Of\+Array\+To\+Build\+From} & the size of the array to build the heap from. \\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} 
-\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_min_heap_a6041d18dee6992810ede4a3444b31738}\label{class_min_heap_a6041d18dee6992810ede4a3444b31738}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!````~MinHeap@{$\sim$MinHeap}}
 \index{````~MinHeap@{$\sim$MinHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
@@ -183,6 +173,11 @@ in case the {\ttfamily logical\+Size} of the {\itshape array} is 0, this method 
 \begin{DoxyReturn}{Returns}
 the {\itshape minimal element} removed from the heap. 
 \end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::logic\+\_\+error} & in case the heap is already empty. \\
+\hline
+\end{DoxyExceptions}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} 
 \end{DoxySeeAlso}

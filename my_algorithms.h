@@ -77,7 +77,7 @@ class my_algorithms {
         message.append("Both of the indexes provided are out of range. "
                        "There are ");
         message.append(std::to_string(size));
-        message.append(" elements in the array.");
+        message.append(" elements in the array.\n");
 
         // TODO: change to `wrong input`
         throw std::out_of_range(message);
@@ -146,7 +146,7 @@ class my_algorithms {
         message.append("Both of the indexes provided are out of range. "
                        "There are ");
         message.append(std::to_string(size));
-        message.append(" elements in the array.");
+        message.append(" elements in the array.\n");
 
         // TODO: change to `wrong input`
         throw std::out_of_range(message);
