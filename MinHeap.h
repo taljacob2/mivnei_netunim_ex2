@@ -14,13 +14,14 @@
 
 /**
  * @brief This class implements a **Minimum-Heap** which its elements are
- *        pointers to *Entries* that are composed by a *key* and a *value*.
+ *        pointers to **lvalue `Entries`** that are composed of a *key* and a *value*.
  *
  * The heap compares its elements to each other, by the comparable `key` field
  * located in each `Entry` element.
  * @tparam K the type of *key* in the entry.
  * @tparam V the type of *value* in the entry.
  * @note The terms `element`, `node` and 'entry' are synonyms.
+ * @attention The `Entries` pointed must be **lvalues**.
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0
  * @see Entry
@@ -28,7 +29,7 @@
 template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
   private:
     /**
-     * Array of pointers to `Entries` that serve as `elements`.
+     * Array of pointers to **lvalue `Entries`** that serve as `elements`.
      * Initialized to `nullptr`.
      */
     Entry<K, V> **array = nullptr;
@@ -44,8 +45,8 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @brief Constructor, initializes the *array*.
      *
      * Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
-     * elements as a parameter. Done by invoking the @link buildHeap @endlink
-     * method.
+     * **lvalue `Entries`** as a parameter. Done by invoking the
+     * @link buildHeap @endlink method.
      * @param arrayToBuildFrom the given array of elements to build the
      *                         heap from.
      * @param sizeOfArrayToBuildFrom the size of the array to build the
@@ -288,7 +289,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
   public:
     /**
      * @brief Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
-     *        elements as a parameter.
+     *        **lvalue `Entries`** as a parameter.
      *
      * Done by making an array of pointers to the elements given in the @p
      * arrayToBuildFrom.
@@ -296,6 +297,8 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *                         heap from.
      * @param sizeOfArrayToBuildFrom the size of the array to build the
      *                               heap from.
+     * @attention the `Entries` elements in the @p arrayToBuildFrom must be
+     *            **lvalues**.
      */
     void buildHeap(Entry<K, V> *arrayToBuildFrom,
                    int          sizeOfArrayToBuildFrom) override {

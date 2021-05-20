@@ -41,6 +41,14 @@ int main() {
     std::cout << "heap after deletion2: \n" << minHeap;
 
 
+    /* XXX : MY TEST: try to insert: */
+    auto entryToInsert = Entry(999, std::string("hello"));
+
+    minHeap.insert(&entryToInsert);
+
+    std::cout << "heap after insertion: \n" << minHeap;
+
+
     delete[] arrayToBuildFrom;
     return 0;
 }
