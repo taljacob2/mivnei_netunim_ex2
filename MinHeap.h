@@ -16,8 +16,13 @@
  * @brief This class implements a **Minimum-Heap** which its elements are
  *        pointers to **lvalue `Entries`** that are composed of a *key* and a *value*.
  *
- * The heap compares its elements to each other, by the comparable `key` field
- * located in each `Entry` element.
+ * @li Once the heap has been built by @link buildHeap @endlink or
+ * @link MinHeap(Entry<K, V> *,int) @endlink, its *physical-size* is treated
+ * as a constant - thus unchangeable. In case the user wishes to change the
+ * *physical-size* of the heap, there is a *must* to invoke @link buildHeap
+ * @endlink again.
+ * @li The heap compares its elements to each other, by the comparable `key`
+ * field located in each `Entry` element.
  * @tparam K the type of *key* in the entry.
  * @tparam V the type of *value* in the entry.
  * @note The terms `element`, `node` and 'entry' are synonyms.
@@ -130,7 +135,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @brief Inserts the @p elementToInsert to the heap.
      *
      * @param elementToInsert the element to insert to the heap.
-     * @throws std::runtime_error in case the heap is already full.
+     * @throws std::logic_error in case the heap is already full.
      */
     void insert(Entry<K, V> *elementToInsert) override {
 
@@ -174,7 +179,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             message.append(" elements.\n");
 
             // TODO: change to `wrong input`
-            throw std::runtime_error(message);
+            throw std::logic_error(message);
         }
     }
 
@@ -297,6 +302,9 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *                         heap from.
      * @param sizeOfArrayToBuildFrom the size of the array to build the
      *                               heap from.
+     * @note In case there is already an `allocated` `array` in this heap,
+     *       this method ensures to `delete []` it *before* handling the
+     *       building process.
      * @attention the `Entries` elements in the @p arrayToBuildFrom must be
      *            **lvalues**.
      */

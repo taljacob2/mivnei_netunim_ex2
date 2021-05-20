@@ -63,7 +63,8 @@ class Min\+Heap$<$ K, V $>$}
 
 This class implements a {\bfseries{Minimum-\/\+Heap}} which its elements are pointers to {\bfseries{lvalue {\ttfamily Entries}}} that are composed of a {\itshape key} and a {\itshape value}. 
 
-The heap compares its elements to each other, by the comparable {\ttfamily key} field located in each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} element. 
+\begin{DoxyItemize}
+\item Once the heap has been built by \mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} or \mbox{\hyperlink{class_min_heap_ad33a31874c9406b784c3c40a158cd501}{Min\+Heap(\+Entry$<$\+K, V$>$ $\ast$,int)}}, its {\itshape physical-\/size} is treated as a constant -\/ thus unchangeable. In case the user wishes to change the {\itshape physical-\/size} of the heap, there is a {\itshape must} to invoke \mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} again. \item The heap compares its elements to each other, by the comparable {\ttfamily key} field located in each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} element. 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em K} & the type of {\itshape key} in the entry. \\
 \hline
@@ -85,6 +86,7 @@ Tal Yacob, ID\+: 208632778.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_entry}{Entry}} 
 \end{DoxySeeAlso}
+\end{DoxyItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -152,6 +154,9 @@ Done by making an array of pointers to the elements given in the {\ttfamily arra
 {\em size\+Of\+Array\+To\+Build\+From} & the size of the array to build the heap from. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyNote}{Note}
+In case there is already an {\ttfamily allocated} {\ttfamily array} in this heap, this method ensures to {\ttfamily delete \mbox{[}\mbox{]}} it {\itshape before} handling the building process. 
+\end{DoxyNote}
 \begin{DoxyAttention}{Attention}
 the {\ttfamily Entries} elements in the {\ttfamily array\+To\+Build\+From} must be {\bfseries{lvalues}}. 
 \end{DoxyAttention}
@@ -259,7 +264,7 @@ Inserts the {\ttfamily element\+To\+Insert} to the heap.
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em std\+::runtime\+\_\+error} & in case the heap is already full. \\
+{\em std\+::logic\+\_\+error} & in case the heap is already full. \\
 \hline
 \end{DoxyExceptions}
 

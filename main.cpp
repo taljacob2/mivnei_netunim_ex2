@@ -46,7 +46,15 @@ int main() {
 
     minHeap.insert(&entryToInsert);
 
-    std::cout << "heap after insertion: \n" << minHeap;
+
+    std::cout << "heap after insertion2: \n" << minHeap;
+
+    /* XXX : MY TEST: try to insert when heap is full: */
+    auto entryToInsert2 = Entry(1000, std::string("World"));
+
+    minHeap.insert(&entryToInsert);
+
+    std::cout << "heap after insertion2: \n" << minHeap;
 
 
     delete[] arrayToBuildFrom;
