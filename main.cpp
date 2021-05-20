@@ -33,8 +33,10 @@ int main() {
 
     std::cout << "heap after deletion: \n" << minHeap;
 
-    Entry<int, std::string> *deletedElement2 = minHeap.deleteMin();
-    std::cout << "Removed Element: " << *deletedElement2 << "\n";
+    try {
+        Entry<int, std::string> *deletedElement2 = minHeap.deleteMin();
+        std::cout << "Removed Element: " << *deletedElement2 << "\n";
+    } catch (std::exception &e) { std::cerr << e.what(); }
 
     std::cout << "heap after deletion2: \n" << minHeap;
 
