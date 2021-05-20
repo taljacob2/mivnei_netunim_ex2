@@ -11,9 +11,11 @@
  */
 int main() {
 
-    /* Receive input, and create an InputOutput object */
-    InputOutput *inputOutput                = InputOutput::factoryInputOutput();
-    int *        arrayReceivedFromInputFile = nullptr;
+    /* Receive input, and create an InputOutput object: */
+    InputOutput *inputOutput = InputOutput::factoryInputOutput();
+
+    /* Extract array from the inputFile: */
+    int *arrayReceivedFromInputFile = nullptr;
     try {
         arrayReceivedFromInputFile = inputOutput->getIntArrayFromInputFile();
     } catch (std::exception &e) {
@@ -31,11 +33,9 @@ int main() {
     std::cout << "\n";
 
 
-    // /* Create a `Minimum-Heap` from the array. */
-    // MinHeap<int, std::string> minHeap(arrayToBuildFrom, N);
-    //
-    //
-    // delete[] arrayToBuildFrom;
+    /* Create a `Minimum-Heap` from the array. */
+    // MinHeap<int, std::string> minHeap(arrayReceivedFromInputFile, inputOutput->getN());
+
 
     delete[] arrayReceivedFromInputFile;
     delete inputOutput;
