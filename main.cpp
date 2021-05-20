@@ -20,10 +20,10 @@ int main() {
     }
 
 
-    /* XXX MY TEST: printing heap */
+    /* Create a `Minimum-Heap` from the array. */
+    MinHeap<int, std::string> minHeap(arrayToBuildFrom, N);
 
-    MinHeap<int, std::string> minHeap;
-    minHeap.buildHeap(arrayToBuildFrom, N);
+    /* XXX MY TEST: printing heap */
     std::cout << minHeap;
 
 

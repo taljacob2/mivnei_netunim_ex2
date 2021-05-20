@@ -58,31 +58,14 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     }
 
     /**
-     * @brief Constructor, initializes the *array*.
-     *
-     * Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
-     * elements as a parameter. Done by invoking the @link buildHeap @endlink
-     * method.
-     * @param arrayToBuildFrom the given array of elements to build the
-     *                         heap from.
-     * @param sizeOfArrayToBuildFrom the size of the array to build the
-     *                               heap from.
-     * @see buildHeap
+     * @brief Default empty constructor.
      */
-    // explicit MinHeap(Entry<K, V> *arrayToBuildFrom,
-    //                  int          sizeOfArrayToBuildFrom) {
-    //     buildHeap(arrayToBuildFrom, sizeOfArrayToBuildFrom);
-    // }
-
     MinHeap() = default;
 
     /**
      * @brief Destructor.
      */
-    virtual ~MinHeap() {
-        // for (int i = 0; i < physicalSize; i++) { delete array[i]; }
-        delete[] array;
-    }
+    virtual ~MinHeap() { delete[] array; }
 
     /**
      * @brief Deletes the *minimal element* from the heap, and returns it.
