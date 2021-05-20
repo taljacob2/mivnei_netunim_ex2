@@ -47,12 +47,15 @@ int main() {
     minHeap.insert(&entryToInsert);
 
 
-    std::cout << "heap after insertion2: \n" << minHeap;
+    std::cout << "heap after insertion: \n" << minHeap;
 
     /* XXX : MY TEST: try to insert when heap is full: */
     auto entryToInsert2 = Entry(1000, std::string("World"));
 
-    minHeap.insert(&entryToInsert);
+    try {
+        minHeap.insert(&entryToInsert);
+    } catch (std::exception &e) { std::cerr << e.what(); }
+
 
     std::cout << "heap after insertion2: \n" << minHeap;
 
