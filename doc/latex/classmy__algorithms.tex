@@ -18,8 +18,6 @@ this class bundles together all the algorithm methods in the program.
 \begin{DoxyCompactList}\small\item\em Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the smaller element out of them. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static T $\ast$ \mbox{\hyperlink{classmy__algorithms_a69c56c853f1240b910ec0e49cfc32623}{copy\+Array}} (const T $\ast$array, int size)
 \begin{DoxyCompactList}\small\item\em generic algorithm to copy an array. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\static T $\ast$$\ast$ \mbox{\hyperlink{classmy__algorithms_aeae0a6779f2955998b2cb6879fcc5edf}{create\+Array\+Of\+Pointers}} (T $\ast$array, int size)
-\begin{DoxyCompactList}\small\item\em generic algorithm to create an array of pointers to each element provided in the {\ttfamily array} given. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a10c7c5677d44a82850f99867bc0be126}{swap}} (T $\ast$array, int index1, int index2)
 \begin{DoxyCompactList}\small\item\em generic {\ttfamily swap} algorithm of two elements in an array. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a98c8a2353897ea85926c8f3cf5a57a5d}{swap}} (T \&element1, T \&element2)
@@ -108,20 +106,6 @@ generic algorithm to copy an array.
 \begin{DoxyReturn}{Returns}
 the {\ttfamily new} copied array. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy__algorithms_aeae0a6779f2955998b2cb6879fcc5edf}\label{classmy__algorithms_aeae0a6779f2955998b2cb6879fcc5edf}} 
-\index{my\_algorithms@{my\_algorithms}!createArrayOfPointers@{createArrayOfPointers}}
-\index{createArrayOfPointers@{createArrayOfPointers}!my\_algorithms@{my\_algorithms}}
-\doxysubsubsection{\texorpdfstring{createArrayOfPointers()}{createArrayOfPointers()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static T$\ast$$\ast$ my\+\_\+algorithms\+::create\+Array\+Of\+Pointers (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-generic algorithm to create an array of pointers to each element provided in the {\ttfamily array} given. 
-
-\begin{DoxyReturn}{Returns}
-the {\ttfamily new} created array of pointers. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classmy__algorithms_a5c64a53c34afd017fe748b8ff00a57ee}\label{classmy__algorithms_a5c64a53c34afd017fe748b8ff00a57ee}} 
 \index{my\_algorithms@{my\_algorithms}!division\_TheIthElementInItsSize@{division\_TheIthElementInItsSize}}
 \index{division\_TheIthElementInItsSize@{division\_TheIthElementInItsSize}!my\_algorithms@{my\_algorithms}}
@@ -184,7 +168,8 @@ static int my\+\_\+algorithms\+::max (\begin{DoxyParamCaption}\item[{T $\ast$$\a
 
 Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the larger element out of them. 
 
-\begin{DoxyNote}{Note}
+The method ensures safety\+: \begin{DoxyItemize}
+\item The method makes sure to ensure that the {\ttfamily index\+To\+Element1} and {\ttfamily index\+To\+Element2} provided are not out of range. \item The method makes sure to ensure that the elements are not {\ttfamily nullptr}, and if they are {\ttfamily nullptr}, the method knows how to handle them. \begin{DoxyNote}{Note}
 if element is a {\ttfamily nullptr}, prioritize to return the index of the {\itshape other} element given. If both element are {\ttfamily nullptr}, return the index of the {\itshape first} element. 
 \end{DoxyNote}
 \begin{DoxyAttention}{Attention}
@@ -207,6 +192,7 @@ the index of the pointer that points to the larger element.
 {\em std\+::out\+\_\+of\+\_\+range} & in case {\itshape both} of the indexes {\ttfamily index\+To\+Element1} and {\ttfamily index\+To\+Element2} provided are out of range. \\
 \hline
 \end{DoxyExceptions}
+\end{DoxyItemize}
 \mbox{\Hypertarget{classmy__algorithms_a314af99ccad423bd770f8bc387a3071b}\label{classmy__algorithms_a314af99ccad423bd770f8bc387a3071b}} 
 \index{my\_algorithms@{my\_algorithms}!min@{min}}
 \index{min@{min}!my\_algorithms@{my\_algorithms}}
@@ -218,7 +204,8 @@ static int my\+\_\+algorithms\+::min (\begin{DoxyParamCaption}\item[{T $\ast$$\a
 
 Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the smaller element out of them. 
 
-\begin{DoxyNote}{Note}
+The method ensures safety\+: \begin{DoxyItemize}
+\item The method makes sure to ensure that the {\ttfamily index\+To\+Element1} and {\ttfamily index\+To\+Element2} provided are not out of range. \item The method makes sure to ensure that the elements are not {\ttfamily nullptr}, and if they are {\ttfamily nullptr}, the method knows how to handle them. \begin{DoxyNote}{Note}
 if element is a {\ttfamily nullptr}, prioritize to return the index of the {\itshape other} element given. If both element are {\ttfamily nullptr}, return the index of the {\itshape first} element. 
 \end{DoxyNote}
 \begin{DoxyAttention}{Attention}
@@ -241,6 +228,7 @@ the index of the pointer that points to the smaller element.
 {\em std\+::out\+\_\+of\+\_\+range} & in case {\itshape both} of the indexes {\ttfamily index\+To\+Element1} and {\ttfamily index\+To\+Element2} provided are out of range. \\
 \hline
 \end{DoxyExceptions}
+\end{DoxyItemize}
 \mbox{\Hypertarget{classmy__algorithms_a98317c4e662536b0c93636ceaf3934ff}\label{classmy__algorithms_a98317c4e662536b0c93636ceaf3934ff}} 
 \index{my\_algorithms@{my\_algorithms}!partition@{partition}}
 \index{partition@{partition}!my\_algorithms@{my\_algorithms}}

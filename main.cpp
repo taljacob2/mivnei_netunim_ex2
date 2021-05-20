@@ -9,17 +9,23 @@
  * @version 1.0
  */
 int main() {
-    int N = 10;
 
+    /* XXX MY TEST: Generating an Input Array */
+
+    int   N                = 10;
     auto *arrayToBuildFrom = new Entry<int, std::string>[N];
     for (int i = 0; i < N; i++) {
         arrayToBuildFrom[i] =
                 Entry<int, std::string>(N - i, std::to_string(i + 100));
     }
 
+
+    /* XXX MY TEST: printing heap */
+
     MinHeap<int, std::string> minHeap;
     minHeap.buildHeap(arrayToBuildFrom, N);
     std::cout << minHeap;
+
 
     delete[] arrayToBuildFrom;
     return 0;

@@ -204,31 +204,6 @@
             <tr class="separator:a69c56c853f1240b910ec0e49cfc32623">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:aeae0a6779f2955998b2cb6879fcc5edf">
-                <td class="memTemplParams" colspan="2">template&lt;class T
-                    &gt;
-                </td>
-            </tr>
-            <tr class="memitem:aeae0a6779f2955998b2cb6879fcc5edf">
-                <td class="memTemplItemLeft" align="right" valign="top">static T
-                    **&#160;
-                </td>
-                <td class="memTemplItemRight" valign="bottom"><a class="el"
-                                                                 href="classmy__algorithms.html#aeae0a6779f2955998b2cb6879fcc5edf">createArrayOfPointers</a>
-                    (T *array, int size)
-                </td>
-            </tr>
-            <tr class="memdesc:aeae0a6779f2955998b2cb6879fcc5edf">
-                <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">generic algorithm to create an array of
-                    pointers to each element provided in the <code>array</code>
-                    given. <a
-                            href="classmy__algorithms.html#aeae0a6779f2955998b2cb6879fcc5edf">More...</a><br/>
-                </td>
-            </tr>
-            <tr class="separator:aeae0a6779f2955998b2cb6879fcc5edf">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
             <tr class="memitem:a10c7c5677d44a82850f99867bc0be126">
                 <td class="memTemplParams" colspan="2">template&lt;class T
                     &gt;
@@ -741,61 +716,6 @@
 
             </div>
         </div>
-        <a id="aeae0a6779f2955998b2cb6879fcc5edf"></a>
-        <h2 class="memtitle"><span class="permalink"><a
-                href="#aeae0a6779f2955998b2cb6879fcc5edf">&#9670;&nbsp;</a></span>createArrayOfPointers()
-        </h2>
-
-        <div class="memitem">
-            <div class="memproto">
-                <div class="memtemplate">
-                    template&lt;class T &gt;
-                </div>
-                <table class="mlabels">
-                    <tr>
-                        <td class="mlabels-left">
-                            <table class="memname">
-                                <tr>
-                                    <td class="memname">static T**
-                                        my_algorithms::createArrayOfPointers
-                                    </td>
-                                    <td>(</td>
-                                    <td class="paramtype">T *&#160;</td>
-                                    <td class="paramname"><em>array</em>,</td>
-                                </tr>
-                                <tr>
-                                    <td class="paramkey"></td>
-                                    <td></td>
-                                    <td class="paramtype">int&#160;</td>
-                                    <td class="paramname"><em>size</em>&#160;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>)</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="mlabels-right">
-                            <span class="mlabels"><span
-                                    class="mlabel">inline</span><span
-                                    class="mlabel">static</span></span></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="memdoc">
-
-                <p>generic algorithm to create an array of pointers to each
-                    element provided in the <code>array</code> given. </p>
-                <dl class="section return">
-                    <dt>Returns</dt>
-                    <dd>the <code>new</code> created array of pointers.</dd>
-                </dl>
-
-            </div>
-        </div>
         <a id="a5c64a53c34afd017fe748b8ff00a57ee"></a>
         <h2 class="memtitle"><span class="permalink"><a
                 href="#a5c64a53c34afd017fe748b8ff00a57ee">&#9670;&nbsp;</a></span>division_TheIthElementInItsSize()
@@ -1146,64 +1066,83 @@
                 <p>Compares two elements pointed out from two pointers, by their
                     given indexes, and returns the index to the pointer that
                     points to the larger element out of them. </p>
-                <dl class="section note">
-                    <dt>Note</dt>
-                    <dd>if element is a <code>nullptr</code>, prioritize to
-                        return the index of the <em>other</em> element given. If
-                        both element are <code>nullptr</code>, return the index
-                        of the <em>first</em> element.
-                    </dd>
-                </dl>
-                <dl class="section attention">
-                    <dt>Attention</dt>
-                    <dd>if <code>indexToElement2</code> is out fo range, but
-                        <code>indexToElement1</code> is not out of range, the
-                        method returns the <code>indexToElement1</code>.
-                    </dd>
-                </dl>
-                <dl class="params">
-                    <dt>Parameters</dt>
-                    <dd>
-                        <table class="params">
-                            <tr>
-                                <td class="paramname">array</td>
-                                <td>an array of pointers to elements.</td>
-                            </tr>
-                            <tr>
-                                <td class="paramname">indexToElement1</td>
-                                <td>index of pointer to first element to
-                                    compare.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="paramname">indexToElement2</td>
-                                <td>index of pointer to second element to
-                                    compare.
-                                </td>
-                            </tr>
-                        </table>
-                    </dd>
-                </dl>
-                <dl class="section return">
-                    <dt>Returns</dt>
-                    <dd>the index of the pointer that points to the larger
-                        element.
-                    </dd>
-                </dl>
-                <dl class="exception">
-                    <dt>Exceptions</dt>
-                    <dd>
-                        <table class="exception">
-                            <tr>
-                                <td class="paramname">std::out_of_range</td>
-                                <td>in case <em>both</em> of the indexes <code>indexToElement1</code>
-                                    and <code>indexToElement2</code> provided
-                                    are out of range.
-                                </td>
-                            </tr>
-                        </table>
-                    </dd>
-                </dl>
+                <p>The method ensures safety: </p>
+                <ul>
+                    <li>The method makes sure to ensure that the <code>indexToElement1</code>
+                        and <code>indexToElement2</code> provided are not out of
+                        range.
+                    </li>
+                    <li>The method makes sure to ensure that the elements are
+                        not <code>nullptr</code>, and if they are
+                        <code>nullptr</code>, the method knows how to handle
+                        them.
+                        <dl class="section note">
+                            <dt>Note</dt>
+                            <dd>if element is a <code>nullptr</code>, prioritize
+                                to return the index of the <em>other</em>
+                                element given. If both element are
+                                <code>nullptr</code>, return the index of the
+                                <em>first</em> element.
+                            </dd>
+                        </dl>
+                        <dl class="section attention">
+                            <dt>Attention</dt>
+                            <dd>if <code>indexToElement2</code> is out fo range,
+                                but <code>indexToElement1</code> is not out of
+                                range, the method returns the <code>indexToElement1</code>.
+                            </dd>
+                        </dl>
+                        <dl class="params">
+                            <dt>Parameters</dt>
+                            <dd>
+                                <table class="params">
+                                    <tr>
+                                        <td class="paramname">array</td>
+                                        <td>an array of pointers to elements.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paramname">indexToElement1
+                                        </td>
+                                        <td>index of pointer to first element to
+                                            compare.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paramname">indexToElement2
+                                        </td>
+                                        <td>index of pointer to second element
+                                            to compare.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dd>
+                        </dl>
+                        <dl class="section return">
+                            <dt>Returns</dt>
+                            <dd>the index of the pointer that points to the
+                                larger element.
+                            </dd>
+                        </dl>
+                        <dl class="exception">
+                            <dt>Exceptions</dt>
+                            <dd>
+                                <table class="exception">
+                                    <tr>
+                                        <td class="paramname">
+                                            std::out_of_range
+                                        </td>
+                                        <td>in case <em>both</em> of the indexes
+                                            <code>indexToElement1</code> and
+                                            <code>indexToElement2</code>
+                                            provided are out of range.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
 
             </div>
         </div>
@@ -1271,64 +1210,83 @@
                 <p>Compares two elements pointed out from two pointers, by their
                     given indexes, and returns the index to the pointer that
                     points to the smaller element out of them. </p>
-                <dl class="section note">
-                    <dt>Note</dt>
-                    <dd>if element is a <code>nullptr</code>, prioritize to
-                        return the index of the <em>other</em> element given. If
-                        both element are <code>nullptr</code>, return the index
-                        of the <em>first</em> element.
-                    </dd>
-                </dl>
-                <dl class="section attention">
-                    <dt>Attention</dt>
-                    <dd>if <code>indexToElement2</code> is out fo range, but
-                        <code>indexToElement1</code> is not out of range, the
-                        method returns the <code>indexToElement1</code>.
-                    </dd>
-                </dl>
-                <dl class="params">
-                    <dt>Parameters</dt>
-                    <dd>
-                        <table class="params">
-                            <tr>
-                                <td class="paramname">array</td>
-                                <td>an array of pointers to elements.</td>
-                            </tr>
-                            <tr>
-                                <td class="paramname">indexToElement1</td>
-                                <td>index of pointer to first element to
-                                    compare.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="paramname">indexToElement2</td>
-                                <td>index of pointer to second element to
-                                    compare.
-                                </td>
-                            </tr>
-                        </table>
-                    </dd>
-                </dl>
-                <dl class="section return">
-                    <dt>Returns</dt>
-                    <dd>the index of the pointer that points to the smaller
-                        element.
-                    </dd>
-                </dl>
-                <dl class="exception">
-                    <dt>Exceptions</dt>
-                    <dd>
-                        <table class="exception">
-                            <tr>
-                                <td class="paramname">std::out_of_range</td>
-                                <td>in case <em>both</em> of the indexes <code>indexToElement1</code>
-                                    and <code>indexToElement2</code> provided
-                                    are out of range.
-                                </td>
-                            </tr>
-                        </table>
-                    </dd>
-                </dl>
+                <p>The method ensures safety: </p>
+                <ul>
+                    <li>The method makes sure to ensure that the <code>indexToElement1</code>
+                        and <code>indexToElement2</code> provided are not out of
+                        range.
+                    </li>
+                    <li>The method makes sure to ensure that the elements are
+                        not <code>nullptr</code>, and if they are
+                        <code>nullptr</code>, the method knows how to handle
+                        them.
+                        <dl class="section note">
+                            <dt>Note</dt>
+                            <dd>if element is a <code>nullptr</code>, prioritize
+                                to return the index of the <em>other</em>
+                                element given. If both element are
+                                <code>nullptr</code>, return the index of the
+                                <em>first</em> element.
+                            </dd>
+                        </dl>
+                        <dl class="section attention">
+                            <dt>Attention</dt>
+                            <dd>if <code>indexToElement2</code> is out fo range,
+                                but <code>indexToElement1</code> is not out of
+                                range, the method returns the <code>indexToElement1</code>.
+                            </dd>
+                        </dl>
+                        <dl class="params">
+                            <dt>Parameters</dt>
+                            <dd>
+                                <table class="params">
+                                    <tr>
+                                        <td class="paramname">array</td>
+                                        <td>an array of pointers to elements.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paramname">indexToElement1
+                                        </td>
+                                        <td>index of pointer to first element to
+                                            compare.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="paramname">indexToElement2
+                                        </td>
+                                        <td>index of pointer to second element
+                                            to compare.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dd>
+                        </dl>
+                        <dl class="section return">
+                            <dt>Returns</dt>
+                            <dd>the index of the pointer that points to the
+                                smaller element.
+                            </dd>
+                        </dl>
+                        <dl class="exception">
+                            <dt>Exceptions</dt>
+                            <dd>
+                                <table class="exception">
+                                    <tr>
+                                        <td class="paramname">
+                                            std::out_of_range
+                                        </td>
+                                        <td>in case <em>both</em> of the indexes
+                                            <code>indexToElement1</code> and
+                                            <code>indexToElement2</code>
+                                            provided are out of range.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
 
             </div>
         </div>

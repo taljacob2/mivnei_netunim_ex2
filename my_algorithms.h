@@ -19,6 +19,12 @@ class my_algorithms {
      *        given indexes, and returns the index to the pointer that points
      *        to the larger element out of them.
      *
+     * The method ensures safety:
+     * @li The method makes sure to ensure that the @p indexToElement1 and @p
+     * indexToElement2 provided are not out of range.
+     * @li The method makes sure to ensure that the elements are not
+     * `nullptr`, and if they are `nullptr`, the method knows how to handle
+     * them.
      * @note if element is a `nullptr`, prioritize to return the index of the
      *       *other* element given.
      *       If both element are `nullptr`, return the index of the *first*
@@ -82,6 +88,12 @@ class my_algorithms {
      *        given indexes, and returns the index to the pointer that points
      *        to the smaller element out of them.
      *
+     * The method ensures safety:
+     * @li The method makes sure to ensure that the @p indexToElement1 and @p
+     * indexToElement2 provided are not out of range.
+     * @li The method makes sure to ensure that the elements are not
+     * `nullptr`, and if they are `nullptr`, the method knows how to handle
+     * them.
      * @note if element is a `nullptr`, prioritize to return the index of the
      *       *other* element given.
      *       If both element are `nullptr`, return the index of the *first*
