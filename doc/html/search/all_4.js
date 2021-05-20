@@ -1,6 +1,6 @@
 var searchData =
     [
-        ['deletemin_12', ['deleteMin', ['../class_min_heap.html#a6f4be46b00c888580c5f3afe41865930', 1, 'MinHeap::deleteMin()'], ['../class_min_heap_a_d_t.html#aad46f6fbc56041d20c3130dcf5b42d5e', 1, 'MinHeapADT::deleteMin()']]],
-        ['different_5ftype_13', ['different_type', ['../classmy__string_1_1iterator.html#a4088e3e8d2fadd112e33558019c3e4e0', 1, 'my_string::iterator']]],
-        ['division_5ftheithelementinitssize_14', ['division_TheIthElementInItsSize', ['../classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee', 1, 'my_algorithms']]]
+        ['deletemin_13', ['deleteMin', ['../class_min_heap.html#a6f4be46b00c888580c5f3afe41865930', 1, 'MinHeap::deleteMin()'], ['../class_min_heap_a_d_t.html#aad46f6fbc56041d20c3130dcf5b42d5e', 1, 'MinHeapADT::deleteMin()']]],
+        ['different_5ftype_14', ['different_type', ['../classmy__string_1_1iterator.html#a4088e3e8d2fadd112e33558019c3e4e0', 1, 'my_string::iterator']]],
+        ['division_5ftheithelementinitssize_15', ['division_TheIthElementInItsSize', ['../classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee', 1, 'my_algorithms']]]
     ];

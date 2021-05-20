@@ -23,27 +23,58 @@ class my_algorithms {
      *       *other* element given.
      *       If both element are `nullptr`, return the index of the *first*
      *       element.
+     * @attention if @p indexToElement2 is out fo range, but @p
+     *            indexToElement1 is not out of range, the method returns the
+     *            @p indexToElement1.
      * @param array an array of pointers to elements.
      * @param indexToElement1 index of pointer to first element to compare.
      * @param indexToElement2 index of pointer to second element to compare.
      * @return the index of the pointer that points to the larger element.
+     * @throws std::out_of_range in case *both* of the indexes
+     *         @p indexToElement1 and @p indexToElement2 provided are
+     *         out of range.
      */
     template<class T>
-    static int max(T **array, int indexToElement1, int indexToElement2) {
+    static int max(T **array, int size, int indexToElement1,
+                   int indexToElement2) {
+        if (((indexToElement2 < size) && (0 <= indexToElement2)) &&
+            ((indexToElement1 < size) && (0 <= indexToElement1))) {
 
-        if (array[indexToElement2] == nullptr) {
-            return indexToElement1;
-        } else if (array[indexToElement2] != nullptr) {
-            if (array[indexToElement1] == nullptr) {
-                return indexToElement2;
-            } else {
+            /*
+             * If `indexToElement2` is not out-of-range.
+             * and `indexToElement1` is not out-of-range.
+             */
+            if (array[indexToElement2] == nullptr) {
+                return indexToElement1;
+            } else if (array[indexToElement2] != nullptr) {
+                if (array[indexToElement1] == nullptr) {
+                    return indexToElement2;
+                } else {
 
-                // Both elements are not nullptr. Compare regularly.
-                return (*array[indexToElement1]) > (*array[indexToElement2])
-                               ? indexToElement1
-                               : indexToElement2;
+                    // Both elements are not nullptr. Compare regularly.
+                    return (*array[indexToElement1]) > (*array[indexToElement2])
+                                   ? indexToElement1
+                                   : indexToElement2;
+                }
             }
+        } else if ((indexToElement1 < size) && (0 <= indexToElement1)) {
+
+            /* If `indexToElement1` is not out-of-range. */
+            return indexToElement1;
         }
+
+        /*
+         * Both `indexToElement1` and `indexToElement2` are out-of-range.
+         * Throw a message.
+         */
+        std::string message;
+        message.append("Both of the indexes provided are out of range. "
+                       "There are ");
+        message.append(std::to_string(size));
+        message.append(" elements in the array.");
+
+        // TODO: change to `wrong input`
+        throw std::out_of_range(message);
     }
 
     /**
@@ -55,30 +86,58 @@ class my_algorithms {
      *       *other* element given.
      *       If both element are `nullptr`, return the index of the *first*
      *       element.
+     * @attention if @p indexToElement2 is out fo range, but @p
+     *            indexToElement1 is not out of range, the method returns the
+     *            @p indexToElement1.
      * @param array an array of pointers to elements.
      * @param indexToElement1 index of pointer to first element to compare.
      * @param indexToElement2 index of pointer to second element to compare.
      * @return the index of the pointer that points to the smaller element.
-     * @throws std::runtime_error in case there is a problem with
-     *         comparing between the elements. This should not happen.
+     * @throws std::out_of_range in case *both* of the indexes
+     *         @p indexToElement1 and @p indexToElement2 provided are
+     *         out of range.
      */
     template<class T>
-    static int min(T **array, int indexToElement1, int indexToElement2) {
+    static int min(T **array, int size, int indexToElement1,
+                   int indexToElement2) {
+        if (((indexToElement2 < size) && (0 <= indexToElement2)) &&
+            ((indexToElement1 < size) && (0 <= indexToElement1))) {
 
-        if (array[indexToElement2] == nullptr) {
-            return indexToElement1;
-        } else if (array[indexToElement2] != nullptr) {
-            if (array[indexToElement1] == nullptr) {
-                return indexToElement2;
-            } else {
+            /*
+             * If `indexToElement2` is not out-of-range.
+             * and `indexToElement1` is not out-of-range.
+             */
+            if (array[indexToElement2] == nullptr) {
+                return indexToElement1;
+            } else if (array[indexToElement2] != nullptr) {
+                if (array[indexToElement1] == nullptr) {
+                    return indexToElement2;
+                } else {
 
-                // Both elements are not nullptr. Compare regularly.
-                return (*array[indexToElement1]) < (*array[indexToElement2])
-                               ? indexToElement1
-                               : indexToElement2;
+                    // Both elements are not nullptr. Compare regularly.
+                    return (*array[indexToElement1]) < (*array[indexToElement2])
+                                   ? indexToElement1
+                                   : indexToElement2;
+                }
             }
+        } else if ((indexToElement1 < size) && (0 <= indexToElement1)) {
+
+            /* If `indexToElement1` is not out-of-range. */
+            return indexToElement1;
         }
-        throw std::runtime_error("Could not compare between elements.");
+
+        /*
+         * Both `indexToElement1` and `indexToElement2` are out-of-range.
+         * Throw a message.
+         */
+        std::string message;
+        message.append("Both of the indexes provided are out of range. "
+                       "There are ");
+        message.append(std::to_string(size));
+        message.append(" elements in the array.");
+
+        // TODO: change to `wrong input`
+        throw std::out_of_range(message);
     }
 
     /**
@@ -90,21 +149,6 @@ class my_algorithms {
         auto *copiedArr = new T[size];
         for (int i = 0; i < size; ++i) { copiedArr[i] = array[i]; }
         return copiedArr;
-    }
-
-    /**
-     * @brief generic algorithm to create an array of pointers to each
-     *        element provided in the @p array given.
-     *
-     * @returns the `new` created array of pointers.
-     */
-    template<class T>
-    static T **createArrayOfPointers(const T *array, int size) {
-        auto **pointingArray = new T *[size];
-        for (int i = 0; i < size; ++i) {
-            pointingArray[i] = const_cast<T *>(&array[i]);
-        }
-        return pointingArray;
     }
 
     /**

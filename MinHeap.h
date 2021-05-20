@@ -58,9 +58,31 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     }
 
     /**
+     * @brief Constructor, initializes the *array*.
+     *
+     * Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
+     * elements as a parameter. Done by invoking the @link buildHeap @endlink
+     * method.
+     * @param arrayToBuildFrom the given array of elements to build the
+     *                         heap from.
+     * @param sizeOfArrayToBuildFrom the size of the array to build the
+     *                               heap from.
+     * @see buildHeap
+     */
+    // explicit MinHeap(Entry<K, V> *arrayToBuildFrom,
+    //                  int          sizeOfArrayToBuildFrom) {
+    //     buildHeap(arrayToBuildFrom, sizeOfArrayToBuildFrom);
+    // }
+
+    MinHeap() = default;
+
+    /**
      * @brief Destructor.
      */
-    virtual ~MinHeap() { delete[] array; }
+    virtual ~MinHeap() {
+        // for (int i = 0; i < physicalSize; i++) { delete array[i]; }
+        delete[] array;
+    }
 
     /**
      * @brief Deletes the *minimal element* from the heap, and returns it.
@@ -138,7 +160,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             }
         } else {
 
-            /* The heap is already full. Throw message. */
+            /* The heap is already full. Throw a message. */
             std::string message;
             message.append("The heap is already full, and contains ");
             message.append(std::to_string(physicalSize));
@@ -163,13 +185,14 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *            than `(logicalSize / 2)`, because indexes larger than
      *            `(logicalSize / 2)` point to leaf `node`s, thus the method
      *            will have no effect, as explained earlier.
+     * @throws std::out_of_range in case the index provided is out of range.
      */
     void fixHeap(int indexToFixFrom) override {
 
         /* Check that `indexToFixFrom` is a legal index. */
         if ((indexToFixFrom < 0) || (logicalSize <= indexToFixFrom)) {
 
-            /* The `indexToFixFrom` is out of range. Throw message. */
+            /* The `indexToFixFrom` is out of range. Throw a message. */
             std::string message;
             message.append("The index provided is out of range. There are ");
             message.append(std::to_string(logicalSize));
@@ -190,7 +213,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         if (array[currentIndex] == nullptr) {
 
             /*
-             * The `indexToFixFrom` is out of range. Throw message.
+             * The `indexToFixFrom` is out of range. Throw a message.
              * Note: should not be happening here, thanks to already checked
              * scenario.
              */
@@ -204,36 +227,65 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         }
 
         /* array[currentIndex] is not `nullptr`. Thus, comparable. */
+        fixHeapWhile(currentIndex);
+    }
+
+  private:
+    /**
+     * @brief This method is a *private* method, that represents a `while`
+     *        that is being invoked by the @link fixHeap(int) @endlink method.
+     *
+     * @param currentIndex should be in between `0` and `(logicalSize / 2)`.
+     *                     Represents the index to *fixHeap* from.
+     * @see fixHeap(int)
+     */
+    void fixHeapWhile(int currentIndex) {
+
+        /* array[currentIndex] is not `nullptr`. Thus, comparable. */
         while ((0 <= currentIndex) && (currentIndex < (logicalSize / 2))) {
-            int indexOfMinimalChildOfCurrentRoot = my_algorithms::min(
-                    array, currentIndex * 2 + 1, currentIndex * 2 + 2);
+
+            /* Get the index that points to the `minimal` element. */
+            int indexOfMinimalChildOfCurrentRoot =
+                    my_algorithms::min(array, logicalSize, currentIndex * 2 + 1,
+                                       currentIndex * 2 + 2);
             if (array[indexOfMinimalChildOfCurrentRoot] != nullptr) {
 
                 /*
                  * There is a living entry.
                  * Compare by keys.
+                 * `swap` the elements if needed, to maintain the validity of
+                 * the heap as a `Minimum-Heap`.
                  */
                 if (*array[currentIndex] >
                     *array[indexOfMinimalChildOfCurrentRoot]) {
                     my_algorithms::swap(array, currentIndex,
                                         indexOfMinimalChildOfCurrentRoot);
+
+                    /*
+                     * Set the updated iterator index to the replaced index.
+                     * Note: this enlarges the index.
+                     */
                     currentIndex = indexOfMinimalChildOfCurrentRoot;
                 }
             } else {
 
                 /*
                  * There is no entry to compare with.
-                 * Thus, we have reached a leaf.
+                 * Thus, this `node` does not have children,
+                 * and is actually a leaf.
                  */
                 break;
             }
-        } // FIXME: doesn't work good.
+        }
     }
 
+  public:
     /**
      * @brief Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
      *        elements as a parameter.
      *
+     * Done by making an array of pointers to the elements given in the @p
+     * arrayToBuildFrom.
      * @param arrayToBuildFrom the given array of elements to build the
      *                         heap from.
      * @param sizeOfArrayToBuildFrom the size of the array to build the
@@ -245,43 +297,13 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         /* Delete the old array if there is any. */
         delete[] array;
 
-        /* Initialize a `new` empty array of pointers. */
+        /* Initialize a `new` empty array of pointers to elements given. */
         physicalSize = sizeOfArrayToBuildFrom;
         logicalSize  = sizeOfArrayToBuildFrom;
-        array        = my_algorithms::createArrayOfPointers<Entry<K, V>>(
-                arrayToBuildFrom, sizeOfArrayToBuildFrom);
-
-        /*
-         * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
-         * Note: the almost last level has `(logicalSize / 2)` `nodes`.
-         */
-        int lastIndex = logicalSize - 1;
-        for (int currentIndex = (lastIndex - 1) / 2; currentIndex >= 0;
-             currentIndex--) {
-            fixHeap(currentIndex);
+        array        = new Entry<K, V> *[sizeOfArrayToBuildFrom];
+        for (int i = 0; i < sizeOfArrayToBuildFrom; i++) {
+            array[i] = &arrayToBuildFrom[i];
         }
-    }
-
-    /**
-     * @brief Builds a **Minimum-Heap** by giving an @p arrayToBuildFrom of
-     *        elements as a parameter.
-     *
-     * @param arrayToBuildFrom the given array of elements to build the
-     *                         heap from.
-     * @param sizeOfArrayToBuildFrom the size of the array to build the
-     *                               heap from.
-     */
-    void buildHeap(Entry<K, V> **arrayToBuildFrom, int sizeOfArrayToBuildFrom) {
-        // TODO: check this method.
-
-        /* Delete the old array if there is any. */
-        delete[] array;
-
-        /* Initialize a `new` empty array of pointers. */
-        physicalSize = sizeOfArrayToBuildFrom;
-        logicalSize  = sizeOfArrayToBuildFrom;
-        array        = my_algorithms::copyArray<Entry<K, V>>(arrayToBuildFrom,
-                                                      sizeOfArrayToBuildFrom);
 
         /*
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.

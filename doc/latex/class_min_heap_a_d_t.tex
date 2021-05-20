@@ -20,7 +20,7 @@ Inheritance diagram for Min\+Heap\+ADT$<$ K, V $>$\+:\begin{figure}[H]
 \item 
 virtual \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$ \mbox{\hyperlink{class_min_heap_a_d_t_aad46f6fbc56041d20c3130dcf5b42d5e}{delete\+Min}} ()=0
 \begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} from the heap, and returns it. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_min_heap_a_d_t_a2a12a7585f1327f7b8a79c7a0a3d3886}{insert}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&element\+To\+Insert)=0
+virtual void \mbox{\hyperlink{class_min_heap_a_d_t_a414eb805e88dfa1995c481571ff90d1b}{insert}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$element\+To\+Insert)=0
 \begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_min_heap_a_d_t_a448c7198ad5aa4f525d017cce6cb5237}{fix\+Heap}} (int index\+To\+Fix\+From)=0
 \begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
@@ -121,12 +121,12 @@ this method will continue to run until the root is no longer larger than one of 
 
 Implemented in \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{Min\+Heap$<$ K, V $>$}}.
 
-\mbox{\Hypertarget{class_min_heap_a_d_t_a2a12a7585f1327f7b8a79c7a0a3d3886}\label{class_min_heap_a_d_t_a2a12a7585f1327f7b8a79c7a0a3d3886}} 
+\mbox{\Hypertarget{class_min_heap_a_d_t_a414eb805e88dfa1995c481571ff90d1b}\label{class_min_heap_a_d_t_a414eb805e88dfa1995c481571ff90d1b}} 
 \index{MinHeapADT$<$ K, V $>$@{MinHeapADT$<$ K, V $>$}!insert@{insert}}
 \index{insert@{insert}!MinHeapADT$<$ K, V $>$@{MinHeapADT$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
-virtual void \mbox{\hyperlink{class_min_heap_a_d_t}{Min\+Heap\+ADT}}$<$ K, V $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+virtual void \mbox{\hyperlink{class_min_heap_a_d_t}{Min\+Heap\+ADT}}$<$ K, V $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -139,7 +139,7 @@ Inserts the {\ttfamily element\+To\+Insert} to the heap.
 \end{DoxyParams}
 
 
-Implemented in \mbox{\hyperlink{class_min_heap_a4be6c262d5fdb48feb4ce8d41603cac8}{Min\+Heap$<$ K, V $>$}}.
+Implemented in \mbox{\hyperlink{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}{Min\+Heap$<$ K, V $>$}}.
 
 \mbox{\Hypertarget{class_min_heap_a_d_t_a5a10590c084fd8d559e55ff9b7ba57c5}\label{class_min_heap_a_d_t_a5a10590c084fd8d559e55ff9b7ba57c5}} 
 \index{MinHeapADT$<$ K, V $>$@{MinHeapADT$<$ K, V $>$}!isEmpty@{isEmpty}}

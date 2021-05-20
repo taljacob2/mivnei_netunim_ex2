@@ -2,7 +2,7 @@
 \label{class_min_heap}\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
 
 
-This class implements a {\bfseries{Minimum-\/\+Heap}} which its elements are {\itshape Entries} that are composed by a {\itshape key} and a {\itshape value}.  
+This class implements a {\bfseries{Minimum-\/\+Heap}} which its elements are pointers to {\itshape Entries} that are composed by a {\itshape key} and a {\itshape value}.  
 
 
 
@@ -20,11 +20,13 @@ Inheritance diagram for Min\+Heap$<$ K, V $>$\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_min_heap_ad33a31874c9406b784c3c40a158cd501}{Min\+Heap}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$array\+To\+Build\+From, int size\+Of\+Array\+To\+Build\+From)
 \begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}{Min\+Heap}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_min_heap_a6041d18dee6992810ede4a3444b31738}{$\sim$\+Min\+Heap}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$ \mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{delete\+Min}} () override
 \begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} from the heap, and returns it. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_min_heap_a4be6c262d5fdb48feb4ce8d41603cac8}{insert}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&element\+To\+Insert) override
+void \mbox{\hyperlink{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}{insert}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$element\+To\+Insert) override
 \begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap}} (int index\+To\+Fix\+From) override
 \begin{DoxyCompactList}\small\item\em This method handles a heap that is {\itshape valid} from the root downwards until the {\ttfamily index\+To\+Fix\+From}, which from there and on downwards, the heap is {\itshape invalid} -\/ means\+: that the {\ttfamily node} in the {\ttfamily index\+To\+Fix\+From} is no smaller than both of its children. \end{DoxyCompactList}\item 
@@ -34,10 +36,15 @@ bool \mbox{\hyperlink{class_min_heap_a7edac6f943f3e143fbf45b529e70a8e4}{is\+Empt
 \begin{DoxyCompactList}\small\item\em returns a boolean value that determines whether this heap is empty or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_ae6f21519950cc55c5b470d07ee01a062}{make\+Empty}} () override
 \begin{DoxyCompactList}\small\item\em clears the heap from elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}{fix\+Heap\+While}} (int current\+Index)
+\begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents a {\ttfamily while} that is being invoked by the \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$ \mbox{\hyperlink{class_min_heap_aac2fdfeffb2831f053bda9ed5308246f}{array}} = nullptr
+\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$$\ast$ \mbox{\hyperlink{class_min_heap_a889e4bc48d8430fa841532b25dc000e4}{array}} = nullptr
 \item 
 int \mbox{\hyperlink{class_min_heap_a6e37d28efb033ff005ad704809af28b4}{physical\+Size}} = 0
 \begin{DoxyCompactList}\small\item\em The {\itshape physical-\/size} of the {\itshape array}. \end{DoxyCompactList}\item 
@@ -54,11 +61,13 @@ std\+::ostream \& \mbox{\hyperlink{class_min_heap_a81a7799f8217c5db84b7eec767932
 \subsubsection*{template$<$typename K, typename V$>$\newline
 class Min\+Heap$<$ K, V $>$}
 
-This class implements a {\bfseries{Minimum-\/\+Heap}} which its elements are {\itshape Entries} that are composed by a {\itshape key} and a {\itshape value}. 
+This class implements a {\bfseries{Minimum-\/\+Heap}} which its elements are pointers to {\itshape Entries} that are composed by a {\itshape key} and a {\itshape value}. 
 
 The heap compares its elements to each other, by the comparable {\ttfamily key} field located in each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} element. 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em E} & is an \mbox{\hyperlink{class_entry}{Entry}} type of element in the {\itshape Heap}. \\
+{\em K} & the type of {\itshape key} in the entry. \\
+\hline
+{\em V} & the type of {\itshape value} in the entry. \\
 \hline
 \end{DoxyTemplParams}
 \begin{DoxyNote}{Note}
@@ -79,9 +88,30 @@ Tal Yacob, ID\+: 208632778.
 \mbox{\Hypertarget{class_min_heap_ad33a31874c9406b784c3c40a158cd501}\label{class_min_heap_ad33a31874c9406b784c3c40a158cd501}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!MinHeap@{MinHeap}}
 \index{MinHeap@{MinHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
-\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}}
+\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
 \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$}]{array\+To\+Build\+From,  }\item[{int}]{size\+Of\+Array\+To\+Build\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, initializes the {\itshape array}. 
+
+Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\+From} of elements as a parameter. Done by invoking the \mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} method. 
+\begin{DoxyParams}{Parameters}
+{\em array\+To\+Build\+From} & the given array of elements to build the heap from. \\
+\hline
+{\em size\+Of\+Array\+To\+Build\+From} & the size of the array to build the heap from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}\label{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!MinHeap@{MinHeap}}
+\index{MinHeap@{MinHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
 
 
@@ -122,7 +152,7 @@ void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::build\+Heap (\b
 
 Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\+From} of elements as a parameter. 
 
-
+Done by making an array of pointers to the elements given in the {\ttfamily array\+To\+Build\+From}. 
 \begin{DoxyParams}{Parameters}
 {\em array\+To\+Build\+From} & the given array of elements to build the heap from. \\
 \hline
@@ -183,15 +213,39 @@ this method will continue to run until the root is no longer smaller than both o
 there is no use to give {\ttfamily index\+To\+Fix\+From} that is larger than {\ttfamily (logical\+Size / 2)}, because indexes larger than {\ttfamily (logical\+Size / 2)} point to leaf {\ttfamily node}s, thus the method will have no effect, as explained earlier. 
 \end{DoxyAttention}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & in case the index provided is out of range. \\
+\hline
+\end{DoxyExceptions}
+
 
 Implements \mbox{\hyperlink{class_min_heap_a_d_t_a448c7198ad5aa4f525d017cce6cb5237}{Min\+Heap\+ADT$<$ K, V $>$}}.
 
-\mbox{\Hypertarget{class_min_heap_a4be6c262d5fdb48feb4ce8d41603cac8}\label{class_min_heap_a4be6c262d5fdb48feb4ce8d41603cac8}} 
+\mbox{\Hypertarget{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}\label{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!fixHeapWhile@{fixHeapWhile}}
+\index{fixHeapWhile@{fixHeapWhile}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{fixHeapWhile()}{fixHeapWhile()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::fix\+Heap\+While (\begin{DoxyParamCaption}\item[{int}]{current\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This method is a {\itshape private} method, that represents a {\ttfamily while} that is being invoked by the \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Index} & should be in between {\ttfamily 0} and {\ttfamily (logical\+Size / 2)}. Represents the index to {\itshape fix\+Heap} from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}\label{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!insert@{insert}}
 \index{insert@{insert}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
-void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ \&}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -209,7 +263,7 @@ Inserts the {\ttfamily element\+To\+Insert} to the heap.
 \end{DoxyExceptions}
 
 
-Implements \mbox{\hyperlink{class_min_heap_a_d_t_a2a12a7585f1327f7b8a79c7a0a3d3886}{Min\+Heap\+ADT$<$ K, V $>$}}.
+Implements \mbox{\hyperlink{class_min_heap_a_d_t_a414eb805e88dfa1995c481571ff90d1b}{Min\+Heap\+ADT$<$ K, V $>$}}.
 
 \mbox{\Hypertarget{class_min_heap_a7edac6f943f3e143fbf45b529e70a8e4}\label{class_min_heap_a7edac6f943f3e143fbf45b529e70a8e4}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!isEmpty@{isEmpty}}
@@ -261,14 +315,14 @@ std\+::ostream {\ttfamily operator $<$$<$} print method.
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_min_heap_aac2fdfeffb2831f053bda9ed5308246f}\label{class_min_heap_aac2fdfeffb2831f053bda9ed5308246f}} 
+\mbox{\Hypertarget{class_min_heap_a889e4bc48d8430fa841532b25dc000e4}\label{class_min_heap_a889e4bc48d8430fa841532b25dc000e4}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!array@{array}}
 \index{array@{array}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{array}{array}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
-\mbox{\hyperlink{class_entry}{Entry}}$<$K, V$>$$\ast$ \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::array = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\hyperlink{class_entry}{Entry}}$<$K, V$>$$\ast$$\ast$ \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::array = nullptr\hspace{0.3cm}{\ttfamily [private]}}
 
-Array of {\ttfamily Entries} that serve as {\ttfamily elements}. Initialized to {\ttfamily nullptr}. \mbox{\Hypertarget{class_min_heap_aa5f4e762e12a9ea582b476c9520f2e91}\label{class_min_heap_aa5f4e762e12a9ea582b476c9520f2e91}} 
+Array of pointers to {\ttfamily Entries} that serve as {\ttfamily elements}. Initialized to {\ttfamily nullptr}. \mbox{\Hypertarget{class_min_heap_aa5f4e762e12a9ea582b476c9520f2e91}\label{class_min_heap_aa5f4e762e12a9ea582b476c9520f2e91}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!logicalSize@{logicalSize}}
 \index{logicalSize@{logicalSize}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{logicalSize}{logicalSize}}
