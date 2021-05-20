@@ -53,7 +53,19 @@ int main() {
     auto entryToInsert2 = Entry(1000, std::string("World"));
 
     try {
-        minHeap.insert(&entryToInsert);
+        minHeap.insert(&entryToInsert2);
+    } catch (std::exception &e) { std::cerr << e.what(); }
+
+
+    std::cout << "heap after insertion2: \n" << minHeap;
+
+
+    std::cout << "MAKING EMPTY AND TRYING TO INSERT:"
+              << "\n";
+    minHeap.makeEmpty();
+
+    try {
+        minHeap.insert(&entryToInsert2);
     } catch (std::exception &e) { std::cerr << e.what(); }
 
 
