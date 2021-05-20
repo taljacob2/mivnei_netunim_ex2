@@ -4,16 +4,6 @@
 
 #include "InputOutput.h"
 
-InputOutput::InputOutput() {
-
-    // sets the floating point precision of whole "cout" stream:
-    std::cout << std::setprecision(4);
-    std::cout << std::fixed;
-
-    // if there is already a 'Measure' file, delete it:
-    remove(fileName);
-}
-
 InputOutput::~InputOutput() = default;
 
 int InputOutput::getSize() noexcept(false) {

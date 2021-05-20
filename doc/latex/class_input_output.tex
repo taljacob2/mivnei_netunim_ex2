@@ -12,7 +12,7 @@ this class bundles together all the input / output methods of the program.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_input_output_ae05048b59854178af0331b7efd0f5edf}{Input\+Output}} ()
+\mbox{\hyperlink{class_input_output_a2c4d38e4befa1b5c6d0abcd3a03116f1}{Input\+Output}} (int \&\mbox{\hyperlink{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}{N}}, int \&\mbox{\hyperlink{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}{K}}, std\+::string \&input\+File\+Name, std\+::string \&output\+File\+Name)
 \item 
 \mbox{\hyperlink{class_input_output_a6925ac56858a476dbe0819586448a25d}{$\sim$\+Input\+Output}} ()
 \item 
@@ -28,7 +28,11 @@ double $\ast$ \mbox{\hyperlink{class_input_output_a7403f35be5673fbd37f96ef970d5e
 {\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_input_output_a408062257e63734b0bf07b79d43b2959}{set\+Sorts}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, T $\ast$\&insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested)
 \item 
 {\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_input_output_a8f8537166733f58fd5262ca01a700dbc}{print\+Elements}} (T $\ast$insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
-\end{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_input_output_abe6d37e81e60efd1a0ddf233ca8019e1}{receive\+Input}} (int \&\mbox{\hyperlink{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}{N}}, int \&\mbox{\hyperlink{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}{K}}, std\+::string \&input\+File\+Name, std\+::string \&output\+File\+Name)
+\item 
+static \mbox{\hyperlink{class_input_output}{Input\+Output}} $\ast$ \mbox{\hyperlink{class_input_output_a701529f39c0c64b5d03cc39fb2e5cb94}{factory\+Input\+Output}} ()
+\begin{DoxyCompactList}\small\item\em This method serves as a {\bfseries{Factory}} method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,6 +54,14 @@ static void \mbox{\hyperlink{class_input_output_a96c902d441eb36942449b259454678f
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+const int \mbox{\hyperlink{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}{N}}
+\begin{DoxyCompactList}\small\item\em The number of elements provided. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}{K}}
+\begin{DoxyCompactList}\small\item\em The division parameter. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}{INPUT\+\_\+\+FILE\+\_\+\+NAME}}
+\begin{DoxyCompactList}\small\item\em The name of the {\ttfamily input} file. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{class_input_output_adc15a5fa052c379f0825da1cbca984a7}{OUTPUT\+\_\+\+FILE\+\_\+\+NAME}}
+\begin{DoxyCompactList}\small\item\em The name of the {\ttfamily output} file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy__string}{my\+\_\+string}} \mbox{\hyperlink{class_input_output_ac751010552e2daf9089bcb767f950d00}{\+\_\+input}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
@@ -71,11 +83,11 @@ Tal Yacob, ID\+: 208632778.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_input_output_ae05048b59854178af0331b7efd0f5edf}\label{class_input_output_ae05048b59854178af0331b7efd0f5edf}} 
+\mbox{\Hypertarget{class_input_output_a2c4d38e4befa1b5c6d0abcd3a03116f1}\label{class_input_output_a2c4d38e4befa1b5c6d0abcd3a03116f1}} 
 \index{InputOutput@{InputOutput}!InputOutput@{InputOutput}}
 \index{InputOutput@{InputOutput}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{InputOutput()}{InputOutput()}}
-{\footnotesize\ttfamily Input\+Output\+::\+Input\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Input\+Output\+::\+Input\+Output (\begin{DoxyParamCaption}\item[{int \&}]{N,  }\item[{int \&}]{K,  }\item[{std\+::string \&}]{input\+File\+Name,  }\item[{std\+::string \&}]{output\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_input_output_a6925ac56858a476dbe0819586448a25d}\label{class_input_output_a6925ac56858a476dbe0819586448a25d}} 
 \index{InputOutput@{InputOutput}!````~InputOutput@{$\sim$InputOutput}}
@@ -104,6 +116,26 @@ Tal Yacob, ID\+: 208632778.
 \doxysubsubsection{\texorpdfstring{checkLegalUnsignedIntInput()}{checkLegalUnsignedIntInput()}}
 {\footnotesize\ttfamily bool Input\+Output\+::check\+Legal\+Unsigned\+Int\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy__string}{my\+\_\+string}} \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
+\mbox{\Hypertarget{class_input_output_a701529f39c0c64b5d03cc39fb2e5cb94}\label{class_input_output_a701529f39c0c64b5d03cc39fb2e5cb94}} 
+\index{InputOutput@{InputOutput}!factoryInputOutput@{factoryInputOutput}}
+\index{factoryInputOutput@{factoryInputOutput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{factoryInputOutput()}{factoryInputOutput()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_input_output}{Input\+Output}}$\ast$ Input\+Output\+::factory\+Input\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+This method serves as a {\bfseries{Factory}} method. 
+
+Receives input\+: \begin{DoxyItemize}
+\item (int) N -\/ the number of elements provided. \item (int) K -\/ the division parameter. \item (std\+::string) INPUT\+\_\+\+FILE\+\_\+\+NAME -\/ the name of the {\ttfamily input\+File}. \item (std\+::string) OUTPUT\+\_\+\+FILE\+\_\+\+NAME -\/ the name of the {\ttfamily output\+File}.\end{DoxyItemize}
+Construction\+: \begin{DoxyItemize}
+\item Constructs a {\ttfamily new} {\itshape \mbox{\hyperlink{class_input_output}{Input\+Output}}} object from the given input, and returns it. \begin{DoxyReturn}{Returns}
+Constructs a {\ttfamily new} {\itshape \mbox{\hyperlink{class_input_output}{Input\+Output}}} object from the given input, and returns it. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_input_output_a2c4d38e4befa1b5c6d0abcd3a03116f1}{Input\+Output(int\&, int\&, std\+::string\&, std\+::string\&)}} 
+\end{DoxySeeAlso}
+\end{DoxyItemize}
 \mbox{\Hypertarget{class_input_output_a7403f35be5673fbd37f96ef970d5e904}\label{class_input_output_a7403f35be5673fbd37f96ef970d5e904}} 
 \index{InputOutput@{InputOutput}!getAllInputs@{getAllInputs}}
 \index{getAllInputs@{getAllInputs}!InputOutput@{InputOutput}}
@@ -234,6 +266,12 @@ the {\ttfamily new} allocated manipulated array.
 
 {\ttfamily this\+::file\+Name} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_input_output_abe6d37e81e60efd1a0ddf233ca8019e1}\label{class_input_output_abe6d37e81e60efd1a0ddf233ca8019e1}} 
+\index{InputOutput@{InputOutput}!receiveInput@{receiveInput}}
+\index{receiveInput@{receiveInput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{receiveInput()}{receiveInput()}}
+{\footnotesize\ttfamily static void Input\+Output\+::receive\+Input (\begin{DoxyParamCaption}\item[{int \&}]{N,  }\item[{int \&}]{K,  }\item[{std\+::string \&}]{input\+File\+Name,  }\item[{std\+::string \&}]{output\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 \mbox{\Hypertarget{class_input_output_af5b2df278b468d22f9a6c87694552591}\label{class_input_output_af5b2df278b468d22f9a6c87694552591}} 
 \index{InputOutput@{InputOutput}!setArrayContents@{setArrayContents}}
 \index{setArrayContents@{setArrayContents}!InputOutput@{InputOutput}}
@@ -265,6 +303,46 @@ static void Input\+Output\+::set\+Sorts (\begin{DoxyParamCaption}\item[{T $\ast$
 
 
 The name of the \textquotesingle{}Measure\textquotesingle{} file\+: 
+
+\mbox{\Hypertarget{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}\label{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}} 
+\index{InputOutput@{InputOutput}!INPUT\_FILE\_NAME@{INPUT\_FILE\_NAME}}
+\index{INPUT\_FILE\_NAME@{INPUT\_FILE\_NAME}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{INPUT\_FILE\_NAME}{INPUT\_FILE\_NAME}}
+{\footnotesize\ttfamily const std\+::string Input\+Output\+::\+INPUT\+\_\+\+FILE\+\_\+\+NAME\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The name of the {\ttfamily input} file. 
+
+\mbox{\Hypertarget{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}\label{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}} 
+\index{InputOutput@{InputOutput}!K@{K}}
+\index{K@{K}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{K}{K}}
+{\footnotesize\ttfamily const int Input\+Output\+::K\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The division parameter. 
+
+\mbox{\Hypertarget{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}\label{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}} 
+\index{InputOutput@{InputOutput}!N@{N}}
+\index{N@{N}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily const int Input\+Output\+::N\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of elements provided. 
+
+\mbox{\Hypertarget{class_input_output_adc15a5fa052c379f0825da1cbca984a7}\label{class_input_output_adc15a5fa052c379f0825da1cbca984a7}} 
+\index{InputOutput@{InputOutput}!OUTPUT\_FILE\_NAME@{OUTPUT\_FILE\_NAME}}
+\index{OUTPUT\_FILE\_NAME@{OUTPUT\_FILE\_NAME}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_FILE\_NAME}{OUTPUT\_FILE\_NAME}}
+{\footnotesize\ttfamily const std\+::string Input\+Output\+::\+OUTPUT\+\_\+\+FILE\+\_\+\+NAME\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The name of the {\ttfamily output} file. 
 
 
 

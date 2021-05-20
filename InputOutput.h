@@ -19,6 +19,18 @@
  */
 class InputOutput {
   private:
+    /// The number of elements provided.
+    const int N;
+
+    /// The division parameter.
+    const int K;
+
+    /// The name of the `input` file.
+    const std::string INPUT_FILE_NAME;
+
+    /// The name of the `output` file.
+    const std::string OUTPUT_FILE_NAME;
+
     my_string _input;
 
     /// The name of the 'Measure' file:
@@ -45,7 +57,15 @@ class InputOutput {
     void setArrayContents(double array[], int size);
 
   public:
-    InputOutput();
+    InputOutput(int &N, int &K, std::string &inputFileName,
+                std::string &outputFileName)
+        : N(N), K(K), INPUT_FILE_NAME(inputFileName),
+          OUTPUT_FILE_NAME(outputFileName) {
+
+        // sets the floating point precision of whole "cout" stream:
+        std::cout << std::setprecision(4);
+        std::cout << std::fixed;
+    }
 
     ~InputOutput();
 
@@ -212,6 +232,52 @@ class InputOutput {
              << " is : " << std::setprecision(9) << std::fixed << time_taken;
         file << " sec" << std::endl;
         file.close();
+    }
+
+  public:
+    static void receiveInput(int &N, int &K, std::string &inputFileName,
+                             std::string &outputFileName) {
+
+        /* Receive N */
+        std::cin >> N;
+
+        /* Receive K */
+        std::cin >> K;
+
+        /* Receive name of InputFile: */
+        std::cin >> inputFileName;
+
+        /* Receive name of OutputFile: */
+        std::cin >> outputFileName;
+    }
+
+    /**
+     * @brief This method serves as a **Factory** method.
+     *
+     * Receives input:
+     *      @li (int) N - the number of elements provided.
+     *      @li (int) K - the division parameter.
+     *      @li (std::string) INPUT_FILE_NAME - the name of the `inputFile`.
+     *      @li (std::string) OUTPUT_FILE_NAME - the name of the `outputFile`.
+     *
+     * Construction:
+     *      @li Constructs a `new` *InputOutput* object from the given input, and
+     *      returns it.
+     * @return Constructs a `new` *InputOutput* object from the given input,
+     * and returns it.
+     * @see InputOutput(int&, int&, std::string&, std::string&)
+     */
+    static InputOutput *factoryInputOutput() {
+
+        /* Receive input: */
+        int         N;
+        int         K;
+        std::string INPUT_FILE_NAME;
+        std::string OUTPUT_FILE_NAME;
+        InputOutput::receiveInput(N, K, INPUT_FILE_NAME, OUTPUT_FILE_NAME);
+
+        /* Create InputOutput object */
+        return new InputOutput(N, K, INPUT_FILE_NAME, OUTPUT_FILE_NAME);
     }
 };
 

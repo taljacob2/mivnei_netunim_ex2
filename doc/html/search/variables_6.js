@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['str_205', ['str', ['../classmy__string.html#a83affb178faa4976938769abc152f7dd', 1, 'my_string']]]
+        ['n_214', ['N', ['../class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc', 1, 'InputOutput']]]
     ];

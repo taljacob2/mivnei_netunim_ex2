@@ -130,14 +130,18 @@
                         name="pub-methods"></a>
                     Public Member Functions</h2></td>
             </tr>
-            <tr class="memitem:ae05048b59854178af0331b7efd0f5edf">
+            <tr class="memitem:a2c4d38e4befa1b5c6d0abcd3a03116f1">
                 <td class="memItemLeft" align="right" valign="top">&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#ae05048b59854178af0331b7efd0f5edf">InputOutput</a>
-                    ()
+                                                            href="class_input_output.html#a2c4d38e4befa1b5c6d0abcd3a03116f1">InputOutput</a>
+                    (int &amp;<a class="el"
+                                 href="class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc">N</a>,
+                    int &amp;<a class="el"
+                                href="class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02">K</a>,
+                    std::string &amp;inputFileName, std::string &amp;outputFileName)
                 </td>
             </tr>
-            <tr class="separator:ae05048b59854178af0331b7efd0f5edf">
+            <tr class="separator:a2c4d38e4befa1b5c6d0abcd3a03116f1">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a6925ac56858a476dbe0819586448a25d">
@@ -247,6 +251,40 @@
             <tr class="separator:a8f8537166733f58fd5262ca01a700dbc">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
+            <tr class="memitem:abe6d37e81e60efd1a0ddf233ca8019e1">
+                <td class="memItemLeft" align="right" valign="top">static void&#160;</td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#abe6d37e81e60efd1a0ddf233ca8019e1">receiveInput</a>
+                    (int &amp;<a class="el"
+                                 href="class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc">N</a>,
+                    int &amp;<a class="el"
+                                href="class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02">K</a>,
+                    std::string &amp;inputFileName, std::string &amp;outputFileName)
+                </td>
+            </tr>
+            <tr class="separator:abe6d37e81e60efd1a0ddf233ca8019e1">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a701529f39c0c64b5d03cc39fb2e5cb94">
+                <td class="memItemLeft" align="right" valign="top">static <a
+                        class="el"
+                        href="class_input_output.html">InputOutput</a> *&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#a701529f39c0c64b5d03cc39fb2e5cb94">factoryInputOutput</a>
+                    ()
+                </td>
+            </tr>
+            <tr class="memdesc:a701529f39c0c64b5d03cc39fb2e5cb94">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method serves as a <b>Factory</b>
+                    method. <a
+                            href="class_input_output.html#a701529f39c0c64b5d03cc39fb2e5cb94">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a701529f39c0c64b5d03cc39fb2e5cb94">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
         </table>
         <table class="memberdecls">
             <tr class="heading">
@@ -344,6 +382,70 @@
                         name="pri-attribs"></a>
                     Private Attributes</h2></td>
             </tr>
+            <tr class="memitem:a54a5d6f4e9b87c13e28c66e1d13abbbc">
+                <td class="memItemLeft" align="right" valign="top">const int&#160;</td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc">N</a>
+                </td>
+            </tr>
+            <tr class="memdesc:a54a5d6f4e9b87c13e28c66e1d13abbbc">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">The number of elements provided. <a
+                        href="class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a54a5d6f4e9b87c13e28c66e1d13abbbc">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a561fedb6ffe0facc22f1a8565d3eef02">
+                <td class="memItemLeft" align="right" valign="top">const int&#160;</td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02">K</a>
+                </td>
+            </tr>
+            <tr class="memdesc:a561fedb6ffe0facc22f1a8565d3eef02">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">The division parameter. <a
+                        href="class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a561fedb6ffe0facc22f1a8565d3eef02">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a1e526b2dd1e303454bcf57c566f3af2f">
+                <td class="memItemLeft" align="right" valign="top">const
+                    std::string&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f">INPUT_FILE_NAME</a>
+                </td>
+            </tr>
+            <tr class="memdesc:a1e526b2dd1e303454bcf57c566f3af2f">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">The name of the <code>input</code> file.
+                    <a href="class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a1e526b2dd1e303454bcf57c566f3af2f">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:adc15a5fa052c379f0825da1cbca984a7">
+                <td class="memItemLeft" align="right" valign="top">const
+                    std::string&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#adc15a5fa052c379f0825da1cbca984a7">OUTPUT_FILE_NAME</a>
+                </td>
+            </tr>
+            <tr class="memdesc:adc15a5fa052c379f0825da1cbca984a7">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">The name of the <code>output</code> file.
+                    <a href="class_input_output.html#adc15a5fa052c379f0825da1cbca984a7">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:adc15a5fa052c379f0825da1cbca984a7">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
             <tr class="memitem:ac751010552e2daf9089bcb767f950d00">
                 <td class="memItemLeft" align="right" valign="top"><a class="el"
                                                                       href="classmy__string.html">my_string</a>&#160;
@@ -395,20 +497,57 @@
             </dl>
         </div>
         <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-        <a id="ae05048b59854178af0331b7efd0f5edf"></a>
+        <a id="a2c4d38e4befa1b5c6d0abcd3a03116f1"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#ae05048b59854178af0331b7efd0f5edf">&#9670;&nbsp;</a></span>InputOutput()
+                href="#a2c4d38e4befa1b5c6d0abcd3a03116f1">&#9670;&nbsp;</a></span>InputOutput()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
-                <table class="memname">
+                <table class="mlabels">
                     <tr>
-                        <td class="memname">InputOutput::InputOutput</td>
-                        <td>(</td>
-                        <td class="paramname"></td>
-                        <td>)</td>
-                        <td></td>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">
+                                        InputOutput::InputOutput
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramtype">int &amp;&#160;</td>
+                                    <td class="paramname"><em>N</em>,</td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">int &amp;&#160;</td>
+                                    <td class="paramname"><em>K</em>,</td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">std::string &amp;&#160;</td>
+                                    <td class="paramname"><em>inputFileName</em>,
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">std::string &amp;&#160;</td>
+                                    <td class="paramname">
+                                        <em>outputFileName</em>&#160;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span></span></td>
                     </tr>
                 </table>
             </div>
@@ -579,6 +718,74 @@
                 </table>
             </div>
             <div class="memdoc">
+
+            </div>
+        </div>
+        <a id="a701529f39c0c64b5d03cc39fb2e5cb94"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a701529f39c0c64b5d03cc39fb2e5cb94">&#9670;&nbsp;</a></span>factoryInputOutput()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">static <a class="el"
+                                                                  href="class_input_output.html">InputOutput</a>*
+                                        InputOutput::factoryInputOutput
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramname"></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">static</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>This method serves as a <b>Factory</b> method. </p>
+                <p>Receives input: </p>
+                <ul>
+                    <li>(int) N - the number of elements provided.</li>
+                    <li>(int) K - the division parameter.</li>
+                    <li>(std::string) INPUT_FILE_NAME - the name of the <code>inputFile</code>.
+                    </li>
+                    <li>(std::string) OUTPUT_FILE_NAME - the name of the <code>outputFile</code>.
+                    </li>
+                </ul>
+                <p>Construction: </p>
+                <ul>
+                    <li>Constructs a <code>new</code> <em><a class="el"
+                                                             href="class_input_output.html"
+                                                             title="this class bundles together all the input / output methods of the program.">InputOutput</a></em>
+                        object from the given input, and returns it.
+                        <dl class="section return">
+                            <dt>Returns</dt>
+                            <dd>Constructs a <code>new</code> <em><a class="el"
+                                                                     href="class_input_output.html"
+                                                                     title="this class bundles together all the input / output methods of the program.">InputOutput</a></em>
+                                object from the given input, and returns it.
+                            </dd>
+                        </dl>
+                        <dl class="section see">
+                            <dt>See also</dt>
+                            <dd><a class="el"
+                                   href="class_input_output.html#a2c4d38e4befa1b5c6d0abcd3a03116f1">InputOutput(int&amp;,
+                                int&amp;, std::string&amp;,
+                                std::string&amp;)</a></dd>
+                        </dl>
+                    </li>
+                </ul>
 
             </div>
         </div>
@@ -1053,6 +1260,65 @@
 
             </div>
         </div>
+        <a id="abe6d37e81e60efd1a0ddf233ca8019e1"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#abe6d37e81e60efd1a0ddf233ca8019e1">&#9670;&nbsp;</a></span>receiveInput()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">static void
+                                        InputOutput::receiveInput
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramtype">int &amp;&#160;</td>
+                                    <td class="paramname"><em>N</em>,</td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">int &amp;&#160;</td>
+                                    <td class="paramname"><em>K</em>,</td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">std::string &amp;&#160;</td>
+                                    <td class="paramname"><em>inputFileName</em>,
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">std::string &amp;&#160;</td>
+                                    <td class="paramname">
+                                        <em>outputFileName</em>&#160;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">static</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+            </div>
+        </div>
         <a id="af5b2df278b468d22f9a6c87694552591"></a>
         <h2 class="memtitle"><span class="permalink"><a
                 href="#af5b2df278b468d22f9a6c87694552591">&#9670;&nbsp;</a></span>setArrayContents()
@@ -1232,6 +1498,126 @@
             <div class="memdoc">
 
                 <p>The name of the 'Measure' file: </p>
+
+            </div>
+        </div>
+        <a id="a1e526b2dd1e303454bcf57c566f3af2f"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a1e526b2dd1e303454bcf57c566f3af2f">&#9670;&nbsp;</a></span>INPUT_FILE_NAME
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">const std::string
+                                        InputOutput::INPUT_FILE_NAME
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>The name of the <code>input</code> file. </p>
+
+            </div>
+        </div>
+        <a id="a561fedb6ffe0facc22f1a8565d3eef02"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a561fedb6ffe0facc22f1a8565d3eef02">&#9670;&nbsp;</a></span>K
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">const int
+                                        InputOutput::K
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>The division parameter. </p>
+
+            </div>
+        </div>
+        <a id="a54a5d6f4e9b87c13e28c66e1d13abbbc"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a54a5d6f4e9b87c13e28c66e1d13abbbc">&#9670;&nbsp;</a></span>N
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">const int
+                                        InputOutput::N
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>The number of elements provided. </p>
+
+            </div>
+        </div>
+        <a id="adc15a5fa052c379f0825da1cbca984a7"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#adc15a5fa052c379f0825da1cbca984a7">&#9670;&nbsp;</a></span>OUTPUT_FILE_NAME
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">const std::string
+                                        InputOutput::OUTPUT_FILE_NAME
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>The name of the <code>output</code> file. </p>
 
             </div>
         </div>

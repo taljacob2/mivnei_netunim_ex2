@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['physicalsize_204', ['physicalSize', ['../class_min_heap.html#a6e37d28efb033ff005ad704809af28b4', 1, 'MinHeap']]]
+        ['logicalsize_213', ['logicalSize', ['../class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91', 1, 'MinHeap']]]
     ];
