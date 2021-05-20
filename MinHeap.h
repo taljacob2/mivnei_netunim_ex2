@@ -39,10 +39,10 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      */
     Entry<K, V> **array = nullptr;
 
-    /// The *physical-size* of the *array*.
+    /// The *physical-size* of the *array*. Initialized to `0`.
     int physicalSize = 0;
 
-    /// The *logical-size* of the *array*.
+    /// The *logical-size* of the *array*. Initialized to `0`.
     int logicalSize = 0;
 
   public:
@@ -90,29 +90,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         Entry<K, V> *returnElement = array[0];
 
         if (logicalSize >= 2) {
-
-            /*
-             * There is at least `2` elements in the heap,
-             * so we are able to delete an element.
-             */
-
-            /* Set the `first` element in the array to be the `last` element. */
-            array[0] = array[logicalSize - 1];
-
-            /* Set the `last` element to be `nullptr`. */
-            array[logicalSize - 1] = nullptr;
-
-            /*
-             * Decrease the `logicalSize` of the array by `1`,
-             * before invoking `fixHeap(0)`.
-             */
-            logicalSize--;
-
-            /*
-             * After deletion,
-             * invoke `fixHeap(0)` to fix the heap.
-             */
-            fixHeap(0);
+            deleteMinWhenThereAreTwoOrMoreElements();
         } else if (logicalSize > 0) {
 
             /* Delete `array[0]` manually. */
@@ -123,7 +101,6 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         } else {
 
             /* `logicalSize` is 0. */
-
             // TODO: change to `wrong input`
             throw std::logic_error("You have tried to delete an element from "
                                    "an empty heap.\n");
@@ -131,6 +108,40 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         return returnElement;
     }
 
+  private:
+    /**
+     * @brief This method is a *private* method, that represents the
+     *        case when there are `2` or more elements in the heap.
+     *
+     * @see deleteMin()
+     */
+    void deleteMinWhenThereAreTwoOrMoreElements() {
+
+        /*
+         * There are at least `2` elements in the heap,
+         * so we are able to delete an element.
+         */
+
+        /* Set the `first` element in the array to be the `last` element. */
+        array[0] = array[logicalSize - 1];
+
+        /* Set the `last` element to be `nullptr`. */
+        array[logicalSize - 1] = nullptr;
+
+        /*
+         * Decrease the `logicalSize` of the array by `1`,
+         * before invoking `fixHeap(0)`.
+         */
+        logicalSize--;
+
+        /*
+         * After deletion,
+         * invoke `fixHeap(0)` to fix the heap.
+         */
+        fixHeap(0);
+    }
+
+  public:
     /**
      * @brief Inserts the @p elementToInsert to the heap.
      *
@@ -138,38 +149,10 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @throws std::logic_error in case the heap is already full.
      */
     void insert(Entry<K, V> *elementToInsert) override {
-
-        /* If there is enough space in the array. */
         if (physicalSize > logicalSize) {
 
-            /* Add the `elementToInsert` as the `last` element in the array. */
-            array[logicalSize++] = elementToInsert;
-
-            int currentIndex = logicalSize - 1;
-
-            /*
-             * Check upwards the heap, whether there is a need to `swap` the
-             * elements according to the insertion, to ensure the heap is valid.
-             * While there is at least `1` child in the array.
-             */
-            while (0 < currentIndex) {
-
-                /*
-                 * Beginning with the inserted element, compare each child to
-                 * its parent, to check if there is a need to `swap` between
-                 * them, in order to ensure validity of the heap, as a
-                 * `Minimum-Heap`.
-                 */
-                if (*array[currentIndex] < *array[(currentIndex - 1) / 2]) {
-                    my_algorithms::swap(array, currentIndex,
-                                        (currentIndex - 1) / 2);
-
-                    /* Step upwards to the parent of the element. */
-                    currentIndex = (currentIndex - 1) / 2;
-                } else {
-                    break;
-                }
-            }
+            /* If there is enough space in the array. */
+            insertWhenThereIsEnoughSpace(elementToInsert);
         } else {
 
             /* The heap is already full. Throw a message. */
@@ -183,6 +166,49 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         }
     }
 
+  private:
+    /**
+     * @brief This method is a *private* method, that represents the
+     *        case when there is enough space in the heap to insert an
+     *        additional @p elementToInsert element.
+     *
+     * @param elementToInsert is the element required to be inserted to the
+     *                        heap.
+     * @see insert(Entry<K, V> *)
+     */
+    void insertWhenThereIsEnoughSpace(Entry<K, V> *elementToInsert) {
+
+        /* Add the `elementToInsert` as the `last` element in the array. */
+        array[logicalSize++] = elementToInsert;
+
+        int currentIndex = logicalSize - 1;
+
+        /*
+         * Check upwards the heap, whether there is a need to `swap` the
+         * elements according to the insertion, to ensure the heap is valid.
+         * While there is at least `1` child in the array.
+         */
+        while (0 < currentIndex) {
+
+            /*
+             * Beginning with the inserted element, compare each child to
+             * its parent, to check if there is a need to `swap` between
+             * them, in order to ensure validity of the heap, as a
+             * `Minimum-Heap`.
+             */
+            if (*array[currentIndex] < *array[(currentIndex - 1) / 2]) {
+                my_algorithms::swap(array, currentIndex,
+                                    (currentIndex - 1) / 2);
+
+                /* Step upwards to the parent of the element. */
+                currentIndex = (currentIndex - 1) / 2;
+            } else {
+                break;
+            }
+        }
+    }
+
+  public:
     /**
      * @brief This method handles a heap that is *valid* from the root downwards
      *        until the `indexToFixFrom`, which from there and on downwards,
@@ -213,6 +239,22 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             // TODO: change to `wrong input`
             throw std::out_of_range(message);
         }
+        fixHeapLegalIndex(indexToFixFrom);
+    }
+
+  private:
+    /**
+     * @brief This method is a *private* method, that represents the
+     *        case when the provided @p currentIndex is a legal index.
+     *        This method is being invoked by the @link fixHeap(int)
+     *        @endlink method.
+     *
+     * @param currentIndex has been checked as a legal index. should be
+     *                     in between `0` and `(logicalSize / 2)`.
+     *                     Represents the index to *fixHeap* from.
+     * @see fixHeap(int)
+     */
+    void fixHeapLegalIndex(int indexToFixFrom) {
 
         /*
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
@@ -242,7 +284,6 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         fixHeapWhile(currentIndex);
     }
 
-  private:
     /**
      * @brief This method is a *private* method, that represents a `while`
      *        that is being invoked by the @link fixHeap(int) @endlink method.

@@ -319,6 +319,68 @@
                         name="pri-methods"></a>
                     Private Member Functions</h2></td>
             </tr>
+            <tr class="memitem:abfbd451e51d1d8c93ff76ce12f9de60a">
+                <td class="memItemLeft" align="right" valign="top">void&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_min_heap.html#abfbd451e51d1d8c93ff76ce12f9de60a">deleteMinWhenThereAreTwoOrMoreElements</a>
+                    ()
+                </td>
+            </tr>
+            <tr class="memdesc:abfbd451e51d1d8c93ff76ce12f9de60a">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method is a <em>private</em> method,
+                    that represents the case when there are <code>2</code> or
+                    more elements in the heap. <a
+                            href="class_min_heap.html#abfbd451e51d1d8c93ff76ce12f9de60a">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:abfbd451e51d1d8c93ff76ce12f9de60a">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a658f6c362036350b5145178e88e57051">
+                <td class="memItemLeft" align="right" valign="top">void&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_min_heap.html#a658f6c362036350b5145178e88e57051">insertWhenThereIsEnoughSpace</a>
+                    (<a class="el" href="class_entry.html">Entry</a>&lt; K, V
+                    &gt; *elementToInsert)
+                </td>
+            </tr>
+            <tr class="memdesc:a658f6c362036350b5145178e88e57051">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method is a <em>private</em> method,
+                    that represents the case when there is enough space in the
+                    heap to insert an additional <code>elementToInsert</code>
+                    element. <a
+                            href="class_min_heap.html#a658f6c362036350b5145178e88e57051">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a658f6c362036350b5145178e88e57051">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:abf27ed86919364739d0c6d508a8ae9a5">
+                <td class="memItemLeft" align="right" valign="top">void&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_min_heap.html#abf27ed86919364739d0c6d508a8ae9a5">fixHeapLegalIndex</a>
+                    (int indexToFixFrom)
+                </td>
+            </tr>
+            <tr class="memdesc:abf27ed86919364739d0c6d508a8ae9a5">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method is a <em>private</em> method,
+                    that represents the case when the provided <code>currentIndex</code>
+                    is a legal index. This method is being invoked by the <a
+                            class="el"
+                            href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap(int)</a>
+                    method. <a
+                            href="class_min_heap.html#abf27ed86919364739d0c6d508a8ae9a5">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:abf27ed86919364739d0c6d508a8ae9a5">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
             <tr class="memitem:a8f24129c56d65d760c4d0e4460e8d27a">
                 <td class="memItemLeft" align="right" valign="top">void&#160;
                 </td>
@@ -371,7 +433,8 @@
             <tr class="memdesc:a6e37d28efb033ff005ad704809af28b4">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">The <em>physical-size</em> of the <em>array</em>.
-                    <a href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">More...</a><br/>
+                    Initialized to <code>0</code>. <a
+                            href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">More...</a><br/>
                 </td>
             </tr>
             <tr class="separator:a6e37d28efb033ff005ad704809af28b4">
@@ -388,7 +451,8 @@
             <tr class="memdesc:aa5f4e762e12a9ea582b476c9520f2e91">
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">The <em>logical-size</em> of the <em>array</em>.
-                    <a href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">More...</a><br/>
+                    Initialized to <code>0</code>. <a
+                            href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">More...</a><br/>
                 </td>
             </tr>
             <tr class="separator:aa5f4e762e12a9ea582b476c9520f2e91">
@@ -844,6 +908,54 @@
 
             </div>
         </div>
+        <a id="abfbd451e51d1d8c93ff76ce12f9de60a"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#abfbd451e51d1d8c93ff76ce12f9de60a">&#9670;&nbsp;</a></span>deleteMinWhenThereAreTwoOrMoreElements()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <div class="memtemplate">
+                    template&lt;typename K , typename V &gt;
+                </div>
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">void <a class="el"
+                                                                href="class_min_heap.html">MinHeap</a>&lt;
+                                        K, V &gt;::deleteMinWhenThereAreTwoOrMoreElements
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramname"></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>This method is a <em>private</em> method, that represents the
+                    case when there are <code>2</code> or more elements in the
+                    heap. </p>
+                <dl class="section see">
+                    <dt>See also</dt>
+                    <dd><a class="el"
+                           href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930"
+                           title="Deletes the minimal element from the heap, and returns it.">deleteMin()</a>
+                    </dd>
+                </dl>
+
+            </div>
+        </div>
         <a id="ab5f16032e4084a73454be12e70ee3878"></a>
         <h2 class="memtitle"><span class="permalink"><a
                 href="#ab5f16032e4084a73454be12e70ee3878">&#9670;&nbsp;</a></span>fixHeap()
@@ -933,6 +1045,73 @@
                 <p>Implements <a class="el"
                                  href="class_min_heap_a_d_t.html#a448c7198ad5aa4f525d017cce6cb5237">MinHeapADT&lt;
                     K, V &gt;</a>.</p>
+
+            </div>
+        </div>
+        <a id="abf27ed86919364739d0c6d508a8ae9a5"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#abf27ed86919364739d0c6d508a8ae9a5">&#9670;&nbsp;</a></span>fixHeapLegalIndex()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <div class="memtemplate">
+                    template&lt;typename K , typename V &gt;
+                </div>
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">void <a class="el"
+                                                                href="class_min_heap.html">MinHeap</a>&lt;
+                                        K, V &gt;::fixHeapLegalIndex
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramtype">int&#160;</td>
+                                    <td class="paramname">
+                                        <em>indexToFixFrom</em></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>This method is a <em>private</em> method, that represents the
+                    case when the provided <code>currentIndex</code> is a legal
+                    index. This method is being invoked by the <a class="el"
+                                                                  href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap(int)</a>
+                    method. </p>
+                <dl class="params">
+                    <dt>Parameters</dt>
+                    <dd>
+                        <table class="params">
+                            <tr>
+                                <td class="paramname">currentIndex</td>
+                                <td>has been checked as a legal index. should be
+                                    in between <code>0</code> and <code>(logicalSize
+                                        / 2)</code>. Represents the index to
+                                    <em>fixHeap</em> from.
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl class="section see">
+                    <dt>See also</dt>
+                    <dd><a class="el"
+                           href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878"
+                           title="This method handles a heap that is valid from the root downwards until the indexToFixFrom,...">fixHeap(int)</a>
+                    </dd>
+                </dl>
 
             </div>
         </div>
@@ -1070,6 +1249,72 @@
                 <p>Implements <a class="el"
                                  href="class_min_heap_a_d_t.html#a414eb805e88dfa1995c481571ff90d1b">MinHeapADT&lt;
                     K, V &gt;</a>.</p>
+
+            </div>
+        </div>
+        <a id="a658f6c362036350b5145178e88e57051"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a658f6c362036350b5145178e88e57051">&#9670;&nbsp;</a></span>insertWhenThereIsEnoughSpace()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <div class="memtemplate">
+                    template&lt;typename K , typename V &gt;
+                </div>
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">void <a class="el"
+                                                                href="class_min_heap.html">MinHeap</a>&lt;
+                                        K, V &gt;::insertWhenThereIsEnoughSpace
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramtype"><a class="el"
+                                                             href="class_entry.html">Entry</a>&lt;
+                                        K, V &gt; *&#160;
+                                    </td>
+                                    <td class="paramname">
+                                        <em>elementToInsert</em></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">private</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>This method is a <em>private</em> method, that represents the
+                    case when there is enough space in the heap to insert an
+                    additional <code>elementToInsert</code> element. </p>
+                <dl class="params">
+                    <dt>Parameters</dt>
+                    <dd>
+                        <table class="params">
+                            <tr>
+                                <td class="paramname">elementToInsert</td>
+                                <td>is the element required to be inserted to
+                                    the heap.
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl class="section see">
+                    <dt>See also</dt>
+                    <dd><a class="el"
+                           href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16"
+                           title="Inserts the elementToInsert to the heap.">insert(Entry&lt;K,
+                        V&gt; *)</a></dd>
+                </dl>
 
             </div>
         </div>
@@ -1290,7 +1535,8 @@
             </div>
             <div class="memdoc">
 
-                <p>The <em>logical-size</em> of the <em>array</em>. </p>
+                <p>The <em>logical-size</em> of the <em>array</em>. Initialized
+                    to <code>0</code>. </p>
 
             </div>
         </div>
@@ -1324,7 +1570,8 @@
             </div>
             <div class="memdoc">
 
-                <p>The <em>physical-size</em> of the <em>array</em>. </p>
+                <p>The <em>physical-size</em> of the <em>array</em>. Initialized
+                    to <code>0</code>. </p>
 
             </div>
         </div>

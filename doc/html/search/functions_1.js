@@ -1,8 +1,8 @@
 var searchData =
     [
-        ['calculatetotaltimetakenbytheprogram_120', ['calculateTotalTimeTakenByTheProgram', ['../class_input_output.html#a96c902d441eb36942449b259454678fb', 1, 'InputOutput']]],
-        ['checklegaldoubleinput_121', ['checkLegalDoubleInput', ['../class_input_output.html#a2421f7839ae66cb99dd364a325e0e03c', 1, 'InputOutput']]],
-        ['checklegalunsignedintinput_122', ['checkLegalUnsignedIntInput', ['../class_input_output.html#adbb54d295a037e6ce0ef1e4ebb3641ca', 1, 'InputOutput']]],
-        ['compare_123', ['compare', ['../classmy__string.html#a36d7ca20ffce895d0c9c2621555f2170', 1, 'my_string::compare(const char *&amp;str1, const char *&amp;str2)'], ['../classmy__string.html#aa1d01b745bef9e559eccf349aef23070', 1, 'my_string::compare(const my_string &amp;str1, const my_string &amp;str2)']]],
-        ['copyarray_124', ['copyArray', ['../classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623', 1, 'my_algorithms']]]
+        ['calculatetotaltimetakenbytheprogram_123', ['calculateTotalTimeTakenByTheProgram', ['../class_input_output.html#a96c902d441eb36942449b259454678fb', 1, 'InputOutput']]],
+        ['checklegaldoubleinput_124', ['checkLegalDoubleInput', ['../class_input_output.html#a2421f7839ae66cb99dd364a325e0e03c', 1, 'InputOutput']]],
+        ['checklegalunsignedintinput_125', ['checkLegalUnsignedIntInput', ['../class_input_output.html#adbb54d295a037e6ce0ef1e4ebb3641ca', 1, 'InputOutput']]],
+        ['compare_126', ['compare', ['../classmy__string.html#a36d7ca20ffce895d0c9c2621555f2170', 1, 'my_string::compare(const char *&amp;str1, const char *&amp;str2)'], ['../classmy__string.html#aa1d01b745bef9e559eccf349aef23070', 1, 'my_string::compare(const my_string &amp;str1, const my_string &amp;str2)']]],
+        ['copyarray_127', ['copyArray', ['../classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623', 1, 'my_algorithms']]]
     ];

@@ -39,6 +39,12 @@ void \mbox{\hyperlink{class_min_heap_ae6f21519950cc55c5b470d07ee01a062}{make\+Em
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_min_heap_abfbd451e51d1d8c93ff76ce12f9de60a}{delete\+Min\+When\+There\+Are\+Two\+Or\+More\+Elements}} ()
+\begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents the case when there are {\ttfamily 2} or more elements in the heap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_min_heap_a658f6c362036350b5145178e88e57051}{insert\+When\+There\+Is\+Enough\+Space}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$element\+To\+Insert)
+\begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents the case when there is enough space in the heap to insert an additional {\ttfamily element\+To\+Insert} element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_min_heap_abf27ed86919364739d0c6d508a8ae9a5}{fix\+Heap\+Legal\+Index}} (int index\+To\+Fix\+From)
+\begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents the case when the provided {\ttfamily current\+Index} is a legal index. This method is being invoked by the \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} method. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}{fix\+Heap\+While}} (int current\+Index)
 \begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents a {\ttfamily while} that is being invoked by the \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
@@ -47,9 +53,9 @@ void \mbox{\hyperlink{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}{fix\+Hea
 \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$$\ast$ \mbox{\hyperlink{class_min_heap_a889e4bc48d8430fa841532b25dc000e4}{array}} = nullptr
 \item 
 int \mbox{\hyperlink{class_min_heap_a6e37d28efb033ff005ad704809af28b4}{physical\+Size}} = 0
-\begin{DoxyCompactList}\small\item\em The {\itshape physical-\/size} of the {\itshape array}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The {\itshape physical-\/size} of the {\itshape array}. Initialized to {\ttfamily 0}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_min_heap_aa5f4e762e12a9ea582b476c9520f2e91}{logical\+Size}} = 0
-\begin{DoxyCompactList}\small\item\em The {\itshape logical-\/size} of the {\itshape array}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The {\itshape logical-\/size} of the {\itshape array}. Initialized to {\ttfamily 0}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -196,6 +202,20 @@ the {\itshape minimal element} removed from the heap.
 
 Implements \mbox{\hyperlink{class_min_heap_a_d_t_aad46f6fbc56041d20c3130dcf5b42d5e}{Min\+Heap\+ADT$<$ K, V $>$}}.
 
+\mbox{\Hypertarget{class_min_heap_abfbd451e51d1d8c93ff76ce12f9de60a}\label{class_min_heap_abfbd451e51d1d8c93ff76ce12f9de60a}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!deleteMinWhenThereAreTwoOrMoreElements@{deleteMinWhenThereAreTwoOrMoreElements}}
+\index{deleteMinWhenThereAreTwoOrMoreElements@{deleteMinWhenThereAreTwoOrMoreElements}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{deleteMinWhenThereAreTwoOrMoreElements()}{deleteMinWhenThereAreTwoOrMoreElements()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::delete\+Min\+When\+There\+Are\+Two\+Or\+More\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This method is a {\itshape private} method, that represents the case when there are {\ttfamily 2} or more elements in the heap. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{delete\+Min()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_min_heap_ab5f16032e4084a73454be12e70ee3878}\label{class_min_heap_ab5f16032e4084a73454be12e70ee3878}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!fixHeap@{fixHeap}}
 \index{fixHeap@{fixHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
@@ -227,6 +247,25 @@ there is no use to give {\ttfamily index\+To\+Fix\+From} that is larger than {\t
 
 Implements \mbox{\hyperlink{class_min_heap_a_d_t_a448c7198ad5aa4f525d017cce6cb5237}{Min\+Heap\+ADT$<$ K, V $>$}}.
 
+\mbox{\Hypertarget{class_min_heap_abf27ed86919364739d0c6d508a8ae9a5}\label{class_min_heap_abf27ed86919364739d0c6d508a8ae9a5}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!fixHeapLegalIndex@{fixHeapLegalIndex}}
+\index{fixHeapLegalIndex@{fixHeapLegalIndex}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{fixHeapLegalIndex()}{fixHeapLegalIndex()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::fix\+Heap\+Legal\+Index (\begin{DoxyParamCaption}\item[{int}]{index\+To\+Fix\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This method is a {\itshape private} method, that represents the case when the provided {\ttfamily current\+Index} is a legal index. This method is being invoked by the \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Index} & has been checked as a legal index. should be in between {\ttfamily 0} and {\ttfamily (logical\+Size / 2)}. Represents the index to {\itshape fix\+Heap} from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}\label{class_min_heap_a8f24129c56d65d760c4d0e4460e8d27a}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!fixHeapWhile@{fixHeapWhile}}
 \index{fixHeapWhile@{fixHeapWhile}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
@@ -271,6 +310,25 @@ Inserts the {\ttfamily element\+To\+Insert} to the heap.
 
 Implements \mbox{\hyperlink{class_min_heap_a_d_t_a414eb805e88dfa1995c481571ff90d1b}{Min\+Heap\+ADT$<$ K, V $>$}}.
 
+\mbox{\Hypertarget{class_min_heap_a658f6c362036350b5145178e88e57051}\label{class_min_heap_a658f6c362036350b5145178e88e57051}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!insertWhenThereIsEnoughSpace@{insertWhenThereIsEnoughSpace}}
+\index{insertWhenThereIsEnoughSpace@{insertWhenThereIsEnoughSpace}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{insertWhenThereIsEnoughSpace()}{insertWhenThereIsEnoughSpace()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::insert\+When\+There\+Is\+Enough\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$}]{element\+To\+Insert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+This method is a {\itshape private} method, that represents the case when there is enough space in the heap to insert an additional {\ttfamily element\+To\+Insert} element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element\+To\+Insert} & is the element required to be inserted to the heap. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}{insert(\+Entry$<$\+K, V$>$ $\ast$)}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_min_heap_a7edac6f943f3e143fbf45b529e70a8e4}\label{class_min_heap_a7edac6f943f3e143fbf45b529e70a8e4}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!isEmpty@{isEmpty}}
 \index{isEmpty@{isEmpty}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
@@ -337,7 +395,7 @@ int \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::logical\+Size = 
 
 
 
-The {\itshape logical-\/size} of the {\itshape array}. 
+The {\itshape logical-\/size} of the {\itshape array}. Initialized to {\ttfamily 0}. 
 
 \mbox{\Hypertarget{class_min_heap_a6e37d28efb033ff005ad704809af28b4}\label{class_min_heap_a6e37d28efb033ff005ad704809af28b4}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!physicalSize@{physicalSize}}
@@ -348,7 +406,7 @@ int \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::physical\+Size =
 
 
 
-The {\itshape physical-\/size} of the {\itshape array}. 
+The {\itshape physical-\/size} of the {\itshape array}. Initialized to {\ttfamily 0}. 
 
 
 
