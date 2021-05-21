@@ -113,14 +113,6 @@
         <table class="directory">
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#ac751010552e2daf9089bcb767f950d00">_input</a>
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">private</span></td>
-            </tr>
-            <tr>
-                <td class="entry"><a class="el"
                                      href="class_input_output.html#a96c902d441eb36942449b259454678fb">calculateTotalTimeTakenByTheProgram</a>(std::chrono::time_point&lt;
                     std::chrono::high_resolution_clock &gt; start,
                     std::chrono::time_point&lt;
@@ -133,9 +125,19 @@
                         class="mlabel">private</span><span
                         class="mlabel">static</span></td>
             </tr>
+            <tr>
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#a809dd446bd5748572e0c812325da33e8">checkIntInput</a>(std::string
+                    &amp;input)
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"><span class="mlabel">private</span><span
+                        class="mlabel">static</span></td>
+            </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a2421f7839ae66cb99dd364a325e0e03c">checkLegalDoubleInput</a>(my_string
+                                     href="class_input_output.html#abf8acb0aa83374d149786d7935376fed">checkUnsignedIntInput</a>(std::string
                     &amp;input)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
@@ -144,16 +146,6 @@
                         class="mlabel">static</span></td>
             </tr>
             <tr>
-                <td class="entry"><a class="el"
-                                     href="class_input_output.html#adbb54d295a037e6ce0ef1e4ebb3641ca">checkLegalUnsignedIntInput</a>(my_string
-                    &amp;input)
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">private</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr class="even">
                 <td class="entry"><a class="el"
                                      href="class_input_output.html#a701529f39c0c64b5d03cc39fb2e5cb94">factoryInputOutput</a>()
                 </td>
@@ -162,7 +154,7 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td class="entry"><a class="el"
                                      href="class_input_output.html#a98a2de3d18e5093c7c6311e2542b5ef6">fileName</a>
                 </td>
@@ -171,11 +163,40 @@
                 <td class="entry"><span class="mlabel">private</span><span
                         class="mlabel">static</span></td>
             </tr>
+            <tr>
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#aa15d07cab6286d75e96e058650567497">getChecked</a>(std::istream
+                    &amp;is, const std::function&lt; bool(std::string &amp;)&gt;
+                    &amp;checkingFunction, const std::function&lt; T(char *)&gt;
+                    &amp;returnFunction)
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"><span class="mlabel">inline</span><span
+                        class="mlabel">static</span></td>
+            </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a7403f35be5673fbd37f96ef970d5e904">getAllInputs</a>(int
-                    &amp;size, int &amp;serialSizeOfTheElementToLookFor)
-                    noexcept(false)
+                                     href="class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab">getCheckedInt</a>(std::istream
+                    &amp;is)
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"><span class="mlabel">static</span></td>
+            </tr>
+            <tr>
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#aed18759c66beb9fe5091ad7b1fb07807">getCheckedUnsignedInt</a>(std::istream
+                    &amp;is)
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"><span class="mlabel">static</span></td>
+            </tr>
+            <tr class="even">
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#ac8b16ee8f70494d3343f152c32aa564f">getInputFileName</a>()
+                    const
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
@@ -183,20 +204,38 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#af0819764147ca033abb80abf5fc3d3b6">getUnsignedInt</a>(int
-                    size)
+                                     href="class_input_output.html#adc67ae350c6b7a004b7c6fdb07513c08">getIntArrayFromInputFile</a>()
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">private</span></td>
+                <td class="entry"><span class="mlabel">inline</span></td>
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#aa62db776cb59a96fcda59c5045610771">getSize</a>()
+                                     href="class_input_output.html#a9b396cc57be1c21fbd557d6e3dbd0c0b">getK</a>()
+                    const
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">private</span></td>
+                <td class="entry"></td>
+            </tr>
+            <tr>
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#afad905654f147ca5d88a978f6a27e461">getN</a>()
+                    const
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"></td>
+            </tr>
+            <tr class="even">
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#aa84713865f7c47e08856db0584549391">getOutputFileName</a>()
+                    const
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
@@ -214,7 +253,7 @@
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">inline</span></td>
+                <td class="entry"></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
@@ -287,15 +326,6 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#af5b2df278b468d22f9a6c87694552591">setArrayContents</a>(double
-                    array[], int size)
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">private</span></td>
-            </tr>
-            <tr>
-                <td class="entry"><a class="el"
                                      href="class_input_output.html#a408062257e63734b0bf07b79d43b2959">setSorts</a>(T
                     *array, int size, int serialSizeOfTheElementToLookFor, T *&amp;insertionSortedArray,
                     T &amp;selectionElementRequested, T &amp;quintupletElementRequested)
@@ -305,7 +335,7 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr class="even">
+            <tr>
                 <td class="entry"><a class="el"
                                      href="class_input_output.html#a6925ac56858a476dbe0819586448a25d">~InputOutput</a>()
                 </td>

@@ -31,44 +31,12 @@ class InputOutput {
     /// The name of the `output` file.
     const std::string OUTPUT_FILE_NAME;
 
-    my_string _input;
-
     /// The name of the 'Measure' file:
     static constexpr char *fileName = (char *) "Measure.txt";
 
-
-    static bool checkLegalUnsignedIntInput(my_string &input);
-
-    static bool checkLegalDoubleInput(my_string &input);
-
-    static bool checkLegalIntInput(my_string &input);
-
-    int getSize();
-
-    /**
-     * @brief this method gets the `serialSizeOfTheElementToLookFor` from the user.
-     *
-     * @note the `index` of the `serialSizeOfTheElementToLookFor`
-     *       is actually `serialSizeOfTheElementToLookFor - 1`.
-     * @param size size of the array to search in.
-     * @return serialSizeOfTheElementToLookFor
-     * @throws std::range_error if `serialSizeOfTheElementToLookFor` is out of range.
-     * @throws std::runtime_error if the `input` is in an illegal format.
-     */
-    int getSerialSizeOfTheElementToLookFor(int size);
-
-    void setArrayContents(double array[], int size);
-
   public:
     InputOutput(int &N, int &K, std::string &inputFileName,
-                std::string &outputFileName)
-        : N(N), K(K), INPUT_FILE_NAME(inputFileName),
-          OUTPUT_FILE_NAME(outputFileName) {
-
-        // sets the floating point precision of whole "cout" stream:
-        std::cout << std::setprecision(4);
-        std::cout << std::fixed;
-    }
+                std::string &outputFileName);
 
     ~InputOutput();
 
@@ -78,18 +46,6 @@ class InputOutput {
     int                getK() const;
     const std::string &getInputFileName() const;
     const std::string &getOutputFileName() const;
-
-    /**
-     * @brief gets all inputs from the user.
-     *
-     * @param size the size of the array.
-     * @param serialSizeOfTheElementToLookFor the index to be searched.
-     * @return the `new` created array.
-     * @throws std::runtime_error
-     * @throws std::range_error
-     */
-    double *getAllInputs(int &size,
-                         int &serialSizeOfTheElementToLookFor) noexcept(false);
 
     /**
      * this *static* method measures the time it takes
@@ -114,7 +70,7 @@ class InputOutput {
         // copy the array to another array:
         T *arrayToManipulate = my_algorithms::copyArray(array, size);
 
-        // get the function name:
+        // getChecked the function name:
         char *nameOfFunctionToMeasure;
 
         auto start = std::chrono::high_resolution_clock::now();
@@ -157,7 +113,7 @@ class InputOutput {
         // copy the array to another array:
         T *arrayToManipulate = my_algorithms::copyArray(array, size);
 
-        // get the function name:
+        // getChecked the function name:
         char *nameOfFunctionToMeasure;
 
         auto start = std::chrono::high_resolution_clock::now();
@@ -249,16 +205,16 @@ class InputOutput {
                              std::string &outputFileName) {
 
         /* Receive N */
-        std::cin >> N;
+        N = getCheckedInt(std::cin);
 
         /* Receive K */
-        std::cin >> K;
+        K = getCheckedUnsignedInt(std::cin);
 
         /* Receive name of InputFile: */
-        std::cin >> inputFileName;
+        std::cin >> inputFileName; // TODO: need to check this somehow?
 
         /* Receive name of OutputFile: */
-        std::cin >> outputFileName;
+        std::cin >> outputFileName; // TODO: need to check this somehow?
     }
 
     /**
@@ -295,10 +251,16 @@ class InputOutput {
      *        provided by the *INPUT_FILE_NAME*.
      *
      * @return the *int* array specified in the *INPUT_FILE* .
-     * @throws std::runtime_error in case the *file* specified by the
-     *         name: `INPUT_FILE_NAME` could not be found.
+     * @throws std::runtime_error @li in case the *file* specified by the
+     *                            name: `INPUT_FILE_NAME` could not be found.
+     *                            @li in case the `N` provided in the *file*
+     *                            is larger than the actual number of elements
+     *                            provided in the *file*.
      */
     int *getIntArrayFromInputFile() {
+
+        // TODO: maybe split to smaller methods.
+
         std::ifstream file(INPUT_FILE_NAME);
         if (!file) {
 
@@ -314,24 +276,114 @@ class InputOutput {
 
         auto *array = new int[N];
         int   i     = 0;
-        while (i < N) {
+        while ((i < N) && (!file.eof())) {
             try {
-                array[i] = getInt(file);
+                array[i] = getCheckedInt(file);
             } catch (std::exception &e) {
                 delete[] array;
                 throw;
             }
             i++;
         }
-        // TODO: check the loop stop condition - check `eof`?
+        if (i < N) {
+
+            /*
+             * Means, the file ended earlier than indicated in the provided
+             * `N` parameter. This is an error. Throw a message.
+             */
+            std::string message;
+            message.append("We have reached the end of the file earlier than "
+                           "expected.\nThe provided `N` parameter is "
+                           "larger than the number of elements received.");
+            message.append("\n");
+            message.append("The `N` provided was: ").append(std::to_string(N));
+            message.append(", and the number of elements received is: ")
+                    .append(std::to_string(i))
+                    .append(".");
+            message.append("\n");
+
+            // TODO: change to `wrong input`
+            delete[] array;
+            throw std::runtime_error(message);
+        }
 
         file.close();
         return array;
     }
 
-    int         getUnsignedInt(std::istream &is, int size);
-    int         getInt(std::istream &is);
-    static bool checkLegalIntInput(std::string &input);
+    static int getCheckedInt(std::istream &is);
+
+    static int getCheckedUnsignedInt(std::istream &is);
+
+  private:
+    /**
+     * @brief This method receives as a parameter a `std::string` and checks
+     *        whether it is a legal **UnsignedInt**.
+     *
+     * This method is *private*, and is being used as a parameter for the
+     * invocation of @link getCheckedUnsignedInt(std::string &) @endlink in
+     * the body of @link getChecked @endlink method.
+     * @param input the `input` gotten, that is needed to be checked.
+     * @return @li `true` if the `input` is `legal / valid`.
+     *         @li `false` if the `input` is `illegal / invalid`.
+     * @see getCheckedUnsignedInt(std::istream &)
+     * @see getChecked
+     */
+    static bool checkUnsignedIntInput(std::string &input);
+
+    /**
+     * @brief This method receives as a parameter a `std::string` and checks
+     *        whether it is a legal **Int**.
+     *
+     * This method is *private*, and is being used as a parameter for the
+     * invocation of @link getCheckedInt(std::string &) @endlink in
+     * the body of @link getChecked @endlink method.
+     * @param input the `input` gotten, that is needed to be checked.
+     * @return @li `true` if the `input` is `legal / valid`.
+     *         @li `false` if the `input` is `illegal / invalid`.
+     * @see getCheckedInt(std::istream &)
+     * @see getChecked
+     */
+    static bool checkIntInput(std::string &input);
+
+  public:
+    /**
+     * @brief This method gets an input from an `input-stream` @p is,
+     *        and after that, *checks* whether the input gotten is legal by
+     *        checking it with a specific function: @p checkingFunction.
+     *        In case the input was found as legal, then we manipulate the
+     *        checked input with the @p returnFunction, and its `return`
+     *        value is set to be this method's return value.
+     *
+     * @tparam T is the type of the value to get.
+     * @param is is the `input-stream` to get the value from.
+     * @param checkingFunction is the checking function that checks that the
+     *                         input gotten is legal.
+     * @param returnFunction is the function that is being invoked finally
+     *                       in its method. Its `return` value is the final
+     *                       return value of this method.
+     * @return the checked `input` gotten.
+     * @details this method is `generic`, and has a constant template.
+     * @throws std::runtime_error if the `input` is in an illegal format.
+     */
+    template<typename T>
+    static T
+    getChecked(std::istream &                            is,
+               const std::function<bool(std::string &)> &checkingFunction,
+               const std::function<T(char *)> &          returnFunction) {
+
+        // getChecked the input
+        std::string stringInput;
+        std::getline(is, stringInput);
+        if (checkingFunction(stringInput)) {
+
+            // if this is a legal input, return it.
+            return returnFunction(stringInput.c_str());
+        } else {
+            std::string msg = "wrong input";
+            throw std::runtime_error(msg);
+        }
+    }
 };
 
 #endif //MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H

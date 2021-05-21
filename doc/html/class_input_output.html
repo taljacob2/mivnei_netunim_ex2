@@ -105,7 +105,6 @@
             <a href="#pub-methods">Public Member Functions</a> &#124;
             <a href="#pub-static-methods">Static Public Member Functions</a>
             &#124;
-            <a href="#pri-methods">Private Member Functions</a> &#124;
             <a href="#pri-static-methods">Static Private Member Functions</a>
             &#124;
             <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -154,21 +153,68 @@
             <tr class="separator:a6925ac56858a476dbe0819586448a25d">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:a7403f35be5673fbd37f96ef970d5e904">
-                <td class="memItemLeft" align="right" valign="top">double *&#160;</td>
+            <tr class="memitem:afad905654f147ca5d88a978f6a27e461">
+                <td class="memItemLeft" align="right" valign="top">int&#160;
+                </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#a7403f35be5673fbd37f96ef970d5e904">getAllInputs</a>
-                    (int &amp;size, int &amp;serialSizeOfTheElementToLookFor)
-                    noexcept(false)
+                                                            href="class_input_output.html#afad905654f147ca5d88a978f6a27e461">getN</a>
+                    () const
                 </td>
             </tr>
-            <tr class="memdesc:a7403f35be5673fbd37f96ef970d5e904">
+            <tr class="separator:afad905654f147ca5d88a978f6a27e461">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a9b396cc57be1c21fbd557d6e3dbd0c0b">
+                <td class="memItemLeft" align="right" valign="top">int&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#a9b396cc57be1c21fbd557d6e3dbd0c0b">getK</a>
+                    () const
+                </td>
+            </tr>
+            <tr class="separator:a9b396cc57be1c21fbd557d6e3dbd0c0b">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:ac8b16ee8f70494d3343f152c32aa564f">
+                <td class="memItemLeft" align="right" valign="top">const
+                    std::string &amp;&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#ac8b16ee8f70494d3343f152c32aa564f">getInputFileName</a>
+                    () const
+                </td>
+            </tr>
+            <tr class="separator:ac8b16ee8f70494d3343f152c32aa564f">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:aa84713865f7c47e08856db0584549391">
+                <td class="memItemLeft" align="right" valign="top">const
+                    std::string &amp;&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#aa84713865f7c47e08856db0584549391">getOutputFileName</a>
+                    () const
+                </td>
+            </tr>
+            <tr class="separator:aa84713865f7c47e08856db0584549391">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:adc67ae350c6b7a004b7c6fdb07513c08">
+                <td class="memItemLeft" align="right" valign="top">int *&#160;
+                </td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#adc67ae350c6b7a004b7c6fdb07513c08">getIntArrayFromInputFile</a>
+                    ()
+                </td>
+            </tr>
+            <tr class="memdesc:adc67ae350c6b7a004b7c6fdb07513c08">
                 <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">gets all inputs from the user. <a
-                        href="class_input_output.html#a7403f35be5673fbd37f96ef970d5e904">More...</a><br/>
+                <td class="mdescRight">This method gets the <code>array</code>
+                    specified in the <em>INPUT_FILE</em> provided by the <em>INPUT_FILE_NAME</em>.
+                    <a href="class_input_output.html#adc67ae350c6b7a004b7c6fdb07513c08">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:a7403f35be5673fbd37f96ef970d5e904">
+            <tr class="separator:adc67ae350c6b7a004b7c6fdb07513c08">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
@@ -285,51 +331,54 @@
             <tr class="separator:a701529f39c0c64b5d03cc39fb2e5cb94">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-        </table>
-        <table class="memberdecls">
-            <tr class="heading">
-                <td colspan="2"><h2 class="groupheader"><a
-                        name="pri-methods"></a>
-                    Private Member Functions</h2></td>
-            </tr>
-            <tr class="memitem:aa62db776cb59a96fcda59c5045610771">
-                <td class="memItemLeft" align="right" valign="top">int&#160;
-                </td>
+            <tr class="memitem:a6e2dde4714e5236476b5b17dfc620bab">
+                <td class="memItemLeft" align="right" valign="top">static int&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#aa62db776cb59a96fcda59c5045610771">getSize</a>
-                    ()
+                                                            href="class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab">getCheckedInt</a>
+                    (std::istream &amp;is)
                 </td>
             </tr>
-            <tr class="separator:aa62db776cb59a96fcda59c5045610771">
+            <tr class="separator:a6e2dde4714e5236476b5b17dfc620bab">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:af0819764147ca033abb80abf5fc3d3b6">
-                <td class="memItemLeft" align="right" valign="top">int&#160;
-                </td>
+            <tr class="memitem:aed18759c66beb9fe5091ad7b1fb07807">
+                <td class="memItemLeft" align="right" valign="top">static int&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#af0819764147ca033abb80abf5fc3d3b6">getUnsignedInt</a>
-                    (int size)
+                                                            href="class_input_output.html#aed18759c66beb9fe5091ad7b1fb07807">getCheckedUnsignedInt</a>
+                    (std::istream &amp;is)
                 </td>
             </tr>
-            <tr class="memdesc:af0819764147ca033abb80abf5fc3d3b6">
+            <tr class="separator:aed18759c66beb9fe5091ad7b1fb07807">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:aa15d07cab6286d75e96e058650567497">
+                <td class="memTemplParams" colspan="2">template&lt;typename T
+                    &gt;
+                </td>
+            </tr>
+            <tr class="memitem:aa15d07cab6286d75e96e058650567497">
+                <td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td>
+                <td class="memTemplItemRight" valign="bottom"><a class="el"
+                                                                 href="class_input_output.html#aa15d07cab6286d75e96e058650567497">getChecked</a>
+                    (std::istream &amp;is, const std::function&lt;
+                    bool(std::string &amp;)&gt; &amp;checkingFunction, const
+                    std::function&lt; T(char *)&gt; &amp;returnFunction)
+                </td>
+            </tr>
+            <tr class="memdesc:aa15d07cab6286d75e96e058650567497">
                 <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">this method gets the <code>serialSizeOfTheElementToLookFor</code>
-                    from the user. <a
-                            href="class_input_output.html#af0819764147ca033abb80abf5fc3d3b6">More...</a><br/>
+                <td class="mdescRight">This method gets an input from an <code>input-stream</code>
+                    <code>is</code>, and after that, <em>checks</em> whether the
+                    input gotten is legal by checking it with a specific
+                    function: <code>checkingFunction</code>. In case the input
+                    was found as legal, then we manipulate the checked input
+                    with the <code>returnFunction</code>, and its
+                    <code>return</code> value is set to be this method's return
+                    value. <a
+                            href="class_input_output.html#aa15d07cab6286d75e96e058650567497">More...</a><br/>
                 </td>
             </tr>
-            <tr class="separator:af0819764147ca033abb80abf5fc3d3b6">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
-            <tr class="memitem:af5b2df278b468d22f9a6c87694552591">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
-                </td>
-                <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#af5b2df278b468d22f9a6c87694552591">setArrayContents</a>
-                    (double array[], int size)
-                </td>
-            </tr>
-            <tr class="separator:af5b2df278b468d22f9a6c87694552591">
+            <tr class="separator:aa15d07cab6286d75e96e058650567497">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
@@ -338,28 +387,6 @@
                 <td colspan="2"><h2 class="groupheader"><a
                         name="pri-static-methods"></a>
                     Static Private Member Functions</h2></td>
-            </tr>
-            <tr class="memitem:adbb54d295a037e6ce0ef1e4ebb3641ca">
-                <td class="memItemLeft" align="right" valign="top">static bool&#160;</td>
-                <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#adbb54d295a037e6ce0ef1e4ebb3641ca">checkLegalUnsignedIntInput</a>
-                    (<a class="el" href="classmy__string.html">my_string</a>
-                    &amp;input)
-                </td>
-            </tr>
-            <tr class="separator:adbb54d295a037e6ce0ef1e4ebb3641ca">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
-            <tr class="memitem:a2421f7839ae66cb99dd364a325e0e03c">
-                <td class="memItemLeft" align="right" valign="top">static bool&#160;</td>
-                <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#a2421f7839ae66cb99dd364a325e0e03c">checkLegalDoubleInput</a>
-                    (<a class="el" href="classmy__string.html">my_string</a>
-                    &amp;input)
-                </td>
-            </tr>
-            <tr class="separator:a2421f7839ae66cb99dd364a325e0e03c">
-                <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a96c902d441eb36942449b259454678fb">
                 <td class="memItemLeft" align="right" valign="top">static void&#160;</td>
@@ -373,6 +400,42 @@
                 </td>
             </tr>
             <tr class="separator:a96c902d441eb36942449b259454678fb">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:abf8acb0aa83374d149786d7935376fed">
+                <td class="memItemLeft" align="right" valign="top">static bool&#160;</td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#abf8acb0aa83374d149786d7935376fed">checkUnsignedIntInput</a>
+                    (std::string &amp;input)
+                </td>
+            </tr>
+            <tr class="memdesc:abf8acb0aa83374d149786d7935376fed">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method receives as a parameter a
+                    <code>std::string</code> and checks whether it is a legal
+                    <b>UnsignedInt</b>. <a
+                            href="class_input_output.html#abf8acb0aa83374d149786d7935376fed">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:abf8acb0aa83374d149786d7935376fed">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:a809dd446bd5748572e0c812325da33e8">
+                <td class="memItemLeft" align="right" valign="top">static bool&#160;</td>
+                <td class="memItemRight" valign="bottom"><a class="el"
+                                                            href="class_input_output.html#a809dd446bd5748572e0c812325da33e8">checkIntInput</a>
+                    (std::string &amp;input)
+                </td>
+            </tr>
+            <tr class="memdesc:a809dd446bd5748572e0c812325da33e8">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method receives as a parameter a
+                    <code>std::string</code> and checks whether it is a legal
+                    <b>Int</b>. <a
+                            href="class_input_output.html#a809dd446bd5748572e0c812325da33e8">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a809dd446bd5748572e0c812325da33e8">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
@@ -446,17 +509,6 @@
             <tr class="separator:adc15a5fa052c379f0825da1cbca984a7">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:ac751010552e2daf9089bcb767f950d00">
-                <td class="memItemLeft" align="right" valign="top"><a class="el"
-                                                                      href="classmy__string.html">my_string</a>&#160;
-                </td>
-                <td class="memItemRight" valign="bottom"><a class="el"
-                                                            href="class_input_output.html#ac751010552e2daf9089bcb767f950d00">_input</a>
-                </td>
-            </tr>
-            <tr class="separator:ac751010552e2daf9089bcb767f950d00">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
         </table>
         <table class="memberdecls">
             <tr class="heading">
@@ -504,50 +556,36 @@
 
         <div class="memitem">
             <div class="memproto">
-                <table class="mlabels">
+                <table class="memname">
                     <tr>
-                        <td class="mlabels-left">
-                            <table class="memname">
-                                <tr>
-                                    <td class="memname">
-                                        InputOutput::InputOutput
-                                    </td>
-                                    <td>(</td>
-                                    <td class="paramtype">int &amp;&#160;</td>
-                                    <td class="paramname"><em>N</em>,</td>
-                                </tr>
-                                <tr>
-                                    <td class="paramkey"></td>
-                                    <td></td>
-                                    <td class="paramtype">int &amp;&#160;</td>
-                                    <td class="paramname"><em>K</em>,</td>
-                                </tr>
-                                <tr>
-                                    <td class="paramkey"></td>
-                                    <td></td>
-                                    <td class="paramtype">std::string &amp;&#160;</td>
-                                    <td class="paramname"><em>inputFileName</em>,
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="paramkey"></td>
-                                    <td></td>
-                                    <td class="paramtype">std::string &amp;&#160;</td>
-                                    <td class="paramname">
-                                        <em>outputFileName</em>&#160;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>)</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="mlabels-right">
-                            <span class="mlabels"><span
-                                    class="mlabel">inline</span></span></td>
+                        <td class="memname">InputOutput::InputOutput</td>
+                        <td>(</td>
+                        <td class="paramtype">int &amp;&#160;</td>
+                        <td class="paramname"><em>N</em>,</td>
+                    </tr>
+                    <tr>
+                        <td class="paramkey"></td>
+                        <td></td>
+                        <td class="paramtype">int &amp;&#160;</td>
+                        <td class="paramname"><em>K</em>,</td>
+                    </tr>
+                    <tr>
+                        <td class="paramkey"></td>
+                        <td></td>
+                        <td class="paramtype">std::string &amp;&#160;</td>
+                        <td class="paramname"><em>inputFileName</em>,</td>
+                    </tr>
+                    <tr>
+                        <td class="paramkey"></td>
+                        <td></td>
+                        <td class="paramtype">std::string &amp;&#160;</td>
+                        <td class="paramname"><em>outputFileName</em>&#160;</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>)</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </table>
             </div>
@@ -647,9 +685,9 @@
 
             </div>
         </div>
-        <a id="a2421f7839ae66cb99dd364a325e0e03c"></a>
+        <a id="a809dd446bd5748572e0c812325da33e8"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#a2421f7839ae66cb99dd364a325e0e03c">&#9670;&nbsp;</a></span>checkLegalDoubleInput()
+                href="#a809dd446bd5748572e0c812325da33e8">&#9670;&nbsp;</a></span>checkIntInput()
         </h2>
 
         <div class="memitem">
@@ -660,13 +698,10 @@
                             <table class="memname">
                                 <tr>
                                     <td class="memname">bool
-                                        InputOutput::checkLegalDoubleInput
+                                        InputOutput::checkIntInput
                                     </td>
                                     <td>(</td>
-                                    <td class="paramtype"><a class="el"
-                                                             href="classmy__string.html">my_string</a>
-                                        &amp;&#160;
-                                    </td>
+                                    <td class="paramtype">std::string &amp;&#160;</td>
                                     <td class="paramname"><em>input</em></td>
                                     <td>)</td>
                                     <td></td>
@@ -681,12 +716,58 @@
                 </table>
             </div>
             <div class="memdoc">
+
+                <p>This method receives as a parameter a
+                    <code>std::string</code> and checks whether it is a legal
+                    <b>Int</b>. </p>
+                <p>This method is <em>private</em>, and is being used as a
+                    parameter for the invocation of <a class="el" href="">getCheckedInt(std::string
+                        &amp;)</a> in the body of <a class="el"
+                                                     href="class_input_output.html#aa15d07cab6286d75e96e058650567497">getChecked</a>
+                    method. </p>
+                <dl class="params">
+                    <dt>Parameters</dt>
+                    <dd>
+                        <table class="params">
+                            <tr>
+                                <td class="paramname">input</td>
+                                <td>the <code>input</code> gotten, that is
+                                    needed to be checked.
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl class="section return">
+                    <dt>Returns</dt>
+                    <dd>
+                        <ul>
+                            <li><code>true</code> if the <code>input</code> is
+                                <code>legal / valid</code>.
+                            </li>
+                            <li><code>false</code> if the <code>input</code> is
+                                <code>illegal / invalid</code>.
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="section see">
+                    <dt>See also</dt>
+                    <dd><a class="el"
+                           href="class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab">getCheckedInt(std::istream
+                        &amp;)</a></dd>
+                    <dd>
+                        <a class="el"
+                           href="class_input_output.html#aa15d07cab6286d75e96e058650567497"
+                           title="This method gets an input from an input-stream is, and after that, checks whether the input gotten is...">getChecked</a>
+                    </dd>
+                </dl>
 
             </div>
         </div>
-        <a id="adbb54d295a037e6ce0ef1e4ebb3641ca"></a>
+        <a id="abf8acb0aa83374d149786d7935376fed"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#adbb54d295a037e6ce0ef1e4ebb3641ca">&#9670;&nbsp;</a></span>checkLegalUnsignedIntInput()
+                href="#abf8acb0aa83374d149786d7935376fed">&#9670;&nbsp;</a></span>checkUnsignedIntInput()
         </h2>
 
         <div class="memitem">
@@ -697,13 +778,10 @@
                             <table class="memname">
                                 <tr>
                                     <td class="memname">bool
-                                        InputOutput::checkLegalUnsignedIntInput
+                                        InputOutput::checkUnsignedIntInput
                                     </td>
                                     <td>(</td>
-                                    <td class="paramtype"><a class="el"
-                                                             href="classmy__string.html">my_string</a>
-                                        &amp;&#160;
-                                    </td>
+                                    <td class="paramtype">std::string &amp;&#160;</td>
                                     <td class="paramname"><em>input</em></td>
                                     <td>)</td>
                                     <td></td>
@@ -718,6 +796,52 @@
                 </table>
             </div>
             <div class="memdoc">
+
+                <p>This method receives as a parameter a
+                    <code>std::string</code> and checks whether it is a legal
+                    <b>UnsignedInt</b>. </p>
+                <p>This method is <em>private</em>, and is being used as a
+                    parameter for the invocation of <a class="el" href="">getCheckedUnsignedInt(std::string
+                        &amp;)</a> in the body of <a class="el"
+                                                     href="class_input_output.html#aa15d07cab6286d75e96e058650567497">getChecked</a>
+                    method. </p>
+                <dl class="params">
+                    <dt>Parameters</dt>
+                    <dd>
+                        <table class="params">
+                            <tr>
+                                <td class="paramname">input</td>
+                                <td>the <code>input</code> gotten, that is
+                                    needed to be checked.
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl class="section return">
+                    <dt>Returns</dt>
+                    <dd>
+                        <ul>
+                            <li><code>true</code> if the <code>input</code> is
+                                <code>legal / valid</code>.
+                            </li>
+                            <li><code>false</code> if the <code>input</code> is
+                                <code>illegal / invalid</code>.
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="section see">
+                    <dt>See also</dt>
+                    <dd><a class="el"
+                           href="class_input_output.html#aed18759c66beb9fe5091ad7b1fb07807">getCheckedUnsignedInt(std::istream
+                        &amp;)</a></dd>
+                    <dd>
+                        <a class="el"
+                           href="class_input_output.html#aa15d07cab6286d75e96e058650567497"
+                           title="This method gets an input from an input-stream is, and after that, checks whether the input gotten is...">getChecked</a>
+                    </dd>
+                </dl>
 
             </div>
         </div>
@@ -789,30 +913,46 @@
 
             </div>
         </div>
-        <a id="a7403f35be5673fbd37f96ef970d5e904"></a>
+        <a id="aa15d07cab6286d75e96e058650567497"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#a7403f35be5673fbd37f96ef970d5e904">&#9670;&nbsp;</a></span>getAllInputs()
+                href="#aa15d07cab6286d75e96e058650567497">&#9670;&nbsp;</a></span>getChecked()
         </h2>
 
         <div class="memitem">
             <div class="memproto">
+                <div class="memtemplate">
+                    template&lt;typename T &gt;
+                </div>
                 <table class="mlabels">
                     <tr>
                         <td class="mlabels-left">
                             <table class="memname">
                                 <tr>
-                                    <td class="memname">double *
-                                        InputOutput::getAllInputs
+                                    <td class="memname">static T
+                                        InputOutput::getChecked
                                     </td>
                                     <td>(</td>
-                                    <td class="paramtype">int &amp;&#160;</td>
-                                    <td class="paramname"><em>size</em>,</td>
+                                    <td class="paramtype">std::istream &amp;&#160;</td>
+                                    <td class="paramname"><em>is</em>,</td>
                                 </tr>
                                 <tr>
                                     <td class="paramkey"></td>
                                     <td></td>
-                                    <td class="paramtype">int &amp;&#160;</td>
-                                    <td class="paramname"><em>serialSizeOfTheElementToLookFor</em>&#160;
+                                    <td class="paramtype">const std::function&lt;
+                                        bool(std::string &amp;)&gt; &amp;&#160;
+                                    </td>
+                                    <td class="paramname">
+                                        <em>checkingFunction</em>,
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="paramkey"></td>
+                                    <td></td>
+                                    <td class="paramtype">const std::function&lt;
+                                        T(char *)&gt; &amp;&#160;
+                                    </td>
+                                    <td class="paramname">
+                                        <em>returnFunction</em>&#160;
                                     </td>
                                 </tr>
                                 <tr>
@@ -825,92 +965,30 @@
                         </td>
                         <td class="mlabels-right">
                             <span class="mlabels"><span
-                                    class="mlabel">noexcept</span></span></td>
+                                    class="mlabel">inline</span><span
+                                    class="mlabel">static</span></span></td>
                     </tr>
                 </table>
             </div>
             <div class="memdoc">
 
-                <p>gets all inputs from the user. </p>
-                <dl class="params">
-                    <dt>Parameters</dt>
+                <p>This method gets an input from an <code>input-stream</code>
+                    <code>is</code>, and after that, <em>checks</em> whether the
+                    input gotten is legal by checking it with a specific
+                    function: <code>checkingFunction</code>. In case the input
+                    was found as legal, then we manipulate the checked input
+                    with the <code>returnFunction</code>, and its
+                    <code>return</code> value is set to be this method's return
+                    value. </p>
+                <dl class="tparams">
+                    <dt>Template Parameters</dt>
                     <dd>
-                        <table class="params">
+                        <table class="tparams">
                             <tr>
-                                <td class="paramname">size</td>
-                                <td>the size of the array.</td>
-                            </tr>
-                            <tr>
-                                <td class="paramname">
-                                    serialSizeOfTheElementToLookFor
-                                </td>
-                                <td>the index to be searched.</td>
+                                <td class="paramname">T</td>
+                                <td>is the type of the value to get.</td>
                             </tr>
                         </table>
-                    </dd>
-                </dl>
-                <dl class="section return">
-                    <dt>Returns</dt>
-                    <dd>the <code>new</code> created array.</dd>
-                </dl>
-                <dl class="exception">
-                    <dt>Exceptions</dt>
-                    <dd>
-                        <table class="exception">
-                            <tr>
-                                <td class="paramname">std::runtime_error</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="paramname">std::range_error</td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </dd>
-                </dl>
-
-            </div>
-        </div>
-        <a id="af0819764147ca033abb80abf5fc3d3b6"></a>
-        <h2 class="memtitle"><span class="permalink"><a
-                href="#af0819764147ca033abb80abf5fc3d3b6">&#9670;&nbsp;</a></span>getUnsignedInt()
-        </h2>
-
-        <div class="memitem">
-            <div class="memproto">
-                <table class="mlabels">
-                    <tr>
-                        <td class="mlabels-left">
-                            <table class="memname">
-                                <tr>
-                                    <td class="memname">int
-                                        InputOutput::getUnsignedInt
-                                    </td>
-                                    <td>(</td>
-                                    <td class="paramtype">int&#160;</td>
-                                    <td class="paramname"><em>size</em></td>
-                                    <td>)</td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="mlabels-right">
-                            <span class="mlabels"><span
-                                    class="mlabel">private</span><span
-                                    class="mlabel">noexcept</span></span></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="memdoc">
-
-                <p>this method gets the
-                    <code>serialSizeOfTheElementToLookFor</code> from the user.
-                </p>
-                <dl class="section note">
-                    <dt>Note</dt>
-                    <dd>the <code>index</code> of the <code>serialSizeOfTheElementToLookFor</code>
-                        is actually <code>serialSizeOfTheElementToLookFor -
-                            1</code>.
                     </dd>
                 </dl>
                 <dl class="params">
@@ -918,27 +996,38 @@
                     <dd>
                         <table class="params">
                             <tr>
-                                <td class="paramname">size</td>
-                                <td>size of the array to search in.</td>
+                                <td class="paramname">is</td>
+                                <td>is the <code>input-stream</code> to get the
+                                    value from.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="paramname">checkingFunction</td>
+                                <td>is the checking function that checks that
+                                    the input gotten is legal.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="paramname">returnFunction</td>
+                                <td>is the function that is being invoked
+                                    finally in its method. Its
+                                    <code>return</code> value is the final
+                                    return value of this method.
+                                </td>
                             </tr>
                         </table>
                     </dd>
                 </dl>
                 <dl class="section return">
                     <dt>Returns</dt>
-                    <dd>serialSizeOfTheElementToLookFor</dd>
+                    <dd>the checked <code>input</code> gotten.</dd>
                 </dl>
+                <p>this method is <code>generic</code>, and has a constant
+                    template. </p>
                 <dl class="exception">
                     <dt>Exceptions</dt>
                     <dd>
                         <table class="exception">
-                            <tr>
-                                <td class="paramname">std::range_error</td>
-                                <td>if
-                                    <code>serialSizeOfTheElementToLookFor</code>
-                                    is out of range.
-                                </td>
-                            </tr>
                             <tr>
                                 <td class="paramname">std::runtime_error</td>
                                 <td>if the <code>input</code> is in an illegal
@@ -951,9 +1040,9 @@
 
             </div>
         </div>
-        <a id="aa62db776cb59a96fcda59c5045610771"></a>
+        <a id="a6e2dde4714e5236476b5b17dfc620bab"></a>
         <h2 class="memtitle"><span class="permalink"><a
-                href="#aa62db776cb59a96fcda59c5045610771">&#9670;&nbsp;</a></span>getSize()
+                href="#a6e2dde4714e5236476b5b17dfc620bab">&#9670;&nbsp;</a></span>getCheckedInt()
         </h2>
 
         <div class="memitem">
@@ -964,7 +1053,98 @@
                             <table class="memname">
                                 <tr>
                                     <td class="memname">int
-                                        InputOutput::getSize
+                                        InputOutput::getCheckedInt
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramtype">std::istream &amp;&#160;</td>
+                                    <td class="paramname"><em>is</em></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">static</span><span
+                                    class="mlabel">noexcept</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+            </div>
+        </div>
+        <a id="aed18759c66beb9fe5091ad7b1fb07807"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#aed18759c66beb9fe5091ad7b1fb07807">&#9670;&nbsp;</a></span>getCheckedUnsignedInt()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">int
+                                        InputOutput::getCheckedUnsignedInt
+                                    </td>
+                                    <td>(</td>
+                                    <td class="paramtype">std::istream &amp;&#160;</td>
+                                    <td class="paramname"><em>is</em></td>
+                                    <td>)</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="mlabels-right">
+                            <span class="mlabels"><span
+                                    class="mlabel">static</span><span
+                                    class="mlabel">noexcept</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+            </div>
+        </div>
+        <a id="ac8b16ee8f70494d3343f152c32aa564f"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#ac8b16ee8f70494d3343f152c32aa564f">&#9670;&nbsp;</a></span>getInputFileName()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="memname">
+                    <tr>
+                        <td class="memname">const std::string &amp;
+                            InputOutput::getInputFileName
+                        </td>
+                        <td>(</td>
+                        <td class="paramname"></td>
+                        <td>)</td>
+                        <td> const</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+            </div>
+        </div>
+        <a id="adc67ae350c6b7a004b7c6fdb07513c08"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#adc67ae350c6b7a004b7c6fdb07513c08">&#9670;&nbsp;</a></span>getIntArrayFromInputFile()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="mlabels">
+                    <tr>
+                        <td class="mlabels-left">
+                            <table class="memname">
+                                <tr>
+                                    <td class="memname">int*
+                                        InputOutput::getIntArrayFromInputFile
                                     </td>
                                     <td>(</td>
                                     <td class="paramname"></td>
@@ -975,8 +1155,105 @@
                         </td>
                         <td class="mlabels-right">
                             <span class="mlabels"><span
-                                    class="mlabel">private</span><span
-                                    class="mlabel">noexcept</span></span></td>
+                                    class="mlabel">inline</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+                <p>This method gets the <code>array</code> specified in the <em>INPUT_FILE</em>
+                    provided by the <em>INPUT_FILE_NAME</em>. </p>
+                <dl class="section return">
+                    <dt>Returns</dt>
+                    <dd>the <em>int</em> array specified in the
+                        <em>INPUT_FILE</em> .
+                    </dd>
+                </dl>
+                <dl class="exception">
+                    <dt>Exceptions</dt>
+                    <dd>
+                        <table class="exception">
+                            <tr>
+                                <td class="paramname">std::runtime_error</td>
+                                <td>
+                                    <ul>
+                                        <li>in case the <em>file</em> specified
+                                            by the name:
+                                            <code>INPUT_FILE_NAME</code> could
+                                            not be found.
+                                        </li>
+                                        <li>in case the <code>N</code> provided
+                                            in the <em>file</em> is larger than
+                                            the actual number of elements
+                                            provided in the <em>file</em>.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+
+            </div>
+        </div>
+        <a id="a9b396cc57be1c21fbd557d6e3dbd0c0b"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#a9b396cc57be1c21fbd557d6e3dbd0c0b">&#9670;&nbsp;</a></span>getK()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="memname">
+                    <tr>
+                        <td class="memname">int InputOutput::getK</td>
+                        <td>(</td>
+                        <td class="paramname"></td>
+                        <td>)</td>
+                        <td> const</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+            </div>
+        </div>
+        <a id="afad905654f147ca5d88a978f6a27e461"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#afad905654f147ca5d88a978f6a27e461">&#9670;&nbsp;</a></span>getN()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="memname">
+                    <tr>
+                        <td class="memname">int InputOutput::getN</td>
+                        <td>(</td>
+                        <td class="paramname"></td>
+                        <td>)</td>
+                        <td> const</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="memdoc">
+
+            </div>
+        </div>
+        <a id="aa84713865f7c47e08856db0584549391"></a>
+        <h2 class="memtitle"><span class="permalink"><a
+                href="#aa84713865f7c47e08856db0584549391">&#9670;&nbsp;</a></span>getOutputFileName()
+        </h2>
+
+        <div class="memitem">
+            <div class="memproto">
+                <table class="memname">
+                    <tr>
+                        <td class="memname">const std::string &amp;
+                            InputOutput::getOutputFileName
+                        </td>
+                        <td>(</td>
+                        <td class="paramname"></td>
+                        <td>)</td>
+                        <td> const</td>
                     </tr>
                 </table>
             </div>
@@ -1319,51 +1596,6 @@
 
             </div>
         </div>
-        <a id="af5b2df278b468d22f9a6c87694552591"></a>
-        <h2 class="memtitle"><span class="permalink"><a
-                href="#af5b2df278b468d22f9a6c87694552591">&#9670;&nbsp;</a></span>setArrayContents()
-        </h2>
-
-        <div class="memitem">
-            <div class="memproto">
-                <table class="mlabels">
-                    <tr>
-                        <td class="mlabels-left">
-                            <table class="memname">
-                                <tr>
-                                    <td class="memname">void
-                                        InputOutput::setArrayContents
-                                    </td>
-                                    <td>(</td>
-                                    <td class="paramtype">double&#160;</td>
-                                    <td class="paramname"><em>array</em>[],</td>
-                                </tr>
-                                <tr>
-                                    <td class="paramkey"></td>
-                                    <td></td>
-                                    <td class="paramtype">int&#160;</td>
-                                    <td class="paramname"><em>size</em>&#160;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>)</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="mlabels-right">
-                            <span class="mlabels"><span
-                                    class="mlabel">private</span><span
-                                    class="mlabel">noexcept</span></span></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="memdoc">
-
-            </div>
-        </div>
         <a id="a408062257e63734b0bf07b79d43b2959"></a>
         <h2 class="memtitle"><span class="permalink"><a
                 href="#a408062257e63734b0bf07b79d43b2959">&#9670;&nbsp;</a></span>setSorts()
@@ -1440,35 +1672,6 @@
             </div>
         </div>
         <h2 class="groupheader">Member Data Documentation</h2>
-        <a id="ac751010552e2daf9089bcb767f950d00"></a>
-        <h2 class="memtitle"><span class="permalink"><a
-                href="#ac751010552e2daf9089bcb767f950d00">&#9670;&nbsp;</a></span>_input
-        </h2>
-
-        <div class="memitem">
-            <div class="memproto">
-                <table class="mlabels">
-                    <tr>
-                        <td class="mlabels-left">
-                            <table class="memname">
-                                <tr>
-                                    <td class="memname"><a class="el"
-                                                           href="classmy__string.html">my_string</a>
-                                        InputOutput::_input
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td class="mlabels-right">
-                            <span class="mlabels"><span
-                                    class="mlabel">private</span></span></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="memdoc">
-
-            </div>
-        </div>
         <a id="a98a2de3d18e5093c7c6311e2542b5ef6"></a>
         <h2 class="memtitle"><span class="permalink"><a
                 href="#a98a2de3d18e5093c7c6311e2542b5ef6">&#9670;&nbsp;</a></span>fileName

@@ -159,7 +159,7 @@ std::istream &operator>>(std::istream &is, my_string &my_str) {
          * break right after receiving a `non-whitespace`.
          */
         if ((whiteSpacesEncountered) && (c != ' ') && (c != '\t')) {
-            is.unget(); // un-get the `non-whitespace` back to stream.
+            is.unget(); // un-getChecked the `non-whitespace` back to stream.
             break;
         }
         if (!whiteSpacesEncountered) {

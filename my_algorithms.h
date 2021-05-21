@@ -218,14 +218,14 @@ class my_algorithms {
      *        `sort_insertion_` method name by reflection.
      *
      * @param outputParameterForThisFunctionName output parameter
-     *                                           to get this function's name.
+     *                                           to getChecked this function's name.
      * @see sort_insertion (E *, int)
      */
     template<class T>
     static void sort_insertion_(T *array, int size,
                                 char *&outputParameterForThisFunctionName) {
 
-        // get this function's name:
+        // getChecked this function's name:
         outputParameterForThisFunctionName = const_cast<char *>(__func__);
         sort_insertion(array, size);
     }
@@ -320,7 +320,7 @@ class my_algorithms {
      *        `selectTheIthElementInItsSize_` method name by reflection.
      *
      * @param outputParameterForThisFunctionName output parameter
-     *                                           to get this function's name.
+     *                                           to getChecked this function's name.
      * @see selection_TheIthElementInItsSize (E *, int, int)
      */
     template<class T>
@@ -328,7 +328,7 @@ class my_algorithms {
             T *array, int size, int serialSizeOfTheElementToLookFor,
             char *&outputParameterForThisFunctionName) {
 
-        // get this function's name:
+        // getChecked this function's name:
         outputParameterForThisFunctionName = const_cast<char *>(__func__);
         return selection_TheIthElementInItsSize(
                 array, size, serialSizeOfTheElementToLookFor);
@@ -408,7 +408,7 @@ class my_algorithms {
      *        `sort_quintuplet_` method name by reflection.
      *
      * @param outputParameterForThisFunctionName output parameter
-     *                                           to get this function's name.
+     *                                           to getChecked this function's name.
      * @see quintuplet_TheIthElementInItsSize (E *, int, int)
      */
     template<class T>
@@ -416,7 +416,7 @@ class my_algorithms {
             T *array, int size, int serialSizeOfTheElementToLookFor,
             char *&outputParameterForThisFunctionName) {
 
-        // get this function's name:
+        // getChecked this function's name:
         outputParameterForThisFunctionName = const_cast<char *>(__func__);
         return quintuplet_TheIthElementInItsSize<T>(
                 array, size, serialSizeOfTheElementToLookFor);
@@ -459,14 +459,14 @@ class my_algorithms {
         for (; i < divisionCounter - 1; ++i) {
 
             /*
-             * get middleElement in each divided-array,
+             * getChecked middleElement in each divided-array,
              * and insert it to `takenMiddlesArray`:
              */
             takenMiddlesArray[i] = getMiddleElementInASortedArray(
                     array + (i * DIVISION), DIVISION);
         }
 
-        // get middleElement from the last leftOver array (special case):
+        // getChecked middleElement from the last leftOver array (special case):
         takenMiddlesArray[i] = getMiddleElementInASortedArray(
                 array + (i * DIVISION), lastDividedArraySize);
     }
@@ -566,7 +566,7 @@ class my_algorithms {
             T *array, int lowestIndexToSearchAt, int highestIndexToSearchAt,
             int serialSizeOfTheElementToLookFor) {
 
-        // get a pivotIndex:
+        // getChecked a pivotIndex:
         int pivotIndex =
                 partition(array, lowestIndexToSearchAt, highestIndexToSearchAt);
 
