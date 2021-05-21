@@ -3,7 +3,6 @@
 #define MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H
 
 #include "my_algorithms.h"
-#include "my_string.h"
 #include <chrono>
 #include <fstream>
 #include <functional>
@@ -83,10 +82,52 @@ class InputOutput {
 
     /* -- Get Checkers -- */
   public:
+    /**
+     * @brief This method receives an `input` from an `input-stream` and checks
+     *        whether it is a legal **Int**.
+     *
+     * @li In case the `input` gotten is `legal / valid`, return in.
+     * @li In case the `input` gotten is `illegal / invalid`, throw an
+     * exception.
+     * @param is the `input-stream` to get the `input` from.
+     * @return the `input` gotten from the `input-stream` @p is, after
+     *         passing the checking validation.
+     * @throws std::runtime_error if the `input` is in an `illegal` format.
+     * @see checkIntInput(std::string &)
+     * @see getChecked
+     */
     static int getCheckedInt(std::istream &is);
 
+    /**
+     * @brief This method receives an `input` from an `input-stream` and checks
+     *        whether it is a legal **UnsignedInt**.
+     *
+     * @li In case the `input` gotten is `legal / valid`, return in.
+     * @li In case the `input` gotten is `illegal / invalid`, throw an
+     * exception.
+     * @param is the `input-stream` to get the `input` from.
+     * @return the `input` gotten from the `input-stream` @p is, after
+     *         passing the checking validation.
+     * @throws std::runtime_error if the `input` is in an `illegal` format.
+     * @see checkUnsignedIntInput(std::string &)
+     * @see getChecked
+     */
     static int getCheckedUnsignedInt(std::istream &is);
 
+    /**
+     * @brief This method receives an `input` from an `input-stream` and checks
+     *        whether it is a legal **PositiveInt**.
+     *
+     * @li In case the `input` gotten is `legal / valid`, return in.
+     * @li In case the `input` gotten is `illegal / invalid`, throw an
+     * exception.
+     * @param is the `input-stream` to get the `input` from.
+     * @return the `input` gotten from the `input-stream` @p is, after
+     *         passing the checking validation.
+     * @throws std::runtime_error if the `input` is in an `illegal` format.
+     * @see checkPositiveIntInput(std::string &)
+     * @see getChecked
+     */
     static int getCheckedPositiveInt(std::istream &is);
 
   private:
@@ -107,7 +148,7 @@ class InputOutput {
      *                       return value of this method.
      * @return the checked `input` gotten.
      * @details this method is `generic`, and has a constant template.
-     * @throws std::runtime_error if the `input` is in an illegal format.
+     * @throws std::runtime_error if the `input` is in an `illegal` format.
      */
     template<typename T>
     static T
@@ -161,18 +202,18 @@ class InputOutput {
     static bool checkUnsignedIntInput(std::string &input);
 
     /**
- * @brief This method receives as a parameter a `std::string` and checks
- *        whether it is a legal **UnsignedInt**.
- *
- * This method is *private*, and is being used as a parameter for the
- * invocation of @link getCheckedUnsignedInt(std::string &) @endlink in
- * the body of @link getChecked @endlink method.
- * @param input the `input` gotten, that is needed to be checked.
- * @return @li `true` if the `input` is `legal / valid`.
- *         @li `false` if the `input` is `illegal / invalid`.
- * @see getCheckedUnsignedInt(std::istream &)
- * @see getChecked
- */
+     * @brief This method receives as a parameter a `std::string` and checks
+     *        whether it is a legal **PositiveInt**.
+     *
+     * This method is *private*, and is being used as a parameter for the
+     * invocation of @link getCheckedPositiveInt(std::string &) @endlink in
+     * the body of @link getChecked @endlink method.
+     * @param input the `input` gotten, that is needed to be checked.
+     * @return @li `true` if the `input` is `legal / valid`.
+     *         @li `false` if the `input` is `illegal / invalid`.
+     * @see getCheckedPositiveInt(std::istream &)
+     * @see getChecked
+     */
     static bool checkPositiveIntInput(std::string &input);
 };
 

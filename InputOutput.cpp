@@ -35,7 +35,7 @@ void InputOutput::receiveInput(int &N, int &K, std::string &inputFileName,
                                std::string &outputFileName) {
 
     /* Receive N */
-    N = getCheckedInt(std::cin);
+    N = getCheckedPositiveInt(std::cin);
 
     /* Receive K */
     K = getCheckedPositiveInt(std::cin);
