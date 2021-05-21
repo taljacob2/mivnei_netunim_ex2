@@ -31,9 +31,6 @@ class InputOutput {
     /// The name of the `output` file.
     const std::string OUTPUT_FILE_NAME;
 
-    /// The name of the 'Measure' file:
-    static constexpr char *fileName = (char *) "Measure.txt";
-
     /* -- Constructor & Destructor -- */
   public:
     InputOutput(int &N, int &K, std::string &inputFileName,

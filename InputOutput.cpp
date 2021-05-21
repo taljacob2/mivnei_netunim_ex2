@@ -38,7 +38,7 @@ void InputOutput::receiveInput(int &N, int &K, std::string &inputFileName,
     N = getCheckedInt(std::cin);
 
     /* Receive K */
-    K = getCheckedUnsignedInt(std::cin);
+    K = getCheckedPositiveInt(std::cin);
 
     /* Receive name of InputFile: */
     std::cin >> inputFileName; // TODO: need to check this somehow?
