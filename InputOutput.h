@@ -370,7 +370,7 @@ class InputOutput {
     static T
     getChecked(std::istream &                            is,
                const std::function<bool(std::string &)> &checkingFunction,
-               const std::function<T(char *)> &          returnFunction) {
+               const std::function<T(const char *)> &    returnFunction) {
 
         // getChecked the input
         std::string stringInput;
