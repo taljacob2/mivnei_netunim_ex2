@@ -113,21 +113,17 @@
         <table class="directory">
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a96c902d441eb36942449b259454678fb">calculateTotalTimeTakenByTheProgram</a>(std::chrono::time_point&lt;
-                    std::chrono::high_resolution_clock &gt; start,
-                    std::chrono::time_point&lt;
-                    std::chrono::high_resolution_clock &gt; end, const char
-                    *nameOfFunctionToMeasure)
+                                     href="class_input_output.html#a809dd446bd5748572e0c812325da33e8">checkIntInput</a>(std::string
+                    &amp;input)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">private</span><span
+                <td class="entry"><span class="mlabel">private</span><span
                         class="mlabel">static</span></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a809dd446bd5748572e0c812325da33e8">checkIntInput</a>(std::string
+                                     href="class_input_output.html#ab81e99c4b4b09a8a0b69cb469dbf124b">checkPositiveIntInput</a>(std::string
                     &amp;input)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
@@ -147,37 +143,37 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a701529f39c0c64b5d03cc39fb2e5cb94">factoryInputOutput</a>()
+                                     href="class_input_output.html#abf558caf1b249af58f38255f98a2f2ee">factoryInputOutput</a>()
+                </td>
+                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
+                </td>
+                <td class="entry"><span class="mlabel">static</span></td>
+            </tr>
+            <tr class="even">
+                <td class="entry"><a class="el"
+                                     href="class_input_output.html#a2c351b772f694d9549b0fd67b7705d80">getChecked</a>(std::istream
+                    &amp;is, const std::function&lt; bool(std::string &amp;)&gt;
+                    &amp;checkingFunction, const std::function&lt; K(const char
+                    *)&gt; &amp;returnFunction)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
                 <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr class="even">
-                <td class="entry"><a class="el"
-                                     href="class_input_output.html#a98a2de3d18e5093c7c6311e2542b5ef6">fileName</a>
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">private</span><span
+                        class="mlabel">private</span><span
                         class="mlabel">static</span></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#aa15d07cab6286d75e96e058650567497">getChecked</a>(std::istream
-                    &amp;is, const std::function&lt; bool(std::string &amp;)&gt;
-                    &amp;checkingFunction, const std::function&lt; T(char *)&gt;
-                    &amp;returnFunction)
+                                     href="class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab">getCheckedInt</a>(std::istream
+                    &amp;is)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
+                <td class="entry"><span class="mlabel">static</span></td>
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab">getCheckedInt</a>(std::istream
+                                     href="class_input_output.html#a910146926f54a19018302e8d036a4f09">getCheckedPositiveInt</a>(std::istream
                     &amp;is)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
@@ -204,11 +200,11 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#adc67ae350c6b7a004b7c6fdb07513c08">getIntArrayFromInputFile</a>()
+                                     href="class_input_output.html#ab6ff572bf1793528bba2265d1a52db58">getIntArrayFromInputFile</a>()
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">inline</span></td>
+                <td class="entry"></td>
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
@@ -281,59 +277,13 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_input_output.html#a8f8537166733f58fd5262ca01a700dbc">printElements</a>(T
-                    *insertionSortedArray, T &amp;selectionElementRequested, T
-                    &amp;quintupletElementRequested, int
-                    serialSizeOfTheElementToLookFor)
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr>
-                <td class="entry"><a class="el"
-                                     href="class_input_output.html#ab35a93245e4ca6c5fc46ebd1c1392188">printMeasure</a>(T
-                    *array, int size, const std::function&lt; void(T *, int,
-                    char *&amp;)&gt; &amp;functionToMeasure)
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr class="even">
-                <td class="entry"><a class="el"
-                                     href="class_input_output.html#a3f6399704cadf4cad0bff97dbb270a2b">printMeasure</a>(T
-                    *array, int size, int serialSizeOfTheElementToLookFor, const
-                    std::function&lt; T(T *, int, int, char *&amp;)&gt; &amp;functionToMeasure)
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr>
-                <td class="entry"><a class="el"
-                                     href="class_input_output.html#abe6d37e81e60efd1a0ddf233ca8019e1">receiveInput</a>(int
+                                     href="class_input_output.html#ab82445548a1c63be10bc08cc075b8e8b">receiveInput</a>(int
                     &amp;N, int &amp;K, std::string &amp;inputFileName,
                     std::string &amp;outputFileName)
                 </td>
                 <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
                 </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr class="even">
-                <td class="entry"><a class="el"
-                                     href="class_input_output.html#a408062257e63734b0bf07b79d43b2959">setSorts</a>(T
-                    *array, int size, int serialSizeOfTheElementToLookFor, T *&amp;insertionSortedArray,
-                    T &amp;selectionElementRequested, T &amp;quintupletElementRequested)
-                </td>
-                <td class="entry"><a class="el" href="class_input_output.html">InputOutput</a>
-                </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
+                <td class="entry"><span class="mlabel">static</span></td>
             </tr>
             <tr>
                 <td class="entry"><a class="el"

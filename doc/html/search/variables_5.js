@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['logicalsize_219', ['logicalSize', ['../class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91', 1, 'MinHeap']]]
+        ['output_5ffile_5fname_158', ['OUTPUT_FILE_NAME', ['../class_input_output.html#adc15a5fa052c379f0825da1cbca984a7', 1, 'InputOutput']]]
     ];

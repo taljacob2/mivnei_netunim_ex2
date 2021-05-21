@@ -142,14 +142,14 @@
             </div>
             <div class="line"><a name="l00043"></a><span
                     class="lineno">   43</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00044"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de">   44</a></span>&#160;
                 <span class="keyword">static</span> <span class="keywordtype">int</span>
                 <a class="code"
-                   href="classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de">max</a>(T
+                   href="classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de">max</a>(K
                 **array, <span class="keywordtype">int</span> size, <span
                         class="keywordtype">int</span> indexToElement1,
             </div>
@@ -302,14 +302,14 @@
             </div>
             <div class="line"><a name="l00112"></a><span
                     class="lineno">  112</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00113"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b">  113</a></span>&#160;
                 <span class="keyword">static</span> <span class="keywordtype">int</span>
                 <a class="code"
-                   href="classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b">min</a>(T
+                   href="classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b">min</a>(K
                 **array, <span class="keywordtype">int</span> size, <span
                         class="keywordtype">int</span> indexToElement1,
             </div>
@@ -464,15 +464,15 @@
                     class="line"
                     href="classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623">  160</a></span>&#160;
                 <span class="keyword">template</span>&lt;<span class="keyword">class</span>
-                T&gt; <span class="keyword">static</span> T *<a class="code"
+                K&gt; <span class="keyword">static</span> K *<a class="code"
                                                                 href="classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623">copyArray</a>(<span
-                        class="keyword">const</span> T *array, <span
+                        class="keyword">const</span> K *array, <span
                         class="keywordtype">int</span> size) {
             </div>
             <div class="line"><a name="l00161"></a><span
                     class="lineno">  161</span>&#160; <span
                     class="keyword">auto</span> *copiedArr = <span
-                    class="keyword">new</span> T[size];
+                    class="keyword">new</span> K[size];
             </div>
             <div class="line"><a name="l00162"></a><span
                     class="lineno">  162</span>&#160; <span class="keywordflow">for</span>
@@ -493,14 +493,14 @@
                     class="line"
                     href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">  174</a></span>&#160;
                 <span class="keyword">template</span>&lt;<span class="keyword">class</span>
-                T&gt; <span class="keyword">static</span> <span
+                K&gt; <span class="keyword">static</span> <span
                         class="keywordtype">void</span> <a class="code"
-                                                           href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">swap</a>(T
+                                                           href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">swap</a>(K
                 *array, <span class="keywordtype">int</span> index1, <span
                         class="keywordtype">int</span> index2) {
             </div>
             <div class="line"><a name="l00175"></a><span
-                    class="lineno">  175</span>&#160; T tmp = array[index1];
+                    class="lineno">  175</span>&#160; K tmp = array[index1];
             </div>
             <div class="line"><a name="l00176"></a><span
                     class="lineno">  176</span>&#160; array[index1] =
@@ -519,13 +519,13 @@
                     class="line"
                     href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d">  187</a></span>&#160;
                 <span class="keyword">template</span>&lt;<span class="keyword">class</span>
-                T&gt; <span class="keyword">static</span> <span
+                K&gt; <span class="keyword">static</span> <span
                         class="keywordtype">void</span> <a class="code"
-                                                           href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d">swap</a>(T
-                &amp;element1, T &amp;element2) {
+                                                           href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d">swap</a>(K
+                &amp;element1, K &amp;element2) {
             </div>
             <div class="line"><a name="l00188"></a><span
-                    class="lineno">  188</span>&#160; T tmp = element1;
+                    class="lineno">  188</span>&#160; K tmp = element1;
             </div>
             <div class="line"><a name="l00189"></a><span
                     class="lineno">  189</span>&#160; element1 = element2;
@@ -543,9 +543,9 @@
                     class="line"
                     href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb">  199</a></span>&#160;
                 <span class="keyword">template</span>&lt;<span class="keyword">class</span>
-                T&gt; <span class="keyword">static</span> <span
+                K&gt; <span class="keyword">static</span> <span
                         class="keywordtype">void</span> <a class="code"
-                                                           href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb">sort_insertion</a>(T
+                                                           href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb">sort_insertion</a>(K
                 *array, <span class="keywordtype">int</span> size) {
             </div>
             <div class="line"><a name="l00200"></a><span
@@ -577,7 +577,7 @@
                 ((array)[predecessor_index] &gt; (array)[curr_head_index]) {
             </div>
             <div class="line"><a name="l00207"></a><span
-                    class="lineno">  207</span>&#160; swap&lt;T&gt;((array),
+                    class="lineno">  207</span>&#160; swap&lt;K&gt;((array),
                 curr_head_index, predecessor_index);
             </div>
             <div class="line"><a name="l00208"></a><span
@@ -608,14 +608,14 @@
             </div>
             <div class="line"><a name="l00224"></a><span
                     class="lineno">  224</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00225"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7">  225</a></span>&#160;
                 <span class="keyword">static</span> <span class="keywordtype">void</span>
                 <a class="code"
-                   href="classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7">sort_insertion_</a>(T
+                   href="classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7">sort_insertion_</a>(K
                 *array, <span class="keywordtype">int</span> size,
             </div>
             <div class="line"><a name="l00226"></a><span
@@ -646,14 +646,14 @@
             </div>
             <div class="line"><a name="l00252"></a><span
                     class="lineno">  252</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00253"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff">  253</a></span>&#160;
                 <span class="keyword">static</span> <span class="keywordtype">int</span>
                 <a class="code"
-                   href="classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff">partition</a>(T
+                   href="classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff">partition</a>(K
                 *array, <span class="keywordtype">int</span>
                 lowestIndexPossible,
             </div>
@@ -710,7 +710,7 @@
                     class="lineno">  269</span>&#160;<span class="comment">             */</span>
             </div>
             <div class="line"><a name="l00270"></a><span
-                    class="lineno">  270</span>&#160; swap&lt;T&gt;(array,
+                    class="lineno">  270</span>&#160; swap&lt;K&gt;(array,
                 pivotIndex, indexOfElementToServeAsPivot);
             </div>
             <div class="line"><a name="l00271"></a><span
@@ -736,7 +736,7 @@
                 (array[pivotIndex] &gt; array[nonPivotIndex]) {
             </div>
             <div class="line"><a name="l00277"></a><span
-                    class="lineno">  277</span>&#160; swap&lt;T&gt;(array,
+                    class="lineno">  277</span>&#160; swap&lt;K&gt;(array,
                 pivotIndex, nonPivotIndex);
             </div>
             <div class="line"><a name="l00278"></a><span
@@ -767,7 +767,7 @@
                 (array[nonPivotIndex] &gt; array[pivotIndex]) {
             </div>
             <div class="line"><a name="l00285"></a><span
-                    class="lineno">  285</span>&#160; swap&lt;T&gt;(array,
+                    class="lineno">  285</span>&#160; swap&lt;K&gt;(array,
                 pivotIndex, nonPivotIndex);
             </div>
             <div class="line"><a name="l00286"></a><span
@@ -811,17 +811,17 @@
             </div>
             <div class="line"><a name="l00310"></a><span
                     class="lineno">  310</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00311"></a><span
                     class="lineno">  311</span>&#160; <span class="keyword">static</span>
-                T
+                K
             </div>
             <div class="line"><a name="l00312"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9">  312</a></span>&#160;
                 <a class="code"
-                   href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9">selection_TheIthElementInItsSize</a>(T
+                   href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9">selection_TheIthElementInItsSize</a>(K
                 *array, <span class="keywordtype">int</span> size,
             </div>
             <div class="line"><a name="l00313"></a><span
@@ -845,16 +845,16 @@
             </div>
             <div class="line"><a name="l00326"></a><span
                     class="lineno">  326</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00327"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a1a9d0ae0126d0fdbb10b7d03813d3708">  327</a></span>&#160;
-                <span class="keyword">static</span> T <a class="code"
+                <span class="keyword">static</span> K <a class="code"
                                                          href="classmy__algorithms.html#a1a9d0ae0126d0fdbb10b7d03813d3708">selection_TheIthElementInItsSize_</a>(
             </div>
             <div class="line"><a name="l00328"></a><span
-                    class="lineno">  328</span>&#160; T *array, <span
+                    class="lineno">  328</span>&#160; K *array, <span
                     class="keywordtype">int</span> size, <span
                     class="keywordtype">int</span>
                 serialSizeOfTheElementToLookFor,
@@ -893,9 +893,9 @@
                     class="line"
                     href="classmy__algorithms.html#af081947ad20d95de269a023e165c2677">  344</a></span>&#160;
                 <span class="keyword">template</span>&lt;<span class="keyword">class</span>
-                T&gt; <span class="keyword">static</span> <span
+                K&gt; <span class="keyword">static</span> <span
                         class="keywordtype">void</span> <a class="code"
-                                                           href="classmy__algorithms.html#af081947ad20d95de269a023e165c2677">bubbleSort</a>(T
+                                                           href="classmy__algorithms.html#af081947ad20d95de269a023e165c2677">bubbleSort</a>(K
                 *array, <span class="keywordtype">int</span> size) {
             </div>
             <div class="line"><a name="l00345"></a><span
@@ -927,18 +927,18 @@
             </div>
             <div class="line"><a name="l00364"></a><span
                     class="lineno">  364</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T, <span class="keywordtype">int</span>
+                    class="keyword">class</span> K, <span class="keywordtype">int</span>
                 DIVISION&gt;
             </div>
             <div class="line"><a name="l00365"></a><span
                     class="lineno">  365</span>&#160; <span class="keyword">static</span>
-                T
+                K
             </div>
             <div class="line"><a name="l00366"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee">  366</a></span>&#160;
                 <a class="code"
-                   href="classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee">division_TheIthElementInItsSize</a>(T
+                   href="classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee">division_TheIthElementInItsSize</a>(K
                 *array, <span class="keywordtype">int</span> size,
             </div>
             <div class="line"><a name="l00367"></a><span
@@ -976,7 +976,7 @@
             </div>
             <div class="line"><a name="l00375"></a><span
                     class="lineno">  375</span>&#160;
-                whileOfBubbleSort_division_TheIthElementInItsSize&lt;T, DIVISION&gt;(
+                whileOfBubbleSort_division_TheIthElementInItsSize&lt;K, DIVISION&gt;(
             </div>
             <div class="line"><a name="l00376"></a><span
                     class="lineno">  376</span>&#160; array, size,
@@ -986,12 +986,12 @@
                     class="lineno">  377</span>&#160; lastDividedArraySize);
             </div>
             <div class="line"><a name="l00378"></a><span
-                    class="lineno">  378</span>&#160; T *takenMiddlesArray =
-                <span class="keyword">new</span> T[divisionCounter];
+                    class="lineno">  378</span>&#160; K *takenMiddlesArray =
+                <span class="keyword">new</span> K[divisionCounter];
             </div>
             <div class="line"><a name="l00379"></a><span
                     class="lineno">  379</span>&#160;
-                getMiddleArray_division_TheIthElementInItsSize&lt;T, DIVISION&gt;(
+                getMiddleArray_division_TheIthElementInItsSize&lt;K, DIVISION&gt;(
             </div>
             <div class="line"><a name="l00380"></a><span
                     class="lineno">  380</span>&#160; array, takenMiddlesArray,
@@ -1013,7 +1013,7 @@
                                                          href="classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a">getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize</a>&lt;
             </div>
             <div class="line"><a name="l00385"></a><span
-                    class="lineno">  385</span>&#160; T, DIVISION&gt;(array,
+                    class="lineno">  385</span>&#160; K, DIVISION&gt;(array,
                 size, takenMiddlesArray,
             </div>
             <div class="line"><a name="l00386"></a><span
@@ -1030,7 +1030,7 @@
             </div>
             <div class="line"><a name="l00389"></a><span
                     class="lineno">  389</span>&#160; <span class="keywordflow">return</span>
-                returnOf_division_TheIthElementInItsSize&lt;T, DIVISION&gt;(
+                returnOf_division_TheIthElementInItsSize&lt;K, DIVISION&gt;(
             </div>
             <div class="line"><a name="l00390"></a><span
                     class="lineno">  390</span>&#160; array, size,
@@ -1047,17 +1047,17 @@
             </div>
             <div class="line"><a name="l00398"></a><span
                     class="lineno">  398</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00399"></a><span
                     class="lineno">  399</span>&#160; <span class="keyword">static</span>
-                T
+                K
             </div>
             <div class="line"><a name="l00400"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">  400</a></span>&#160;
                 <a class="code"
-                   href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">quintuplet_TheIthElementInItsSize</a>(T
+                   href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">quintuplet_TheIthElementInItsSize</a>(K
                 *array, <span class="keywordtype">int</span> size,
             </div>
             <div class="line"><a name="l00401"></a><span
@@ -1066,7 +1066,7 @@
             </div>
             <div class="line"><a name="l00402"></a><span
                     class="lineno">  402</span>&#160; <span class="keywordflow">return</span>
-                division_TheIthElementInItsSize&lt;T, 5&gt;(
+                division_TheIthElementInItsSize&lt;K, 5&gt;(
             </div>
             <div class="line"><a name="l00403"></a><span
                     class="lineno">  403</span>&#160; array, size,
@@ -1080,16 +1080,16 @@
             </div>
             <div class="line"><a name="l00414"></a><span
                     class="lineno">  414</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00415"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604">  415</a></span>&#160;
-                <span class="keyword">static</span> T <a class="code"
+                <span class="keyword">static</span> K <a class="code"
                                                          href="classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604">quintuplet_TheIthElementInItsSize_</a>(
             </div>
             <div class="line"><a name="l00416"></a><span
-                    class="lineno">  416</span>&#160; T *array, <span
+                    class="lineno">  416</span>&#160; K *array, <span
                     class="keywordtype">int</span> size, <span
                     class="keywordtype">int</span>
                 serialSizeOfTheElementToLookFor,
@@ -1111,7 +1111,7 @@
             </div>
             <div class="line"><a name="l00421"></a><span
                     class="lineno">  421</span>&#160; <span class="keywordflow">return</span>
-                quintuplet_TheIthElementInItsSize&lt;T&gt;(
+                quintuplet_TheIthElementInItsSize&lt;K&gt;(
             </div>
             <div class="line"><a name="l00422"></a><span
                     class="lineno">  422</span>&#160; array, size,
@@ -1128,7 +1128,7 @@
             </div>
             <div class="line"><a name="l00426"></a><span
                     class="lineno">  426</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T, <span class="keywordtype">int</span>
+                    class="keyword">class</span> K, <span class="keywordtype">int</span>
                 DIVISION&gt;
             </div>
             <div class="line"><a name="l00427"></a><span class="lineno"><a
@@ -1139,7 +1139,7 @@
                    href="classmy__algorithms.html#a64f6801e29ed8116d9433bb61e004922">whileOfBubbleSort_division_TheIthElementInItsSize</a>(
             </div>
             <div class="line"><a name="l00428"></a><span
-                    class="lineno">  428</span>&#160; T *array, <span
+                    class="lineno">  428</span>&#160; K *array, <span
                     class="keywordtype">int</span> size, <span
                     class="keywordtype">int</span> &amp;divisionCounter, <span
                     class="keywordtype">int</span> &amp;divisionInteger,
@@ -1229,7 +1229,7 @@
             </div>
             <div class="line"><a name="l00454"></a><span
                     class="lineno">  454</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T, <span class="keywordtype">int</span>
+                    class="keyword">class</span> K, <span class="keywordtype">int</span>
                 DIVISION&gt;
             </div>
             <div class="line"><a name="l00455"></a><span class="lineno"><a
@@ -1240,7 +1240,7 @@
                    href="classmy__algorithms.html#a0c99008229b4de5eabb510f9afbdef3f">getMiddleArray_division_TheIthElementInItsSize</a>(
             </div>
             <div class="line"><a name="l00456"></a><span
-                    class="lineno">  456</span>&#160; T *array, T
+                    class="lineno">  456</span>&#160; K *array, K
                 *takenMiddlesArray, <span class="keywordtype">int</span>
                 divisionCounter,
             </div>
@@ -1306,7 +1306,7 @@
             </div>
             <div class="line"><a name="l00474"></a><span
                     class="lineno">  474</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T, <span class="keywordtype">int</span>
+                    class="keyword">class</span> K, <span class="keywordtype">int</span>
                 DIVISION&gt;
             </div>
             <div class="line"><a name="l00475"></a><span
@@ -1319,8 +1319,8 @@
                    href="classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a">getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize</a>(
             </div>
             <div class="line"><a name="l00477"></a><span
-                    class="lineno">  477</span>&#160; T *array, <span
-                    class="keywordtype">int</span> size, T *takenMiddlesArray,
+                    class="lineno">  477</span>&#160; K *array, <span
+                    class="keywordtype">int</span> size, K *takenMiddlesArray,
                 <span class="keywordtype">int</span> divisionCounter,
             </div>
             <div class="line"><a name="l00478"></a><span
@@ -1343,12 +1343,12 @@
                     class="lineno">  483</span>&#160;<span class="comment">         */</span>
             </div>
             <div class="line"><a name="l00484"></a><span
-                    class="lineno">  484</span>&#160; T
+                    class="lineno">  484</span>&#160; K
                 takenMiddlesArray_medianPivotElement =
             </div>
             <div class="line"><a name="l00485"></a><span
                     class="lineno">  485</span>&#160;
-                division_TheIthElementInItsSize&lt;T, DIVISION&gt;(
+                division_TheIthElementInItsSize&lt;K, DIVISION&gt;(
             </div>
             <div class="line"><a name="l00486"></a><span
                     class="lineno">  486</span>&#160; takenMiddlesArray,
@@ -1475,14 +1475,14 @@
             </div>
             <div class="line"><a name="l00521"></a><span
                     class="lineno">  521</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T, <span class="keywordtype">int</span>
+                    class="keyword">class</span> K, <span class="keywordtype">int</span>
                 DIVISION&gt;
             </div>
             <div class="line"><a name="l00522"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4">  522</a></span>&#160;
-                <span class="keyword">static</span> T <a class="code"
-                                                         href="classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4">returnOf_division_TheIthElementInItsSize</a>(T
+                <span class="keyword">static</span> K <a class="code"
+                                                         href="classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4">returnOf_division_TheIthElementInItsSize</a>(K
                 *array, <span class="keywordtype">int</span> size, <span
                         class="keywordtype">int</span> i,
             </div>
@@ -1503,7 +1503,7 @@
             </div>
             <div class="line"><a name="l00527"></a><span
                     class="lineno">  527</span>&#160; <span class="keywordflow">return</span>
-                division_TheIthElementInItsSize&lt;T, DIVISION&gt;(array,
+                division_TheIthElementInItsSize&lt;K, DIVISION&gt;(array,
                 k_index,
             </div>
             <div class="line"><a name="l00528"></a><span
@@ -1516,7 +1516,7 @@
             </div>
             <div class="line"><a name="l00530"></a><span
                     class="lineno">  530</span>&#160; <span class="keywordflow">return</span>
-                division_TheIthElementInItsSize&lt;T, DIVISION&gt;(
+                division_TheIthElementInItsSize&lt;K, DIVISION&gt;(
             </div>
             <div class="line"><a name="l00531"></a><span
                     class="lineno">  531</span>&#160; array + (k_index + 1),
@@ -1554,16 +1554,16 @@
             </div>
             <div class="line"><a name="l00564"></a><span
                     class="lineno">  564</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00565"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#a33ef55e9a30603a9170275afb71be875">  565</a></span>&#160;
-                <span class="keyword">static</span> T <a class="code"
+                <span class="keyword">static</span> K <a class="code"
                                                          href="classmy__algorithms.html#a33ef55e9a30603a9170275afb71be875">selectTheIthElementInItsSize_UnSecured</a>(
             </div>
             <div class="line"><a name="l00566"></a><span
-                    class="lineno">  566</span>&#160; T *array, <span
+                    class="lineno">  566</span>&#160; K *array, <span
                     class="keywordtype">int</span> lowestIndexToSearchAt, <span
                     class="keywordtype">int</span> highestIndexToSearchAt,
             </div>
@@ -1673,13 +1673,13 @@
             </div>
             <div class="line"><a name="l00596"></a><span
                     class="lineno">  596</span>&#160; <span class="keyword">template</span>&lt;<span
-                    class="keyword">class</span> T&gt;
+                    class="keyword">class</span> K&gt;
             </div>
             <div class="line"><a name="l00597"></a><span class="lineno"><a
                     class="line"
                     href="classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc">  597</a></span>&#160;
-                <span class="keyword">static</span> T <a class="code"
-                                                         href="classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc">getMiddleElementInASortedArray</a>(T
+                <span class="keyword">static</span> K <a class="code"
+                                                         href="classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc">getMiddleElementInASortedArray</a>(K
                 *array, <span class="keywordtype">int</span> size) {
             </div>
             <div class="line"><a name="l00598"></a><span
@@ -1690,13 +1690,29 @@
                     class="lineno">  599</span>&#160; }
             </div>
             <div class="line"><a name="l00600"></a><span
-                    class="lineno">  600</span>&#160;};
+                    class="lineno">  600</span>&#160;
             </div>
             <div class="line"><a name="l00601"></a><span
-                    class="lineno">  601</span>&#160;
+                    class="lineno">  601</span>&#160; <span class="keyword">public</span>:
             </div>
-            <div class="line"><a name="l00602"></a><span
-                    class="lineno">  602</span>&#160;<span class="preprocessor">#endif </span><span
+            <div class="line"><a name="l00614"></a><span class="lineno"><a
+                    class="line"
+                    href="classmy__algorithms.html#a065eca6e5d55fe20cd3c2d2d318ba59b">  614</a></span>&#160;
+                <span class="keyword">template</span>&lt;<span class="keyword">typename</span>
+                K&gt; <span class="keyword">static</span> <span
+                        class="keywordtype">void</span> <a class="code"
+                                                           href="classmy__algorithms.html#a065eca6e5d55fe20cd3c2d2d318ba59b">kWayMergeSort</a>(K
+                *array, <span class="keywordtype">int</span> size, <span
+                        class="keywordtype">int</span> k) {}
+            </div>
+            <div class="line"><a name="l00615"></a><span
+                    class="lineno">  615</span>&#160;};
+            </div>
+            <div class="line"><a name="l00616"></a><span
+                    class="lineno">  616</span>&#160;
+            </div>
+            <div class="line"><a name="l00617"></a><span
+                    class="lineno">  617</span>&#160;<span class="preprocessor">#endif </span><span
                     class="comment">//MIVNEI_NETUNIM_EX2_MY_ALGORITHMS_H</span>
             </div>
             <div class="ttc" id="aclassmy__algorithms_html">
@@ -1708,12 +1724,25 @@
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:15</div>
             </div>
             <div class="ttc"
+                 id="aclassmy__algorithms_html_a065eca6e5d55fe20cd3c2d2d318ba59b">
+                <div class="ttname"><a
+                        href="classmy__algorithms.html#a065eca6e5d55fe20cd3c2d2d318ba59b">my_algorithms::kWayMergeSort</a>
+                </div>
+                <div class="ttdeci">static void kWayMergeSort(K *array, int
+                    size, int k)
+                </div>
+                <div class="ttdoc">This algorithm sorts the array given, by
+                    dividing it to k smaller arrays. Sorting each of them....
+                </div>
+                <div class="ttdef"><b>Definition:</b> my_algorithms.h:614</div>
+            </div>
+            <div class="ttc"
                  id="aclassmy__algorithms_html_a0c99008229b4de5eabb510f9afbdef3f">
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a0c99008229b4de5eabb510f9afbdef3f">my_algorithms::getMiddleArray_division_TheIthElementInItsSize</a>
                 </div>
                 <div class="ttdeci">static void
-                    getMiddleArray_division_TheIthElementInItsSize(T *array, T
+                    getMiddleArray_division_TheIthElementInItsSize(K *array, K
                     *takenMiddlesArray, int divisionCounter, int
                     lastDividedArraySize)
                 </div>
@@ -1724,7 +1753,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">my_algorithms::swap</a>
                 </div>
-                <div class="ttdeci">static void swap(T *array, int index1, int
+                <div class="ttdeci">static void swap(K *array, int index1, int
                     index2)
                 </div>
                 <div class="ttdoc">generic swap algorithm of two elements in an
@@ -1737,7 +1766,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a1a9d0ae0126d0fdbb10b7d03813d3708">my_algorithms::selection_TheIthElementInItsSize_</a>
                 </div>
-                <div class="ttdeci">static T selection_TheIthElementInItsSize_(T
+                <div class="ttdeci">static K selection_TheIthElementInItsSize_(K
                     *array, int size, int serialSizeOfTheElementToLookFor, char
                     *&amp;outputParameterForThisFunctionName)
                 </div>
@@ -1751,7 +1780,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9">my_algorithms::selection_TheIthElementInItsSize</a>
                 </div>
-                <div class="ttdeci">static T selection_TheIthElementInItsSize(T
+                <div class="ttdeci">static K selection_TheIthElementInItsSize(K
                     *array, int size, int serialSizeOfTheElementToLookFor)
                 </div>
                 <div class="ttdoc">this method is the public method for the
@@ -1764,7 +1793,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b">my_algorithms::min</a>
                 </div>
-                <div class="ttdeci">static int min(T **array, int size, int
+                <div class="ttdeci">static int min(K **array, int size, int
                     indexToElement1, int indexToElement2)
                 </div>
                 <div class="ttdoc">Compares two elements pointed out from two
@@ -1778,8 +1807,8 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a33ef55e9a30603a9170275afb71be875">my_algorithms::selectTheIthElementInItsSize_UnSecured</a>
                 </div>
-                <div class="ttdeci">static T
-                    selectTheIthElementInItsSize_UnSecured(T *array, int
+                <div class="ttdeci">static K
+                    selectTheIthElementInItsSize_UnSecured(K *array, int
                     lowestIndexToSearchAt, int highestIndexToSearchAt, int
                     serialSizeOfTheElementToLookFor)
                 </div>
@@ -1793,8 +1822,8 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4">my_algorithms::returnOf_division_TheIthElementInItsSize</a>
                 </div>
-                <div class="ttdeci">static T
-                    returnOf_division_TheIthElementInItsSize(T *array, int size,
+                <div class="ttdeci">static K
+                    returnOf_division_TheIthElementInItsSize(K *array, int size,
                     int i, int k_index)
                 </div>
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:522</div>
@@ -1804,7 +1833,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7">my_algorithms::sort_insertion_</a>
                 </div>
-                <div class="ttdeci">static void sort_insertion_(T *array, int
+                <div class="ttdeci">static void sort_insertion_(K *array, int
                     size, char *&amp;outputParameterForThisFunctionName)
                 </div>
                 <div class="ttdoc">this method is made for getting the
@@ -1817,7 +1846,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee">my_algorithms::division_TheIthElementInItsSize</a>
                 </div>
-                <div class="ttdeci">static T division_TheIthElementInItsSize(T
+                <div class="ttdeci">static K division_TheIthElementInItsSize(K
                     *array, int size, int serialSizeOfTheElementToLookFor)
                 </div>
                 <div class="ttdoc">this method searches for the I'th element in
@@ -1831,7 +1860,7 @@
                         href="classmy__algorithms.html#a64f6801e29ed8116d9433bb61e004922">my_algorithms::whileOfBubbleSort_division_TheIthElementInItsSize</a>
                 </div>
                 <div class="ttdeci">static void
-                    whileOfBubbleSort_division_TheIthElementInItsSize(T *array,
+                    whileOfBubbleSort_division_TheIthElementInItsSize(K *array,
                     int size, int &amp;divisionCounter, int &amp;divisionInteger,
                     int &amp;lastDividedArraySize)
                 </div>
@@ -1842,7 +1871,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623">my_algorithms::copyArray</a>
                 </div>
-                <div class="ttdeci">static T * copyArray(const T *array, int
+                <div class="ttdeci">static K * copyArray(const K *array, int
                     size)
                 </div>
                 <div class="ttdoc">generic algorithm to copy an array.</div>
@@ -1854,8 +1883,8 @@
                         href="classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a">my_algorithms::getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize</a>
                 </div>
                 <div class="ttdeci">static void
-                    getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize(T
-                    *array, int size, T *takenMiddlesArray, int divisionCounter,
+                    getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize(K
+                    *array, int size, K *takenMiddlesArray, int divisionCounter,
                     int &amp;takenMiddlesArray_medianPivotElement_indexInArray)
                 </div>
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:476</div>
@@ -1865,7 +1894,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de">my_algorithms::max</a>
                 </div>
-                <div class="ttdeci">static int max(T **array, int size, int
+                <div class="ttdeci">static int max(K **array, int size, int
                     indexToElement1, int indexToElement2)
                 </div>
                 <div class="ttdoc">Compares two elements pointed out from two
@@ -1879,7 +1908,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff">my_algorithms::partition</a>
                 </div>
-                <div class="ttdeci">static int partition(T *array, int
+                <div class="ttdeci">static int partition(K *array, int
                     lowestIndexPossible, int highestIndexPossible, int
                     indexOfElementToServeAsPivot=0)
                 </div>
@@ -1893,7 +1922,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d">my_algorithms::swap</a>
                 </div>
-                <div class="ttdeci">static void swap(T &amp;element1, T &amp;element2)</div>
+                <div class="ttdeci">static void swap(K &amp;element1, K &amp;element2)</div>
                 <div class="ttdoc">generic swap algorithm of two elements.</div>
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:187</div>
             </div>
@@ -1902,7 +1931,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">my_algorithms::quintuplet_TheIthElementInItsSize</a>
                 </div>
-                <div class="ttdeci">static T quintuplet_TheIthElementInItsSize(T
+                <div class="ttdeci">static K quintuplet_TheIthElementInItsSize(K
                     *array, int size, int serialSizeOfTheElementToLookFor)
                 </div>
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:400</div>
@@ -1912,7 +1941,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc">my_algorithms::getMiddleElementInASortedArray</a>
                 </div>
-                <div class="ttdeci">static T getMiddleElementInASortedArray(T
+                <div class="ttdeci">static K getMiddleElementInASortedArray(K
                     *array, int size)
                 </div>
                 <div class="ttdef"><b>Definition:</b> my_algorithms.h:597</div>
@@ -1922,7 +1951,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb">my_algorithms::sort_insertion</a>
                 </div>
-                <div class="ttdeci">static void sort_insertion(T *array, int
+                <div class="ttdeci">static void sort_insertion(K *array, int
                     size)
                 </div>
                 <div class="ttdoc">sorts the array given array.</div>
@@ -1933,7 +1962,7 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#af081947ad20d95de269a023e165c2677">my_algorithms::bubbleSort</a>
                 </div>
-                <div class="ttdeci">static void bubbleSort(T *array, int size)
+                <div class="ttdeci">static void bubbleSort(K *array, int size)
                 </div>
                 <div class="ttdoc">sorts an array using the bubble-sort
                     algorithm.
@@ -1945,8 +1974,8 @@
                 <div class="ttname"><a
                         href="classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604">my_algorithms::quintuplet_TheIthElementInItsSize_</a>
                 </div>
-                <div class="ttdeci">static T
-                    quintuplet_TheIthElementInItsSize_(T *array, int size, int
+                <div class="ttdeci">static K
+                    quintuplet_TheIthElementInItsSize_(K *array, int size, int
                     serialSizeOfTheElementToLookFor, char *&amp;outputParameterForThisFunctionName)
                 </div>
                 <div class="ttdoc">this method is made for getting the

@@ -113,7 +113,7 @@
         <table class="directory">
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#af081947ad20d95de269a023e165c2677">bubbleSort</a>(T
+                                     href="classmy__algorithms.html#af081947ad20d95de269a023e165c2677">bubbleSort</a>(K
                     *array, int size)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -124,7 +124,7 @@
             <tr>
                 <td class="entry"><a class="el"
                                      href="classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623">copyArray</a>(const
-                    T *array, int size)
+                    K *array, int size)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
                 </td>
@@ -133,7 +133,7 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee">division_TheIthElementInItsSize</a>(T
+                                     href="classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee">division_TheIthElementInItsSize</a>(K
                     *array, int size, int serialSizeOfTheElementToLookFor)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -143,8 +143,8 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a0c99008229b4de5eabb510f9afbdef3f">getMiddleArray_division_TheIthElementInItsSize</a>(T
-                    *array, T *takenMiddlesArray, int divisionCounter, int
+                                     href="classmy__algorithms.html#a0c99008229b4de5eabb510f9afbdef3f">getMiddleArray_division_TheIthElementInItsSize</a>(K
+                    *array, K *takenMiddlesArray, int divisionCounter, int
                     lastDividedArraySize)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -155,7 +155,7 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc">getMiddleElementInASortedArray</a>(T
+                                     href="classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc">getMiddleElementInASortedArray</a>(K
                     *array, int size)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -166,8 +166,8 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a">getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize</a>(T
-                    *array, int size, T *takenMiddlesArray, int divisionCounter,
+                                     href="classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a">getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize</a>(K
+                    *array, int size, K *takenMiddlesArray, int divisionCounter,
                     int &amp;takenMiddlesArray_medianPivotElement_indexInArray)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -178,8 +178,8 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de">max</a>(T
-                    **array, int size, int indexToElement1, int indexToElement2)
+                                     href="classmy__algorithms.html#a065eca6e5d55fe20cd3c2d2d318ba59b">kWayMergeSort</a>(K
+                    *array, int size, int k)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
                 </td>
@@ -188,7 +188,7 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b">min</a>(T
+                                     href="classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de">max</a>(K
                     **array, int size, int indexToElement1, int indexToElement2)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -198,7 +198,17 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff">partition</a>(T
+                                     href="classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b">min</a>(K
+                    **array, int size, int indexToElement1, int indexToElement2)
+                </td>
+                <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
+                </td>
+                <td class="entry"><span class="mlabel">inline</span><span
+                        class="mlabel">static</span></td>
+            </tr>
+            <tr>
+                <td class="entry"><a class="el"
+                                     href="classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff">partition</a>(K
                     *array, int lowestIndexPossible, int highestIndexPossible,
                     int indexOfElementToServeAsPivot=0)
                 </td>
@@ -207,9 +217,9 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">quintuplet_TheIthElementInItsSize</a>(T
+                                     href="classmy__algorithms.html#aa2254406e1a518653134735938fcaa61">quintuplet_TheIthElementInItsSize</a>(K
                     *array, int size, int serialSizeOfTheElementToLookFor)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -217,9 +227,9 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr class="even">
+            <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604">quintuplet_TheIthElementInItsSize_</a>(T
+                                     href="classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604">quintuplet_TheIthElementInItsSize_</a>(K
                     *array, int size, int serialSizeOfTheElementToLookFor, char
                     *&amp;outputParameterForThisFunctionName)
                 </td>
@@ -228,9 +238,9 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4">returnOf_division_TheIthElementInItsSize</a>(T
+                                     href="classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4">returnOf_division_TheIthElementInItsSize</a>(K
                     *array, int size, int i, int k_index)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -239,9 +249,9 @@
                         class="mlabel">private</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr class="even">
+            <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9">selection_TheIthElementInItsSize</a>(T
+                                     href="classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9">selection_TheIthElementInItsSize</a>(K
                     *array, int size, int serialSizeOfTheElementToLookFor)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -249,9 +259,9 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a1a9d0ae0126d0fdbb10b7d03813d3708">selection_TheIthElementInItsSize_</a>(T
+                                     href="classmy__algorithms.html#a1a9d0ae0126d0fdbb10b7d03813d3708">selection_TheIthElementInItsSize_</a>(K
                     *array, int size, int serialSizeOfTheElementToLookFor, char
                     *&amp;outputParameterForThisFunctionName)
                 </td>
@@ -260,9 +270,9 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr class="even">
+            <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a33ef55e9a30603a9170275afb71be875">selectTheIthElementInItsSize_UnSecured</a>(T
+                                     href="classmy__algorithms.html#a33ef55e9a30603a9170275afb71be875">selectTheIthElementInItsSize_UnSecured</a>(K
                     *array, int lowestIndexToSearchAt, int
                     highestIndexToSearchAt, int serialSizeOfTheElementToLookFor)
                 </td>
@@ -272,9 +282,9 @@
                         class="mlabel">private</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb">sort_insertion</a>(T
+                                     href="classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb">sort_insertion</a>(K
                     *array, int size)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -282,9 +292,9 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
-            <tr class="even">
+            <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7">sort_insertion_</a>(T
+                                     href="classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7">sort_insertion_</a>(K
                     *array, int size, char *&amp;outputParameterForThisFunctionName)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
@@ -292,10 +302,20 @@
                 <td class="entry"><span class="mlabel">inline</span><span
                         class="mlabel">static</span></td>
             </tr>
+            <tr class="even">
+                <td class="entry"><a class="el"
+                                     href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">swap</a>(K
+                    *array, int index1, int index2)
+                </td>
+                <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
+                </td>
+                <td class="entry"><span class="mlabel">inline</span><span
+                        class="mlabel">static</span></td>
+            </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126">swap</a>(T
-                    *array, int index1, int index2)
+                                     href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d">swap</a>(K
+                    &amp;element1, K &amp;element2)
                 </td>
                 <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
                 </td>
@@ -304,17 +324,7 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d">swap</a>(T
-                    &amp;element1, T &amp;element2)
-                </td>
-                <td class="entry"><a class="el" href="classmy__algorithms.html">my_algorithms</a>
-                </td>
-                <td class="entry"><span class="mlabel">inline</span><span
-                        class="mlabel">static</span></td>
-            </tr>
-            <tr>
-                <td class="entry"><a class="el"
-                                     href="classmy__algorithms.html#a64f6801e29ed8116d9433bb61e004922">whileOfBubbleSort_division_TheIthElementInItsSize</a>(T
+                                     href="classmy__algorithms.html#a64f6801e29ed8116d9433bb61e004922">whileOfBubbleSort_division_TheIthElementInItsSize</a>(K
                     *array, int size, int &amp;divisionCounter, int &amp;divisionInteger,
                     int &amp;lastDividedArraySize)
                 </td>

@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.cpp" "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.o"
   "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp" "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o"
-  "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.cpp" "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.o"
+  "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/my_string.cpp" "/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

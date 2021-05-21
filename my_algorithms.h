@@ -2,8 +2,12 @@
 #ifndef MIVNEI_NETUNIM_EX2_MY_ALGORITHMS_H
 #define MIVNEI_NETUNIM_EX2_MY_ALGORITHMS_H
 
+
+#include <cmath>
 #include <exception>
+#include <functional>
 #include <iostream>
+
 
 /**
  * @brief this class bundles together all the algorithm
@@ -235,9 +239,10 @@ class my_algorithms {
      *        and returns its index.
      *
      * @warning this method doesn't check that the
-     *          @p lowestIndex and @p highestIndex
+     *          @p lowestIndexPossible and @p highestIndexPossible
      *          are valid indexes in the array.
-     * @note this method places the `pivot` in the **earliest** index possible.
+     * @note by default, this method places the `pivot` in the **earliest**
+     *       index possible.
      * @tparam T element of the array.
      * @param array the array to be sorted.
      * @param lowestIndexPossible the lowest index in the @p array given.
@@ -596,6 +601,86 @@ class my_algorithms {
     template<class T>
     static T getMiddleElementInASortedArray(T *array, int size) {
         return array[(size - 1) / 2];
+    }
+
+  public:
+    /**
+     * @brief sorts an array using the `quick-sort` algorithm.
+     *
+     * @note This method is **secured**.
+     * @tparam T element of the array.
+     * @param array the array to be sorted.
+     * @param size the size of the given @p array.
+     * @see quickSortRecursive(T *, int, int)
+     * @see partition(T *, int, int, int)
+     */
+    template<typename T> static void quickSort(T *array, int size) {
+        quickSortRecursive(array, 0, size - 1);
+    }
+
+  private:
+    /**
+     * @brief sorts an array using the `quick-sort` algorithm.
+     *
+     * This done by using the @link partition(T *, int, int, int) @endlink
+     * method, with the `pivot` index being the `first` index possible.
+     * @warning this method doesn't check that the
+     *          @p lowestIndexPossible and @p highestIndexPossible
+     *          are valid indexes in the array.
+     * @tparam T element of the array.
+     * @param array the array to be sorted.
+     * @param lowestIndexPossible the lowest index in the @p array given.
+     * @param highestIndexPossible the highest index in the @p array given.
+     * @see partition(T *, int, int, int)
+     */
+    template<typename T>
+    static void quickSortRecursive(T *array, int lowestIndexPossible,
+                                   int highestIndexPossible) {
+        if (lowestIndexPossible < highestIndexPossible) {
+            int pivot =
+                    partition(array, lowestIndexPossible,
+                              highestIndexPossible); // pivot the `first` index.
+            quickSortRecursive(array, lowestIndexPossible, pivot - 1);
+            quickSortRecursive(array, pivot + 1, highestIndexPossible);
+        }
+    }
+
+  private:
+    /**
+     * @brief This method divides a given @p array to @p k smaller arrays,
+     *        and invokes the @p forEachSmallArrayFunction function for
+     *        each of the divided smaller arrays.
+     * @note The method divides the given @p array such that the sizes of the
+     *       smaller arrays are spread as equally as possible.
+     * @tparam T the `type` of elements in the array given.
+     * @param array the array to divide to @p k smaller arrays.
+     * @param size the size of the @p array given.
+     * @param k the division parameter.
+     * @param forEachSmallArrayFunction this function is being invoked
+     *                                  `for-each` smaller array.
+     */
+    template<typename T>
+    static void divideArrayToKSmallerArrays(
+            T *array, int size, int k,
+            const std::function<void(T *, int)> &forEachSmallArrayFunction) {
+
+        /*
+         * Save here the size of the last small array.
+         * Note: must initialize with `0`.
+         */
+        int lastSmallArraySize = 0;
+        while ((size > 0) && (k > 0)) {
+            int currSmallArraySize = ceil((double) size / k);
+
+            /* Do something to the current small array. */
+            forEachSmallArrayFunction(array + lastSmallArraySize,
+                                      currSmallArraySize);
+
+            /* Step ahead. */
+            size = size - currSmallArraySize;
+            k--;
+            lastSmallArraySize = currSmallArraySize;
+        }
     }
 };
 

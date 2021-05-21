@@ -24,38 +24,32 @@ const std\+::string \& \mbox{\hyperlink{class_input_output_ac8b16ee8f70494d3343f
 \item 
 const std\+::string \& \mbox{\hyperlink{class_input_output_aa84713865f7c47e08856db0584549391}{get\+Output\+File\+Name}} () const
 \item 
-int $\ast$ \mbox{\hyperlink{class_input_output_adc67ae350c6b7a004b7c6fdb07513c08}{get\+Int\+Array\+From\+Input\+File}} ()
+int $\ast$ \mbox{\hyperlink{class_input_output_ab6ff572bf1793528bba2265d1a52db58}{get\+Int\+Array\+From\+Input\+File}} ()
 \begin{DoxyCompactList}\small\item\em This method gets the {\ttfamily array} specified in the {\itshape INPUT\+\_\+\+FILE} provided by the {\itshape INPUT\+\_\+\+FILE\+\_\+\+NAME}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class T $>$ }\\static T $\ast$ \mbox{\hyperlink{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}{print\+Measure}} (T $\ast$array, int size, const std\+::function$<$ void(T $\ast$, int, char $\ast$\&)$>$ \&function\+To\+Measure)
+static void \mbox{\hyperlink{class_input_output_ab82445548a1c63be10bc08cc075b8e8b}{receive\+Input}} (int \&\mbox{\hyperlink{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}{N}}, int \&\mbox{\hyperlink{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}{K}}, std\+::string \&input\+File\+Name, std\+::string \&output\+File\+Name)
 \item 
-{\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}{print\+Measure}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, const std\+::function$<$ T(T $\ast$, int, int, char $\ast$\&)$>$ \&function\+To\+Measure)
-\item 
-{\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_input_output_a408062257e63734b0bf07b79d43b2959}{set\+Sorts}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, T $\ast$\&insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested)
-\item 
-{\footnotesize template$<$class T $>$ }\\static void \mbox{\hyperlink{class_input_output_a8f8537166733f58fd5262ca01a700dbc}{print\+Elements}} (T $\ast$insertion\+Sorted\+Array, T \&selection\+Element\+Requested, T \&quintuplet\+Element\+Requested, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
-\item 
-static void \mbox{\hyperlink{class_input_output_abe6d37e81e60efd1a0ddf233ca8019e1}{receive\+Input}} (int \&\mbox{\hyperlink{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}{N}}, int \&\mbox{\hyperlink{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}{K}}, std\+::string \&input\+File\+Name, std\+::string \&output\+File\+Name)
-\item 
-static \mbox{\hyperlink{class_input_output}{Input\+Output}} $\ast$ \mbox{\hyperlink{class_input_output_a701529f39c0c64b5d03cc39fb2e5cb94}{factory\+Input\+Output}} ()
+static \mbox{\hyperlink{class_input_output}{Input\+Output}} $\ast$ \mbox{\hyperlink{class_input_output_abf558caf1b249af58f38255f98a2f2ee}{factory\+Input\+Output}} ()
 \begin{DoxyCompactList}\small\item\em This method serves as a {\bfseries{Factory}} method. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_input_output_a6e2dde4714e5236476b5b17dfc620bab}{get\+Checked\+Int}} (std\+::istream \&is)
-\item 
+\begin{DoxyCompactList}\small\item\em This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Int}}. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_input_output_aed18759c66beb9fe5091ad7b1fb07807}{get\+Checked\+Unsigned\+Int}} (std\+::istream \&is)
-\item 
-{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{class_input_output_aa15d07cab6286d75e96e058650567497}{get\+Checked}} (std\+::istream \&is, const std\+::function$<$ bool(std\+::string \&)$>$ \&checking\+Function, const std\+::function$<$ T(char $\ast$)$>$ \&return\+Function)
-\begin{DoxyCompactList}\small\item\em This method gets an input from an {\ttfamily input-\/stream} {\ttfamily is}, and after that, {\itshape checks} whether the input gotten is legal by checking it with a specific function\+: {\ttfamily checking\+Function}. In case the input was found as legal, then we manipulate the checked input with the {\ttfamily return\+Function}, and its {\ttfamily return} value is set to be this method\textquotesingle{}s return value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Unsigned\+Int}}. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_input_output_a910146926f54a19018302e8d036a4f09}{get\+Checked\+Positive\+Int}} (std\+::istream \&is)
+\begin{DoxyCompactList}\small\item\em This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Positive\+Int}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_input_output_a96c902d441eb36942449b259454678fb}{calculate\+Total\+Time\+Taken\+By\+The\+Program}} (std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ start, std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$ end, const char $\ast$name\+Of\+Function\+To\+Measure)
-\item 
+{\footnotesize template$<$typename K $>$ }\\static K \mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} (std\+::istream \&is, const std\+::function$<$ bool(std\+::string \&)$>$ \&checking\+Function, const std\+::function$<$ K(const char $\ast$)$>$ \&return\+Function)
+\begin{DoxyCompactList}\small\item\em This method gets an input from an {\ttfamily input-\/stream} {\ttfamily is}, and after that, {\itshape checks} whether the input gotten is legal by checking it with a specific function\+: {\ttfamily checking\+Function}. In case the input was found as legal, then we manipulate the checked input with the {\ttfamily return\+Function}, and its {\ttfamily return} value is set to be this method\textquotesingle{}s return value. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_output_a809dd446bd5748572e0c812325da33e8}{check\+Int\+Input}} (std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Int}}. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_input_output_abf8acb0aa83374d149786d7935376fed}{check\+Unsigned\+Int\+Input}} (std\+::string \&input)
 \begin{DoxyCompactList}\small\item\em This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Unsigned\+Int}}. \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{class_input_output_a809dd446bd5748572e0c812325da33e8}{check\+Int\+Input}} (std\+::string \&input)
-\begin{DoxyCompactList}\small\item\em This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Int}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static bool \mbox{\hyperlink{class_input_output_ab81e99c4b4b09a8a0b69cb469dbf124b}{check\+Positive\+Int\+Input}} (std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Positive\+Int}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,11 +61,6 @@ const std\+::string \mbox{\hyperlink{class_input_output_a1e526b2dd1e303454bcf57c
 \begin{DoxyCompactList}\small\item\em The name of the {\ttfamily input} file. \end{DoxyCompactList}\item 
 const std\+::string \mbox{\hyperlink{class_input_output_adc15a5fa052c379f0825da1cbca984a7}{OUTPUT\+\_\+\+FILE\+\_\+\+NAME}}
 \begin{DoxyCompactList}\small\item\em The name of the {\ttfamily output} file. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-static constexpr char $\ast$ \mbox{\hyperlink{class_input_output_a98a2de3d18e5093c7c6311e2542b5ef6}{file\+Name}} = (char $\ast$) \char`\"{}Measure.\+txt\char`\"{}
-\begin{DoxyCompactList}\small\item\em The name of the \textquotesingle{}Measure\textquotesingle{} file\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -101,12 +90,6 @@ Tal Yacob, ID\+: 208632778.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_input_output_a96c902d441eb36942449b259454678fb}\label{class_input_output_a96c902d441eb36942449b259454678fb}} 
-\index{InputOutput@{InputOutput}!calculateTotalTimeTakenByTheProgram@{calculateTotalTimeTakenByTheProgram}}
-\index{calculateTotalTimeTakenByTheProgram@{calculateTotalTimeTakenByTheProgram}!InputOutput@{InputOutput}}
-\doxysubsubsection{\texorpdfstring{calculateTotalTimeTakenByTheProgram()}{calculateTotalTimeTakenByTheProgram()}}
-{\footnotesize\ttfamily static void Input\+Output\+::calculate\+Total\+Time\+Taken\+By\+The\+Program (\begin{DoxyParamCaption}\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$}]{start,  }\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::high\+\_\+resolution\+\_\+clock $>$}]{end,  }\item[{const char $\ast$}]{name\+Of\+Function\+To\+Measure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
-
 \mbox{\Hypertarget{class_input_output_a809dd446bd5748572e0c812325da33e8}\label{class_input_output_a809dd446bd5748572e0c812325da33e8}} 
 \index{InputOutput@{InputOutput}!checkIntInput@{checkIntInput}}
 \index{checkIntInput@{checkIntInput}!InputOutput@{InputOutput}}
@@ -117,7 +100,7 @@ Tal Yacob, ID\+: 208632778.
 
 This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Int}}. 
 
-This method is {\itshape private}, and is being used as a parameter for the invocation of \mbox{\hyperlink{}{get\+Checked\+Int(std\+::string \&)}} in the body of \mbox{\hyperlink{class_input_output_aa15d07cab6286d75e96e058650567497}{get\+Checked}} method. 
+This method is {\itshape private}, and is being used as a parameter for the invocation of \mbox{\hyperlink{}{get\+Checked\+Int(std\+::string \&)}} in the body of \mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} method. 
 \begin{DoxyParams}{Parameters}
 {\em input} & the {\ttfamily input} gotten, that is needed to be checked. \\
 \hline
@@ -130,7 +113,32 @@ This method is {\itshape private}, and is being used as a parameter for the invo
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_input_output_a6e2dde4714e5236476b5b17dfc620bab}{get\+Checked\+Int(std\+::istream \&)}} 
 
-\mbox{\hyperlink{class_input_output_aa15d07cab6286d75e96e058650567497}{get\+Checked}} 
+\mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_input_output_ab81e99c4b4b09a8a0b69cb469dbf124b}\label{class_input_output_ab81e99c4b4b09a8a0b69cb469dbf124b}} 
+\index{InputOutput@{InputOutput}!checkPositiveIntInput@{checkPositiveIntInput}}
+\index{checkPositiveIntInput@{checkPositiveIntInput}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{checkPositiveIntInput()}{checkPositiveIntInput()}}
+{\footnotesize\ttfamily bool Input\+Output\+::check\+Positive\+Int\+Input (\begin{DoxyParamCaption}\item[{std\+::string \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Positive\+Int}}. 
+
+This method is {\itshape private}, and is being used as a parameter for the invocation of \mbox{\hyperlink{}{get\+Checked\+Positive\+Int(std\+::string \&)}} in the body of \mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} method. 
+\begin{DoxyParams}{Parameters}
+{\em input} & the {\ttfamily input} gotten, that is needed to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\begin{DoxyItemize}
+\item {\ttfamily true} if the {\ttfamily input} is {\ttfamily legal / valid}. \item {\ttfamily false} if the {\ttfamily input} is {\ttfamily illegal / invalid}. \end{DoxyItemize}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_input_output_a910146926f54a19018302e8d036a4f09}{get\+Checked\+Positive\+Int(std\+::istream \&)}} 
+
+\mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_input_output_abf8acb0aa83374d149786d7935376fed}\label{class_input_output_abf8acb0aa83374d149786d7935376fed}} 
 \index{InputOutput@{InputOutput}!checkUnsignedIntInput@{checkUnsignedIntInput}}
@@ -142,7 +150,7 @@ This method is {\itshape private}, and is being used as a parameter for the invo
 
 This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Unsigned\+Int}}. 
 
-This method is {\itshape private}, and is being used as a parameter for the invocation of \mbox{\hyperlink{}{get\+Checked\+Unsigned\+Int(std\+::string \&)}} in the body of \mbox{\hyperlink{class_input_output_aa15d07cab6286d75e96e058650567497}{get\+Checked}} method. 
+This method is {\itshape private}, and is being used as a parameter for the invocation of \mbox{\hyperlink{}{get\+Checked\+Unsigned\+Int(std\+::string \&)}} in the body of \mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} method. 
 \begin{DoxyParams}{Parameters}
 {\em input} & the {\ttfamily input} gotten, that is needed to be checked. \\
 \hline
@@ -155,13 +163,13 @@ This method is {\itshape private}, and is being used as a parameter for the invo
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_input_output_aed18759c66beb9fe5091ad7b1fb07807}{get\+Checked\+Unsigned\+Int(std\+::istream \&)}} 
 
-\mbox{\hyperlink{class_input_output_aa15d07cab6286d75e96e058650567497}{get\+Checked}} 
+\mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_input_output_a701529f39c0c64b5d03cc39fb2e5cb94}\label{class_input_output_a701529f39c0c64b5d03cc39fb2e5cb94}} 
+\mbox{\Hypertarget{class_input_output_abf558caf1b249af58f38255f98a2f2ee}\label{class_input_output_abf558caf1b249af58f38255f98a2f2ee}} 
 \index{InputOutput@{InputOutput}!factoryInputOutput@{factoryInputOutput}}
 \index{factoryInputOutput@{factoryInputOutput}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{factoryInputOutput()}{factoryInputOutput()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_input_output}{Input\+Output}}$\ast$ Input\+Output\+::factory\+Input\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input_output}{Input\+Output}} $\ast$ Input\+Output\+::factory\+Input\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -177,12 +185,12 @@ Constructs a {\ttfamily new} {\itshape \mbox{\hyperlink{class_input_output}{Inpu
 \mbox{\hyperlink{class_input_output_a2c4d38e4befa1b5c6d0abcd3a03116f1}{Input\+Output(int\&, int\&, std\+::string\&, std\+::string\&)}} 
 \end{DoxySeeAlso}
 \end{DoxyItemize}
-\mbox{\Hypertarget{class_input_output_aa15d07cab6286d75e96e058650567497}\label{class_input_output_aa15d07cab6286d75e96e058650567497}} 
+\mbox{\Hypertarget{class_input_output_a2c351b772f694d9549b0fd67b7705d80}\label{class_input_output_a2c351b772f694d9549b0fd67b7705d80}} 
 \index{InputOutput@{InputOutput}!getChecked@{getChecked}}
 \index{getChecked@{getChecked}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{getChecked()}{getChecked()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-static T Input\+Output\+::get\+Checked (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{const std\+::function$<$ bool(std\+::string \&)$>$ \&}]{checking\+Function,  }\item[{const std\+::function$<$ T(char $\ast$)$>$ \&}]{return\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+static K Input\+Output\+::get\+Checked (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{const std\+::function$<$ bool(std\+::string \&)$>$ \&}]{checking\+Function,  }\item[{const std\+::function$<$ K(const char $\ast$)$>$ \&}]{return\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -190,7 +198,7 @@ This method gets an input from an {\ttfamily input-\/stream} {\ttfamily is}, and
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em T} & is the type of the value to get. \\
+{\em K} & is the type of the value to get. \\
 \hline
 \end{DoxyTemplParams}
 
@@ -207,7 +215,7 @@ the checked {\ttfamily input} gotten.
 \end{DoxyReturn}
 this method is {\ttfamily generic}, and has a constant template. 
 \begin{DoxyExceptions}{Exceptions}
-{\em std\+::runtime\+\_\+error} & if the {\ttfamily input} is in an illegal format. \\
+{\em std\+::runtime\+\_\+error} & if the {\ttfamily input} is in an {\ttfamily illegal} format. \\
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{class_input_output_a6e2dde4714e5236476b5b17dfc620bab}\label{class_input_output_a6e2dde4714e5236476b5b17dfc620bab}} 
@@ -216,23 +224,101 @@ this method is {\ttfamily generic}, and has a constant template.
 \doxysubsubsection{\texorpdfstring{getCheckedInt()}{getCheckedInt()}}
 {\footnotesize\ttfamily int Input\+Output\+::get\+Checked\+Int (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
 
+
+
+This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Int}}. 
+
+\begin{DoxyItemize}
+\item In case the {\ttfamily input} gotten is {\ttfamily legal / valid}, return in. \item In case the {\ttfamily input} gotten is {\ttfamily illegal / invalid}, throw an exception. 
+\begin{DoxyParams}{Parameters}
+{\em is} & the {\ttfamily input-\/stream} to get the {\ttfamily input} from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\ttfamily input} gotten from the {\ttfamily input-\/stream} {\ttfamily is}, after passing the checking validation. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the {\ttfamily input} is in an {\ttfamily illegal} format. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_input_output_a809dd446bd5748572e0c812325da33e8}{check\+Int\+Input(std\+::string \&)}} 
+
+\mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} 
+\end{DoxySeeAlso}
+\end{DoxyItemize}
+\mbox{\Hypertarget{class_input_output_a910146926f54a19018302e8d036a4f09}\label{class_input_output_a910146926f54a19018302e8d036a4f09}} 
+\index{InputOutput@{InputOutput}!getCheckedPositiveInt@{getCheckedPositiveInt}}
+\index{getCheckedPositiveInt@{getCheckedPositiveInt}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{getCheckedPositiveInt()}{getCheckedPositiveInt()}}
+{\footnotesize\ttfamily int Input\+Output\+::get\+Checked\+Positive\+Int (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Positive\+Int}}. 
+
+\begin{DoxyItemize}
+\item In case the {\ttfamily input} gotten is {\ttfamily legal / valid}, return in. \item In case the {\ttfamily input} gotten is {\ttfamily illegal / invalid}, throw an exception. 
+\begin{DoxyParams}{Parameters}
+{\em is} & the {\ttfamily input-\/stream} to get the {\ttfamily input} from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\ttfamily input} gotten from the {\ttfamily input-\/stream} {\ttfamily is}, after passing the checking validation. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the {\ttfamily input} is in an {\ttfamily illegal} format. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_input_output_ab81e99c4b4b09a8a0b69cb469dbf124b}{check\+Positive\+Int\+Input(std\+::string \&)}} 
+
+\mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} 
+\end{DoxySeeAlso}
+\end{DoxyItemize}
 \mbox{\Hypertarget{class_input_output_aed18759c66beb9fe5091ad7b1fb07807}\label{class_input_output_aed18759c66beb9fe5091ad7b1fb07807}} 
 \index{InputOutput@{InputOutput}!getCheckedUnsignedInt@{getCheckedUnsignedInt}}
 \index{getCheckedUnsignedInt@{getCheckedUnsignedInt}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{getCheckedUnsignedInt()}{getCheckedUnsignedInt()}}
 {\footnotesize\ttfamily int Input\+Output\+::get\+Checked\+Unsigned\+Int (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
 
+
+
+This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Unsigned\+Int}}. 
+
+\begin{DoxyItemize}
+\item In case the {\ttfamily input} gotten is {\ttfamily legal / valid}, return in. \item In case the {\ttfamily input} gotten is {\ttfamily illegal / invalid}, throw an exception. 
+\begin{DoxyParams}{Parameters}
+{\em is} & the {\ttfamily input-\/stream} to get the {\ttfamily input} from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\ttfamily input} gotten from the {\ttfamily input-\/stream} {\ttfamily is}, after passing the checking validation. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the {\ttfamily input} is in an {\ttfamily illegal} format. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_input_output_abf8acb0aa83374d149786d7935376fed}{check\+Unsigned\+Int\+Input(std\+::string \&)}} 
+
+\mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} 
+\end{DoxySeeAlso}
+\end{DoxyItemize}
 \mbox{\Hypertarget{class_input_output_ac8b16ee8f70494d3343f152c32aa564f}\label{class_input_output_ac8b16ee8f70494d3343f152c32aa564f}} 
 \index{InputOutput@{InputOutput}!getInputFileName@{getInputFileName}}
 \index{getInputFileName@{getInputFileName}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{getInputFileName()}{getInputFileName()}}
 {\footnotesize\ttfamily const std\+::string \& Input\+Output\+::get\+Input\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_input_output_adc67ae350c6b7a004b7c6fdb07513c08}\label{class_input_output_adc67ae350c6b7a004b7c6fdb07513c08}} 
+\mbox{\Hypertarget{class_input_output_ab6ff572bf1793528bba2265d1a52db58}\label{class_input_output_ab6ff572bf1793528bba2265d1a52db58}} 
 \index{InputOutput@{InputOutput}!getIntArrayFromInputFile@{getIntArrayFromInputFile}}
 \index{getIntArrayFromInputFile@{getIntArrayFromInputFile}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{getIntArrayFromInputFile()}{getIntArrayFromInputFile()}}
-{\footnotesize\ttfamily int$\ast$ Input\+Output\+::get\+Int\+Array\+From\+Input\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int $\ast$ Input\+Output\+::get\+Int\+Array\+From\+Input\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -266,101 +352,15 @@ the {\itshape int} array specified in the {\itshape INPUT\+\_\+\+FILE} .
 \doxysubsubsection{\texorpdfstring{getOutputFileName()}{getOutputFileName()}}
 {\footnotesize\ttfamily const std\+::string \& Input\+Output\+::get\+Output\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_input_output_a8f8537166733f58fd5262ca01a700dbc}\label{class_input_output_a8f8537166733f58fd5262ca01a700dbc}} 
-\index{InputOutput@{InputOutput}!printElements@{printElements}}
-\index{printElements@{printElements}!InputOutput@{InputOutput}}
-\doxysubsubsection{\texorpdfstring{printElements()}{printElements()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static void Input\+Output\+::print\+Elements (\begin{DoxyParamCaption}\item[{T $\ast$}]{insertion\+Sorted\+Array,  }\item[{T \&}]{selection\+Element\+Requested,  }\item[{T \&}]{quintuplet\+Element\+Requested,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-\mbox{\Hypertarget{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}\label{class_input_output_ab35a93245e4ca6c5fc46ebd1c1392188}} 
-\index{InputOutput@{InputOutput}!printMeasure@{printMeasure}}
-\index{printMeasure@{printMeasure}!InputOutput@{InputOutput}}
-\doxysubsubsection{\texorpdfstring{printMeasure()}{printMeasure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static T$\ast$ Input\+Output\+::print\+Measure (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{const std\+::function$<$ void(T $\ast$, int, char $\ast$\&)$>$ \&}]{function\+To\+Measure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-this {\itshape static} method measures the time it takes to a given {\ttfamily function\+To\+Measure} to work on the {\ttfamily array} given. the method outputs the measures to the {\ttfamily this\+::file\+Name} {\ttfamily Measure} file.
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em T} & element of the array. \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em array} & array to be manipulated. \\
-\hline
-{\em size} & size of the given array. \\
-\hline
-{\em function\+To\+Measure} & the method that manipulates the array. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the {\ttfamily new} allocated manipulated array. 
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms}{my\+\_\+algorithms}} 
-
-{\ttfamily this\+::file\+Name} 
-\end{DoxySeeAlso}
-\mbox{\Hypertarget{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}\label{class_input_output_a3f6399704cadf4cad0bff97dbb270a2b}} 
-\index{InputOutput@{InputOutput}!printMeasure@{printMeasure}}
-\index{printMeasure@{printMeasure}!InputOutput@{InputOutput}}
-\doxysubsubsection{\texorpdfstring{printMeasure()}{printMeasure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static T Input\+Output\+::print\+Measure (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For,  }\item[{const std\+::function$<$ T(T $\ast$, int, int, char $\ast$\&)$>$ \&}]{function\+To\+Measure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-this {\itshape static} method measures the time it takes to a given {\ttfamily function\+To\+Measure} to work on the {\ttfamily array} given. the method outputs the measures to the {\ttfamily this\+::file\+Name} {\ttfamily Measure} file.
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em T} & element of the array. \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em array} & array to be manipulated. \\
-\hline
-{\em size} & size of the given array. \\
-\hline
-{\em function\+To\+Measure} & the method that manipulates the array. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the {\ttfamily new} allocated manipulated array. 
-\end{DoxyReturn}
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{classmy__algorithms}{my\+\_\+algorithms}} 
-
-{\ttfamily this\+::file\+Name} 
-\end{DoxySeeAlso}
-\mbox{\Hypertarget{class_input_output_abe6d37e81e60efd1a0ddf233ca8019e1}\label{class_input_output_abe6d37e81e60efd1a0ddf233ca8019e1}} 
+\mbox{\Hypertarget{class_input_output_ab82445548a1c63be10bc08cc075b8e8b}\label{class_input_output_ab82445548a1c63be10bc08cc075b8e8b}} 
 \index{InputOutput@{InputOutput}!receiveInput@{receiveInput}}
 \index{receiveInput@{receiveInput}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{receiveInput()}{receiveInput()}}
-{\footnotesize\ttfamily static void Input\+Output\+::receive\+Input (\begin{DoxyParamCaption}\item[{int \&}]{N,  }\item[{int \&}]{K,  }\item[{std\+::string \&}]{input\+File\+Name,  }\item[{std\+::string \&}]{output\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-\mbox{\Hypertarget{class_input_output_a408062257e63734b0bf07b79d43b2959}\label{class_input_output_a408062257e63734b0bf07b79d43b2959}} 
-\index{InputOutput@{InputOutput}!setSorts@{setSorts}}
-\index{setSorts@{setSorts}!InputOutput@{InputOutput}}
-\doxysubsubsection{\texorpdfstring{setSorts()}{setSorts()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static void Input\+Output\+::set\+Sorts (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{int}]{serial\+Size\+Of\+The\+Element\+To\+Look\+For,  }\item[{T $\ast$\&}]{insertion\+Sorted\+Array,  }\item[{T \&}]{selection\+Element\+Requested,  }\item[{T \&}]{quintuplet\+Element\+Requested }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily void Input\+Output\+::receive\+Input (\begin{DoxyParamCaption}\item[{int \&}]{N,  }\item[{int \&}]{K,  }\item[{std\+::string \&}]{input\+File\+Name,  }\item[{std\+::string \&}]{output\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_input_output_a98a2de3d18e5093c7c6311e2542b5ef6}\label{class_input_output_a98a2de3d18e5093c7c6311e2542b5ef6}} 
-\index{InputOutput@{InputOutput}!fileName@{fileName}}
-\index{fileName@{fileName}!InputOutput@{InputOutput}}
-\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
-{\footnotesize\ttfamily constexpr char$\ast$ Input\+Output\+::file\+Name = (char $\ast$) \char`\"{}Measure.\+txt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
-
-
-
-The name of the \textquotesingle{}Measure\textquotesingle{} file\+: 
-
 \mbox{\Hypertarget{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}\label{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}} 
 \index{InputOutput@{InputOutput}!INPUT\_FILE\_NAME@{INPUT\_FILE\_NAME}}
 \index{INPUT\_FILE\_NAME@{INPUT\_FILE\_NAME}!InputOutput@{InputOutput}}

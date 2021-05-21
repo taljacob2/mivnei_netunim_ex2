@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/AlgorithmsAndMinHeap.h">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>
@@ -100,16 +103,16 @@
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapAdt.h">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/my_string.cpp">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug/my_string.h">
+			<Option target="mivnei_netunim_ex1"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h">
-			<Option target="mivnei_netunim_ex1"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.cpp">
-			<Option target="mivnei_netunim_ex1"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h">
 			<Option target="mivnei_netunim_ex1"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/CMakeLists.txt">

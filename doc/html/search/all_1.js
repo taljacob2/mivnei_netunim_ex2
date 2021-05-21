@@ -1,4 +1,5 @@
 var searchData =
     [
-        ['array_2', ['array', ['../class_min_heap.html#a889e4bc48d8430fa841532b25dc000e4', 1, 'MinHeap']]]
+        ['bubblesort_1', ['bubbleSort', ['../classmy__algorithms.html#af081947ad20d95de269a023e165c2677', 1, 'my_algorithms']]],
+        ['buildheap_2', ['buildHeap', ['../class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3', 1, 'MinHeap::buildHeap()'], ['../class_min_heap_a_d_t.html#aa726874d27400106be78034fcee2e130', 1, 'MinHeapADT::buildHeap()']]]
     ];
