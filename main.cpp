@@ -1,5 +1,5 @@
+#include "AlgorithmsAndMinHeap.h"
 #include "InputOutput.h"
-#include "MinHeap.h"
 #include <iostream>
 
 
@@ -30,6 +30,8 @@ int main() {
     }
 
     /* check: print array received: */
+    std::cout << "array received: "
+              << "\n";
     for (int i = 0; i < inputOutput->getN(); i++) {
         std::cout << arrayReceivedFromInputFile[i] << " ";
     }
@@ -38,6 +40,18 @@ int main() {
 
     /* Create a `Minimum-Heap` from the array. */
     // MinHeap<int, std::string> minHeap(arrayReceivedFromInputFile, inputOutput->getN());
+
+    AlgorithmsAndMinHeap::kWayMergeSort(&arrayReceivedFromInputFile,
+                                        inputOutput->getN(),
+                                        inputOutput->getK());
+
+    /* check: print result array: */
+    std::cout << "result array: "
+              << "\n";
+    for (int i = 0; i < inputOutput->getN(); i++) {
+        std::cout << arrayReceivedFromInputFile[i] << " ";
+    }
+    std::cout << "\n";
 
 
     delete[] arrayReceivedFromInputFile;

@@ -23,19 +23,43 @@ class AlgorithmsAndMinHeap {
      * @param k the *division* parameter, when sorting the array.
      * @see my_algorithms::quickSort(K *, int)
      */
-    template<typename K> static void kWayMergeSort(K *array, int size, int k) {
+    template<typename K> static void kWayMergeSort(K **array, int size, int k) {
         if (size < k) {
-            quickSort(array, size);
+            my_algorithms::quickSort(*array, size);
             return;
         }
-        /* XXX Note: (int)`VALUE` = (kGiven - currK) */
-        MinHeap<K, int> minHeap;
 
+        K *  resultArray         = new K[size];
+        K ** smallArrayLocations = new K *[k];
+        int *smallArraySizes     = new int[k];
+
+
+        /* XXX Note: (int)`VALUE` = (kGiven - currK) */
+        MinHeap<K, int> minHeap(k);
+
+        /*
+         * Divide the array to K smaller arrays.
+         * For each small array: - Sort the array.
+         *                       - `insert` the `first` element in the array to
+         *                         the `Minimum-Heap` provided.
+         */
         // FIXME: change `quickSort` to `recursive` call !!!! -->>>
-        divideArrayToKSmallerArrays<K, int>(array, size, k,
-                                            my_algorithms::quickSort, minHeap);
+        divideArrayToKSmallerArrays<K, int>(
+                *array, size, k, smallArrayLocations, smallArraySizes,
+                my_algorithms::quickSort<K>, minHeap);
+
+        deleteMinAndCheckFromWhichSmallArray(size, smallArrayLocations,
+                                             smallArraySizes, minHeap,
+                                             resultArray);
+
+        *array = my_algorithms::copyArray(resultArray, size);
+
+        delete[] smallArrayLocations;
+        delete[] smallArraySizes;
+        delete[] resultArray;
     }
 
+  private:
     /**
      * @brief This method divides a given @p array to @p k smaller arrays,
      *        and invokes the @p forEachSmallArrayFunction function for
@@ -51,37 +75,108 @@ class AlgorithmsAndMinHeap {
      */
     template<typename K, typename V>
     static void divideArrayToKSmallerArrays(
-            K *array, int size, int k,
+            K *array, int size, int k, K **smallArrayLocations,
+            int *                                smallArraySizes,
             const std::function<void(K *, int)> &forEachSmallArrayFunction,
             MinHeap<K, V> &                      minHeap) {
 
         /*
          * Save here the size of the last small array.
-         * Note: must initialize with `0`.
+         * Attention: must initialize with `0`.
          */
         int lastSmallArraySize = 0;
         int currK              = k;
         while ((size > 0) && (currK > 0)) {
-            int currSmallArraySize = ceil((double) size / k);
 
-            /* Do something to the current small array. */
-            forEachSmallArrayFunction(array + lastSmallArraySize,
-                                      currSmallArraySize);
+            /* Determines the current iteration. */
+            int kIndex = k - currK;
+
+            /* Get `currSmallArray` `location`. */
+            int *currSmallArray = array + lastSmallArraySize;
 
             /*
-             * Take the first element in the smaller array, and `insert` it to
-             * the `Minimum-Heap`.
+             * Insert the `currSmallArray` `location` to the
+             * `smallArrayLocations` array.
              */
+            smallArrayLocations[kIndex] = currSmallArray;
 
-            // NOTE: `Entry` must be `lvalue`.
-            auto *entryToInsert =
-                    new Entry((array + lastSmallArraySize)[0], k - currK);
+            /* Get `currSmallArray` `size`. */
+            int currSmallArraySize = ceil((double) size / k);
+
+            /*
+             * Insert the `currSmallArray` `size` to the
+             * `smallArraySizes` array.
+             */
+            smallArraySizes[kIndex] = currSmallArraySize;
+
+
+            /* Do something to the current small array. */
+            forEachSmallArrayFunction(currSmallArray, currSmallArraySize);
+
+            /*
+             * Take the `first` element in the current small array,
+             * and `insert` it to the `Minimum-Heap` as a `Key` of an `Entry`,
+             * and set this `Entry`'s `Value` to be the `currSmallArray`
+             * iteration index.
+             * Attention: `Entry` must be `lvalue`.
+             */
+            auto *entryToInsert = new Entry<K, V>(currSmallArray[0], kIndex);
             minHeap.insert(entryToInsert);
 
             /* Step ahead. */
             size = size - currSmallArraySize;
             currK--;
             lastSmallArraySize = currSmallArraySize;
+        }
+    }
+
+    template<typename K, typename V>
+    static void deleteMinAndCheckFromWhichSmallArray(int size,
+                                                     K **smallArrayLocations,
+                                                     K * smallArraySizes,
+                                                     MinHeap<K, V> &minHeap,
+                                                     K *resultArray) {
+        for (int i = 0; i < size; i++) {
+
+            // TODO: checking print of HEAP:
+            std::cout << minHeap << "\n";
+
+            /* Delete the minimal element from the heap. */
+            Entry<K, V> *deletedElement = minHeap.deleteMin();
+
+            /* Insert minimal `key` to `resultArray`. */
+            resultArray[i] = deletedElement->getKey();
+
+            /* If there are elements in the according array. */
+            if ((smallArraySizes[deletedElement->getValue()]) > 0) {
+
+                /* Step ahead the `location` of the according small array. */
+                smallArrayLocations[deletedElement->getValue()]++;
+
+                /* Decrease the `size` of the according small array by `1`. */
+                smallArraySizes[deletedElement->getValue()]--;
+
+                /*
+                 * `Insert` the next smaller element in the according small array
+                 * to the given `Minimum-Heap`.
+                 * (= the `first` element in the small array).
+                 */
+                auto *elementToInsert = new Entry<K, V>(
+                        (smallArrayLocations[deletedElement->getValue()])[0],
+                        deletedElement->getValue());
+
+                minHeap.insert(elementToInsert);
+            } else {
+
+                /*
+                 * Should not be happening if the `smallArraySizes` is
+                 * properly made.
+                 */
+                // TODO: change to `wrong input`
+                throw std::runtime_error("You have tried to remove an "
+                                         "element from a `small array` that "
+                                         "is already empty.");
+            }
         }
     }
 };

@@ -6,19 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/AlgorithmsAndMinHeap.h
+MinHeap.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
+
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h
 ostream
 -
 
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.cpp
-InputOutput.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
-
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
 my_algorithms.h
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
-my_string.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h
 chrono
 -
 fstream
@@ -49,23 +47,19 @@ Entry.h
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp
+AlgorithmsAndMinHeap.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/AlgorithmsAndMinHeap.h
 InputOutput.h
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
-MinHeap.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
 iostream
 -
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
+cmath
+-
 exception
 -
-iostream
--
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_string.h
-cstring
--
-fstream
+functional
 -
 iostream
 -

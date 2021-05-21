@@ -64,6 +64,18 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     }
 
     /**
+     * @brief Constructor, sets the `physicalSize` of the *array* to be @p
+     *        physicalSize.
+     *
+     * @note the content of the *array* remains empty.
+     * @param physicalSize set the `physicalSize` of the array to be this size.
+     */
+    explicit MinHeap(int physicalSize) {
+        this->physicalSize = physicalSize;
+        array              = new Entry<K, V> *[physicalSize];
+    }
+
+    /**
      * @brief Default empty constructor.
      */
     MinHeap() = default;
@@ -71,7 +83,10 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     /**
      * @brief Destructor.
      */
-    virtual ~MinHeap() { delete[] array; }
+    virtual ~MinHeap() {
+        for (int i = 0; i < physicalSize; i++) { delete array[i]; }
+        delete[] array;
+    }
 
     /**
      * @brief Deletes the *minimal element* from the heap, and returns it.

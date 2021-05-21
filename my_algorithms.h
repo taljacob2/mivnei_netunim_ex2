@@ -666,15 +666,15 @@ class my_algorithms {
 
         /*
          * Save here the size of the last small array.
-         * Note: must initialize with `0`.
+         * Attention: must initialize with `0`.
          */
         int lastSmallArraySize = 0;
         while ((size > 0) && (k > 0)) {
-            int currSmallArraySize = ceil((double) size / k);
+            int *currSmallArray     = array + lastSmallArraySize;
+            int  currSmallArraySize = ceil((double) size / k);
 
             /* Do something to the current small array. */
-            forEachSmallArrayFunction(array + lastSmallArraySize,
-                                      currSmallArraySize);
+            forEachSmallArrayFunction(currSmallArray, currSmallArraySize);
 
             /* Step ahead. */
             size = size - currSmallArraySize;
