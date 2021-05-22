@@ -1,0 +1,26 @@
+var classmy__algorithms =
+    [
+        ["bubbleSort", "classmy__algorithms.html#af081947ad20d95de269a023e165c2677", null],
+        ["copyArray", "classmy__algorithms.html#a69c56c853f1240b910ec0e49cfc32623", null],
+        ["divideArrayToKSmallerArrays", "classmy__algorithms.html#aac54fef26ff556f642781a06baec848a", null],
+        ["division_TheIthElementInItsSize", "classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee", null],
+        ["getMiddleArray_division_TheIthElementInItsSize", "classmy__algorithms.html#a0c99008229b4de5eabb510f9afbdef3f", null],
+        ["getMiddleElementInASortedArray", "classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc", null],
+        ["getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize", "classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a", null],
+        ["max", "classmy__algorithms.html#a8149d73db0f0dbdeb696f1e7a17991de", null],
+        ["min", "classmy__algorithms.html#a314af99ccad423bd770f8bc387a3071b", null],
+        ["partition", "classmy__algorithms.html#a98317c4e662536b0c93636ceaf3934ff", null],
+        ["quickSort", "classmy__algorithms.html#a0004e4c89992a6d75d96d17d88c20a85", null],
+        ["quickSortRecursive", "classmy__algorithms.html#aa7994ba5673d4363c3d19eb81c7dab76", null],
+        ["quintuplet_TheIthElementInItsSize", "classmy__algorithms.html#aa2254406e1a518653134735938fcaa61", null],
+        ["quintuplet_TheIthElementInItsSize_", "classmy__algorithms.html#afe367498c8e46a9b4e7107151f0a3604", null],
+        ["returnOf_division_TheIthElementInItsSize", "classmy__algorithms.html#a47fa1a3e54c4babbdc766e9d892489e4", null],
+        ["selection_TheIthElementInItsSize", "classmy__algorithms.html#a23545ccc3e6aec01c1b054c9ebba1da9", null],
+        ["selection_TheIthElementInItsSize_", "classmy__algorithms.html#a1a9d0ae0126d0fdbb10b7d03813d3708", null],
+        ["selectTheIthElementInItsSize_UnSecured", "classmy__algorithms.html#a33ef55e9a30603a9170275afb71be875", null],
+        ["sort_insertion", "classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb", null],
+        ["sort_insertion_", "classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7", null],
+        ["swap", "classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d", null],
+        ["swap", "classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126", null],
+        ["whileOfBubbleSort_division_TheIthElementInItsSize", "classmy__algorithms.html#a64f6801e29ed8116d9433bb61e004922", null]
+    ];
