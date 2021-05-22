@@ -80,6 +80,38 @@ class InputOutput {
      */
     int *getIntArrayFromInputFile();
 
+    /**
+     * @brief Prints an @p array to an `output-stream`.
+     *
+     * @tparam T the `type` of elements in the @p array given.
+     * @param os the `output-stream` to print the array to.
+     * @param array the array to be printed.
+     * @param size the size of the @p array to be printed.
+     */
+    template<typename T>
+    static void printArray(std::ostream &os, T *array, int size) {
+        for (int i = 0; i < size; i++) { os << array[i] << " "; }
+        os << "\n";
+    }
+
+    /**
+     * @brief Prints an @p array to an `output-stream`, such that after each
+     *        element printed, we print a @p delimiter `char`.
+     *
+     * @note the @p delimiter `char` is *not* printed after the `last` element.
+     * @tparam T the `type` of elements in the @p array given.
+     * @param os the `output-stream` to print the array to.
+     * @param array the array to be printed.
+     * @param size the size of the @p array to be printed.
+     * @param delimiter the `char` to be printed in between the printed
+     *                  elements. Means, this method prints this `char` after
+     *                  each element but the `last` element.
+     */
+    template<typename T>
+    static void printArray(std::ostream &os, T *array, int size,
+                           char delimiter) {
+        for (int i = 0; i < size - 1; i++) { os << array[i] << delimiter; }
+    }
     /* -- Get Checkers -- */
   public:
     /**
