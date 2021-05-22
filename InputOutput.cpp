@@ -133,7 +133,7 @@ int InputOutput::getCheckedPositiveInt(std::istream &is) noexcept(false) {
 bool InputOutput::checkIntInput(std::string &input) {
     bool returnValue = false;
     int  i           = 0;
-    for (; i < input.length(); i++) {
+    for (; i < (int) input.length(); i++) {
         if ((input[i] == '+') || (input[i] == '-')) {
             if (i == 0) {
 
@@ -152,14 +152,14 @@ bool InputOutput::checkIntInput(std::string &input) {
     }
 
     /* Return `true` only if all iterations have passed successfully. */
-    if (i == input.length()) { returnValue = true; }
+    if (i == (int) input.length()) { returnValue = true; }
     return returnValue;
 }
 
 bool InputOutput::checkUnsignedIntInput(std::string &input) {
     bool returnValue = false;
     int  i           = 0;
-    for (; i < input.length(); i++) {
+    for (; i < (int) input.length(); i++) {
         if (input[i] == '+') {
             if (i == 0) {
 
@@ -178,14 +178,14 @@ bool InputOutput::checkUnsignedIntInput(std::string &input) {
     }
 
     /* Return `true` only if all iterations have passed successfully. */
-    if (i == input.length()) { returnValue = true; }
+    if (i == (int) input.length()) { returnValue = true; }
     return returnValue;
 }
 
 bool InputOutput::checkPositiveIntInput(std::string &input) {
     bool returnValue = false;
     int  i           = 0;
-    for (; i < input.length(); i++) {
+    for (; i < (int) input.length(); i++) {
         if (input[i] == '+') {
             if (i == 0) {
 
@@ -215,6 +215,6 @@ bool InputOutput::checkPositiveIntInput(std::string &input) {
     }
 
     /* Return `true` only if all iterations have passed successfully. */
-    if (i == input.length()) { returnValue = true; }
+    if (i == (int) input.length()) { returnValue = true; }
     return returnValue;
 }
