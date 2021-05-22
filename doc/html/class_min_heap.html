@@ -274,7 +274,10 @@
                     <code>indexToFixFrom</code>, which from there and on
                     downwards, the heap is <em>invalid</em> - means: that the
                     <code>node</code> in the <code>indexToFixFrom</code> is no
-                    smaller than both of its children. <a
+                    smaller than both of its children. The method ensures to
+                    <em>correct</em> the heap by <em>fixing</em> its validity -
+                    means, checking that each <code>node</code> is smaller than
+                    both of its children. <a
                             href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">More...</a><br/>
                 </td>
             </tr>
@@ -1213,7 +1216,10 @@
                     root downwards until the <code>indexToFixFrom</code>, which
                     from there and on downwards, the heap is <em>invalid</em> -
                     means: that the <code>node</code> in the <code>indexToFixFrom</code>
-                    is no smaller than both of its children. </p>
+                    is no smaller than both of its children. The method ensures
+                    to <em>correct</em> the heap by <em>fixing</em> its validity
+                    - means, checking that each <code>node</code> is smaller
+                    than both of its children. </p>
                 <dl class="params">
                     <dt>Parameters</dt>
                     <dd>
@@ -1372,27 +1378,39 @@
                             class="el"
                             href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap(int)</a>
                     method. </p>
-                <dl class="params">
-                    <dt>Parameters</dt>
-                    <dd>
-                        <table class="params">
-                            <tr>
-                                <td class="paramname">currentIndex</td>
-                                <td>should be in between <code>0</code> and
-                                    <code>(logicalSize / 2)</code>. Represents
-                                    the index to <em>fixHeap</em> from.
-                                </td>
-                            </tr>
-                        </table>
-                    </dd>
-                </dl>
-                <dl class="section see">
-                    <dt>See also</dt>
-                    <dd><a class="el"
-                           href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878"
-                           title="This method handles a heap that is valid from the root downwards until the indexToFixFrom,...">fixHeap(int)</a>
-                    </dd>
-                </dl>
+                <p>The <code>while</code> loop has <code>2</code> stop
+                    conditions: </p>
+                <ul>
+                    <li>there are no children to the <code>node</code> that is
+                        being iterated ( = the <code>node</code> that is being
+                        iterated is a <code>leaf</code>.
+                    </li>
+                    <li>the <code>node</code> that is being iterated is
+                        <em>not</em> smaller than each of its children.
+                        <dl class="params">
+                            <dt>Parameters</dt>
+                            <dd>
+                                <table class="params">
+                                    <tr>
+                                        <td class="paramname">currentIndex</td>
+                                        <td>should be in between <code>0</code>
+                                            and <code>(logicalSize / 2)</code>.
+                                            Represents the index to
+                                            <em>fixHeap</em> from.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </dd>
+                        </dl>
+                        <dl class="section see">
+                            <dt>See also</dt>
+                            <dd><a class="el"
+                                   href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878"
+                                   title="This method handles a heap that is valid from the root downwards until the indexToFixFrom,...">fixHeap(int)</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
 
             </div>
         </div>

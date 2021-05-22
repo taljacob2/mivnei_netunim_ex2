@@ -33,7 +33,7 @@ virtual \mbox{\hyperlink{class_min_heap_a6041d18dee6992810ede4a3444b31738}{$\sim
 void \mbox{\hyperlink{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}{insert}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$element\+To\+Insert) override
 \begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap}} (int index\+To\+Fix\+From) override
-\begin{DoxyCompactList}\small\item\em This method handles a heap that is {\itshape valid} from the root downwards until the {\ttfamily index\+To\+Fix\+From}, which from there and on downwards, the heap is {\itshape invalid} -\/ means\+: that the {\ttfamily node} in the {\ttfamily index\+To\+Fix\+From} is no smaller than both of its children. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This method handles a heap that is {\itshape valid} from the root downwards until the {\ttfamily index\+To\+Fix\+From}, which from there and on downwards, the heap is {\itshape invalid} -\/ means\+: that the {\ttfamily node} in the {\ttfamily index\+To\+Fix\+From} is no smaller than both of its children. The method ensures to {\itshape correct} the heap by {\itshape fixing} its validity -\/ means, checking that each {\ttfamily node} is smaller than both of its children. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$array\+To\+Build\+From, int size\+Of\+Array\+To\+Build\+From) override
 \begin{DoxyCompactList}\small\item\em Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\+From} of {\bfseries{lvalue {\ttfamily Entries}}} as a parameter. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_min_heap_a7edac6f943f3e143fbf45b529e70a8e4}{is\+Empty}} () override
@@ -295,7 +295,7 @@ void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::fix\+Heap (\beg
 
 
 
-This method handles a heap that is {\itshape valid} from the root downwards until the {\ttfamily index\+To\+Fix\+From}, which from there and on downwards, the heap is {\itshape invalid} -\/ means\+: that the {\ttfamily node} in the {\ttfamily index\+To\+Fix\+From} is no smaller than both of its children. 
+This method handles a heap that is {\itshape valid} from the root downwards until the {\ttfamily index\+To\+Fix\+From}, which from there and on downwards, the heap is {\itshape invalid} -\/ means\+: that the {\ttfamily node} in the {\ttfamily index\+To\+Fix\+From} is no smaller than both of its children. The method ensures to {\itshape correct} the heap by {\itshape fixing} its validity -\/ means, checking that each {\ttfamily node} is smaller than both of its children. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -347,7 +347,8 @@ void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::fix\+Heap\+Whil
 
 This method is a {\itshape private} method, that represents a {\ttfamily while} that is being invoked by the \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} method. 
 
-
+The {\ttfamily while} loop has {\ttfamily 2} stop conditions\+: \begin{DoxyItemize}
+\item there are no children to the {\ttfamily node} that is being iterated ( = the {\ttfamily node} that is being iterated is a {\ttfamily leaf}. \item the {\ttfamily node} that is being iterated is {\itshape not} smaller than each of its children. 
 \begin{DoxyParams}{Parameters}
 {\em current\+Index} & should be in between {\ttfamily 0} and {\ttfamily (logical\+Size / 2)}. Represents the index to {\itshape fix\+Heap} from. \\
 \hline
@@ -355,6 +356,7 @@ This method is a {\itshape private} method, that represents a {\ttfamily while} 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} 
 \end{DoxySeeAlso}
+\end{DoxyItemize}
 \mbox{\Hypertarget{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}\label{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!insert@{insert}}
 \index{insert@{insert}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
