@@ -156,7 +156,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mivnei_netunim_ex1
+CMAKE_PROJECT_NAME:STATIC=mivnei_netunim_ex2
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -231,6 +231,12 @@ mivnei_netunim_ex1_BINARY_DIR:STATIC=/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_
 
 //Value Computed by CMake
 mivnei_netunim_ex1_SOURCE_DIR:STATIC=/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2
+
+//Value Computed by CMake
+mivnei_netunim_ex2_BINARY_DIR:STATIC=/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/cmake-build-debug
+
+//Value Computed by CMake
+mivnei_netunim_ex2_SOURCE_DIR:STATIC=/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2
 
 
 ########################

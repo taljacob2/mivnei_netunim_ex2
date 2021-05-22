@@ -1,23 +1,77 @@
-var class_input_output =
-    [
-        ["InputOutput", "class_input_output.html#a2c4d38e4befa1b5c6d0abcd3a03116f1", null],
-        ["~InputOutput", "class_input_output.html#a6925ac56858a476dbe0819586448a25d", null],
-        ["checkIntInput", "class_input_output.html#a809dd446bd5748572e0c812325da33e8", null],
-        ["checkPositiveIntInput", "class_input_output.html#ab81e99c4b4b09a8a0b69cb469dbf124b", null],
-        ["checkUnsignedIntInput", "class_input_output.html#abf8acb0aa83374d149786d7935376fed", null],
-        ["factoryInputOutput", "class_input_output.html#abf558caf1b249af58f38255f98a2f2ee", null],
-        ["getChecked", "class_input_output.html#a2c351b772f694d9549b0fd67b7705d80", null],
-        ["getCheckedInt", "class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab", null],
-        ["getCheckedPositiveInt", "class_input_output.html#a910146926f54a19018302e8d036a4f09", null],
-        ["getCheckedUnsignedInt", "class_input_output.html#aed18759c66beb9fe5091ad7b1fb07807", null],
-        ["getInputFileName", "class_input_output.html#ac8b16ee8f70494d3343f152c32aa564f", null],
-        ["getIntArrayFromInputFile", "class_input_output.html#ab6ff572bf1793528bba2265d1a52db58", null],
-        ["getK", "class_input_output.html#a9b396cc57be1c21fbd557d6e3dbd0c0b", null],
-        ["getN", "class_input_output.html#afad905654f147ca5d88a978f6a27e461", null],
-        ["getOutputFileName", "class_input_output.html#aa84713865f7c47e08856db0584549391", null],
-        ["receiveInput", "class_input_output.html#ab82445548a1c63be10bc08cc075b8e8b", null],
-        ["INPUT_FILE_NAME", "class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f", null],
-        ["K", "class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02", null],
-        ["N", "class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc", null],
-        ["OUTPUT_FILE_NAME", "class_input_output.html#adc15a5fa052c379f0825da1cbca984a7", null]
-    ];
+/* Thread and mutex controls for Objective C.
+   Copyright (C) 1996-2019 Free Software Foundation, Inc.
+   Contributed by Galen C. Hunt (gchunt@cs.rochester.edu)
+
+This file is part of GCC.
+
+GCC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3, or (at your option)
+any later version.
+
+GCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Under Section 7 of GPL version 3, you are granted additional
+permissions described in the GCC Runtime Library Exception, version
+3.1, as published by the Free Software Foundation.
+
+You should have received a copy of the GNU General Public License and
+a copy of the GCC Runtime Library Exception along with this program;
+see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+<http://www.gnu.org/licenses/>.  */
+
+#ifndef
+__thread_INCLUDE_GNU
+#define
+__thread_INCLUDE_GNU
+
+#include
+"objc.h"
+
+#ifdef
+__cplusplus
+extern
+"C"
+{
+    #endif /* __cplusplus */
+
+    /*************************************************************************
+     *  Universal static variables:
+     */
+    extern
+    int
+    __objc_thread_exit_status;      /* Global exit status.   */
+
+    /********
+     *  Thread safe implementation types and functions.
+     */
+
+    /* Thread priorities */
+    #define
+    OBJC_THREAD_INTERACTIVE_PRIORITY
+    2
+    #define
+    OBJC_THREAD_BACKGROUND_PRIORITY
+    1
+    #define
+    OBJC_THREAD_LOW_PRIORITY
+    0
+
+    /* A thread */
+    typedef
+    void * objc_thread_t;
+
+    /* This structure represents a single mutual exclusion lock. */
+    struct
+    objc_mutex
+    {
+        volatile
+        objc_thread_t
+        owner;     /* Id of thread that owns. */
+        volatile
+        int
+        depth;               /* # of acquires. */
+        v

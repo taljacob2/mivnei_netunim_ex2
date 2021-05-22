@@ -1,22 +1,73 @@
-var class_min_heap =
-    [
-        ["MinHeap", "class_min_heap.html#ad33a31874c9406b784c3c40a158cd501", null],
-        ["MinHeap", "class_min_heap.html#ad7b6335a707b33ba813911d9396c40a6", null],
-        ["MinHeap", "class_min_heap.html#a8cfd4f3ec701187c24893f6d4a9063d8", null],
-        ["~MinHeap", "class_min_heap.html#a6041d18dee6992810ede4a3444b31738", null],
-        ["buildHeap", "class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3", null],
-        ["deleteMin", "class_min_heap.html#a6f4be46b00c888580c5f3afe41865930", null],
-        ["deleteMin", "class_min_heap.html#a2774a39578ec0f31204e97df1645cd30", null],
-        ["deleteMinWhenThereAreTwoOrMoreElements", "class_min_heap.html#a1b020a274541d1da5c5d34ab43515a19", null],
-        ["fixHeap", "class_min_heap.html#ab5f16032e4084a73454be12e70ee3878", null],
-        ["fixHeapLegalIndex", "class_min_heap.html#abf27ed86919364739d0c6d508a8ae9a5", null],
-        ["fixHeapWhile", "class_min_heap.html#a8f24129c56d65d760c4d0e4460e8d27a", null],
-        ["insert", "class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16", null],
-        ["insertWhenThereIsEnoughSpace", "class_min_heap.html#a658f6c362036350b5145178e88e57051", null],
-        ["isEmpty", "class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4", null],
-        ["makeEmpty", "class_min_heap.html#ae6f21519950cc55c5b470d07ee01a062", null],
-        ["operator<<", "class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f", null],
-        ["array", "class_min_heap.html#a889e4bc48d8430fa841532b25dc000e4", null],
-        ["logicalSize", "class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91", null],
-        ["physicalSize", "class_min_heap.html#a6e37d28efb033ff005ad704809af28b4", null]
-    ];
+/* Copyright (C) 2009-2019 Free Software Foundation, Inc.
+
+   This file is part of GCC.
+
+   GCC is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3, or (at your option)
+   any later version.
+
+   GCC is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   Under Section 7 of GPL version 3, you are granted additional
+   permissions described in the GCC Runtime Library Exception, version
+   3.1, as published by the Free Software Foundation.
+
+   You should have received a copy of the GNU General Public License and
+   a copy of the GCC Runtime Library Exception along with this program;
+   see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+   <http://www.gnu.org/licenses/>.  */
+
+#if
+!defined
+_X86INTRIN_H_INCLUDED && !defined
+_IMMINTRIN_H_INCLUDED
+# error
+"Never use <lzcntintrin.h> directly; include <x86intrin.h> instead."
+#endif
+
+
+#ifndef
+_LZCNTINTRIN_H_INCLUDED
+#define
+_LZCNTINTRIN_H_INCLUDED
+
+#ifndef
+__LZCNT__
+#pragma
+GCC
+push_options
+#pragma
+GCC
+target("lzcnt")
+#define
+__DISABLE_LZCNT__
+#endif /* __LZCNT__ */
+
+extern
+__inline
+unsigned
+short
+__attribute__((__gnu_inline__, __always_inline__, __artificial__))
+__lzcnt16(unsigned
+short
+__X
+)
+{
+    return __builtin_ia32_lzcnt_u16(__X);
+}
+
+extern
+__inline
+unsigned
+int
+__attribute__((__gnu_inline__, __always_inline__, __artificial__))
+__lzcnt32(unsigned
+int
+__X
+)
+{
+    return __builtin_i
