@@ -96,13 +96,31 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @throws std::logic_error in case the heap is already empty.
      * @see fixHeap(int)
      */
-    Entry<K, V> *deleteMin() override {
+    Entry<K, V> *deleteMin() override { return deleteMin(true); }
+
+    /**
+     * @brief Deletes the *minimal element* from the heap, and returns it.
+     * @deprecated Caution when setting @p fixHeapAfterDeletion to `false`.
+     *
+     * @note After removing the *minimal element* from the heap, this method
+     *       calls the *fixHeap(0)* method, in order to fix the heap
+     *       afterwards - only if the @p fixHeapAfterDeletion parameter is `true`.
+     * @attention in case the `logicalSize` of the *array* is 0,
+     *            this method returns `null_ptr`.
+     * @param fixHeapAfterDeletion determines if the method will call the
+     *                             *fixHeap(0)* method, after deletion, to
+     *                             ensure that the heap is still valid.
+     * @return the *minimal element* removed from the heap.
+     * @throws std::logic_error in case the heap is already empty.
+     * @see fixHeap(int)
+     */
+    Entry<K, V> *deleteMin(bool fixHeapAfterDeletion) {
 
         /* Save the value of `array[0]` to return in the end of the method. */
         Entry<K, V> *returnElement = array[0];
 
         if (logicalSize >= 2) {
-            deleteMinWhenThereAreTwoOrMoreElements();
+            deleteMinWhenThereAreTwoOrMoreElements(fixHeapAfterDeletion);
         } else if (logicalSize > 0) {
 
             /* Delete `array[0]` manually. */
@@ -125,9 +143,16 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @brief This method is a *private* method, that represents the
      *        case when there are `2` or more elements in the heap.
      *
+     * @note After removing the *minimal element* from the heap, this method
+     *       calls the *fixHeap(0)* method, in order to fix the heap
+     *       afterwards - only if the @p fixHeapAfterDeletion parameter is `true`.
+     * @param fixHeapAfterDeletion determines if the method will call the
+     *                             *fixHeap(0)* method, after deletion, to
+     *                             ensure that the heap is still valid.
      * @see deleteMin()
+     * @see fixHeap(int)
      */
-    void deleteMinWhenThereAreTwoOrMoreElements() {
+    void deleteMinWhenThereAreTwoOrMoreElements(bool fixHeapAfterDeletion) {
 
         /*
          * There are at least `2` elements in the heap,
@@ -150,7 +175,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
          * After deletion,
          * invoke `fixHeap(0)` to fix the heap.
          */
-        fixHeap(0);
+        if (fixHeapAfterDeletion) { fixHeap(0); }
     }
 
   public:

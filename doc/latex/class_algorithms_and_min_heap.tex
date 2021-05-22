@@ -74,6 +74,9 @@ in case {\ttfamily k} is smaller than the {\ttfamily size} of the {\ttfamily arr
 
 In case {\ttfamily k} equals to {\ttfamily 2}, this algorithm is actually the known {\ttfamily Merge\+Sort} algorithm. 
 \end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+the {\ttfamily array} given {\itshape must} be dynamically allocated. 
+\end{DoxyAttention}
 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em K} & the {\ttfamily type} of the elements in the {\ttfamily array} given. \\
@@ -81,7 +84,7 @@ In case {\ttfamily k} equals to {\ttfamily 2}, this algorithm is actually the kn
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em array} & the array to sort. \\
+{\em array} & the array to sort. {\itshape Must} be dynamically allocated. \\
 \hline
 {\em size} & the size of the {\ttfamily array} to sort. \\
 \hline

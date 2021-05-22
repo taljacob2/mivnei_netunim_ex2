@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['mivnei_5fnetunim_20targil_20tichnuti_202_176', ['mivnei_netunim targil tichnuti 2', ['../index.html', 1, '']]]
+        ['deprecated_20list_177', ['Deprecated List', ['../deprecated.html', 1, '']]]
     ];

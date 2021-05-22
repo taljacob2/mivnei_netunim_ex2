@@ -28,6 +28,8 @@ virtual \mbox{\hyperlink{class_min_heap_a6041d18dee6992810ede4a3444b31738}{$\sim
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$ \mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{delete\+Min}} () override
 \begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} from the heap, and returns it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$ \mbox{\hyperlink{class_min_heap_a2774a39578ec0f31204e97df1645cd30}{delete\+Min}} (bool fix\+Heap\+After\+Deletion)
+\begin{DoxyCompactList}\small\item\em Deletes the {\itshape minimal element} from the heap, and returns it. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_aeee64b5f9f692ab7023c26f49279ef16}{insert}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$element\+To\+Insert) override
 \begin{DoxyCompactList}\small\item\em Inserts the {\ttfamily element\+To\+Insert} to the heap. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap}} (int index\+To\+Fix\+From) override
@@ -41,7 +43,7 @@ void \mbox{\hyperlink{class_min_heap_ae6f21519950cc55c5b470d07ee01a062}{make\+Em
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_min_heap_abfbd451e51d1d8c93ff76ce12f9de60a}{delete\+Min\+When\+There\+Are\+Two\+Or\+More\+Elements}} ()
+void \mbox{\hyperlink{class_min_heap_a1b020a274541d1da5c5d34ab43515a19}{delete\+Min\+When\+There\+Are\+Two\+Or\+More\+Elements}} (bool fix\+Heap\+After\+Deletion)
 \begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents the case when there are {\ttfamily 2} or more elements in the heap. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_min_heap_a658f6c362036350b5145178e88e57051}{insert\+When\+There\+Is\+Enough\+Space}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$element\+To\+Insert)
 \begin{DoxyCompactList}\small\item\em This method is a {\itshape private} method, that represents the case when there is enough space in the heap to insert an additional {\ttfamily element\+To\+Insert} element. \end{DoxyCompactList}\item 
@@ -194,7 +196,7 @@ Implements \mbox{\hyperlink{class_min_heap_a_d_t_aa726874d27400106be78034fcee2e1
 \mbox{\Hypertarget{class_min_heap_a6f4be46b00c888580c5f3afe41865930}\label{class_min_heap_a6f4be46b00c888580c5f3afe41865930}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!deleteMin@{deleteMin}}
 \index{deleteMin@{deleteMin}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
-\doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}}
+\doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
 \mbox{\hyperlink{class_entry}{Entry}}$<$K, V$>$$\ast$ \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::delete\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
@@ -223,19 +225,66 @@ the {\itshape minimal element} removed from the heap.
 
 Implements \mbox{\hyperlink{class_min_heap_a_d_t_aad46f6fbc56041d20c3130dcf5b42d5e}{Min\+Heap\+ADT$<$ K, V $>$}}.
 
-\mbox{\Hypertarget{class_min_heap_abfbd451e51d1d8c93ff76ce12f9de60a}\label{class_min_heap_abfbd451e51d1d8c93ff76ce12f9de60a}} 
+\mbox{\Hypertarget{class_min_heap_a2774a39578ec0f31204e97df1645cd30}\label{class_min_heap_a2774a39578ec0f31204e97df1645cd30}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!deleteMin@{deleteMin}}
+\index{deleteMin@{deleteMin}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{deleteMin()}{deleteMin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_entry}{Entry}}$<$K, V$>$$\ast$ \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::delete\+Min (\begin{DoxyParamCaption}\item[{bool}]{fix\+Heap\+After\+Deletion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes the {\itshape minimal element} from the heap, and returns it. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Caution when setting {\ttfamily fix\+Heap\+After\+Deletion} to {\ttfamily false}.\end{DoxyRefDesc}
+
+
+\begin{DoxyNote}{Note}
+After removing the {\itshape minimal element} from the heap, this method calls the {\itshape fix\+Heap(0)} method, in order to fix the heap afterwards -\/ only if the {\ttfamily fix\+Heap\+After\+Deletion} parameter is {\ttfamily true}. 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+in case the {\ttfamily logical\+Size} of the {\itshape array} is 0, this method returns {\ttfamily null\+\_\+ptr}. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em fix\+Heap\+After\+Deletion} & determines if the method will call the {\itshape fix\+Heap(0)} method, after deletion, to ensure that the heap is still valid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\itshape minimal element} removed from the heap. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::logic\+\_\+error} & in case the heap is already empty. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_min_heap_a1b020a274541d1da5c5d34ab43515a19}\label{class_min_heap_a1b020a274541d1da5c5d34ab43515a19}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!deleteMinWhenThereAreTwoOrMoreElements@{deleteMinWhenThereAreTwoOrMoreElements}}
 \index{deleteMinWhenThereAreTwoOrMoreElements@{deleteMinWhenThereAreTwoOrMoreElements}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
 \doxysubsubsection{\texorpdfstring{deleteMinWhenThereAreTwoOrMoreElements()}{deleteMinWhenThereAreTwoOrMoreElements()}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
-void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::delete\+Min\+When\+There\+Are\+Two\+Or\+More\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+void \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::delete\+Min\+When\+There\+Are\+Two\+Or\+More\+Elements (\begin{DoxyParamCaption}\item[{bool}]{fix\+Heap\+After\+Deletion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
 This method is a {\itshape private} method, that represents the case when there are {\ttfamily 2} or more elements in the heap. 
 
+\begin{DoxyNote}{Note}
+After removing the {\itshape minimal element} from the heap, this method calls the {\itshape fix\+Heap(0)} method, in order to fix the heap afterwards -\/ only if the {\ttfamily fix\+Heap\+After\+Deletion} parameter is {\ttfamily true}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em fix\+Heap\+After\+Deletion} & determines if the method will call the {\itshape fix\+Heap(0)} method, after deletion, to ensure that the heap is still valid. \\
+\hline
+\end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{delete\+Min()}} 
+
+\mbox{\hyperlink{class_min_heap_ab5f16032e4084a73454be12e70ee3878}{fix\+Heap(int)}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_min_heap_ab5f16032e4084a73454be12e70ee3878}\label{class_min_heap_ab5f16032e4084a73454be12e70ee3878}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!fixHeap@{fixHeap}}
