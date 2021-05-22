@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mivnei_netunim_ex1
+# Target rules for targets named mivnei_netunim_ex2
 
 # Build rule for target.
-mivnei_netunim_ex1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mivnei_netunim_ex1
-.PHONY : mivnei_netunim_ex1
+mivnei_netunim_ex2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mivnei_netunim_ex2
+.PHONY : mivnei_netunim_ex2
 
 # fast build rule for target.
-mivnei_netunim_ex1/fast:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/build
-.PHONY : mivnei_netunim_ex1/fast
+mivnei_netunim_ex2/fast:
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/build
+.PHONY : mivnei_netunim_ex2/fast
 
 InputOutput.o: InputOutput.cpp.o
 
@@ -129,7 +129,7 @@ InputOutput.o: InputOutput.cpp.o
 
 # target to build an object file
 InputOutput.cpp.o:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.o
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/InputOutput.cpp.o
 .PHONY : InputOutput.cpp.o
 
 InputOutput.i: InputOutput.cpp.i
@@ -138,7 +138,7 @@ InputOutput.i: InputOutput.cpp.i
 
 # target to preprocess a source file
 InputOutput.cpp.i:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.i
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/InputOutput.cpp.i
 .PHONY : InputOutput.cpp.i
 
 InputOutput.s: InputOutput.cpp.s
@@ -147,7 +147,7 @@ InputOutput.s: InputOutput.cpp.s
 
 # target to generate assembly for a file
 InputOutput.cpp.s:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/InputOutput.cpp.s
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/InputOutput.cpp.s
 .PHONY : InputOutput.cpp.s
 
 main.o: main.cpp.o
@@ -156,7 +156,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -165,7 +165,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,35 +174,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/mivnei_netunim_ex2.dir/build.make CMakeFiles/mivnei_netunim_ex2.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-my_string.o: my_string.cpp.o
-
-.PHONY : my_string.o
-
-# target to build an object file
-my_string.cpp.o:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.o
-.PHONY : my_string.cpp.o
-
-my_string.i: my_string.cpp.i
-
-.PHONY : my_string.i
-
-# target to preprocess a source file
-my_string.cpp.i:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.i
-.PHONY : my_string.cpp.i
-
-my_string.s: my_string.cpp.s
-
-.PHONY : my_string.s
-
-# target to generate assembly for a file
-my_string.cpp.s:
-	$(MAKE) -f CMakeFiles/mivnei_netunim_ex1.dir/build.make CMakeFiles/mivnei_netunim_ex1.dir/my_string.cpp.s
-.PHONY : my_string.cpp.s
 
 # Help Target
 help:
@@ -212,16 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mivnei_netunim_ex1"
+	@echo "... mivnei_netunim_ex2"
 	@echo "... InputOutput.o"
 	@echo "... InputOutput.i"
 	@echo "... InputOutput.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... my_string.o"
-	@echo "... my_string.i"
-	@echo "... my_string.s"
 .PHONY : help
 
 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/mivnei_netunim_ex2.dir/InputOutput.cpp.o CMakeFiles/mivnei_netunim_ex2.dir/main.cpp.o  -o mivnei_netunim_ex2 
