@@ -213,10 +213,10 @@
                     class="lineno">   42</span>&#160;<span class="comment">         * For each `small array`: - Sort the array.</span>
             </div>
             <div class="line"><a name="l00043"></a><span
-                    class="lineno">   43</span>&#160;<span class="comment">         *                       - `insert` the `first` element in the array to</span>
+                    class="lineno">   43</span>&#160;<span class="comment">         *                         - `insert` the `first` element in the array to</span>
             </div>
             <div class="line"><a name="l00044"></a><span
-                    class="lineno">   44</span>&#160;<span class="comment">         *                         the `Minimum-Heap` provided.</span>
+                    class="lineno">   44</span>&#160;<span class="comment">         *                           the `Minimum-Heap` provided.</span>
             </div>
             <div class="line"><a name="l00045"></a><span
                     class="lineno">   45</span>&#160;<span class="comment">         */</span>
@@ -257,8 +257,8 @@
                     class="lineno">   55</span>&#160; <span class="comment">/* BUG : check remove */</span>
             </div>
             <div class="line"><a name="l00056"></a><span
-                    class="lineno">   56</span>&#160; <span class="keyword">delete</span>
-                [] *array;
+                    class="lineno">   56</span>&#160; <span class="keyword">delete</span>[]
+                * array;
             </div>
             <div class="line"><a name="l00057"></a><span
                     class="lineno">   57</span>&#160; *array = resultArray;
@@ -391,7 +391,7 @@
             <div class="line"><a name="l00107"></a><span
                     class="lineno">  107</span>&#160; <span class="keywordtype">int</span>
                 currSmallArraySize = ceil((<span
-                        class="keywordtype">double</span>) size / k);
+                        class="keywordtype">double</span>) size / currK);
             </div>
             <div class="line"><a name="l00108"></a><span
                     class="lineno">  108</span>&#160;
@@ -529,95 +529,96 @@
                     class="lineno">  145</span>&#160;
             </div>
             <div class="line"><a name="l00146"></a><span
-                    class="lineno">  146</span>&#160; <span class="comment">// BUG: checking print of HEAP:</span>
+                    class="lineno">  146</span>&#160; <span class="comment">/* Remove the minimal element from the heap. */</span>
             </div>
             <div class="line"><a name="l00147"></a><span
-                    class="lineno">  147</span>&#160; std::cout &lt;&lt; minHeap
-                &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+                    class="lineno">  147</span>&#160; <a class="code"
+                                                         href="class_entry.html">Entry&lt;K,
+                int&gt;</a> *deletedElement = minHeap.<a class="code"
+                                                         href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">deleteMin</a>();
             </div>
             <div class="line"><a name="l00148"></a><span
                     class="lineno">  148</span>&#160;
             </div>
             <div class="line"><a name="l00149"></a><span
-                    class="lineno">  149</span>&#160; <span class="comment">/* Delete the minimal element from the heap. */</span>
+                    class="lineno">  149</span>&#160; <span class="comment">/* Insert minimal `key` to `resultArray`. */</span>
             </div>
             <div class="line"><a name="l00150"></a><span
-                    class="lineno">  150</span>&#160; <a class="code"
-                                                         href="class_entry.html">Entry&lt;K,
-                int&gt;</a> *deletedElement = minHeap.deleteMin();
+                    class="lineno">  150</span>&#160; resultArray[i] =
+                deletedElement-&gt;<a class="code"
+                                      href="class_entry.html#a61500654198dacda3120c6cc0d644298">getKey</a>();
             </div>
             <div class="line"><a name="l00151"></a><span
                     class="lineno">  151</span>&#160;
             </div>
             <div class="line"><a name="l00152"></a><span
-                    class="lineno">  152</span>&#160; <span class="comment">/* Insert minimal `key` to `resultArray`. */</span>
+                    class="lineno">  152</span>&#160; <span class="comment">/* If there are elements in the according array. */</span>
             </div>
             <div class="line"><a name="l00153"></a><span
-                    class="lineno">  153</span>&#160; resultArray[i] =
-                deletedElement-&gt;<a class="code"
-                                      href="class_entry.html#a61500654198dacda3120c6cc0d644298">getKey</a>();
+                    class="lineno">  153</span>&#160; <span class="keywordflow">if</span>
+                ((smallArraySizes[deletedElement-&gt;<a class="code"
+                                                        href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()])
+                &gt; 0) {
             </div>
             <div class="line"><a name="l00154"></a><span
                     class="lineno">  154</span>&#160;
             </div>
             <div class="line"><a name="l00155"></a><span
-                    class="lineno">  155</span>&#160; <span class="comment">/* If there are elements in the according array. */</span>
-            </div>
+                    class="lineno">  155</span>&#160; <span
+                    class="comment">/*</span></div>
             <div class="line"><a name="l00156"></a><span
-                    class="lineno">  156</span>&#160; <span class="keywordflow">if</span>
-                ((smallArraySizes[deletedElement-&gt;<a class="code"
-                                                        href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()])
-                &gt; 0) {
+                    class="lineno">  156</span>&#160;<span class="comment">                 * `Insert` the next smaller element in the according small array</span>
             </div>
             <div class="line"><a name="l00157"></a><span
-                    class="lineno">  157</span>&#160;
+                    class="lineno">  157</span>&#160;<span class="comment">                 * to the given `Minimum-Heap`.</span>
             </div>
             <div class="line"><a name="l00158"></a><span
-                    class="lineno">  158</span>&#160; <span
-                    class="comment">/*</span></div>
+                    class="lineno">  158</span>&#160;<span class="comment">                 * (= the `first` element in the small array).</span>
+            </div>
             <div class="line"><a name="l00159"></a><span
-                    class="lineno">  159</span>&#160;<span class="comment">                 * `Insert` the next smaller element in the according small array</span>
+                    class="lineno">  159</span>&#160;<span class="comment">                 */</span>
             </div>
             <div class="line"><a name="l00160"></a><span
-                    class="lineno">  160</span>&#160;<span class="comment">                 * to the given `Minimum-Heap`.</span>
-            </div>
-            <div class="line"><a name="l00161"></a><span
-                    class="lineno">  161</span>&#160;<span class="comment">                 * (= the `first` element in the small array).</span>
-            </div>
-            <div class="line"><a name="l00162"></a><span
-                    class="lineno">  162</span>&#160;<span class="comment">                 */</span>
-            </div>
-            <div class="line"><a name="l00163"></a><span
-                    class="lineno">  163</span>&#160; <span
+                    class="lineno">  160</span>&#160; <span
                     class="keyword">auto</span> *elementToInsert = <span
                     class="keyword">new</span> <a class="code"
                                                   href="class_entry.html">Entry&lt;K,
                 int&gt;</a>(
             </div>
-            <div class="line"><a name="l00164"></a><span
-                    class="lineno">  164</span>&#160;
+            <div class="line"><a name="l00161"></a><span
+                    class="lineno">  161</span>&#160;
                 (smallArrayLocations[deletedElement-&gt;<a class="code"
                                                            href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()])[0],
             </div>
-            <div class="line"><a name="l00165"></a><span
-                    class="lineno">  165</span>&#160; deletedElement-&gt;<a
+            <div class="line"><a name="l00162"></a><span
+                    class="lineno">  162</span>&#160; deletedElement-&gt;<a
                     class="code"
                     href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>());
             </div>
-            <div class="line"><a name="l00166"></a><span
-                    class="lineno">  166</span>&#160;
-                minHeap.insert(elementToInsert);
+            <div class="line"><a name="l00163"></a><span
+                    class="lineno">  163</span>&#160; minHeap.<a class="code"
+                                                                 href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">insert</a>(elementToInsert);
             </div>
-            <div class="line"><a name="l00167"></a><span
-                    class="lineno">  167</span>&#160; <a class="code"
+            <div class="line"><a name="l00164"></a><span
+                    class="lineno">  164</span>&#160; <a class="code"
                                                          href="class_algorithms_and_min_heap.html#a3f0c56741f46c470dd920d117ac96064">stepAheadSmallArray</a>(smallArrayLocations,
                 smallArraySizes,
             </div>
+            <div class="line"><a name="l00165"></a><span
+                    class="lineno">  165</span>&#160; deletedElement);
+            </div>
+            <div class="line"><a name="l00166"></a><span
+                    class="lineno">  166</span>&#160; }
+            </div>
+            <div class="line"><a name="l00167"></a><span
+                    class="lineno">  167</span>&#160;
+            </div>
             <div class="line"><a name="l00168"></a><span
-                    class="lineno">  168</span>&#160; deletedElement);
+                    class="lineno">  168</span>&#160; <span class="comment">/* Delete the element from memory. */</span>
             </div>
             <div class="line"><a name="l00169"></a><span
-                    class="lineno">  169</span>&#160; }
+                    class="lineno">  169</span>&#160; <span class="keyword">delete</span>
+                deletedElement;
             </div>
             <div class="line"><a name="l00170"></a><span
                     class="lineno">  170</span>&#160; }
@@ -788,6 +789,18 @@
                 <div class="ttdef"><b>Definition:</b> MinHeap.h:34</div>
             </div>
             <div class="ttc"
+                 id="aclass_min_heap_html_a6f4be46b00c888580c5f3afe41865930">
+                <div class="ttname"><a
+                        href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">MinHeap::deleteMin</a>
+                </div>
+                <div class="ttdeci">Entry&lt; K, V &gt; * deleteMin() override
+                </div>
+                <div class="ttdoc">Deletes the minimal element from the heap,
+                    and returns it.
+                </div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:102</div>
+            </div>
+            <div class="ttc"
                  id="aclass_min_heap_html_aeee64b5f9f692ab7023c26f49279ef16">
                 <div class="ttname"><a
                         href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">MinHeap::insert</a>
@@ -797,7 +810,7 @@
                 </div>
                 <div class="ttdoc">Inserts the elementToInsert to the heap.
                 </div>
-                <div class="ttdef"><b>Definition:</b> MinHeap.h:169</div>
+                <div class="ttdef"><b>Definition:</b> MinHeap.h:166</div>
             </div>
             <div class="ttc"
                  id="aclassmy__algorithms_html_a0004e4c89992a6d75d96d17d88c20a85">
