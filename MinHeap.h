@@ -240,6 +240,8 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
                 /* Step upwards to the parent of the element. */
                 currentIndex = (currentIndex - 1) / 2;
             } else {
+
+                /* There is no need to `swap`. Thus, the heap is valid. */
                 break;
             }
         }
