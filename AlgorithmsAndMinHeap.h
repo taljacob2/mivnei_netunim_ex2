@@ -40,8 +40,8 @@ class AlgorithmsAndMinHeap {
         /*
          * Divide the array to K `smaller arrays`.
          * For each `small array`: - Sort the array.
-         *                       - `insert` the `first` element in the array to
-         *                         the `Minimum-Heap` provided.
+         *                         - `insert` the `first` element in the array to
+         *                           the `Minimum-Heap` provided.
          */
         // FIXME: change `quickSort` to `recursive` call !!!! -->>>
         divideArrayToKSmallerArrays<K>(*array, size, k, smallArrayLocations,
@@ -167,6 +167,9 @@ class AlgorithmsAndMinHeap {
                 stepAheadSmallArray(smallArrayLocations, smallArraySizes,
                                     deletedElement);
             }
+
+            /* Delete the element from memory. */
+            delete deletedElement;
         }
     }
 
