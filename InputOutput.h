@@ -80,6 +80,8 @@ class InputOutput {
      */
     int *getIntArrayFromInputFile();
 
+    /* -- Print Methods -- */
+
     /**
      * @brief Prints an @p array to an `output-stream`.
      *
@@ -110,8 +112,140 @@ class InputOutput {
     template<typename T>
     static void printArray(std::ostream &os, T *array, int size,
                            char delimiter) {
-        for (int i = 0; i < size - 1; i++) { os << array[i] << delimiter; }
+        int i = 0;
+        for (; i < size - 1; i++) { os << array[i] << delimiter; }
+        os << array[i];
     }
+
+    /**
+     * @brief Prints an @p array to an `output` file.
+     *
+     * @tparam T the `type` of elements in the @p array given.
+     * @param array the array to be printed.
+     * @param size the size of the @p array to be printed.
+     * @throws std::runtime_error in case the *file* specified by the
+     *                            name: @p outputFileName could not be opened.
+     */
+    template<typename T>
+    static void printArrayToFile(std::string &outputFileName, T *array,
+                                 int size) {
+        std::ofstream file(outputFileName);
+        if (!file) {
+
+            /* Could not open the file. Throw a message. */
+            std::string message;
+            message.append("Could not open the file: ");
+            message.append(outputFileName);
+            message.append("\n");
+
+            // TODO: change to `wrong input`
+            throw std::runtime_error(message);
+        }
+
+        for (int i = 0; i < size; i++) { file << array[i] << " "; }
+        file << "\n";
+        file.close();
+    }
+
+    /**
+     * @brief Prints an @p array to an `output` file, such that after each
+     *        element printed, we print a @p delimiter `char`.
+     *
+     * @note the @p delimiter `char` is *not* printed after the `last` element.
+     * @tparam T the `type` of elements in the @p array given.
+     * @param outputFileName the name of the `output` file to print the array
+     *                       to.
+     * @param array the array to be printed.
+     * @param size the size of the @p array to be printed.
+     * @param delimiter the `char` to be printed in between the printed
+     *                  elements. Means, this method prints this `char` after
+     *                  each element but the `last` element.
+     * @throws std::runtime_error in case the *file* specified by the
+     *                            name: @p outputFileName could not be opened.
+     */
+    template<typename T>
+    static void printArrayToFile(std::string &outputFileName, T *array,
+                                 int size, char delimiter) {
+        std::ofstream file(outputFileName);
+        if (!file) {
+
+            /* Could not open the file. Throw a message. */
+            std::string message;
+            message.append("Could not open the file: ");
+            message.append(outputFileName);
+            message.append("\n");
+
+            // TODO: change to `wrong input`
+            throw std::runtime_error(message);
+        }
+        int i = 0;
+        for (; i < size - 1; i++) { file << array[i] << delimiter; }
+        file << array[i];
+        file.close();
+    }
+
+    /**
+     * @brief Prints an @p array to the file named *OUTPUT_FILE_NAME*.
+     *
+     * @tparam T the `type` of elements in the @p array given.
+     * @param array the array to be printed.
+     * @param size the size of the @p array to be printed.
+     * @throws std::runtime_error in case the *file* specified by the
+     *                            name: `OUTPUT_FILE_NAME` could not be opened.
+     */
+    template<typename T> void printArrayToFile(T *array, int size) {
+        std::ofstream file(OUTPUT_FILE_NAME);
+        if (!file) {
+
+            /* Could not open the file. Throw a message. */
+            std::string message;
+            message.append("Could not open the file: ");
+            message.append(OUTPUT_FILE_NAME);
+            message.append("\n");
+
+            // TODO: change to `wrong input`
+            throw std::runtime_error(message);
+        }
+
+        for (int i = 0; i < size; i++) { file << array[i] << " "; }
+        file << "\n";
+        file.close();
+    }
+
+    /**
+     * @brief Prints an @p array to the file named *OUTPUT_FILE_NAME*, such
+     *        that after each element printed, we print a @p delimiter `char`.
+     *
+     * @note the @p delimiter `char` is *not* printed after the `last` element.
+     * @tparam T the `type` of elements in the @p array given.
+     * @param array the array to be printed.
+     * @param size the size of the @p array to be printed.
+     * @param delimiter the `char` to be printed in between the printed
+     *                  elements. Means, this method prints this `char` after
+     *                  each element but the `last` element.
+     * @throws std::runtime_error in case the *file* specified by the
+     *                            name: `OUTPUT_FILE_NAME` could not be opened.
+     */
+    template<typename T>
+    void printArrayToFile(T *array, int size, char delimiter) {
+        std::ofstream file(OUTPUT_FILE_NAME);
+        if (!file) {
+
+            /* Could not open the file. Throw a message. */
+            std::string message;
+            message.append("Could not open the file: ");
+            message.append(OUTPUT_FILE_NAME);
+            message.append("\n");
+
+            // TODO: change to `wrong input`
+            throw std::runtime_error(message);
+        }
+        int i = 0;
+        for (; i < size - 1; i++) { file << array[i] << delimiter; }
+        file << array[i];
+        file.close();
+    }
+
     /* -- Get Checkers -- */
   public:
     /**

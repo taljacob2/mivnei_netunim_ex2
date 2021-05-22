@@ -14,10 +14,10 @@ int main() {
     // FIXME::::::::::::: @link and @endlink -> must change to @ref or
     //  something alike.
 
-    /* Receive input, and create an InputOutput object: */
+    /* Receive input, and create an InputOutput object. */
     InputOutput *inputOutput = InputOutput::factoryInputOutput();
 
-    /* Extract array from the inputFile: */
+    /* Extract array from the `input` file. */
     int *arrayReceivedFromInputFile = nullptr;
     try {
         arrayReceivedFromInputFile = inputOutput->getIntArrayFromInputFile();
@@ -29,15 +29,14 @@ int main() {
         return 2;
     }
 
-    InputOutput::printArray(std::cout, arrayReceivedFromInputFile,
-                            inputOutput->getN());
-
+    /* Sort the `arrayReceivedFromInputFile`. */
     AlgorithmsAndMinHeap::kWayMergeSort(&arrayReceivedFromInputFile,
                                         inputOutput->getN(),
                                         inputOutput->getK());
 
-    InputOutput::printArray(std::cout, arrayReceivedFromInputFile,
-                            inputOutput->getN());
+    /* `arrayReceivedFromInputFile` is sorted, print it to `output` file. */
+    inputOutput->printArrayToFile(arrayReceivedFromInputFile,
+                                  inputOutput->getN(), '\n');
 
     delete[] arrayReceivedFromInputFile;
     delete inputOutput;
