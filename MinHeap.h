@@ -251,6 +251,9 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *        until the `indexToFixFrom`, which from there and on downwards,
      *        the heap is *invalid* - means: that the `node` in the
      *        `indexToFixFrom` is no smaller than both of its children.
+     *        The method ensures to *correct* the heap by *fixing* its
+     *        validity - means, checking that each `node` is smaller than
+     *        both of its children.
      *
      * @param indexToFixFrom the method fixes the heap from this index
      *                       downwards until the leaves of the heap.
@@ -325,6 +328,11 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @brief This method is a *private* method, that represents a `while`
      *        that is being invoked by the @link fixHeap(int) @endlink method.
      *
+     * The `while` loop has `2` stop conditions:
+     *  @li there are no children to the `node` that is being iterated ( =
+     *  the `node` that is being iterated is a `leaf`.
+     *  @li the `node` that is being iterated is *not* smaller than each of
+     *  its children.
      * @param currentIndex should be in between `0` and `(logicalSize / 2)`.
      *                     Represents the index to *fixHeap* from.
      * @see fixHeap(int)
@@ -356,6 +364,12 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
                      * Note: this enlarges the index.
                      */
                     currentIndex = indexOfMinimalChildOfCurrentRoot;
+                } else {
+                    /*
+                     * Second stop condition:
+                     * the parent is not smaller than its child. break.
+                     */
+                    break;
                 }
             } else {
 
