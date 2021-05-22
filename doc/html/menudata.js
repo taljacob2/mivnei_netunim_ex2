@@ -1,96 +1,115 @@
-/*
- @licstart  The following is the entire license notice for the JavaScript code in this file.
+// -*- C++ -*-
 
- The MIT License (MIT)
+// Copyright (C) 2005-2019 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software
+// Foundation; either version 3, or (at your option) any later
+// version.
 
- Copyright (C) 1997-2020 by Dimitri van Heesch
+// This library is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software
- and associated documentation files (the "Software"), to deal in the Software without restriction,
- including without limitation the rights to use, copy, modify, merge, publish, distribute,
- sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
 
- The above copyright notice and this permission notice shall be included in all copies or
- substantial portions of the Software.
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
- BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
- DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// Copyright (C) 2004 Ami Tavory and Vladimir Dreizin, IBM-HRL.
 
- @licend  The above is the entire license notice for the JavaScript code in this file
-*/
-var menudata = {
-    children: [
-        {text: "Main Page", url: "index.html"},
-        {text: "Related Pages", url: "pages.html"},
+// Permission to use, copy, modify, sell, and distribute this software
+// is hereby granted without fee, provided that the above copyright
+// notice appears in all copies, and that both that copyright notice
+// and this permission notice appear in supporting documentation. None
+// of the above authors, nor IBM Haifa Research Laboratories, make any
+// representation about the suitability of this software for any
+// purpose. It is provided "as is" without express or implied
+// warranty.
+
+/**
+ * @file pat_trie_/traits.hpp
+ * Contains an implementation class for pat_trie_.
+ */
+
+#ifndef
+PB_DS_PAT_TRIE_NODE_AND_IT_TRAITS_HPP
+#define
+PB_DS_PAT_TRIE_NODE_AND_IT_TRAITS_HPP
+
+#include < ext / pb_ds / detail / pat_trie_ / pat_trie_base.hpp >
+#include < ext / pb_ds / detail / pat_trie_ / synth_access_traits.hpp >
+
+namespace
+__gnu_pbds
+{
+    namespace
+    detail
+    {
+        /// Specialization.
+        /// @ingroup traits
+        template < typename
+        Key,
+            typename
+        Mapped,
+            typename
+        _ATraits,
+        template < typename
+        Node_CItr,
+            typename
+        Node_Itr,
+            typename
+        Cmp_Fn_,
+            typename
+        _Alloc_ >
+        class Node_Update,
+            typename
+        _Alloc >
+        struct
+        trie_traits < Key, Mapped, _ATraits, Node_Update, pat_trie_tag, _Alloc >
         {
-            text: "Classes", url: "annotated.html", children: [
-                {text: "Class List", url: "annotated.html"},
-                {text: "Class Index", url: "classes.html"},
-                {text: "Class Hierarchy", url: "hierarchy.html"},
-                {
-                    text: "Class Members", url: "functions.html", children: [
-                        {
-                            text: "All", url: "functions.html", children: [
-                                {text: "a", url: "functions.html#index_a"},
-                                {text: "b", url: "functions.html#index_b"},
-                                {text: "c", url: "functions.html#index_c"},
-                                {text: "d", url: "functions.html#index_d"},
-                                {text: "e", url: "functions.html#index_e"},
-                                {text: "f", url: "functions.html#index_f"},
-                                {text: "g", url: "functions.html#index_g"},
-                                {text: "i", url: "functions.html#index_i"},
-                                {text: "k", url: "functions.html#index_k"},
-                                {text: "l", url: "functions.html#index_l"},
-                                {text: "m", url: "functions.html#index_m"},
-                                {text: "n", url: "functions.html#index_n"},
-                                {text: "o", url: "functions.html#index_o"},
-                                {text: "p", url: "functions.html#index_p"},
-                                {text: "q", url: "functions.html#index_q"},
-                                {text: "r", url: "functions.html#index_r"},
-                                {text: "s", url: "functions.html#index_s"},
-                                {text: "v", url: "functions.html#index_v"},
-                                {text: "w", url: "functions.html#index_w"},
-                                {text: "~", url: "functions.html#index__7E"}]
-                        },
-                        {
-                            text: "Functions",
-                            url: "functions_func.html",
-                            children: [
-                                {text: "b", url: "functions_func.html#index_b"},
-                                {text: "c", url: "functions_func.html#index_c"},
-                                {text: "d", url: "functions_func.html#index_d"},
-                                {text: "e", url: "functions_func.html#index_e"},
-                                {text: "f", url: "functions_func.html#index_f"},
-                                {text: "g", url: "functions_func.html#index_g"},
-                                {text: "i", url: "functions_func.html#index_i"},
-                                {text: "k", url: "functions_func.html#index_k"},
-                                {text: "m", url: "functions_func.html#index_m"},
-                                {text: "o", url: "functions_func.html#index_o"},
-                                {text: "p", url: "functions_func.html#index_p"},
-                                {text: "q", url: "functions_func.html#index_q"},
-                                {text: "r", url: "functions_func.html#index_r"},
-                                {text: "s", url: "functions_func.html#index_s"},
-                                {text: "w", url: "functions_func.html#index_w"},
-                                {
-                                    text: "~",
-                                    url: "functions_func.html#index__7E"
-                                }]
-                        },
-                        {text: "Variables", url: "functions_vars.html"},
-                        {text: "Related Functions", url: "functions_rela.html"}]
-                }]
-        },
-        {
-            text: "Files", url: "files.html", children: [
-                {text: "File List", url: "files.html"},
-                {
-                    text: "File Members", url: "globals.html", children: [
-                        {text: "All", url: "globals.html"},
-                        {text: "Functions", url: "globals_func.html"}]
-                }]
-        }]
-}
+            private:
+            typedef pat_trie_base                        base_type;
+            typedef types_traits < Key, Mapped, _Alloc, false > type_traits;
+
+        public:
+            typedef
+        typename
+        trie_node_metadata_dispatch < Key, Mapped, _ATraits, Node_Update, _Alloc > ::type
+        metadata_type;
+        typedef
+        base_type::_Metadata < metadata_type, _Alloc > metadata;
+        typedef
+        _ATraits
+        access_traits;
+
+        /// Type for synthesized traits.
+        typedef
+        __gnu_pbds::detail::synth_access_traits < type_traits, false, access_traits > synth_access_traits;
+
+        typedef
+        base_type::_Node_base < synth_access_traits, metadata > node;
+        typedef
+        base_type::_Head < synth_access_traits, metadata > head;
+        typedef
+        base_type::_Leaf < synth_access_traits, metadata > leaf;
+        typedef
+        base_type::_Inode < synth_access_traits, metadata > inode;
+
+        typedef
+        base_type::_Iter < node, leaf, head, inode, true > iterator;
+        typedef
+        base_type::_CIter < node, leaf, head, inode, true > const_iterator;
+        typedef
+        base_type::_Iter < node, leaf, head, inode, false > reverse_iterator;
+        typedef
+        base_type::_CIter < node, leaf, head, inode, false > const_reverse_iterator;
+
+/// This is an iterator to an iterator: it iterates over nodes,
+/// and de-refere
