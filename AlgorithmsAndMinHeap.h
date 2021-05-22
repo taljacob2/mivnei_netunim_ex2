@@ -17,8 +17,9 @@ class AlgorithmsAndMinHeap {
      *       then the method invokes @link my_algorithms::quickSort(K *, int) @endlink.
      * @note In case @p k equals to `2`, this algorithm is actually the known
      *       `MergeSort` algorithm.
+     * @attention the @p array given *must* be dynamically allocated.
      * @tparam K the `type` of the elements in the @p array given.
-     * @param array the array to sort.
+     * @param array the array to sort. *Must* be dynamically allocated.
      * @param size the size of the @p array to sort.
      * @param k the *division* parameter, when sorting the array.
      * @see my_algorithms::quickSort(K *, int)
@@ -52,13 +53,11 @@ class AlgorithmsAndMinHeap {
                                                 smallArraySizes, minHeap,
                                                 resultArray);
 
-        /* BUG : check remove */
         delete[] * array;
         *array = resultArray;
 
         delete[] smallArrayLocations;
         delete[] smallArraySizes;
-        // delete[] resultArray;
     }
 
   private:
