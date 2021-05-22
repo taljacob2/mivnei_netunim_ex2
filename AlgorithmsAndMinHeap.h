@@ -122,23 +122,25 @@ class AlgorithmsAndMinHeap {
              */
             auto *entryToInsert = new Entry<K, V>(currSmallArray[0], kIndex);
             minHeap.insert(entryToInsert);
+            stepAheadSmallArray(smallArrayLocations, smallArraySizes,
+                                entryToInsert);
 
             /* Step ahead. */
             size = size - currSmallArraySize;
             currK--;
-            lastSmallArraySize = currSmallArraySize;
+            lastSmallArraySize += currSmallArraySize;
         }
     }
 
     template<typename K, typename V>
-    static void deleteMinAndCheckFromWhichSmallArray(int size,
-                                                     K **smallArrayLocations,
-                                                     K * smallArraySizes,
+    static void deleteMinAndCheckFromWhichSmallArray(int  size,
+                                                     K ** smallArrayLocations,
+                                                     int *smallArraySizes,
                                                      MinHeap<K, V> &minHeap,
                                                      K *resultArray) {
         for (int i = 0; i < size; i++) {
 
-            // TODO: checking print of HEAP:
+            // BUG: checking print of HEAP:
             std::cout << minHeap << "\n";
 
             /* Delete the minimal element from the heap. */
@@ -150,12 +152,6 @@ class AlgorithmsAndMinHeap {
             /* If there are elements in the according array. */
             if ((smallArraySizes[deletedElement->getValue()]) > 0) {
 
-                /* Step ahead the `location` of the according small array. */
-                smallArrayLocations[deletedElement->getValue()]++;
-
-                /* Decrease the `size` of the according small array by `1`. */
-                smallArraySizes[deletedElement->getValue()]--;
-
                 /*
                  * `Insert` the next smaller element in the according small array
                  * to the given `Minimum-Heap`.
@@ -164,20 +160,23 @@ class AlgorithmsAndMinHeap {
                 auto *elementToInsert = new Entry<K, V>(
                         (smallArrayLocations[deletedElement->getValue()])[0],
                         deletedElement->getValue());
-
                 minHeap.insert(elementToInsert);
-            } else {
-
-                /*
-                 * Should not be happening if the `smallArraySizes` is
-                 * properly made.
-                 */
-                // TODO: change to `wrong input`
-                throw std::runtime_error("You have tried to remove an "
-                                         "element from a `small array` that "
-                                         "is already empty.");
+                stepAheadSmallArray(smallArrayLocations, smallArraySizes,
+                                    deletedElement);
             }
         }
+    }
+
+    template<typename K, typename V>
+    static void stepAheadSmallArray(K **         smallArrayLocations,
+                                    int *        smallArraySizes,
+                                    Entry<K, V> *deletedElement) {
+
+        /* Step ahead the `location` of the according small array. */
+        smallArrayLocations[deletedElement->getValue()]++;
+
+        /* Decrease the `size` of the according small array by `1`. */
+        smallArraySizes[deletedElement->getValue()]--;
     }
 };
 
