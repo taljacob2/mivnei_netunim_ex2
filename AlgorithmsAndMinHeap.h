@@ -143,10 +143,7 @@ class AlgorithmsAndMinHeap {
                                                      K *resultArray) {
         for (int i = 0; i < size; i++) {
 
-            // BUG: checking print of HEAP:
-            std::cout << minHeap << "\n";
-
-            /* Delete the minimal element from the heap. */
+            /* Remove the minimal element from the heap. */
             Entry<K, int> *deletedElement = minHeap.deleteMin();
 
             /* Insert minimal `key` to `resultArray`. */

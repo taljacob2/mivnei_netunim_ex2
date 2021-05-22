@@ -84,10 +84,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @brief Destructor.
      */
     virtual ~MinHeap() {
-        for (int i = 0; i < physicalSize; i++) {
-            /* BUG : check remove */
-            delete array[i];
-        }
+        for (int i = 0; i < physicalSize; i++) { delete array[i]; }
         delete[] array;
     }
 
