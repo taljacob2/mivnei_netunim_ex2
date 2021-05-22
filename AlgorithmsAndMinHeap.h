@@ -104,7 +104,7 @@ class AlgorithmsAndMinHeap {
             smallArrayLocations[kIndex] = currSmallArray;
 
             /* Get `currSmallArray` `size`. */
-            int currSmallArraySize = ceil((double) size / k);
+            int currSmallArraySize = ceil((double) size / currK);
 
             /*
              * Insert the `currSmallArray` `size` to the
