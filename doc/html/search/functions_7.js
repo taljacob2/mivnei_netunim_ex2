@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['kwaymergesort_124', ['kWayMergeSort', ['../classmy__algorithms.html#a065eca6e5d55fe20cd3c2d2d318ba59b', 1, 'my_algorithms']]]
+        ['kwaymergesort_135', ['kWayMergeSort', ['../class_algorithms_and_min_heap.html#a0c473dfe55692a1e87481bcf0a5f6e56', 1, 'AlgorithmsAndMinHeap']]]
     ];

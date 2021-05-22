@@ -39,7 +39,7 @@ class AlgorithmsAndMinHeap {
 
         /*
          * Divide the array to K smaller arrays.
-         * For each small array: - Sort the array.
+         * For each `small array`: - Sort the array.
          *                       - `insert` the `first` element in the array to
          *                         the `Minimum-Heap` provided.
          */
@@ -82,7 +82,7 @@ class AlgorithmsAndMinHeap {
             MinHeap<K, int> &                    minHeap) {
 
         /*
-         * Save here the size of the last small array.
+         * Save here the size of the last `small array`.
          * Attention: must initialize with `0`.
          */
         int lastSmallArraySize = 0;
@@ -172,27 +172,29 @@ class AlgorithmsAndMinHeap {
      * @brief This *private* method is invoked only when we have removed an
      *        element from a `small-array`. The method ensures to
      *        `step-ahead` the `location` of the according `small-array`
-     *        location, and to decrease the `size` of the according
+     *        location, and to decrease by `1` the `size` of the according
      *        `small-array` size.
      *
      * @warning this method does not check that the
-     *          `smallArraySizes[@p deletedElement->getValue()]` is a number greater
+     *          `smallArraySizes[deletedElement->getValue()]` is a number greater
      *          than `0`. Thus, you must use this method in a parentheses of:
      *          @code
-     *          if ((smallArraySizes[@p deletedElement->getValue()]) > 0) {
+     *          if ((smallArraySizes[deletedElement->getValue()]) > 0) {
      *               // call this method...
      *          }
      *          @endcode
-     * @tparam K
-     * @tparam V
-     * @param smallArrayLocations
-     * @param smallArraySizes
-     * @param deletedElement
+     * @tparam K the `key` of the element.
+     * @param smallArrayLocations the array that stores the starting
+     *                            `locations` of all the `small-arrays`.
+     * @param smallArraySizes the array that stores the `sizes` of all
+     *                        the `small-arrays`.
+     * @param deletedElement the element that has been removed from a
+     *                       generic `small-array`.
      */
-    template<typename K, typename V>
-    static void stepAheadSmallArray(K **         smallArrayLocations,
-                                    int *        smallArraySizes,
-                                    Entry<K, V> *deletedElement) {
+    template<typename K>
+    static void stepAheadSmallArray(K **           smallArrayLocations,
+                                    int *          smallArraySizes,
+                                    Entry<K, int> *deletedElement) {
 
         /* Step ahead the `location` of the according small array. */
         smallArrayLocations[deletedElement->getValue()]++;

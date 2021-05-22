@@ -1,5 +1,8 @@
 var files_dup =
     [
+        ["AlgorithmsAndMinHeap.h", "_algorithms_and_min_heap_8h.html", [
+            ["AlgorithmsAndMinHeap", "class_algorithms_and_min_heap.html", null]
+        ]],
         ["Entry.h", "_entry_8h.html", [
             ["Entry", "class_entry.html", "class_entry"]
         ]],

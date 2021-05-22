@@ -1,4 +1,4 @@
 var searchData =
     [
-        ['entry_80', ['Entry', ['../class_entry.html', 1, '']]]
+        ['algorithmsandminheap_87', ['AlgorithmsAndMinHeap', ['../class_algorithms_and_min_heap.html', 1, '']]]
     ];

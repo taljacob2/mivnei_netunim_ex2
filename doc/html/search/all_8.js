@@ -1,6 +1,6 @@
 var searchData =
     [
-        ['k_37', ['K', ['../class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02', 1, 'InputOutput']]],
-        ['key_38', ['key', ['../class_entry.html#a1a9d3eb85017a25b3365cf3920f34282', 1, 'Entry']]],
-        ['kwaymergesort_39', ['kWayMergeSort', ['../classmy__algorithms.html#a065eca6e5d55fe20cd3c2d2d318ba59b', 1, 'my_algorithms']]]
+        ['k_41', ['K', ['../class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02', 1, 'InputOutput']]],
+        ['key_42', ['key', ['../class_entry.html#a1a9d3eb85017a25b3365cf3920f34282', 1, 'Entry']]],
+        ['kwaymergesort_43', ['kWayMergeSort', ['../class_algorithms_and_min_heap.html#a0c473dfe55692a1e87481bcf0a5f6e56', 1, 'AlgorithmsAndMinHeap']]]
     ];

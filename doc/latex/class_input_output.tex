@@ -42,7 +42,7 @@ static int \mbox{\hyperlink{class_input_output_a910146926f54a19018302e8d036a4f09
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename K $>$ }\\static K \mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} (std\+::istream \&is, const std\+::function$<$ bool(std\+::string \&)$>$ \&checking\+Function, const std\+::function$<$ K(const char $\ast$)$>$ \&return\+Function)
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{class_input_output_a2c351b772f694d9549b0fd67b7705d80}{get\+Checked}} (std\+::istream \&is, const std\+::function$<$ bool(std\+::string \&)$>$ \&checking\+Function, const std\+::function$<$ T(const char $\ast$)$>$ \&return\+Function)
 \begin{DoxyCompactList}\small\item\em This method gets an input from an {\ttfamily input-\/stream} {\ttfamily is}, and after that, {\itshape checks} whether the input gotten is legal by checking it with a specific function\+: {\ttfamily checking\+Function}. In case the input was found as legal, then we manipulate the checked input with the {\ttfamily return\+Function}, and its {\ttfamily return} value is set to be this method\textquotesingle{}s return value. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_input_output_a809dd446bd5748572e0c812325da33e8}{check\+Int\+Input}} (std\+::string \&input)
 \begin{DoxyCompactList}\small\item\em This method receives as a parameter a {\ttfamily std\+::string} and checks whether it is a legal {\bfseries{Int}}. \end{DoxyCompactList}\item 
@@ -189,8 +189,8 @@ Constructs a {\ttfamily new} {\itshape \mbox{\hyperlink{class_input_output}{Inpu
 \index{InputOutput@{InputOutput}!getChecked@{getChecked}}
 \index{getChecked@{getChecked}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{getChecked()}{getChecked()}}
-{\footnotesize\ttfamily template$<$typename K $>$ \\
-static K Input\+Output\+::get\+Checked (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{const std\+::function$<$ bool(std\+::string \&)$>$ \&}]{checking\+Function,  }\item[{const std\+::function$<$ K(const char $\ast$)$>$ \&}]{return\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static T Input\+Output\+::get\+Checked (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{const std\+::function$<$ bool(std\+::string \&)$>$ \&}]{checking\+Function,  }\item[{const std\+::function$<$ T(const char $\ast$)$>$ \&}]{return\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -198,7 +198,7 @@ This method gets an input from an {\ttfamily input-\/stream} {\ttfamily is}, and
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em K} & is the type of the value to get. \\
+{\em T} & is the type of the value to get. \\
 \hline
 \end{DoxyTemplParams}
 

@@ -20,6 +20,8 @@ Inheritance diagram for Min\+Heap$<$ K, V $>$\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_min_heap_ad33a31874c9406b784c3c40a158cd501}{Min\+Heap}} (\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$array\+To\+Build\+From, int size\+Of\+Array\+To\+Build\+From)
 \begin{DoxyCompactList}\small\item\em Constructor, initializes the {\itshape array}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_min_heap_ad7b6335a707b33ba813911d9396c40a6}{Min\+Heap}} (int \mbox{\hyperlink{class_min_heap_a6e37d28efb033ff005ad704809af28b4}{physical\+Size}})
+\begin{DoxyCompactList}\small\item\em Constructor, sets the {\ttfamily physical\+Size} of the {\itshape array} to be {\ttfamily physical\+Size}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}{Min\+Heap}} ()=default
 \begin{DoxyCompactList}\small\item\em Default empty constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_min_heap_a6041d18dee6992810ede4a3444b31738}{$\sim$\+Min\+Heap}} ()
@@ -99,7 +101,7 @@ Tal Yacob, ID\+: 208632778.
 \mbox{\Hypertarget{class_min_heap_ad33a31874c9406b784c3c40a158cd501}\label{class_min_heap_ad33a31874c9406b784c3c40a158cd501}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!MinHeap@{MinHeap}}
 \index{MinHeap@{MinHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
-\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
 \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, V $>$ $\ast$}]{array\+To\+Build\+From,  }\item[{int}]{size\+Of\+Array\+To\+Build\+From }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
@@ -117,10 +119,29 @@ Builds a {\bfseries{Minimum-\/\+Heap}} by giving an {\ttfamily array\+To\+Build\
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_min_heap_a3aeffb1e6116afdbc3981e0b2280ecb3}{build\+Heap}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_min_heap_ad7b6335a707b33ba813911d9396c40a6}\label{class_min_heap_ad7b6335a707b33ba813911d9396c40a6}} 
+\index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!MinHeap@{MinHeap}}
+\index{MinHeap@{MinHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}\item[{int}]{physical\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor, sets the {\ttfamily physical\+Size} of the {\itshape array} to be {\ttfamily physical\+Size}. 
+
+\begin{DoxyNote}{Note}
+the content of the {\itshape array} remains empty. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em physical\+Size} & set the {\ttfamily physical\+Size} of the array to be this size. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}\label{class_min_heap_a8cfd4f3ec701187c24893f6d4a9063d8}} 
 \index{MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}!MinHeap@{MinHeap}}
 \index{MinHeap@{MinHeap}!MinHeap$<$ K, V $>$@{MinHeap$<$ K, V $>$}}
-\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{MinHeap()}{MinHeap()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
 \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, V $>$\+::\mbox{\hyperlink{class_min_heap}{Min\+Heap}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
