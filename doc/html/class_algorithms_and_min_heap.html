@@ -128,8 +128,8 @@
                 <td class="mdescLeft">&#160;</td>
                 <td class="mdescRight">This algorithm sorts the
                     <code>array</code> given, by dividing it to <code>k</code>
-                    <code>smaller arrays</code>. Sorting each of them. And
-                    finally <em>merging</em> them together. <a
+                    <code>smaller arrays</code>. Then for each <code>small
+                        array</code>: <a
                             href="class_algorithms_and_min_heap.html#a0c473dfe55692a1e87481bcf0a5f6e56">More...</a><br/>
                 </td>
             </tr>
@@ -223,6 +223,33 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
+        <a name="details" id="details"></a>
+        <h2 class="groupheader">Detailed Description</h2>
+        <div class="textblock"><p>This class bundles all the methods that
+            require to <code>include</code> the <code>algorithm</code> methods
+            in the program, and the <code><a class="el"
+                                             href="class_min_heap.html"
+                                             title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a></code>
+            class together.</p>
+            <dl class="section author">
+                <dt>Author</dt>
+                <dd>Tal Yacob, ID: 208632778.</dd>
+            </dl>
+            <dl class="section version">
+                <dt>Version</dt>
+                <dd>1.0</dd>
+            </dl>
+            <dl class="section see">
+                <dt>See also</dt>
+                <dd><a class="el" href="classmy__algorithms.html"
+                       title="this class bundles together all the algorithm methods in the program.">my_algorithms</a>
+                </dd>
+                <dd>
+                    <a class="el" href="class_min_heap.html"
+                       title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a>
+                </dd>
+            </dl>
+        </div>
         <h2 class="groupheader">Member Function Documentation</h2>
         <a id="ab6c31a97ad826c56a8a1bb90d9f828c1"></a>
         <h2 class="memtitle"><span class="permalink"><a
@@ -494,8 +521,55 @@
 
                 <p>This algorithm sorts the <code>array</code> given, by
                     dividing it to <code>k</code> <code>smaller arrays</code>.
-                    Sorting each of them. And finally <em>merging</em> them
-                    together. </p>
+                    Then for each <code>small array</code>: </p>
+                <ul>
+                    <li>Sort the array.</li>
+                    <li><code>insert</code> the <code>first</code> element in
+                        the array to the <code>Minimum-Heap</code> provided.
+                    </li>
+                </ul>
+                <p>Then, for <code>size</code> number of times: </p>
+                <ul>
+                    <li>Invoke the <code><a class="el"
+                                            href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930"
+                                            title="Deletes the minimal element from the heap, and returns it.">MinHeap.deleteMin()</a></code>
+                        method to get the <code>smallest</code> element in the
+                        <a class="el" href="class_min_heap.html"
+                           title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a>,
+                        and insert it to the <code>resultArray</code>.
+                    </li>
+                    <li>determine the specific <code>small array</code> from
+                        which that element came from, and extract another the
+                        next <code>smallest</code> element in it to the <code><a
+                                class="el" href="class_min_heap.html"
+                                title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a></code>,
+                        instead of the removed element.
+                    </li>
+                </ul>
+                <p>The method handles 3 arrays: </p>
+                <ul>
+                    <li>(K *) resultArray - is the result array.</li>
+                    <li>(K **) resultArray - is an array that stores the start
+                        <code>location</code> of each <code>small array</code>.
+                    </li>
+                    <li>(int *) smallArraySizes - is an array that stores the
+                        <code>size</code> of each <code>small array</code>. The
+                        method creates a <code><a class="el"
+                                                  href="class_min_heap.html"
+                                                  title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a></code>:
+                        This <code><a class="el" href="class_min_heap.html"
+                                      title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a></code>'s
+                        elements are pointers to <code>Entries</code> such that
+                        each <code><a class="el" href="class_entry.html"
+                                      title="This class represents a general entry, which is composed from a key and a value.">Entry</a></code>
+                        is composed of a <code>key</code> and a <code>value.
+                            Its</code>key<code>, stands for the smallest element
+                            in each</code>small array<code>- and its</code>value<code>stands
+                            for an *int* number that determines the
+                            specific</code>small array` from which that element
+                        came from.
+                    </li>
+                </ul>
                 <dl class="section note">
                     <dt>Note</dt>
                     <dd>in case <code>k</code> is smaller than the
@@ -555,6 +629,14 @@
                 <dl class="section see">
                     <dt>See also</dt>
                     <dd>my_algorithms::quickSort(K *, int)</dd>
+                    <dd>
+                        <a class="el" href="class_min_heap.html"
+                           title="This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...">MinHeap</a>
+                    </dd>
+                    <dd>
+                        <a class="el" href="class_entry.html"
+                           title="This class represents a general entry, which is composed from a key and a value.">Entry</a>
+                    </dd>
                 </dl>
 
             </div>

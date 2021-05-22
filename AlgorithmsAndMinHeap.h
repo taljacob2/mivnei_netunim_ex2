@@ -6,15 +6,49 @@
 #define MIVNEI_NETUNIM_EX1_ALGORITHMSANDMINHEAP_H
 
 #include "MinHeap.h"
+
+/**
+ * This class bundles all the methods that require to `include` the
+ * `algorithm` methods in the program, and the `MinHeap` class together.
+ *
+ * @author Tal Yacob, ID: 208632778.
+ * @version 1.0
+ * @see my_algorithms
+ * @see MinHeap
+ */
 class AlgorithmsAndMinHeap {
   public:
     /**
      * @brief This algorithm sorts the @p array given, by dividing it to @p k
-     *        `smaller arrays`. Sorting each of them. And finally *merging* them
-     *        together.
+     *        `smaller arrays`.
+     *        Then for each `small array`:
+     *          @li Sort the array.
+     *          @li `insert` the `first` element in the array to the `Minimum-Heap`
+     *          provided.
+     *
+     *        Then, for `size` number of times:
+     *          @li Invoke the `MinHeap.deleteMin()` method to get the `smallest`
+     *          element in the MinHeap, and insert it to the `resultArray`.
+     *          @li Determine the specific `small array` from which that element
+     *          came from, and extract another the next `smallest` element in
+     *          it to the `MinHeap`, instead of the removed element.
+     *
+     * The method handles 3 arrays:
+     *      @li (K *) resultArray - is the result array.
+     *      @li (K **) resultArray - is an array that stores the start
+     *      `location` of each `small array`.
+     *      @li (int *) smallArraySizes - is an array that stores the `size` of
+     *      each `small array`.
+     * The method creates a `MinHeap`:
+     *      This `MinHeap`'s elements are pointers to `Entries` such that
+     *      each `Entry` is composed of a `key` and a `value.
+     *      Its `key`, stands for the smallest element in each `small array` -
+     *      and its `value` stands for an *int* number that determines the
+     *      specific `small array` from which that element came from.
      *
      * @note in case @p k is smaller than the @p size of the @p array given,
-     *       then the method invokes @link my_algorithms::quickSort(K *, int) @endlink.
+     *       then the method invokes @link my_algorithms::quickSort(K *, int)
+     *       @endlink.
      * @note In case @p k equals to `2`, this algorithm is actually the known
      *       `MergeSort` algorithm.
      * @attention the @p array given *must* be dynamically allocated.
@@ -23,6 +57,8 @@ class AlgorithmsAndMinHeap {
      * @param size the size of the @p array to sort.
      * @param k the *division* parameter, when sorting the array.
      * @see my_algorithms::quickSort(K *, int)
+     * @see MinHeap
+     * @see Entry
      */
     template<typename K> static void kWayMergeSort(K **array, int size, int k) {
         if (size < k) {
@@ -34,8 +70,6 @@ class AlgorithmsAndMinHeap {
         K ** smallArrayLocations = new K *[k];
         int *smallArraySizes     = new int[k];
 
-
-        /* XXX Note: (int)`VALUE` = (kGiven - currK) */
         MinHeap<K, int> minHeap(k);
 
         /*

@@ -8,7 +8,7 @@
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a0c473dfe55692a1e87481bcf0a5f6e56}{k\+Way\+Merge\+Sort}} (K $\ast$$\ast$array, int size, int k)
-\begin{DoxyCompactList}\small\item\em This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Sorting each of them. And finally {\itshape merging} them together. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Then for each {\ttfamily small array}\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +18,22 @@
 \item 
 {\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a3f0c56741f46c470dd920d117ac96064}{step\+Ahead\+Small\+Array}} (K $\ast$$\ast$small\+Array\+Locations, int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_entry}{Entry}}$<$ K, int $>$ $\ast$deleted\+Element)
 \begin{DoxyCompactList}\small\item\em This {\itshape private} method is invoked only when we have removed an element from a {\ttfamily small-\/array}. The method ensures to {\ttfamily step-\/ahead} the {\ttfamily location} of the according {\ttfamily small-\/array} location, and to decrease by {\ttfamily 1} the {\ttfamily size} of the according {\ttfamily small-\/array} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class bundles all the methods that require to {\ttfamily include} the {\ttfamily algorithm} methods in the program, and the {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}} class together.
+
+\begin{DoxyAuthor}{Author}
+Tal Yacob, ID\+: 208632778. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classmy__algorithms}{my\+\_\+algorithms}} 
+
+\mbox{\hyperlink{class_min_heap}{Min\+Heap}} 
+\end{DoxySeeAlso}
 
 
 \doxysubsection{Member Function Documentation}
@@ -67,8 +83,14 @@ static void Algorithms\+And\+Min\+Heap\+::k\+Way\+Merge\+Sort (\begin{DoxyParamC
 
 
 
-This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Sorting each of them. And finally {\itshape merging} them together. 
+This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Then for each {\ttfamily small array}\+: 
 
+\begin{DoxyItemize}
+\item Sort the array. \item {\ttfamily insert} the {\ttfamily first} element in the array to the {\ttfamily Minimum-\/\+Heap} provided.\end{DoxyItemize}
+Then, for {\ttfamily size} number of times\+: \begin{DoxyItemize}
+\item Invoke the {\ttfamily \mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{Min\+Heap.\+delete\+Min()}}} method to get the {\ttfamily smallest} element in the \mbox{\hyperlink{class_min_heap}{Min\+Heap}}, and insert it to the {\ttfamily result\+Array}. \item determine the specific {\ttfamily small array} from which that element came from, and extract another the next {\ttfamily smallest} element in it to the {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}, instead of the removed element.\end{DoxyItemize}
+The method handles 3 arrays\+: \begin{DoxyItemize}
+\item (K $\ast$) result\+Array -\/ is the result array. \item (K $\ast$$\ast$) result\+Array -\/ is an array that stores the start {\ttfamily location} of each {\ttfamily small array}. \item (int $\ast$) small\+Array\+Sizes -\/ is an array that stores the {\ttfamily size} of each {\ttfamily small array}. The method creates a {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}\+: This {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}\textquotesingle{}s elements are pointers to {\ttfamily Entries} such that each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} is composed of a {\ttfamily key} and a {\ttfamily value. Its}key{\ttfamily , stands for the smallest element in each}small array{\ttfamily -\/ and its}value{\ttfamily stands for an $\ast$int$\ast$ number that determines the specific}small array\`{} from which that element came from.\end{DoxyItemize}
 \begin{DoxyNote}{Note}
 in case {\ttfamily k} is smaller than the {\ttfamily size} of the {\ttfamily array} given, then the method invokes \mbox{\hyperlink{}{my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, int)}}. 
 
@@ -93,6 +115,10 @@ the {\ttfamily array} given {\itshape must} be dynamically allocated.
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, int) 
+
+\mbox{\hyperlink{class_min_heap}{Min\+Heap}} 
+
+\mbox{\hyperlink{class_entry}{Entry}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_algorithms_and_min_heap_a3f0c56741f46c470dd920d117ac96064}\label{class_algorithms_and_min_heap_a3f0c56741f46c470dd920d117ac96064}} 
 \index{AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}!stepAheadSmallArray@{stepAheadSmallArray}}
