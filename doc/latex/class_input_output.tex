@@ -25,7 +25,11 @@ const std\+::string \& \mbox{\hyperlink{class_input_output_ac8b16ee8f70494d3343f
 const std\+::string \& \mbox{\hyperlink{class_input_output_aa84713865f7c47e08856db0584549391}{get\+Output\+File\+Name}} () const
 \item 
 int $\ast$ \mbox{\hyperlink{class_input_output_ab6ff572bf1793528bba2265d1a52db58}{get\+Int\+Array\+From\+Input\+File}} ()
-\begin{DoxyCompactList}\small\item\em This method gets the {\ttfamily array} specified in the {\itshape INPUT\+\_\+\+FILE} provided by the {\itshape INPUT\+\_\+\+FILE\+\_\+\+NAME}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method gets the {\ttfamily array} specified in the {\itshape INPUT\+\_\+\+FILE} provided by the {\itshape INPUT\+\_\+\+FILE\+\_\+\+NAME}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_input_output_a636c87fad4c31a39631e8306c7f127f8}{print\+Array\+To\+File}} (T $\ast$array, int size)
+\begin{DoxyCompactList}\small\item\em Prints an {\ttfamily array} to the file named {\itshape OUTPUT\+\_\+\+FILE\+\_\+\+NAME}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_input_output_a95916b643daff5057dcf36f81598fd33}{print\+Array\+To\+File}} (T $\ast$array, int size, char delimiter)
+\begin{DoxyCompactList}\small\item\em Prints an {\ttfamily array} to the file named {\itshape OUTPUT\+\_\+\+FILE\+\_\+\+NAME}, such that after each element printed, we print a {\ttfamily delimiter} {\ttfamily char}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,6 +37,14 @@ static void \mbox{\hyperlink{class_input_output_ab82445548a1c63be10bc08cc075b8e8
 \item 
 static \mbox{\hyperlink{class_input_output}{Input\+Output}} $\ast$ \mbox{\hyperlink{class_input_output_abf558caf1b249af58f38255f98a2f2ee}{factory\+Input\+Output}} ()
 \begin{DoxyCompactList}\small\item\em This method serves as a {\bfseries{Factory}} method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_input_output_ab2a3b978609262c484453d7a40efe7a9}{print\+Array}} (std\+::ostream \&os, T $\ast$array, int size)
+\begin{DoxyCompactList}\small\item\em Prints an {\ttfamily array} to an {\ttfamily output-\/stream}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_input_output_a9cb639d462903c7524b3a2a72690e681}{print\+Array}} (std\+::ostream \&os, T $\ast$array, int size, char delimiter)
+\begin{DoxyCompactList}\small\item\em Prints an {\ttfamily array} to an {\ttfamily output-\/stream}, such that after each element printed, we print a {\ttfamily delimiter} {\ttfamily char}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_input_output_a1b93816ba8d8908f9da86957d845404f}{print\+Array\+To\+File}} (std\+::string \&output\+File\+Name, T $\ast$array, int size)
+\begin{DoxyCompactList}\small\item\em Prints an {\ttfamily array} to an {\ttfamily output} file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_input_output_a2633f0f58c0df0ef0f344ce4c7949b33}{print\+Array\+To\+File}} (std\+::string \&output\+File\+Name, T $\ast$array, int size, char delimiter)
+\begin{DoxyCompactList}\small\item\em Prints an {\ttfamily array} to an {\ttfamily output} file, such that after each element printed, we print a {\ttfamily delimiter} {\ttfamily char}. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_input_output_a6e2dde4714e5236476b5b17dfc620bab}{get\+Checked\+Int}} (std\+::istream \&is)
 \begin{DoxyCompactList}\small\item\em This method receives an {\ttfamily input} from an {\ttfamily input-\/stream} and checks whether it is a legal {\bfseries{Int}}. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_input_output_aed18759c66beb9fe5091ad7b1fb07807}{get\+Checked\+Unsigned\+Int}} (std\+::istream \&is)
@@ -352,6 +364,185 @@ the {\itshape int} array specified in the {\itshape INPUT\+\_\+\+FILE} .
 \doxysubsubsection{\texorpdfstring{getOutputFileName()}{getOutputFileName()}}
 {\footnotesize\ttfamily const std\+::string \& Input\+Output\+::get\+Output\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\mbox{\Hypertarget{class_input_output_ab2a3b978609262c484453d7a40efe7a9}\label{class_input_output_ab2a3b978609262c484453d7a40efe7a9}} 
+\index{InputOutput@{InputOutput}!printArray@{printArray}}
+\index{printArray@{printArray}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printArray()}{printArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Input\+Output\+::print\+Array (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{T $\ast$}]{array,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Prints an {\ttfamily array} to an {\ttfamily output-\/stream}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the {\ttfamily type} of elements in the {\ttfamily array} given. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & the {\ttfamily output-\/stream} to print the array to. \\
+\hline
+{\em array} & the array to be printed. \\
+\hline
+{\em size} & the size of the {\ttfamily array} to be printed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_input_output_a9cb639d462903c7524b3a2a72690e681}\label{class_input_output_a9cb639d462903c7524b3a2a72690e681}} 
+\index{InputOutput@{InputOutput}!printArray@{printArray}}
+\index{printArray@{printArray}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printArray()}{printArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Input\+Output\+::print\+Array (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{char}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Prints an {\ttfamily array} to an {\ttfamily output-\/stream}, such that after each element printed, we print a {\ttfamily delimiter} {\ttfamily char}. 
+
+\begin{DoxyNote}{Note}
+the {\ttfamily delimiter} {\ttfamily char} is {\itshape not} printed after the {\ttfamily last} element. 
+\end{DoxyNote}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the {\ttfamily type} of elements in the {\ttfamily array} given. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & the {\ttfamily output-\/stream} to print the array to. \\
+\hline
+{\em array} & the array to be printed. \\
+\hline
+{\em size} & the size of the {\ttfamily array} to be printed. \\
+\hline
+{\em delimiter} & the {\ttfamily char} to be printed in between the printed elements. Means, this method prints this {\ttfamily char} after each element but the {\ttfamily last} element. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_input_output_a1b93816ba8d8908f9da86957d845404f}\label{class_input_output_a1b93816ba8d8908f9da86957d845404f}} 
+\index{InputOutput@{InputOutput}!printArrayToFile@{printArrayToFile}}
+\index{printArrayToFile@{printArrayToFile}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printArrayToFile()}{printArrayToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Input\+Output\+::print\+Array\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{output\+File\+Name,  }\item[{T $\ast$}]{array,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Prints an {\ttfamily array} to an {\ttfamily output} file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the {\ttfamily type} of elements in the {\ttfamily array} given. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the array to be printed. \\
+\hline
+{\em size} & the size of the {\ttfamily array} to be printed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & in case the {\itshape file} specified by the name\+: {\ttfamily output\+File\+Name} could not be opened. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_input_output_a2633f0f58c0df0ef0f344ce4c7949b33}\label{class_input_output_a2633f0f58c0df0ef0f344ce4c7949b33}} 
+\index{InputOutput@{InputOutput}!printArrayToFile@{printArrayToFile}}
+\index{printArrayToFile@{printArrayToFile}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printArrayToFile()}{printArrayToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void Input\+Output\+::print\+Array\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{output\+File\+Name,  }\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{char}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Prints an {\ttfamily array} to an {\ttfamily output} file, such that after each element printed, we print a {\ttfamily delimiter} {\ttfamily char}. 
+
+\begin{DoxyNote}{Note}
+the {\ttfamily delimiter} {\ttfamily char} is {\itshape not} printed after the {\ttfamily last} element. 
+\end{DoxyNote}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the {\ttfamily type} of elements in the {\ttfamily array} given. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File\+Name} & the name of the {\ttfamily output} file to print the array to. \\
+\hline
+{\em array} & the array to be printed. \\
+\hline
+{\em size} & the size of the {\ttfamily array} to be printed. \\
+\hline
+{\em delimiter} & the {\ttfamily char} to be printed in between the printed elements. Means, this method prints this {\ttfamily char} after each element but the {\ttfamily last} element. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & in case the {\itshape file} specified by the name\+: {\ttfamily output\+File\+Name} could not be opened. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_input_output_a636c87fad4c31a39631e8306c7f127f8}\label{class_input_output_a636c87fad4c31a39631e8306c7f127f8}} 
+\index{InputOutput@{InputOutput}!printArrayToFile@{printArrayToFile}}
+\index{printArrayToFile@{printArrayToFile}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printArrayToFile()}{printArrayToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Input\+Output\+::print\+Array\+To\+File (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prints an {\ttfamily array} to the file named {\itshape OUTPUT\+\_\+\+FILE\+\_\+\+NAME}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the {\ttfamily type} of elements in the {\ttfamily array} given. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the array to be printed. \\
+\hline
+{\em size} & the size of the {\ttfamily array} to be printed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & in case the {\itshape file} specified by the name\+: {\ttfamily OUTPUT\+\_\+\+FILE\+\_\+\+NAME} could not be opened. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_input_output_a95916b643daff5057dcf36f81598fd33}\label{class_input_output_a95916b643daff5057dcf36f81598fd33}} 
+\index{InputOutput@{InputOutput}!printArrayToFile@{printArrayToFile}}
+\index{printArrayToFile@{printArrayToFile}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{printArrayToFile()}{printArrayToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Input\+Output\+::print\+Array\+To\+File (\begin{DoxyParamCaption}\item[{T $\ast$}]{array,  }\item[{int}]{size,  }\item[{char}]{delimiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prints an {\ttfamily array} to the file named {\itshape OUTPUT\+\_\+\+FILE\+\_\+\+NAME}, such that after each element printed, we print a {\ttfamily delimiter} {\ttfamily char}. 
+
+\begin{DoxyNote}{Note}
+the {\ttfamily delimiter} {\ttfamily char} is {\itshape not} printed after the {\ttfamily last} element. 
+\end{DoxyNote}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the {\ttfamily type} of elements in the {\ttfamily array} given. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the array to be printed. \\
+\hline
+{\em size} & the size of the {\ttfamily array} to be printed. \\
+\hline
+{\em delimiter} & the {\ttfamily char} to be printed in between the printed elements. Means, this method prints this {\ttfamily char} after each element but the {\ttfamily last} element. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & in case the {\itshape file} specified by the name\+: {\ttfamily OUTPUT\+\_\+\+FILE\+\_\+\+NAME} could not be opened. \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{class_input_output_ab82445548a1c63be10bc08cc075b8e8b}\label{class_input_output_ab82445548a1c63be10bc08cc075b8e8b}} 
 \index{InputOutput@{InputOutput}!receiveInput@{receiveInput}}
 \index{receiveInput@{receiveInput}!InputOutput@{InputOutput}}

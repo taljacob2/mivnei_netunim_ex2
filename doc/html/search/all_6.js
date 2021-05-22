@@ -1,56 +1,17 @@
-// -*- C++ -*-
-
-// Copyright (C) 2005-2019 Free Software Foundation, Inc.
-//
-// This file is part of the GNU ISO C++ Library.  This library is free
-// software; you can redistribute it and/or modify it under the terms
-// of the GNU General Public License as published by the Free Software
-// Foundation; either version 3, or (at your option) any later
-// version.
-
-// This library is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.
-
-// Under Section 7 of GPL version 3, you are granted additional
-// permissions described in the GCC Runtime Library Exception, version
-// 3.1, as published by the Free Software Foundation.
-
-// You should have received a copy of the GNU General Public License and
-// a copy of the GCC Runtime Library Exception along with this program;
-// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
-// <http://www.gnu.org/licenses/>.
-
-// Copyright (C) 2004 Ami Tavory and Vladimir Dreizin, IBM-HRL.
-
-// Permission to use, copy, modify, sell, and distribute this software
-// is hereby granted without fee, provided that the above copyright
-// notice appears in all copies, and that both that copyright notice
-// and this permission notice appear in supporting documentation. None
-// of the above authors, nor IBM Haifa Research Laboratories, make any
-// representation about the suitability of this software for any
-// purpose. It is provided "as is" without express or implied
-// warranty.
-
-/**
- * @file splay_tree_/traits.hpp
- * Contains an implementation for splay_tree_.
- */
-
-#ifndef
-PB_DS_SPLAY_TREE_NODE_AND_IT_TRAITS_HPP
-#define
-PB_DS_SPLAY_TREE_NODE_AND_IT_TRAITS_HPP
-
-#include < ext / pb_ds / detail / splay_tree_ / node.hpp >
-
-namespace
-__gnu_pbds
-{
-    namespace
-    detail
-    {
-        /// Specialization.
-        /// @ingroup traits
-        template
+var searchData =
+    [
+        ['getchecked_21', ['getChecked', ['../class_input_output.html#a2c351b772f694d9549b0fd67b7705d80', 1, 'InputOutput']]],
+        ['getcheckedint_22', ['getCheckedInt', ['../class_input_output.html#a6e2dde4714e5236476b5b17dfc620bab', 1, 'InputOutput']]],
+        ['getcheckedpositiveint_23', ['getCheckedPositiveInt', ['../class_input_output.html#a910146926f54a19018302e8d036a4f09', 1, 'InputOutput']]],
+        ['getcheckedunsignedint_24', ['getCheckedUnsignedInt', ['../class_input_output.html#aed18759c66beb9fe5091ad7b1fb07807', 1, 'InputOutput']]],
+        ['getinputfilename_25', ['getInputFileName', ['../class_input_output.html#ac8b16ee8f70494d3343f152c32aa564f', 1, 'InputOutput']]],
+        ['getintarrayfrominputfile_26', ['getIntArrayFromInputFile', ['../class_input_output.html#ab6ff572bf1793528bba2265d1a52db58', 1, 'InputOutput']]],
+        ['getk_27', ['getK', ['../class_input_output.html#a9b396cc57be1c21fbd557d6e3dbd0c0b', 1, 'InputOutput']]],
+        ['getkey_28', ['getKey', ['../class_entry.html#a61500654198dacda3120c6cc0d644298', 1, 'Entry']]],
+        ['getmiddlearray_5fdivision_5ftheithelementinitssize_29', ['getMiddleArray_division_TheIthElementInItsSize', ['../classmy__algorithms.html#a0c99008229b4de5eabb510f9afbdef3f', 1, 'my_algorithms']]],
+        ['getmiddleelementinasortedarray_30', ['getMiddleElementInASortedArray', ['../classmy__algorithms.html#ac2204a67bf555e89a2245e492a2016fc', 1, 'my_algorithms']]],
+        ['getn_31', ['getN', ['../class_input_output.html#afad905654f147ca5d88a978f6a27e461', 1, 'InputOutput']]],
+        ['getoutputfilename_32', ['getOutputFileName', ['../class_input_output.html#aa84713865f7c47e08856db0584549391', 1, 'InputOutput']]],
+        ['gettakenmiddlesarraypivotelementandindex_5fdivision_5ftheithelementinitssize_33', ['getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize', ['../classmy__algorithms.html#a75dba142631a3c5a7a8a3cb595447b4a', 1, 'my_algorithms']]],
+        ['getvalue_34', ['getValue', ['../class_entry.html#a4278dda2b25de410992701fcf589f511', 1, 'Entry']]]
+    ];

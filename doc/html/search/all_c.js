@@ -1,42 +1,11 @@
-//===-- sanitizer/common_interface_defs.h -----------------------*- C++ -*-===//
-//
-// This file is distributed under the University of Illinois Open Source
-// License. See LICENSE.TXT for details.
-//
-//===----------------------------------------------------------------------===//
-//
-// Common part of the public sanitizer interface.
-//===----------------------------------------------------------------------===//
-
-#ifndef
-SANITIZER_COMMON_INTERFACE_DEFS_H
-#define
-SANITIZER_COMMON_INTERFACE_DEFS_H
-
-#include < stddef.h >
-#include < stdint.h >
-
-// GCC does not understand __has_feature.
-#if
-!defined(__has_feature)
-# define
-__has_feature(x)
-0
-#endif
-
-#ifdef
-__cplusplus
-extern
-"C"
-{
-    #endif
-    // Arguments for __sanitizer_sandbox_on_notify() below.
-    typedef
-    struct
-    {
-        // Enable sandbox support in sanitizer coverage.
-        int
-        coverage_sandboxed;
-// File descriptor to write coverage data to. If -1 is passed, a file will
-// be pre-opened by __sanitizer_sandobx_on_notify(). This field has no
-// effect if coverage_sandbo
+var searchData =
+    [
+        ['operator_21_3d_59', ['operator!=', ['../class_entry.html#aab278ccd8c0e5ede4ab6dee06b0b5699', 1, 'Entry']]],
+        ['operator_3c_60', ['operator&lt;', ['../class_entry.html#a9d5192da08d2f7e8de9a330dff7e87b3', 1, 'Entry']]],
+        ['operator_3c_3c_61', ['operator&lt;&lt;', ['../class_entry.html#a9e76d0ea660b96a4485a97f0d840a599', 1, 'Entry::operator&lt;&lt;()'], ['../class_min_heap.html#a81a7799f8217c5db84b7eec767932d2f', 1, 'MinHeap::operator&lt;&lt;()']]],
+        ['operator_3c_3d_62', ['operator&lt;=', ['../class_entry.html#aea2336f5f206a1f43326e21471585858', 1, 'Entry']]],
+        ['operator_3d_3d_63', ['operator==', ['../class_entry.html#a97cebebb62941bfd542418937ad86b54', 1, 'Entry']]],
+        ['operator_3e_64', ['operator&gt;', ['../class_entry.html#a95751e03b4b7a493916be90d61a01eb5', 1, 'Entry']]],
+        ['operator_3e_3d_65', ['operator&gt;=', ['../class_entry.html#a7b3643229f885df6916f3034e2e05f8e', 1, 'Entry']]],
+        ['output_5ffile_5fname_66', ['OUTPUT_FILE_NAME', ['../class_input_output.html#adc15a5fa052c379f0825da1cbca984a7', 1, 'InputOutput']]]
+    ];

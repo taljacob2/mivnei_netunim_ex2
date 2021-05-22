@@ -1,24 +1,23 @@
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved. 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0  
- 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, 
-MERCHANTABLITY OR NON-INFRINGEMENT. 
- 
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-
-
-/// <reference no-default-lib="true"/>
-
-
-interface
-ObjectConstructor
-{
-/**
- * Returns an array of valu
+var files_dup =
+    [
+        ["AlgorithmsAndMinHeap.h", "_algorithms_and_min_heap_8h.html", [
+            ["AlgorithmsAndMinHeap", "class_algorithms_and_min_heap.html", "class_algorithms_and_min_heap"]
+        ]],
+        ["Entry.h", "_entry_8h.html", [
+            ["Entry", "class_entry.html", "class_entry"]
+        ]],
+        ["InputOutput.cpp", "_input_output_8cpp.html", null],
+        ["InputOutput.h", "_input_output_8h.html", [
+            ["InputOutput", "class_input_output.html", "class_input_output"]
+        ]],
+        ["main.cpp", "main_8cpp.html", "main_8cpp"],
+        ["MinHeap.h", "_min_heap_8h.html", [
+            ["MinHeap", "class_min_heap.html", "class_min_heap"]
+        ]],
+        ["MinHeapADT.h", "_min_heap_a_d_t_8h.html", [
+            ["MinHeapADT", "class_min_heap_a_d_t.html", "class_min_heap_a_d_t"]
+        ]],
+        ["my_algorithms.h", "my__algorithms_8h.html", [
+            ["my_algorithms", "classmy__algorithms.html", "classmy__algorithms"]
+        ]]
+    ];
