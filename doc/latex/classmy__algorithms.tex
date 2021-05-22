@@ -60,7 +60,7 @@ this class bundles together all the algorithm methods in the program.
 {\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_aa7994ba5673d4363c3d19eb81c7dab76}{quick\+Sort\+Recursive}} (T $\ast$array, int lowest\+Index\+Possible, int highest\+Index\+Possible)
 \begin{DoxyCompactList}\small\item\em sorts an array using the {\ttfamily quick-\/sort} algorithm. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_aac54fef26ff556f642781a06baec848a}{divide\+Array\+To\+KSmaller\+Arrays}} (T $\ast$array, int size, int k, const std\+::function$<$ void(T $\ast$, int)$>$ \&for\+Each\+Small\+Array\+Function)
-\begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} smaller arrays, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided smaller arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -121,10 +121,10 @@ static void my\+\_\+algorithms\+::divide\+Array\+To\+KSmaller\+Arrays (\begin{Do
 
 
 
-This method divides a given {\ttfamily array} to {\ttfamily k} smaller arrays, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided smaller arrays. 
+This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. 
 
 \begin{DoxyNote}{Note}
-The method divides the given {\ttfamily array} such that the sizes of the smaller arrays are spread as equally as possible. 
+The method divides the given {\ttfamily array} such that the sizes of the {\ttfamily smaller arrays} are spread as equally as possible. 
 \end{DoxyNote}
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -133,7 +133,7 @@ The method divides the given {\ttfamily array} such that the sizes of the smalle
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em array} & the array to divide to {\ttfamily k} smaller arrays. \\
+{\em array} & the array to divide to {\ttfamily k} {\ttfamily smaller arrays}. \\
 \hline
 {\em size} & the size of the {\ttfamily array} given. \\
 \hline

@@ -8,12 +8,12 @@
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a0c473dfe55692a1e87481bcf0a5f6e56}{k\+Way\+Merge\+Sort}} (K $\ast$$\ast$array, int size, int k)
-\begin{DoxyCompactList}\small\item\em This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} smaller arrays. Sorting each of them. And finally {\itshape merging} them together. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Sorting each of them. And finally {\itshape merging} them together. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a1d0867f06a515d8f58010bcf5abd51b8}{divide\+Array\+To\+KSmaller\+Arrays}} (K $\ast$array, int size, int k, K $\ast$$\ast$small\+Array\+Locations, int $\ast$small\+Array\+Sizes, const std\+::function$<$ void(K $\ast$, int)$>$ \&for\+Each\+Small\+Array\+Function, \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, int $>$ \&min\+Heap)
-\begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} smaller arrays, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided smaller arrays. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_ab6c31a97ad826c56a8a1bb90d9f828c1}{delete\+Min\+And\+Check\+From\+Which\+Small\+Array}} (int size, K $\ast$$\ast$small\+Array\+Locations, int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, int $>$ \&min\+Heap, K $\ast$result\+Array)
 \item 
 {\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a3f0c56741f46c470dd920d117ac96064}{step\+Ahead\+Small\+Array}} (K $\ast$$\ast$small\+Array\+Locations, int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_entry}{Entry}}$<$ K, int $>$ $\ast$deleted\+Element)
@@ -37,10 +37,10 @@ static void Algorithms\+And\+Min\+Heap\+::divide\+Array\+To\+KSmaller\+Arrays (\
 
 
 
-This method divides a given {\ttfamily array} to {\ttfamily k} smaller arrays, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided smaller arrays. 
+This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. 
 
 \begin{DoxyNote}{Note}
-The method divides the given {\ttfamily array} such that the sizes of the smaller arrays are spread as equally as possible. 
+The method divides the given {\ttfamily array} such that the sizes of the {\ttfamily smaller arrays} are spread as equally as possible. 
 \end{DoxyNote}
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -49,7 +49,7 @@ The method divides the given {\ttfamily array} such that the sizes of the smalle
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em array} & the array to divide to {\ttfamily k} smaller arrays. \\
+{\em array} & the array to divide to {\ttfamily k} {\ttfamily smaller arrays}. \\
 \hline
 {\em size} & the size of the {\ttfamily array} given. \\
 \hline
@@ -67,7 +67,7 @@ static void Algorithms\+And\+Min\+Heap\+::k\+Way\+Merge\+Sort (\begin{DoxyParamC
 
 
 
-This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} smaller arrays. Sorting each of them. And finally {\itshape merging} them together. 
+This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Sorting each of them. And finally {\itshape merging} them together. 
 
 \begin{DoxyNote}{Note}
 in case {\ttfamily k} is smaller than the {\ttfamily size} of the {\ttfamily array} given, then the method invokes \mbox{\hyperlink{}{my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, int)}}. 

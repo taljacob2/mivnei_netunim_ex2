@@ -647,13 +647,13 @@ class my_algorithms {
 
   private:
     /**
-     * @brief This method divides a given @p array to @p k smaller arrays,
+     * @brief This method divides a given @p array to @p k `smaller arrays`,
      *        and invokes the @p forEachSmallArrayFunction function for
-     *        each of the divided smaller arrays.
+     *        each of the divided `smaller arrays`.
      * @note The method divides the given @p array such that the sizes of the
-     *       smaller arrays are spread as equally as possible.
+     *       `smaller arrays` are spread as equally as possible.
      * @tparam T the `type` of elements in the array given.
-     * @param array the array to divide to @p k smaller arrays.
+     * @param array the array to divide to @p k `smaller arrays`.
      * @param size the size of the @p array given.
      * @param k the division parameter.
      * @param forEachSmallArrayFunction this function is being invoked

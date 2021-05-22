@@ -10,7 +10,7 @@ class AlgorithmsAndMinHeap {
   public:
     /**
      * @brief This algorithm sorts the @p array given, by dividing it to @p k
-     *        smaller arrays. Sorting each of them. And finally *merging* them
+     *        `smaller arrays`. Sorting each of them. And finally *merging* them
      *        together.
      *
      * @note in case @p k is smaller than the @p size of the @p array given,
@@ -38,7 +38,7 @@ class AlgorithmsAndMinHeap {
         MinHeap<K, int> minHeap(k);
 
         /*
-         * Divide the array to K smaller arrays.
+         * Divide the array to K `smaller arrays`.
          * For each `small array`: - Sort the array.
          *                       - `insert` the `first` element in the array to
          *                         the `Minimum-Heap` provided.
@@ -52,23 +52,25 @@ class AlgorithmsAndMinHeap {
                                                 smallArraySizes, minHeap,
                                                 resultArray);
 
-        *array = my_algorithms::copyArray(resultArray, size);
+        /* BUG : check remove */
+        delete[] * array;
+        *array = resultArray;
 
         delete[] smallArrayLocations;
         delete[] smallArraySizes;
-        delete[] resultArray;
+        // delete[] resultArray;
     }
 
   private:
     /**
-     * @brief This method divides a given @p array to @p k smaller arrays,
+     * @brief This method divides a given @p array to @p k `smaller arrays`,
      *        and invokes the @p forEachSmallArrayFunction function for
-     *        each of the divided smaller arrays.
+     *        each of the divided `smaller arrays`.
      * @note The method divides the given @p array such that the sizes of the
-     *       smaller arrays are spread as equally as possible.
+     *       `smaller arrays` are spread as equally as possible.
      * @tparam K the `type` of elements in the array given.
      *           this would serve as the `key` type of the elements.
-     * @param array the array to divide to @p k smaller arrays.
+     * @param array the array to divide to @p k `smaller arrays`.
      * @param size the size of the @p array given.
      * @param k the division parameter.
      * @param forEachSmallArrayFunction this function is being invoked
