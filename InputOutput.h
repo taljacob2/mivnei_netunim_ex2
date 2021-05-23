@@ -21,7 +21,10 @@ class InputOutput {
     /// The number of elements provided.
     const int N;
 
-    /// The division parameter.
+    /**
+     * The division parameter - to how many `small arrays` the
+     * `given array` would be divided.
+     */
     const int K;
 
     /// The name of the `input` file.
@@ -46,6 +49,15 @@ class InputOutput {
 
     /* -- Main Methods -- */
   public:
+    /**
+     *
+     * @param N the size of the array in the `input` file.
+     * @param K the division parameter - to how many `small arrays` the
+     *          `given array` would be divided.
+     * @param inputFileName
+     * @param outputFileName
+     * @throws std::runtime_error if an `input` is in an `illegal` format.
+     */
     static void receiveInput(int &N, int &K, std::string &inputFileName,
                              std::string &outputFileName);
 
@@ -54,7 +66,8 @@ class InputOutput {
      *
      * Receives input:
      *      @li (int) N - the number of elements provided.
-     *      @li (int) K - the division parameter.
+     *      @li (int) K - the division parameter - to how many `small arrays`
+     *                    the `given array` would be divided.
      *      @li (std::string) INPUT_FILE_NAME - the name of the `inputFile`.
      *      @li (std::string) OUTPUT_FILE_NAME - the name of the `outputFile`.
      *
@@ -62,8 +75,11 @@ class InputOutput {
      *      @li Constructs a `new` *InputOutput* object from the given input, and
      *      returns it.
      * @return Constructs a `new` *InputOutput* object from the given input,
-     * and returns it.
+     *         and returns it.
+     * @throws std::runtime_error if an `input` is in an `illegal` format,
+     *         when receiving input in the `receiveInput` method.
      * @see InputOutput(int&, int&, std::string&, std::string&)
+     * @see receiveInput(int &, int &, std::string &, std::string &)
      */
     static InputOutput *factoryInputOutput();
 

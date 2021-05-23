@@ -10,13 +10,14 @@
  * @version 1.0
  */
 int main() {
-
-    /* Receive input, and create an InputOutput object. */
-    InputOutput *inputOutput = InputOutput::factoryInputOutput();
-
-    /* Extract array from the `input` file. */
-    int *arrayReceivedFromInputFile = nullptr;
+    InputOutput *inputOutput                = nullptr;
+    int *        arrayReceivedFromInputFile = nullptr;
     try {
+
+        /* Receive input, and create an InputOutput object. */
+        inputOutput = InputOutput::factoryInputOutput();
+
+        /* Extract array from the `input` file. */
         arrayReceivedFromInputFile = inputOutput->getIntArrayFromInputFile();
     } catch (std::exception &e) {
         std::cerr << e.what();

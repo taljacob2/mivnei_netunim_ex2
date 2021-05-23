@@ -52,6 +52,8 @@ class AlgorithmsAndMinHeap {
      * @note in case @p k is smaller than the @p size of the @p array given,
      *       then the method invokes @link my_algorithms::quickSort(K *, int)
      *       @endlink.
+     * @note in case @p k is less than `2`, the method sets @p k to be `2`,
+     *       to prevent an error.
      * @note In case @p k equals to `2`, this algorithm is actually the known
      *       `MergeSort` algorithm.
      * @tparam K the `type` of the elements in the @p array given.
@@ -62,7 +64,10 @@ class AlgorithmsAndMinHeap {
      * @see MinHeap
      * @see Entry
      */
-    template<typename K> static void kWayMergeSort(K *array, int size, int k) {
+    template<typename K>
+    static void kWayMergeSort(K *array, const unsigned int size,
+                              unsigned int k) {
+        if ((k == 1) || (k == 0)) { k = 2; }
         if (size < k) {
             my_algorithms::quickSort(array, size);
             return;
@@ -90,7 +95,9 @@ class AlgorithmsAndMinHeap {
                                                 smallArraySizes, minHeap);
 
         /* Delete each `small array`. */
-        for (int i = 0; i < k; i++) { delete[] smallArrayLocations[i]; }
+        for (unsigned int i = 0; i < k; i++) {
+            delete[] smallArrayLocations[i];
+        }
         delete[] smallArrayLocations;
         delete[] changeableSmallArrayLocations;
         delete[] smallArraySizes;
@@ -140,10 +147,12 @@ class AlgorithmsAndMinHeap {
      */
     template<typename K>
     static void divideArrayToKSmallerArrays(
-            K *array, int size, int k, K **smallArrayLocations,
-            K **changeableSmallArrayLocations, int *smallArraySizes,
-            const std::function<void(K *, int, int)> &forEachSmallArrayFunction,
-            MinHeap<K, int> &                         minHeap) {
+            K *array, unsigned int size, unsigned int k,
+            K **smallArrayLocations, K **changeableSmallArrayLocations,
+            int *smallArraySizes,
+            const std::function<void(K *, unsigned int, unsigned int)>
+                    &        forEachSmallArrayFunction,
+            MinHeap<K, int> &minHeap) {
 
         /*
          * Save here the size of the last `small array`.
@@ -231,9 +240,9 @@ class AlgorithmsAndMinHeap {
      */
     template<typename K>
     static void deleteMinAndCheckFromWhichSmallArray(
-            K *array, int size, K **changeableSmallArrayLocations,
+            K *array, unsigned int size, K **changeableSmallArrayLocations,
             int *smallArraySizes, MinHeap<K, int> &minHeap) {
-        for (int i = 0; i < size; i++) {
+        for (unsigned int i = 0; i < size; i++) {
 
             /* Remove the minimal element from the heap. */
             Entry<K, int> *deletedElement = minHeap.deleteMin();

@@ -68,7 +68,7 @@ static bool \mbox{\hyperlink{class_input_output_ab81e99c4b4b09a8a0b69cb469dbf124
 const int \mbox{\hyperlink{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}{N}}
 \begin{DoxyCompactList}\small\item\em The number of elements provided. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{class_input_output_a561fedb6ffe0facc22f1a8565d3eef02}{K}}
-\begin{DoxyCompactList}\small\item\em The division parameter. \end{DoxyCompactList}\item 
+\item 
 const std\+::string \mbox{\hyperlink{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}{INPUT\+\_\+\+FILE\+\_\+\+NAME}}
 \begin{DoxyCompactList}\small\item\em The name of the {\ttfamily input} file. \end{DoxyCompactList}\item 
 const std\+::string \mbox{\hyperlink{class_input_output_adc15a5fa052c379f0825da1cbca984a7}{OUTPUT\+\_\+\+FILE\+\_\+\+NAME}}
@@ -188,7 +188,7 @@ This method is {\itshape private}, and is being used as a parameter for the invo
 This method serves as a {\bfseries{Factory}} method. 
 
 Receives input\+: \begin{DoxyItemize}
-\item (int) N -\/ the number of elements provided. \item (int) K -\/ the division parameter. \item (std\+::string) INPUT\+\_\+\+FILE\+\_\+\+NAME -\/ the name of the {\ttfamily input\+File}. \item (std\+::string) OUTPUT\+\_\+\+FILE\+\_\+\+NAME -\/ the name of the {\ttfamily output\+File}.\end{DoxyItemize}
+\item (int) N -\/ the number of elements provided. \item (int) K -\/ the division parameter -\/ to how many {\ttfamily small arrays} the {\ttfamily given array} would be divided. \item (std\+::string) INPUT\+\_\+\+FILE\+\_\+\+NAME -\/ the name of the {\ttfamily input\+File}. \item (std\+::string) OUTPUT\+\_\+\+FILE\+\_\+\+NAME -\/ the name of the {\ttfamily output\+File}.\end{DoxyItemize}
 Construction\+: \begin{DoxyItemize}
 \item Constructs a {\ttfamily new} {\itshape \mbox{\hyperlink{class_input_output}{Input\+Output}}} object from the given input, and returns it. \begin{DoxyReturn}{Returns}
 Constructs a {\ttfamily new} {\itshape \mbox{\hyperlink{class_input_output}{Input\+Output}}} object from the given input, and returns it. 
@@ -550,6 +550,22 @@ the {\ttfamily delimiter} {\ttfamily char} is {\itshape not} printed after the {
 {\footnotesize\ttfamily void Input\+Output\+::receive\+Input (\begin{DoxyParamCaption}\item[{int \&}]{N,  }\item[{int \&}]{K,  }\item[{std\+::string \&}]{input\+File\+Name,  }\item[{std\+::string \&}]{output\+File\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
+\begin{DoxyParams}{Parameters}
+{\em N} & the size of the array in the {\ttfamily input} file. \\
+\hline
+{\em K} & the division parameter -\/ to how many {\ttfamily small arrays} the {\ttfamily given array} would be divided. \\
+\hline
+{\em input\+File\+Name} & \\
+\hline
+{\em output\+File\+Name} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if an {\ttfamily input} is in an {\ttfamily illegal} format. \\
+\hline
+\end{DoxyExceptions}
+
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}\label{class_input_output_a1e526b2dd1e303454bcf57c566f3af2f}} 
@@ -568,11 +584,7 @@ The name of the {\ttfamily input} file.
 \doxysubsubsection{\texorpdfstring{K}{K}}
 {\footnotesize\ttfamily const int Input\+Output\+::K\hspace{0.3cm}{\ttfamily [private]}}
 
-
-
-The division parameter. 
-
-\mbox{\Hypertarget{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}\label{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}} 
+The division parameter -\/ to how many {\ttfamily small arrays} the {\ttfamily given array} would be divided. \mbox{\Hypertarget{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}\label{class_input_output_a54a5d6f4e9b87c13e28c66e1d13abbbc}} 
 \index{InputOutput@{InputOutput}!N@{N}}
 \index{N@{N}!InputOutput@{InputOutput}}
 \doxysubsubsection{\texorpdfstring{N}{N}}

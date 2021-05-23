@@ -559,12 +559,6 @@
                                                             href="class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02">K</a>
                 </td>
             </tr>
-            <tr class="memdesc:a561fedb6ffe0facc22f1a8565d3eef02">
-                <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">The division parameter. <a
-                        href="class_input_output.html#a561fedb6ffe0facc22f1a8565d3eef02">More...</a><br/>
-                </td>
-            </tr>
             <tr class="separator:a561fedb6ffe0facc22f1a8565d3eef02">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
@@ -972,7 +966,10 @@
                 <p>Receives input: </p>
                 <ul>
                     <li>(int) N - the number of elements provided.</li>
-                    <li>(int) K - the division parameter.</li>
+                    <li>(int) K - the division parameter - to how many <code>small
+                        arrays</code> the <code>given array</code> would be
+                        divided.
+                    </li>
                     <li>(std::string) INPUT_FILE_NAME - the name of the <code>inputFile</code>.
                     </li>
                     <li>(std::string) OUTPUT_FILE_NAME - the name of the <code>outputFile</code>.
@@ -2262,6 +2259,47 @@
                 </table>
             </div>
             <div class="memdoc">
+                <dl class="params">
+                    <dt>Parameters</dt>
+                    <dd>
+                        <table class="params">
+                            <tr>
+                                <td class="paramname">N</td>
+                                <td>the size of the array in the
+                                    <code>input</code> file.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="paramname">K</td>
+                                <td>the division parameter - to how many <code>small
+                                    arrays</code> the <code>given array</code>
+                                    would be divided.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="paramname">inputFileName</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="paramname">outputFileName</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+                <dl class="exception">
+                    <dt>Exceptions</dt>
+                    <dd>
+                        <table class="exception">
+                            <tr>
+                                <td class="paramname">std::runtime_error</td>
+                                <td>if an <code>input</code> is in an <code>illegal</code>
+                                    format.
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
 
             </div>
         </div>
@@ -2321,8 +2359,9 @@
                 </table>
             </div>
             <div class="memdoc">
-
-                <p>The division parameter. </p>
+                <p>The division parameter - to how many <code>small
+                    arrays</code> the <code>given array</code> would be divided.
+                </p>
 
             </div>
         </div>
