@@ -99,9 +99,9 @@
         <table class="directory">
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_algorithms_and_min_heap.html#ab6c31a97ad826c56a8a1bb90d9f828c1">deleteMinAndCheckFromWhichSmallArray</a>(int
-                    size, K **smallArrayLocations, int *smallArraySizes, MinHeap&lt;
-                    K, int &gt; &amp;minHeap, K *resultArray)
+                                     href="class_algorithms_and_min_heap.html#a464d8d267255c9b7050048cbcf48b3ee">deleteMinAndCheckFromWhichSmallArray</a>(K
+                    *array, int size, K **changeableSmallArrayLocations, int
+                    *smallArraySizes, MinHeap&lt; K, int &gt; &amp;minHeap)
                 </td>
                 <td class="entry"><a class="el"
                                      href="class_algorithms_and_min_heap.html">AlgorithmsAndMinHeap</a>
@@ -112,11 +112,11 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_algorithms_and_min_heap.html#a1d0867f06a515d8f58010bcf5abd51b8">divideArrayToKSmallerArrays</a>(K
-                    *array, int size, int k, K **smallArrayLocations, int
-                    *smallArraySizes, const std::function&lt; void(K *, int)&gt;
-                    &amp;forEachSmallArrayFunction, MinHeap&lt; K, int &gt;
-                    &amp;minHeap)
+                                     href="class_algorithms_and_min_heap.html#a66b7d33108e08d9e31eb6113113499ca">divideArrayToKSmallerArrays</a>(K
+                    *array, int size, int k, K **smallArrayLocations, K
+                    **changeableSmallArrayLocations, int *smallArraySizes, const
+                    std::function&lt; void(K *, int, int)&gt; &amp;forEachSmallArrayFunction,
+                    MinHeap&lt; K, int &gt; &amp;minHeap)
                 </td>
                 <td class="entry"><a class="el"
                                      href="class_algorithms_and_min_heap.html">AlgorithmsAndMinHeap</a>
@@ -127,8 +127,8 @@
             </tr>
             <tr class="even">
                 <td class="entry"><a class="el"
-                                     href="class_algorithms_and_min_heap.html#a0c473dfe55692a1e87481bcf0a5f6e56">kWayMergeSort</a>(K
-                    **array, int size, int k)
+                                     href="class_algorithms_and_min_heap.html#ae34a5869bbad8539564ba4384b8c5f3e">kWayMergeSort</a>(K
+                    *array, int size, int k)
                 </td>
                 <td class="entry"><a class="el"
                                      href="class_algorithms_and_min_heap.html">AlgorithmsAndMinHeap</a>
@@ -138,9 +138,9 @@
             </tr>
             <tr>
                 <td class="entry"><a class="el"
-                                     href="class_algorithms_and_min_heap.html#a3f0c56741f46c470dd920d117ac96064">stepAheadSmallArray</a>(K
-                    **smallArrayLocations, int *smallArraySizes, Entry&lt; K,
-                    int &gt; *deletedElement)
+                                     href="class_algorithms_and_min_heap.html#a5c8694b8a632b90907db4a0f098a3e0f">stepAheadSmallArray</a>(K
+                    **changeableSmallArrayLocations, int *smallArraySizes, Entry&lt;
+                    K, int &gt; *deletedElement)
                 </td>
                 <td class="entry"><a class="el"
                                      href="class_algorithms_and_min_heap.html">AlgorithmsAndMinHeap</a>

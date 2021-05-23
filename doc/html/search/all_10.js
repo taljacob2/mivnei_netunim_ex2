@@ -7,6 +7,6 @@ var searchData=
     ['setvalue_81', ['setValue', ['../class_entry.html#acbb4d35842aebb3abd57d4615a6772f8', 1, 'Entry']]],
     ['sort_5finsertion_82', ['sort_insertion', ['../classmy__algorithms.html#ae5d12081b519c2eebed31bdee42c7ffb', 1, 'my_algorithms']]],
     ['sort_5finsertion_5f_83', ['sort_insertion_', ['../classmy__algorithms.html#a54a78b3380d0d2132b4d1f4964e21ab7', 1, 'my_algorithms']]],
-    ['stepaheadsmallarray_84', ['stepAheadSmallArray', ['../class_algorithms_and_min_heap.html#a3f0c56741f46c470dd920d117ac96064', 1, 'AlgorithmsAndMinHeap']]],
+    ['stepaheadsmallarray_84', ['stepAheadSmallArray', ['../class_algorithms_and_min_heap.html#a5c8694b8a632b90907db4a0f098a3e0f', 1, 'AlgorithmsAndMinHeap']]],
     ['swap_85', ['swap', ['../classmy__algorithms.html#a10c7c5677d44a82850f99867bc0be126', 1, 'my_algorithms::swap(T *array, int index1, int index2)'], ['../classmy__algorithms.html#a98c8a2353897ea85926c8f3cf5a57a5d', 1, 'my_algorithms::swap(T &amp;element1, T &amp;element2)']]]
 ];

@@ -34,9 +34,12 @@ class AlgorithmsAndMinHeap {
      *          it to the `MinHeap`, instead of the removed element.
      *
      * The method handles 3 arrays:
-     *      @li (K *) resultArray - is the result array.
-     *      @li (K **) resultArray - is an array that stores the start
-     *      `location` of each `small array`.
+     *      @li (K *) smallArrayLocations - is an array that stores the
+     *      `starting` location of each `small array`.
+     *      @li (K **) changeableSmallArrayLocations - is the same as
+     *      `smallArrayLocations`, but on each `remove` of a `first` element in
+     *      a `small array`, set the location of the according `small array`
+     *      to be `1` location ahead.
      *      @li (int *) smallArraySizes - is an array that stores the `size` of
      *      each `small array`.
      * The method creates a `MinHeap`:
@@ -51,7 +54,6 @@ class AlgorithmsAndMinHeap {
      *       @endlink.
      * @note In case @p k equals to `2`, this algorithm is actually the known
      *       `MergeSort` algorithm.
-     * @attention the @p array given *must* be dynamically allocated.
      * @tparam K the `type` of the elements in the @p array given.
      * @param array the array to sort. *Must* be dynamically allocated.
      * @param size the size of the @p array to sort.
@@ -66,7 +68,6 @@ class AlgorithmsAndMinHeap {
             return;
         }
 
-        // K *  resultArray         = new K[size];
         K ** smallArrayLocations           = new K *[k];
         K ** changeableSmallArrayLocations = new K *[k];
         int *smallArraySizes               = new int[k];
@@ -79,18 +80,14 @@ class AlgorithmsAndMinHeap {
          *                         - `insert` the `first` element in the array to
          *                           the `Minimum-Heap` provided.
          */
-        // FIXME: change `quickSort` to `recursive` call !!!! -->>>
         divideArrayToKSmallerArrays<K>(array, size, k, smallArrayLocations,
                                        changeableSmallArrayLocations,
                                        smallArraySizes, kWayMergeSort<K>,
                                        minHeap);
 
-        deleteMinAndCheckFromWhichSmallArray<K>(
-                size, changeableSmallArrayLocations, smallArraySizes, minHeap,
-                array);
-
-        // delete[] * array;
-        // *array = resultArray;
+        deleteMinAndCheckFromWhichSmallArray<K>(array, size,
+                                                changeableSmallArrayLocations,
+                                                smallArraySizes, minHeap);
 
         /* Delete each `small array`. */
         for (int i = 0; i < k; i++) { delete[] smallArrayLocations[i]; }
@@ -104,6 +101,16 @@ class AlgorithmsAndMinHeap {
      * @brief This method divides a given @p array to @p k `smaller arrays`,
      *        and invokes the @p forEachSmallArrayFunction function for
      *        each of the divided `smaller arrays`.
+     *
+     * @attention this method creates @p k `small arrays` that their
+     *            `starting` location is stored in the @p smallArrayLocations array.
+     *            So, after the use of this method, the user *must* `delete` each
+     *            `small array` with a loop:
+     *            @code
+     *            // Delete each `small array`.
+     *            for (int i = 0; i < k; i++) { delete[] smallArrayLocations[i]; }
+     *            @endcode
+     *
      * @note The method divides the given @p array such that the sizes of the
      *       `smaller arrays` are spread as equally as possible.
      * @tparam K the `type` of elements in the array given.
@@ -111,8 +118,25 @@ class AlgorithmsAndMinHeap {
      * @param array the array to divide to @p k `smaller arrays`.
      * @param size the size of the @p array given.
      * @param k the division parameter.
+     * @param smallArrayLocations is an array that stores the
+     *                            `starting` location of each `small array`.
+     * @param changeableSmallArrayLocations is the same as
+     *                                      `smallArrayLocations`, but on each
+     *                                      `remove` of a `first` element in
+     *                                      a `small array`, set the location
+     *                                      of the according `small array`
+     *                                      to be `1` location ahead.
+     * @param smallArraySizes is an array that stores the `size` of each
+     *                        `small array`.
      * @param forEachSmallArrayFunction this function is being invoked
-     *                                  `for-each` smaller array.
+     *                                  `for-each` `small array`.
+     * @param minHeap is the *Minimum-Heap* that has been pre-initialized to the
+     *                `physicalSize` of @p k. And in this method, on each
+     *                iteration, right after the @p
+     *                forEachSmallArrayFunction is being invoked, this
+     *                *Minimum-Heap* is `inserting` the `first` element in
+     *                each `small array` to it.
+     * @see MinHeap
      */
     template<typename K>
     static void divideArrayToKSmallerArrays(
@@ -144,12 +168,13 @@ class AlgorithmsAndMinHeap {
             /* Get `currSmallArrayStartLocation` `location`. */
             K *currSmallArrayStartLocation = array + lastSmallArraySize;
 
+            /* Copy the correct amount of elements to a `small array`. */
             K *currSmallArrayLocation = my_algorithms::copyArray(
                     currSmallArrayStartLocation, currSmallArraySize);
 
             /*
-             * Insert the `currSmallArrayStartLocation` `location` to the
-             * `smallArrayLocations` array.
+             * Insert the `currSmallArrayStartLocation` to the
+             * `smallArrayLocations` and `changeableSmallArrayLocations` arrays.
              */
             smallArrayLocations[kIndex]           = currSmallArrayLocation;
             changeableSmallArrayLocations[kIndex] = currSmallArrayLocation;
@@ -160,9 +185,9 @@ class AlgorithmsAndMinHeap {
 
             /*
              * Take the `first` element in the current small array,
-             * and `insert` it to the `Minimum-Heap` as a `Key` of an `Entry`,
-             * and set this `Entry`'s `Value` to be the `currSmallArrayStartLocation`
-             * iteration index.
+             * and `insert` it to the `Minimum-Heap` as a `key` of an `Entry`,
+             * and set this `Entry`'s `value` to be the
+             * `currSmallArrayStartLocation` iteration index.
              * Attention: `Entry` must be `lvalue`.
              */
             auto *entryToInsert =
@@ -179,82 +204,35 @@ class AlgorithmsAndMinHeap {
     }
 
     /**
-     * @brief This method divides a given @p array to @p k `smaller arrays`,
-     *        and invokes the @p forEachSmallArrayFunction function for
-     *        each of the divided `smaller arrays`.
-     * @note The method divides the given @p array such that the sizes of the
-     *       `smaller arrays` are spread as equally as possible.
+     * @brief This method, for @p size times, deletes the `smallest` element
+     *        in the @p minHeap, and inserts it to the @p array. Then, takes the
+     *        next `smallest` element from the according `small array` that
+     *        this `deletedElement` came from, and inserts it to the @p minHeap.
+     *        At the end of this method, the @p array would be sorted.
+     *
      * @tparam K the `type` of elements in the array given.
-     *           this would serve as the `key` type of the elements.
-     * @param array the array to divide to @p k `smaller arrays`.
+                 this would serve as the `key` type of the elements.
+     * @param array the array to be sorted. The array to has been divided to `k`
+     *              `smaller arrays`.
      * @param size the size of the @p array given.
-     * @param k the division parameter.
-     * @param forEachSmallArrayFunction this function is being invoked
-     *                                  `for-each` smaller array.
+     * @param changeableSmallArrayLocations is the same as
+     *                                      `smallArrayLocations`, but on each
+     *                                      `remove` of a `first` element in
+     *                                      a `small array`, set the location
+     *                                      of the according `small array`
+     *                                      to be `1` location ahead.
+     * @param smallArraySizes is an array that stores the `size` of each
+     *                        `small array`.
+     * @param minHeap is the *Minimum-Heap* that has been pre-initialized to the
+     *                `physicalSize` of `k`. And stores the all the `first`
+     *                elements in each `small array`. Means, it stores all
+     *                the `smallest` `k` elements in the original @p array.
+     * @see MinHeap
      */
     template<typename K>
-    static void divideArrayToKSmallerArrays(
-            K *array, int size, int k, K **smallArrayLocations,
-            int *                                smallArraySizes,
-            const std::function<void(K *, int)> &forEachSmallArrayFunction,
-            MinHeap<K, int> &                    minHeap) {
-
-        /*
-         * Save here the size of the last `small array`.
-         * Attention: must initialize with `0`.
-         */
-        int lastSmallArraySize = 0;
-        int currK              = k;
-        while ((size > 0) && (currK > 0)) {
-
-            /* Determines the current iteration. */
-            int kIndex = k - currK;
-
-            /* Get `currSmallArray` `location`. */
-            K *currSmallArray = array + lastSmallArraySize;
-
-            /*
-             * Insert the `currSmallArray` `location` to the
-             * `smallArrayLocations` array.
-             */
-            smallArrayLocations[kIndex] = currSmallArray;
-
-            /* Get `currSmallArray` `size`. */
-            int currSmallArraySize = ceil((double) size / currK);
-
-            /*
-             * Insert the `currSmallArray` `size` to the
-             * `smallArraySizes` array.
-             */
-            smallArraySizes[kIndex] = currSmallArraySize;
-
-
-            /* Do something to the current small array. */
-            forEachSmallArrayFunction(currSmallArray, currSmallArraySize);
-
-            /*
-             * Take the `first` element in the current small array,
-             * and `insert` it to the `Minimum-Heap` as a `Key` of an `Entry`,
-             * and set this `Entry`'s `Value` to be the `currSmallArray`
-             * iteration index.
-             * Attention: `Entry` must be `lvalue`.
-             */
-            auto *entryToInsert = new Entry<K, int>(currSmallArray[0], kIndex);
-            minHeap.insert(entryToInsert);
-            stepAheadSmallArray(smallArrayLocations, smallArraySizes,
-                                entryToInsert);
-
-            /* Step ahead. */
-            size = size - currSmallArraySize;
-            currK--;
-            lastSmallArraySize += currSmallArraySize;
-        }
-    }
-
-    template<typename K>
     static void deleteMinAndCheckFromWhichSmallArray(
-            int size, K **changeableSmallArrayLocations, int *smallArraySizes,
-            MinHeap<K, int> &minHeap, K *array) {
+            K *array, int size, K **changeableSmallArrayLocations,
+            int *smallArraySizes, MinHeap<K, int> &minHeap) {
         for (int i = 0; i < size; i++) {
 
             /* Remove the minimal element from the heap. */
@@ -301,8 +279,9 @@ class AlgorithmsAndMinHeap {
      *          }
      *          @endcode
      * @tparam K the `key` of the element.
-     * @param smallArrayLocations the array that stores the starting
-     *                            `locations` of all the `small-arrays`.
+     * @param changeableSmallArrayLocations the array that stores the
+     *                                      current starting `locations` of
+     *                                      all the `small-arrays`.
      * @param smallArraySizes the array that stores the `sizes` of all
      *                        the `small-arrays`.
      * @param deletedElement the element that has been removed from a

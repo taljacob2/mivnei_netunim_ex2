@@ -1,8 +1,8 @@
 var searchData=
 [
     ['deletemin_110', ['deleteMin', ['../class_min_heap.html#a6f4be46b00c888580c5f3afe41865930', 1, 'MinHeap::deleteMin() override'], ['../class_min_heap.html#a2774a39578ec0f31204e97df1645cd30', 1, 'MinHeap::deleteMin(bool fixHeapAfterDeletion)'], ['../class_min_heap_a_d_t.html#aad46f6fbc56041d20c3130dcf5b42d5e', 1, 'MinHeapADT::deleteMin()']]],
-    ['deleteminandcheckfromwhichsmallarray_111', ['deleteMinAndCheckFromWhichSmallArray', ['../class_algorithms_and_min_heap.html#ab6c31a97ad826c56a8a1bb90d9f828c1', 1, 'AlgorithmsAndMinHeap']]],
+    ['deleteminandcheckfromwhichsmallarray_111', ['deleteMinAndCheckFromWhichSmallArray', ['../class_algorithms_and_min_heap.html#a464d8d267255c9b7050048cbcf48b3ee', 1, 'AlgorithmsAndMinHeap']]],
     ['deleteminwhentherearetwoormoreelements_112', ['deleteMinWhenThereAreTwoOrMoreElements', ['../class_min_heap.html#a1b020a274541d1da5c5d34ab43515a19', 1, 'MinHeap']]],
-    ['dividearraytoksmallerarrays_113', ['divideArrayToKSmallerArrays', ['../class_algorithms_and_min_heap.html#a1d0867f06a515d8f58010bcf5abd51b8', 1, 'AlgorithmsAndMinHeap::divideArrayToKSmallerArrays()'], ['../classmy__algorithms.html#aac54fef26ff556f642781a06baec848a', 1, 'my_algorithms::divideArrayToKSmallerArrays(T *array, int size, int k, const std::function&lt; void(T *, int)&gt; &amp;forEachSmallArrayFunction)']]],
+    ['dividearraytoksmallerarrays_113', ['divideArrayToKSmallerArrays', ['../class_algorithms_and_min_heap.html#a66b7d33108e08d9e31eb6113113499ca', 1, 'AlgorithmsAndMinHeap::divideArrayToKSmallerArrays()'], ['../classmy__algorithms.html#aac54fef26ff556f642781a06baec848a', 1, 'my_algorithms::divideArrayToKSmallerArrays(T *array, int size, int k, const std::function&lt; void(T *, int)&gt; &amp;forEachSmallArrayFunction)']]],
     ['division_5ftheithelementinitssize_114', ['division_TheIthElementInItsSize', ['../classmy__algorithms.html#a5c64a53c34afd017fe748b8ff00a57ee', 1, 'my_algorithms']]]
 ];
