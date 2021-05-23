@@ -8,8 +8,8 @@
 #include "MinHeap.h"
 
 /**
- * This class bundles all the methods that require to `include` the
- * `algorithm` methods in the program, and the `MinHeap` class together.
+ * @brief This class bundles all the methods that require to `include` the
+ *        `algorithm` methods in the program, and the `MinHeap` class together.
  *
  * @author Tal Yacob, ID: 208632778.
  * @version 1.0

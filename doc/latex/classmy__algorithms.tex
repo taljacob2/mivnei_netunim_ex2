@@ -12,6 +12,8 @@ this class bundles together all the algorithm methods in the program.
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a0004e4c89992a6d75d96d17d88c20a85}{quick\+Sort}} (T $\ast$array, int size)
+\begin{DoxyCompactList}\small\item\em sorts an array using the {\ttfamily quick-\/sort} algorithm. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static int \mbox{\hyperlink{classmy__algorithms_a8149d73db0f0dbdeb696f1e7a17991de}{max}} (T $\ast$$\ast$array, int size, int index\+To\+Element1, int index\+To\+Element2)
 \begin{DoxyCompactList}\small\item\em Compares two elements pointed out from two pointers, by their given indexes, and returns the index to the pointer that points to the larger element out of them. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static int \mbox{\hyperlink{classmy__algorithms_a314af99ccad423bd770f8bc387a3071b}{min}} (T $\ast$$\ast$array, int size, int index\+To\+Element1, int index\+To\+Element2)
@@ -39,12 +41,14 @@ this class bundles together all the algorithm methods in the program.
 {\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_aa2254406e1a518653134735938fcaa61}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
 \item 
 {\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_afe367498c8e46a9b4e7107151f0a3604}{quintuplet\+\_\+\+The\+Ith\+Element\+In\+Its\+Size\+\_\+}} (T $\ast$array, int size, int serial\+Size\+Of\+The\+Element\+To\+Look\+For, char $\ast$\&output\+Parameter\+For\+This\+Function\+Name)
-\begin{DoxyCompactList}\small\item\em this method is made for getting the {\ttfamily sort\+\_\+quintuplet\+\_\+} method name by reflection. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a0004e4c89992a6d75d96d17d88c20a85}{quick\+Sort}} (T $\ast$array, int size)
-\begin{DoxyCompactList}\small\item\em sorts an array using the {\ttfamily quick-\/sort} algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em this method is made for getting the {\ttfamily sort\+\_\+quintuplet\+\_\+} method name by reflection. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_aa7994ba5673d4363c3d19eb81c7dab76}{quick\+Sort\+Recursive}} (T $\ast$array, int lowest\+Index\+Possible, int highest\+Index\+Possible)
+\begin{DoxyCompactList}\small\item\em sorts an array using the {\ttfamily quick-\/sort} algorithm. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_aac54fef26ff556f642781a06baec848a}{divide\+Array\+To\+KSmaller\+Arrays}} (T $\ast$array, int size, int k, const std\+::function$<$ void(T $\ast$, int)$>$ \&for\+Each\+Small\+Array\+Function)
+\begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T , int DIVISION$>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a64f6801e29ed8116d9433bb61e004922}{while\+Of\+Bubble\+Sort\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, int size, int \&division\+Counter, int \&division\+Integer, int \&last\+Divided\+Array\+Size)
 \item 
 {\footnotesize template$<$class T , int DIVISION$>$ }\\static void \mbox{\hyperlink{classmy__algorithms_a0c99008229b4de5eabb510f9afbdef3f}{get\+Middle\+Array\+\_\+division\+\_\+\+The\+Ith\+Element\+In\+Its\+Size}} (T $\ast$array, T $\ast$taken\+Middles\+Array, int division\+Counter, int last\+Divided\+Array\+Size)
@@ -56,11 +60,7 @@ this class bundles together all the algorithm methods in the program.
 {\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_a33ef55e9a30603a9170275afb71be875}{select\+The\+Ith\+Element\+In\+Its\+Size\+\_\+\+Un\+Secured}} (T $\ast$array, int lowest\+Index\+To\+Search\+At, int highest\+Index\+To\+Search\+At, int serial\+Size\+Of\+The\+Element\+To\+Look\+For)
 \begin{DoxyCompactList}\small\item\em this method searches for the {\ttfamily I\textquotesingle{}th element in its size} by giving a parameter of {\ttfamily serial\+Size\+Of\+The\+Element\+To\+Look\+For}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\static T \mbox{\hyperlink{classmy__algorithms_ac2204a67bf555e89a2245e492a2016fc}{get\+Middle\+Element\+In\+ASorted\+Array}} (T $\ast$array, int size)
-\item 
-{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_aa7994ba5673d4363c3d19eb81c7dab76}{quick\+Sort\+Recursive}} (T $\ast$array, int lowest\+Index\+Possible, int highest\+Index\+Possible)
-\begin{DoxyCompactList}\small\item\em sorts an array using the {\ttfamily quick-\/sort} algorithm. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classmy__algorithms_aac54fef26ff556f642781a06baec848a}{divide\+Array\+To\+KSmaller\+Arrays}} (T $\ast$array, int size, int k, const std\+::function$<$ void(T $\ast$, int)$>$ \&for\+Each\+Small\+Array\+Function)
-\begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

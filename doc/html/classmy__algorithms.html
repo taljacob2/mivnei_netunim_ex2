@@ -113,6 +113,30 @@
                         name="pub-static-methods"></a>
                     Static Public Member Functions</h2></td>
             </tr>
+            <tr class="memitem:a0004e4c89992a6d75d96d17d88c20a85">
+                <td class="memTemplParams" colspan="2">template&lt;typename T
+                    &gt;
+                </td>
+            </tr>
+            <tr class="memitem:a0004e4c89992a6d75d96d17d88c20a85">
+                <td class="memTemplItemLeft" align="right" valign="top">static
+                    void&#160;
+                </td>
+                <td class="memTemplItemRight" valign="bottom"><a class="el"
+                                                                 href="classmy__algorithms.html#a0004e4c89992a6d75d96d17d88c20a85">quickSort</a>
+                    (T *array, int size)
+                </td>
+            </tr>
+            <tr class="memdesc:a0004e4c89992a6d75d96d17d88c20a85">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">sorts an array using the
+                    <code>quick-sort</code> algorithm. <a
+                            href="classmy__algorithms.html#a0004e4c89992a6d75d96d17d88c20a85">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:a0004e4c89992a6d75d96d17d88c20a85">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
             <tr class="memitem:a8149d73db0f0dbdeb696f1e7a17991de">
                 <td class="memTemplParams" colspan="2">template&lt;class T
                     &gt;
@@ -441,36 +465,64 @@
             <tr class="separator:afe367498c8e46a9b4e7107151f0a3604">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
-            <tr class="memitem:a0004e4c89992a6d75d96d17d88c20a85">
-                <td class="memTemplParams" colspan="2">template&lt;typename T
-                    &gt;
-                </td>
-            </tr>
-            <tr class="memitem:a0004e4c89992a6d75d96d17d88c20a85">
-                <td class="memTemplItemLeft" align="right" valign="top">static
-                    void&#160;
-                </td>
-                <td class="memTemplItemRight" valign="bottom"><a class="el"
-                                                                 href="classmy__algorithms.html#a0004e4c89992a6d75d96d17d88c20a85">quickSort</a>
-                    (T *array, int size)
-                </td>
-            </tr>
-            <tr class="memdesc:a0004e4c89992a6d75d96d17d88c20a85">
-                <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">sorts an array using the
-                    <code>quick-sort</code> algorithm. <a
-                            href="classmy__algorithms.html#a0004e4c89992a6d75d96d17d88c20a85">More...</a><br/>
-                </td>
-            </tr>
-            <tr class="separator:a0004e4c89992a6d75d96d17d88c20a85">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
         </table>
         <table class="memberdecls">
             <tr class="heading">
                 <td colspan="2"><h2 class="groupheader"><a
                         name="pri-static-methods"></a>
                     Static Private Member Functions</h2></td>
+            </tr>
+            <tr class="memitem:aa7994ba5673d4363c3d19eb81c7dab76">
+                <td class="memTemplParams" colspan="2">template&lt;typename T
+                    &gt;
+                </td>
+            </tr>
+            <tr class="memitem:aa7994ba5673d4363c3d19eb81c7dab76">
+                <td class="memTemplItemLeft" align="right" valign="top">static
+                    void&#160;
+                </td>
+                <td class="memTemplItemRight" valign="bottom"><a class="el"
+                                                                 href="classmy__algorithms.html#aa7994ba5673d4363c3d19eb81c7dab76">quickSortRecursive</a>
+                    (T *array, int lowestIndexPossible, int
+                    highestIndexPossible)
+                </td>
+            </tr>
+            <tr class="memdesc:aa7994ba5673d4363c3d19eb81c7dab76">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">sorts an array using the
+                    <code>quick-sort</code> algorithm. <a
+                            href="classmy__algorithms.html#aa7994ba5673d4363c3d19eb81c7dab76">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:aa7994ba5673d4363c3d19eb81c7dab76">
+                <td class="memSeparator" colspan="2">&#160;</td>
+            </tr>
+            <tr class="memitem:aac54fef26ff556f642781a06baec848a">
+                <td class="memTemplParams" colspan="2">template&lt;typename T
+                    &gt;
+                </td>
+            </tr>
+            <tr class="memitem:aac54fef26ff556f642781a06baec848a">
+                <td class="memTemplItemLeft" align="right" valign="top">static
+                    void&#160;
+                </td>
+                <td class="memTemplItemRight" valign="bottom"><a class="el"
+                                                                 href="classmy__algorithms.html#aac54fef26ff556f642781a06baec848a">divideArrayToKSmallerArrays</a>
+                    (T *array, int size, int k, const std::function&lt; void(T
+                    *, int)&gt; &amp;forEachSmallArrayFunction)
+                </td>
+            </tr>
+            <tr class="memdesc:aac54fef26ff556f642781a06baec848a">
+                <td class="mdescLeft">&#160;</td>
+                <td class="mdescRight">This method divides a given
+                    <code>array</code> to <code>k</code> <code>smaller
+                        arrays</code>, and invokes the <code>forEachSmallArrayFunction</code>
+                    function for each of the divided <code>smaller arrays</code>.
+                    <a href="classmy__algorithms.html#aac54fef26ff556f642781a06baec848a">More...</a><br/>
+                </td>
+            </tr>
+            <tr class="separator:aac54fef26ff556f642781a06baec848a">
+                <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a64f6801e29ed8116d9433bb61e004922">
                 <td class="memTemplParams" colspan="2">template&lt;class T , int
@@ -577,58 +629,6 @@
                 </td>
             </tr>
             <tr class="separator:ac2204a67bf555e89a2245e492a2016fc">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
-            <tr class="memitem:aa7994ba5673d4363c3d19eb81c7dab76">
-                <td class="memTemplParams" colspan="2">template&lt;typename T
-                    &gt;
-                </td>
-            </tr>
-            <tr class="memitem:aa7994ba5673d4363c3d19eb81c7dab76">
-                <td class="memTemplItemLeft" align="right" valign="top">static
-                    void&#160;
-                </td>
-                <td class="memTemplItemRight" valign="bottom"><a class="el"
-                                                                 href="classmy__algorithms.html#aa7994ba5673d4363c3d19eb81c7dab76">quickSortRecursive</a>
-                    (T *array, int lowestIndexPossible, int
-                    highestIndexPossible)
-                </td>
-            </tr>
-            <tr class="memdesc:aa7994ba5673d4363c3d19eb81c7dab76">
-                <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">sorts an array using the
-                    <code>quick-sort</code> algorithm. <a
-                            href="classmy__algorithms.html#aa7994ba5673d4363c3d19eb81c7dab76">More...</a><br/>
-                </td>
-            </tr>
-            <tr class="separator:aa7994ba5673d4363c3d19eb81c7dab76">
-                <td class="memSeparator" colspan="2">&#160;</td>
-            </tr>
-            <tr class="memitem:aac54fef26ff556f642781a06baec848a">
-                <td class="memTemplParams" colspan="2">template&lt;typename T
-                    &gt;
-                </td>
-            </tr>
-            <tr class="memitem:aac54fef26ff556f642781a06baec848a">
-                <td class="memTemplItemLeft" align="right" valign="top">static
-                    void&#160;
-                </td>
-                <td class="memTemplItemRight" valign="bottom"><a class="el"
-                                                                 href="classmy__algorithms.html#aac54fef26ff556f642781a06baec848a">divideArrayToKSmallerArrays</a>
-                    (T *array, int size, int k, const std::function&lt; void(T
-                    *, int)&gt; &amp;forEachSmallArrayFunction)
-                </td>
-            </tr>
-            <tr class="memdesc:aac54fef26ff556f642781a06baec848a">
-                <td class="mdescLeft">&#160;</td>
-                <td class="mdescRight">This method divides a given
-                    <code>array</code> to <code>k</code> <code>smaller
-                        arrays</code>, and invokes the <code>forEachSmallArrayFunction</code>
-                    function for each of the divided <code>smaller arrays</code>.
-                    <a href="classmy__algorithms.html#aac54fef26ff556f642781a06baec848a">More...</a><br/>
-                </td>
-            </tr>
-            <tr class="separator:aac54fef26ff556f642781a06baec848a">
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
