@@ -61,9 +61,6 @@ InputOutput *InputOutput::factoryInputOutput() {
 }
 
 int *InputOutput::getIntArrayFromInputFile() {
-
-    // TODO: maybe split to smaller methods.
-
     std::ifstream file(INPUT_FILE_NAME);
     if (!file) {
 
