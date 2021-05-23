@@ -110,6 +110,80 @@ class AlgorithmsAndMinHeap {
      *                                  `for-each` smaller array.
      */
     template<typename K>
+    static void
+    divideArrayToKSmallerArrays(K *array, int size, int k,
+                                K **smallArrayLocations, int *smallArraySizes,
+                                const std::function<void(K **, int, int)>
+                                        &        forEachSmallArrayFunction,
+                                MinHeap<K, int> &minHeap) {
+
+        /*
+         * Save here the size of the last `small array`.
+         * Attention: must initialize with `0`.
+         */
+        int lastSmallArraySize = 0;
+        int currK              = k;
+        while ((size > 0) && (currK > 0)) {
+
+            /* Determines the current iteration. */
+            int kIndex = k - currK;
+
+            /* Get `currSmallArray` `location`. */
+            K *currSmallArray = array + lastSmallArraySize;
+
+            /*
+             * Insert the `currSmallArray` `location` to the
+             * `smallArrayLocations` array.
+             */
+            smallArrayLocations[kIndex] = currSmallArray;
+
+            /* Get `currSmallArray` `size`. */
+            int currSmallArraySize = ceil((double) size / currK);
+
+            /*
+             * Insert the `currSmallArray` `size` to the
+             * `smallArraySizes` array.
+             */
+            smallArraySizes[kIndex] = currSmallArraySize;
+
+
+            /* Do something to the current small array. */
+            forEachSmallArrayFunction(&currSmallArray, currSmallArraySize);
+
+            /*
+             * Take the `first` element in the current small array,
+             * and `insert` it to the `Minimum-Heap` as a `Key` of an `Entry`,
+             * and set this `Entry`'s `Value` to be the `currSmallArray`
+             * iteration index.
+             * Attention: `Entry` must be `lvalue`.
+             */
+            auto *entryToInsert = new Entry<K, int>(currSmallArray[0], kIndex);
+            minHeap.insert(entryToInsert);
+            stepAheadSmallArray(smallArrayLocations, smallArraySizes,
+                                entryToInsert);
+
+            /* Step ahead. */
+            size = size - currSmallArraySize;
+            currK--;
+            lastSmallArraySize += currSmallArraySize;
+        }
+    }
+
+    /**
+     * @brief This method divides a given @p array to @p k `smaller arrays`,
+     *        and invokes the @p forEachSmallArrayFunction function for
+     *        each of the divided `smaller arrays`.
+     * @note The method divides the given @p array such that the sizes of the
+     *       `smaller arrays` are spread as equally as possible.
+     * @tparam K the `type` of elements in the array given.
+     *           this would serve as the `key` type of the elements.
+     * @param array the array to divide to @p k `smaller arrays`.
+     * @param size the size of the @p array given.
+     * @param k the division parameter.
+     * @param forEachSmallArrayFunction this function is being invoked
+     *                                  `for-each` smaller array.
+     */
+    template<typename K>
     static void divideArrayToKSmallerArrays(
             K *array, int size, int k, K **smallArrayLocations,
             int *                                smallArraySizes,
@@ -128,7 +202,7 @@ class AlgorithmsAndMinHeap {
             int kIndex = k - currK;
 
             /* Get `currSmallArray` `location`. */
-            int *currSmallArray = array + lastSmallArraySize;
+            K *currSmallArray = array + lastSmallArraySize;
 
             /*
              * Insert the `currSmallArray` `location` to the
