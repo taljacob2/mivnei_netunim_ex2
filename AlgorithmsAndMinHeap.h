@@ -149,7 +149,8 @@ class AlgorithmsAndMinHeap {
             K *array, unsigned long int size, unsigned long int k,
             K **smallArrayLocations, K **changeableSmallArrayLocations,
             long int *smallArraySizes,
-            const std::function<void(K *, unsigned long int, unsigned long int)>
+            const std::function<void(K *, const unsigned long int,
+                                     unsigned long int)>
                     &             forEachSmallArrayFunction,
             MinHeap<K, long int> &minHeap) {
 

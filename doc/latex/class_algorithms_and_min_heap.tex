@@ -12,16 +12,16 @@ This class bundles all the methods that require to {\ttfamily include} the {\ttf
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_ad7a01f064627f34633bac703e27db926}{k\+Way\+Merge\+Sort}} (K $\ast$array, const unsigned int size, unsigned int k)
+{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_ac1ced91cd45c34a68ea0c3f9e94de015}{k\+Way\+Merge\+Sort}} (K $\ast$array, const unsigned long int size, unsigned long int k)
 \begin{DoxyCompactList}\small\item\em This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k} {\ttfamily smaller arrays}. Then for each {\ttfamily small array}\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_abe98e88a4042854d2fe28e0667048338}{divide\+Array\+To\+KSmaller\+Arrays}} (K $\ast$array, unsigned int size, unsigned int k, K $\ast$$\ast$small\+Array\+Locations, K $\ast$$\ast$changeable\+Small\+Array\+Locations, int $\ast$small\+Array\+Sizes, const std\+::function$<$ void(K $\ast$, unsigned int, unsigned int)$>$ \&for\+Each\+Small\+Array\+Function, \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, int $>$ \&min\+Heap)
+{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_ad394d93363c0a1eea4ec8c1b30f4fd3e}{divide\+Array\+To\+KSmaller\+Arrays}} (K $\ast$array, unsigned long int size, unsigned long int k, K $\ast$$\ast$small\+Array\+Locations, K $\ast$$\ast$changeable\+Small\+Array\+Locations, long int $\ast$small\+Array\+Sizes, const std\+::function$<$ void(K $\ast$, const unsigned long int, unsigned long int)$>$ \&for\+Each\+Small\+Array\+Function, \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, long int $>$ \&min\+Heap)
 \begin{DoxyCompactList}\small\item\em This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smaller arrays}, and invokes the {\ttfamily for\+Each\+Small\+Array\+Function} function for each of the divided {\ttfamily smaller arrays}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_adb87a0cb8ca1492b62b64c8902ec16f1}{delete\+Min\+And\+Check\+From\+Which\+Small\+Array}} (K $\ast$array, unsigned int size, K $\ast$$\ast$changeable\+Small\+Array\+Locations, int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, int $>$ \&min\+Heap)
+{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_ae0bcafc4de4c0f322f8bfcc0c14285c2}{delete\+Min\+And\+Check\+From\+Which\+Small\+Array}} (K $\ast$array, unsigned long int size, K $\ast$$\ast$changeable\+Small\+Array\+Locations, long int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, long int $>$ \&min\+Heap)
 \begin{DoxyCompactList}\small\item\em This method, for {\ttfamily size} times, deletes the {\ttfamily smallest} element in the {\ttfamily min\+Heap}, and inserts it to the {\ttfamily array}. Then, takes the next {\ttfamily smallest} element from the according {\ttfamily small array} that this {\ttfamily deleted\+Element} came from, and inserts it to the {\ttfamily min\+Heap}. At the end of this method, the {\ttfamily array} would be sorted. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a5c8694b8a632b90907db4a0f098a3e0f}{step\+Ahead\+Small\+Array}} (K $\ast$$\ast$changeable\+Small\+Array\+Locations, int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_entry}{Entry}}$<$ K, int $>$ $\ast$deleted\+Element)
+{\footnotesize template$<$typename K $>$ }\\static void \mbox{\hyperlink{class_algorithms_and_min_heap_a45269c64b3efd2950a850f7e45071b03}{step\+Ahead\+Small\+Array}} (K $\ast$$\ast$changeable\+Small\+Array\+Locations, long int $\ast$small\+Array\+Sizes, \mbox{\hyperlink{class_entry}{Entry}}$<$ K, long int $>$ $\ast$deleted\+Element)
 \begin{DoxyCompactList}\small\item\em This {\itshape private} method is invoked only when we have removed an element from a {\ttfamily small-\/array}. The method ensures to {\ttfamily step-\/ahead} the {\ttfamily location} of the according {\ttfamily small-\/array} location, and to decrease by {\ttfamily 1} the {\ttfamily size} of the according {\ttfamily small-\/array} size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -42,12 +42,12 @@ Tal Yacob, ID\+: 208632778.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_algorithms_and_min_heap_adb87a0cb8ca1492b62b64c8902ec16f1}\label{class_algorithms_and_min_heap_adb87a0cb8ca1492b62b64c8902ec16f1}} 
+\mbox{\Hypertarget{class_algorithms_and_min_heap_ae0bcafc4de4c0f322f8bfcc0c14285c2}\label{class_algorithms_and_min_heap_ae0bcafc4de4c0f322f8bfcc0c14285c2}} 
 \index{AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}!deleteMinAndCheckFromWhichSmallArray@{deleteMinAndCheckFromWhichSmallArray}}
 \index{deleteMinAndCheckFromWhichSmallArray@{deleteMinAndCheckFromWhichSmallArray}!AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}}
 \doxysubsubsection{\texorpdfstring{deleteMinAndCheckFromWhichSmallArray()}{deleteMinAndCheckFromWhichSmallArray()}}
 {\footnotesize\ttfamily template$<$typename K $>$ \\
-static void Algorithms\+And\+Min\+Heap\+::delete\+Min\+And\+Check\+From\+Which\+Small\+Array (\begin{DoxyParamCaption}\item[{K $\ast$}]{array,  }\item[{unsigned int}]{size,  }\item[{K $\ast$$\ast$}]{changeable\+Small\+Array\+Locations,  }\item[{int $\ast$}]{small\+Array\+Sizes,  }\item[{\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, int $>$ \&}]{min\+Heap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+static void Algorithms\+And\+Min\+Heap\+::delete\+Min\+And\+Check\+From\+Which\+Small\+Array (\begin{DoxyParamCaption}\item[{K $\ast$}]{array,  }\item[{unsigned long int}]{size,  }\item[{K $\ast$$\ast$}]{changeable\+Small\+Array\+Locations,  }\item[{long int $\ast$}]{small\+Array\+Sizes,  }\item[{\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, long int $>$ \&}]{min\+Heap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -74,12 +74,12 @@ This method, for {\ttfamily size} times, deletes the {\ttfamily smallest} elemen
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_min_heap}{Min\+Heap}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_algorithms_and_min_heap_abe98e88a4042854d2fe28e0667048338}\label{class_algorithms_and_min_heap_abe98e88a4042854d2fe28e0667048338}} 
+\mbox{\Hypertarget{class_algorithms_and_min_heap_ad394d93363c0a1eea4ec8c1b30f4fd3e}\label{class_algorithms_and_min_heap_ad394d93363c0a1eea4ec8c1b30f4fd3e}} 
 \index{AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}!divideArrayToKSmallerArrays@{divideArrayToKSmallerArrays}}
 \index{divideArrayToKSmallerArrays@{divideArrayToKSmallerArrays}!AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}}
 \doxysubsubsection{\texorpdfstring{divideArrayToKSmallerArrays()}{divideArrayToKSmallerArrays()}}
 {\footnotesize\ttfamily template$<$typename K $>$ \\
-static void Algorithms\+And\+Min\+Heap\+::divide\+Array\+To\+KSmaller\+Arrays (\begin{DoxyParamCaption}\item[{K $\ast$}]{array,  }\item[{unsigned int}]{size,  }\item[{unsigned int}]{k,  }\item[{K $\ast$$\ast$}]{small\+Array\+Locations,  }\item[{K $\ast$$\ast$}]{changeable\+Small\+Array\+Locations,  }\item[{int $\ast$}]{small\+Array\+Sizes,  }\item[{const std\+::function$<$ void(K $\ast$, unsigned int, unsigned int)$>$ \&}]{for\+Each\+Small\+Array\+Function,  }\item[{\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, int $>$ \&}]{min\+Heap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+static void Algorithms\+And\+Min\+Heap\+::divide\+Array\+To\+KSmaller\+Arrays (\begin{DoxyParamCaption}\item[{K $\ast$}]{array,  }\item[{unsigned long int}]{size,  }\item[{unsigned long int}]{k,  }\item[{K $\ast$$\ast$}]{small\+Array\+Locations,  }\item[{K $\ast$$\ast$}]{changeable\+Small\+Array\+Locations,  }\item[{long int $\ast$}]{small\+Array\+Sizes,  }\item[{const std\+::function$<$ void(K $\ast$, const unsigned long int, unsigned long int)$>$ \&}]{for\+Each\+Small\+Array\+Function,  }\item[{\mbox{\hyperlink{class_min_heap}{Min\+Heap}}$<$ K, long int $>$ \&}]{min\+Heap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -89,7 +89,7 @@ This method divides a given {\ttfamily array} to {\ttfamily k} {\ttfamily smalle
 this method creates {\ttfamily k} {\ttfamily small arrays} that their {\ttfamily starting} location is stored in the {\ttfamily small\+Array\+Locations} array. So, after the use of this method, the user {\itshape must} {\ttfamily delete} each {\ttfamily small array} with a loop\+: 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{// Delete each `small array`.}}
-\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < k; i++) \{ \textcolor{keyword}{delete}[] smallArrayLocations[i]; \}}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{int} i = 0; i < k; i++) \{ \textcolor{keyword}{delete}[] smallArrayLocations[i]; \}}
 
 \end{DoxyCode}
 
@@ -124,12 +124,12 @@ The method divides the given {\ttfamily array} such that the sizes of the {\ttfa
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_min_heap}{Min\+Heap}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_algorithms_and_min_heap_ad7a01f064627f34633bac703e27db926}\label{class_algorithms_and_min_heap_ad7a01f064627f34633bac703e27db926}} 
+\mbox{\Hypertarget{class_algorithms_and_min_heap_ac1ced91cd45c34a68ea0c3f9e94de015}\label{class_algorithms_and_min_heap_ac1ced91cd45c34a68ea0c3f9e94de015}} 
 \index{AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}!kWayMergeSort@{kWayMergeSort}}
 \index{kWayMergeSort@{kWayMergeSort}!AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}}
 \doxysubsubsection{\texorpdfstring{kWayMergeSort()}{kWayMergeSort()}}
 {\footnotesize\ttfamily template$<$typename K $>$ \\
-static void Algorithms\+And\+Min\+Heap\+::k\+Way\+Merge\+Sort (\begin{DoxyParamCaption}\item[{K $\ast$}]{array,  }\item[{const unsigned int}]{size,  }\item[{unsigned int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static void Algorithms\+And\+Min\+Heap\+::k\+Way\+Merge\+Sort (\begin{DoxyParamCaption}\item[{K $\ast$}]{array,  }\item[{const unsigned long int}]{size,  }\item[{unsigned long int}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -140,11 +140,11 @@ This algorithm sorts the {\ttfamily array} given, by dividing it to {\ttfamily k
 Then, for {\ttfamily size} number of times\+: \begin{DoxyItemize}
 \item Invoke the {\ttfamily \mbox{\hyperlink{class_min_heap_a6f4be46b00c888580c5f3afe41865930}{Min\+Heap.\+delete\+Min()}}} method to get the {\ttfamily smallest} element in the \mbox{\hyperlink{class_min_heap}{Min\+Heap}}, and insert it to the {\ttfamily result\+Array}. \item Determine the specific {\ttfamily small array} from which that element came from, and extract another the next {\ttfamily smallest} element in it to the {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}, instead of the removed element.\end{DoxyItemize}
 The method handles 3 arrays\+: \begin{DoxyItemize}
-\item (K $\ast$) small\+Array\+Locations -\/ is an array that stores the {\ttfamily starting} location of each {\ttfamily small array}. \item (K $\ast$$\ast$) changeable\+Small\+Array\+Locations -\/ is the same as {\ttfamily small\+Array\+Locations}, but on each {\ttfamily remove} of a {\ttfamily first} element in a {\ttfamily small array}, set the location of the according {\ttfamily small array} to be {\ttfamily 1} location ahead. \item (int $\ast$) small\+Array\+Sizes -\/ is an array that stores the {\ttfamily size} of each {\ttfamily small array}. The method creates a {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}\+: This {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}\textquotesingle{}s elements are pointers to {\ttfamily Entries} such that each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} is composed of a {\ttfamily key} and a {\ttfamily value. Its}key{\ttfamily , stands for the smallest element in each}small array{\ttfamily -\/ and its}value{\ttfamily stands for an $\ast$int$\ast$ number that determines the specific}small array\`{} from which that element came from.\end{DoxyItemize}
+\item (K $\ast$) small\+Array\+Locations -\/ is an array that stores the {\ttfamily starting} location of each {\ttfamily small array}. \item (K $\ast$$\ast$) changeable\+Small\+Array\+Locations -\/ is the same as {\ttfamily small\+Array\+Locations}, but on each {\ttfamily remove} of a {\ttfamily first} element in a {\ttfamily small array}, set the location of the according {\ttfamily small array} to be {\ttfamily 1} location ahead. \item (long int $\ast$) small\+Array\+Sizes -\/ is an array that stores the {\ttfamily size} of each {\ttfamily small array}. The method creates a {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}\+: This {\ttfamily \mbox{\hyperlink{class_min_heap}{Min\+Heap}}}\textquotesingle{}s elements are pointers to {\ttfamily Entries} such that each {\ttfamily \mbox{\hyperlink{class_entry}{Entry}}} is composed of a {\ttfamily key} and a {\ttfamily value. Its}key{\ttfamily , stands for the smallest element in each}small array{\ttfamily -\/ and its}value{\ttfamily stands for an $\ast$long int$\ast$ number that determines the specific}small array\`{} from which that element came from.\end{DoxyItemize}
 \begin{DoxyNote}{Note}
-in case {\ttfamily k} is smaller than the {\ttfamily size} of the {\ttfamily array} given, then the method invokes \mbox{\hyperlink{}{my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, int)}}. 
+in case {\ttfamily k} is smaller than the {\ttfamily size} of the {\ttfamily array} given, then the method invokes \mbox{\hyperlink{}{my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, long int)}}. 
 
-in case {\ttfamily k} is less than {\ttfamily 2}, the method sets {\ttfamily k} to be {\ttfamily 2}, to prevent an error. 
+in case {\ttfamily k} is less than {\ttfamily 2}, then the method invokes \mbox{\hyperlink{}{my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, long int)}}. 
 
 In case {\ttfamily k} equals to {\ttfamily 2}, this algorithm is actually the known {\ttfamily Merge\+Sort} algorithm. 
 \end{DoxyNote}
@@ -163,18 +163,18 @@ In case {\ttfamily k} equals to {\ttfamily 2}, this algorithm is actually the kn
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, int) 
+my\+\_\+algorithms\+::quick\+Sort(\+K $\ast$, long int) 
 
 \mbox{\hyperlink{class_min_heap}{Min\+Heap}} 
 
 \mbox{\hyperlink{class_entry}{Entry}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_algorithms_and_min_heap_a5c8694b8a632b90907db4a0f098a3e0f}\label{class_algorithms_and_min_heap_a5c8694b8a632b90907db4a0f098a3e0f}} 
+\mbox{\Hypertarget{class_algorithms_and_min_heap_a45269c64b3efd2950a850f7e45071b03}\label{class_algorithms_and_min_heap_a45269c64b3efd2950a850f7e45071b03}} 
 \index{AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}!stepAheadSmallArray@{stepAheadSmallArray}}
 \index{stepAheadSmallArray@{stepAheadSmallArray}!AlgorithmsAndMinHeap@{AlgorithmsAndMinHeap}}
 \doxysubsubsection{\texorpdfstring{stepAheadSmallArray()}{stepAheadSmallArray()}}
 {\footnotesize\ttfamily template$<$typename K $>$ \\
-static void Algorithms\+And\+Min\+Heap\+::step\+Ahead\+Small\+Array (\begin{DoxyParamCaption}\item[{K $\ast$$\ast$}]{changeable\+Small\+Array\+Locations,  }\item[{int $\ast$}]{small\+Array\+Sizes,  }\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, int $>$ $\ast$}]{deleted\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+static void Algorithms\+And\+Min\+Heap\+::step\+Ahead\+Small\+Array (\begin{DoxyParamCaption}\item[{K $\ast$$\ast$}]{changeable\+Small\+Array\+Locations,  }\item[{long int $\ast$}]{small\+Array\+Sizes,  }\item[{\mbox{\hyperlink{class_entry}{Entry}}$<$ K, long int $>$ $\ast$}]{deleted\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 
 

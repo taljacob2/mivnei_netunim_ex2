@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['n_58', ['N', ['../class_input_output.html#a54a5d6f4e9b87c13e28c66e1d13abbbc', 1, 'InputOutput']]]
-    ];
+var searchData=
+[
+  ['n_58',['N',['../class_input_output.html#aeb7e70e6c01d4bf3cc36c188fb2b8128',1,'InputOutput']]]
+];

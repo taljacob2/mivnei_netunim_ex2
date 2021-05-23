@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['logicalsize_175', ['logicalSize', ['../class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91', 1, 'MinHeap']]]
-    ];
+var searchData=
+[
+  ['logicalsize_175',['logicalSize',['../class_min_heap.html#a23b483bad2c38288a8e0aa82c5e1d22b',1,'MinHeap']]]
+];

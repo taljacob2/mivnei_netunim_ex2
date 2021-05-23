@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['entry_91', ['Entry', ['../class_entry.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['entry_91',['Entry',['../class_entry.html',1,'']]]
+];

@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['kwaymergesort_138', ['kWayMergeSort', ['../class_algorithms_and_min_heap.html#ad7a01f064627f34633bac703e27db926', 1, 'AlgorithmsAndMinHeap']]]
-    ];
+var searchData=
+[
+  ['kwaymergesort_138',['kWayMergeSort',['../class_algorithms_and_min_heap.html#ac1ced91cd45c34a68ea0c3f9e94de015',1,'AlgorithmsAndMinHeap']]]
+];
