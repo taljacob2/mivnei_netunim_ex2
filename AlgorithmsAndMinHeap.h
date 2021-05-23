@@ -148,7 +148,7 @@ class AlgorithmsAndMinHeap {
 
 
             /* Do something to the current small array. */
-            forEachSmallArrayFunction(&currSmallArray, currSmallArraySize);
+            forEachSmallArrayFunction(&currSmallArray, currSmallArraySize, k);
 
             /*
              * Take the `first` element in the current small array,
