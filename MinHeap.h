@@ -131,6 +131,8 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         } else {
 
             /* `logicalSize` is 0. */
+            // throw std::logic_error("You have tried to delete an element from "
+            //                        "an empty heap.\n");
             throw std::logic_error("wrong input");
         }
         return returnElement;
