@@ -27,7 +27,7 @@ int main() {
     }
 
     /* Sort the `arrayReceivedFromInputFile`. */
-    AlgorithmsAndMinHeap::kWayMergeSort(&arrayReceivedFromInputFile,
+    AlgorithmsAndMinHeap::kWayMergeSort(arrayReceivedFromInputFile,
                                         inputOutput->getN(),
                                         inputOutput->getK());
 

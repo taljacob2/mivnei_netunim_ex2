@@ -60,15 +60,16 @@ class AlgorithmsAndMinHeap {
      * @see MinHeap
      * @see Entry
      */
-    template<typename K> static void kWayMergeSort(K **array, int size, int k) {
+    template<typename K> static void kWayMergeSort(K *array, int size, int k) {
         if (size < k) {
-            my_algorithms::quickSort(*array, size);
+            my_algorithms::quickSort(array, size);
             return;
         }
 
-        K *  resultArray         = new K[size];
-        K ** smallArrayLocations = new K *[k];
-        int *smallArraySizes     = new int[k];
+        // K *  resultArray         = new K[size];
+        K ** smallArrayLocations           = new K *[k];
+        K ** changeableSmallArrayLocations = new K *[k];
+        int *smallArraySizes               = new int[k];
 
         MinHeap<K, int> minHeap(k);
 
@@ -79,18 +80,22 @@ class AlgorithmsAndMinHeap {
          *                           the `Minimum-Heap` provided.
          */
         // FIXME: change `quickSort` to `recursive` call !!!! -->>>
-        divideArrayToKSmallerArrays<K>(*array, size, k, smallArrayLocations,
-                                       smallArraySizes,
-                                       my_algorithms::quickSort<K>, minHeap);
+        divideArrayToKSmallerArrays<K>(array, size, k, smallArrayLocations,
+                                       changeableSmallArrayLocations,
+                                       smallArraySizes, kWayMergeSort<K>,
+                                       minHeap);
 
-        deleteMinAndCheckFromWhichSmallArray<K>(size, smallArrayLocations,
-                                                smallArraySizes, minHeap,
-                                                resultArray);
+        deleteMinAndCheckFromWhichSmallArray<K>(
+                size, changeableSmallArrayLocations, smallArraySizes, minHeap,
+                array);
 
-        delete[] * array;
-        *array = resultArray;
+        // delete[] * array;
+        // *array = resultArray;
 
+        /* Delete each `small array`. */
+        for (int i = 0; i < k; i++) { delete[] smallArrayLocations[i]; }
         delete[] smallArrayLocations;
+        delete[] changeableSmallArrayLocations;
         delete[] smallArraySizes;
     }
 
@@ -110,12 +115,11 @@ class AlgorithmsAndMinHeap {
      *                                  `for-each` smaller array.
      */
     template<typename K>
-    static void
-    divideArrayToKSmallerArrays(K *array, int size, int k,
-                                K **smallArrayLocations, int *smallArraySizes,
-                                const std::function<void(K **, int, int)>
-                                        &        forEachSmallArrayFunction,
-                                MinHeap<K, int> &minHeap) {
+    static void divideArrayToKSmallerArrays(
+            K *array, int size, int k, K **smallArrayLocations,
+            K **changeableSmallArrayLocations, int *smallArraySizes,
+            const std::function<void(K *, int, int)> &forEachSmallArrayFunction,
+            MinHeap<K, int> &                         minHeap) {
 
         /*
          * Save here the size of the last `small array`.
@@ -128,38 +132,43 @@ class AlgorithmsAndMinHeap {
             /* Determines the current iteration. */
             int kIndex = k - currK;
 
-            /* Get `currSmallArray` `location`. */
-            K *currSmallArray = array + lastSmallArraySize;
-
-            /*
-             * Insert the `currSmallArray` `location` to the
-             * `smallArrayLocations` array.
-             */
-            smallArrayLocations[kIndex] = currSmallArray;
-
-            /* Get `currSmallArray` `size`. */
+            /* Get `currSmallArrayStartLocation` `size`. */
             int currSmallArraySize = ceil((double) size / currK);
 
             /*
-             * Insert the `currSmallArray` `size` to the
+             * Insert the `currSmallArrayStartLocation` `size` to the
              * `smallArraySizes` array.
              */
             smallArraySizes[kIndex] = currSmallArraySize;
 
+            /* Get `currSmallArrayStartLocation` `location`. */
+            K *currSmallArrayStartLocation = array + lastSmallArraySize;
+
+            K *currSmallArrayLocation = my_algorithms::copyArray(
+                    currSmallArrayStartLocation, currSmallArraySize);
+
+            /*
+             * Insert the `currSmallArrayStartLocation` `location` to the
+             * `smallArrayLocations` array.
+             */
+            smallArrayLocations[kIndex]           = currSmallArrayLocation;
+            changeableSmallArrayLocations[kIndex] = currSmallArrayLocation;
 
             /* Do something to the current small array. */
-            forEachSmallArrayFunction(&currSmallArray, currSmallArraySize, k);
+            forEachSmallArrayFunction(currSmallArrayLocation,
+                                      currSmallArraySize, k);
 
             /*
              * Take the `first` element in the current small array,
              * and `insert` it to the `Minimum-Heap` as a `Key` of an `Entry`,
-             * and set this `Entry`'s `Value` to be the `currSmallArray`
+             * and set this `Entry`'s `Value` to be the `currSmallArrayStartLocation`
              * iteration index.
              * Attention: `Entry` must be `lvalue`.
              */
-            auto *entryToInsert = new Entry<K, int>(currSmallArray[0], kIndex);
+            auto *entryToInsert =
+                    new Entry<K, int>(currSmallArrayLocation[0], kIndex);
             minHeap.insert(entryToInsert);
-            stepAheadSmallArray(smallArrayLocations, smallArraySizes,
+            stepAheadSmallArray(changeableSmallArrayLocations, smallArraySizes,
                                 entryToInsert);
 
             /* Step ahead. */
@@ -243,18 +252,16 @@ class AlgorithmsAndMinHeap {
     }
 
     template<typename K>
-    static void deleteMinAndCheckFromWhichSmallArray(int  size,
-                                                     K ** smallArrayLocations,
-                                                     int *smallArraySizes,
-                                                     MinHeap<K, int> &minHeap,
-                                                     K *resultArray) {
+    static void deleteMinAndCheckFromWhichSmallArray(
+            int size, K **changeableSmallArrayLocations, int *smallArraySizes,
+            MinHeap<K, int> &minHeap, K *array) {
         for (int i = 0; i < size; i++) {
 
             /* Remove the minimal element from the heap. */
             Entry<K, int> *deletedElement = minHeap.deleteMin();
 
             /* Insert minimal `key` to `resultArray`. */
-            resultArray[i] = deletedElement->getKey();
+            array[i] = deletedElement->getKey();
 
             /* If there are elements in the according array. */
             if ((smallArraySizes[deletedElement->getValue()]) > 0) {
@@ -265,11 +272,12 @@ class AlgorithmsAndMinHeap {
                  * (= the `first` element in the small array).
                  */
                 auto *elementToInsert = new Entry<K, int>(
-                        (smallArrayLocations[deletedElement->getValue()])[0],
+                        (changeableSmallArrayLocations
+                                 [deletedElement->getValue()])[0],
                         deletedElement->getValue());
                 minHeap.insert(elementToInsert);
-                stepAheadSmallArray(smallArrayLocations, smallArraySizes,
-                                    deletedElement);
+                stepAheadSmallArray(changeableSmallArrayLocations,
+                                    smallArraySizes, deletedElement);
             }
 
             /* Delete the element from memory. */
@@ -301,12 +309,15 @@ class AlgorithmsAndMinHeap {
      *                       generic `small-array`.
      */
     template<typename K>
-    static void stepAheadSmallArray(K **           smallArrayLocations,
-                                    int *          smallArraySizes,
+    static void stepAheadSmallArray(K ** changeableSmallArrayLocations,
+                                    int *smallArraySizes,
                                     Entry<K, int> *deletedElement) {
 
-        /* Step ahead the `location` of the according small array. */
-        smallArrayLocations[deletedElement->getValue()]++;
+        /*
+         * Step ahead the `location` of the according small array,
+         * to point to the next `smallest` element in the array.
+         */
+        changeableSmallArrayLocations[deletedElement->getValue()]++;
 
         /* Decrease the `size` of the according small array by `1`. */
         smallArraySizes[deletedElement->getValue()]--;
