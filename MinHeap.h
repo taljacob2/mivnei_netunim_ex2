@@ -131,9 +131,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         } else {
 
             /* `logicalSize` is 0. */
-            // TODO: change to `wrong input`
-            throw std::logic_error("You have tried to delete an element from "
-                                   "an empty heap.\n");
+            throw std::logic_error("wrong input");
         }
         return returnElement;
     }
@@ -193,13 +191,12 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         } else {
 
             /* The heap is already full. Throw a message. */
-            std::string message;
-            message.append("The heap is already full, and contains ");
-            message.append(std::to_string(physicalSize));
-            message.append(" elements.\n");
+            // std::string message;
+            // message.append("The heap is already full, and contains ");
+            // message.append(std::to_string(physicalSize));
+            // message.append(" elements.\n");
 
-            // TODO: change to `wrong input`
-            throw std::logic_error(message);
+            throw std::logic_error("wrong input");
         }
     }
 
@@ -273,13 +270,12 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         if ((indexToFixFrom < 0) || (logicalSize <= indexToFixFrom)) {
 
             /* The `indexToFixFrom` is out of range. Throw a message. */
-            std::string message;
-            message.append("The index provided is out of range. There are ");
-            message.append(std::to_string(logicalSize));
-            message.append(" elements in the heap.\n");
+            // std::string message;
+            // message.append("The index provided is out of range. There are ");
+            // message.append(std::to_string(logicalSize));
+            // message.append(" elements in the heap.\n");
 
-            // TODO: change to `wrong input`
-            throw std::out_of_range(message);
+            throw std::out_of_range("wrong input");
         }
         fixHeapLegalIndex(indexToFixFrom);
     }
@@ -313,13 +309,12 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
              * Note: should not be happening here, thanks to already checked
              * scenario.
              */
-            std::string message;
-            message.append(
-                    "The index provided is out of range. The element "
-                    "you have provided is `nullptr`. Thus, in-comparable.\n");
+            // std::string message;
+            // message.append(
+            //         "The index provided is out of range. The element "
+            //         "you have provided is `nullptr`. Thus, in-comparable.\n");
 
-            // TODO: change to `wrong input`
-            throw std::out_of_range(message);
+            throw std::out_of_range("wrong input");
         }
 
         /* array[currentIndex] is not `nullptr`. Thus, comparable. */

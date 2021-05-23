@@ -65,13 +65,12 @@ int *InputOutput::getIntArrayFromInputFile() {
     if (!file) {
 
         /* Could not find the file. Throw a message. */
-        std::string message;
-        message.append("Could not find the file: ");
-        message.append(INPUT_FILE_NAME);
-        message.append("\n");
+        // std::string message;
+        // message.append("Could not find the file: ");
+        // message.append(INPUT_FILE_NAME);
+        // message.append("\n");
 
-        // TODO: change to `wrong input`
-        throw std::runtime_error(message);
+        throw std::runtime_error("wrong input");
     }
 
     auto *array = new int[N];
@@ -91,20 +90,19 @@ int *InputOutput::getIntArrayFromInputFile() {
          * Means, the file ended earlier than indicated in the provided
          * `N` parameter. This is an error. Throw a message.
          */
-        std::string message;
-        message.append("We have reached the end of the file earlier than "
-                       "expected.\nThe provided `N` parameter is "
-                       "larger than the number of elements received.");
-        message.append("\n");
-        message.append("The `N` provided was: ").append(std::to_string(N));
-        message.append(", and the number of elements received is: ")
-                .append(std::to_string(i))
-                .append(".");
-        message.append("\n");
+        // std::string message;
+        // message.append("We have reached the end of the file earlier than "
+        //                "expected.\nThe provided `N` parameter is "
+        //                "larger than the number of elements received.");
+        // message.append("\n");
+        // message.append("The `N` provided was: ").append(std::to_string(N));
+        // message.append(", and the number of elements received is: ")
+        //         .append(std::to_string(i))
+        //         .append(".");
+        // message.append("\n");
 
-        // TODO: change to `wrong input`
         delete[] array;
-        throw std::runtime_error(message);
+        throw std::runtime_error("wrong input");
     }
 
     file.close();

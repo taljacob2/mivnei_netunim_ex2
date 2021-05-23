@@ -133,13 +133,12 @@ class InputOutput {
         if (!file) {
 
             /* Could not open the file. Throw a message. */
-            std::string message;
-            message.append("Could not open the file: ");
-            message.append(outputFileName);
-            message.append("\n");
+            // std::string message;
+            // message.append("Could not open the file: ");
+            // message.append(outputFileName);
+            // message.append("\n");
 
-            // TODO: change to `wrong input`
-            throw std::runtime_error(message);
+            throw std::runtime_error("wrong input");
         }
 
         for (int i = 0; i < size; i++) { file << array[i] << " "; }
@@ -170,13 +169,12 @@ class InputOutput {
         if (!file) {
 
             /* Could not open the file. Throw a message. */
-            std::string message;
-            message.append("Could not open the file: ");
-            message.append(outputFileName);
-            message.append("\n");
+            // std::string message;
+            // message.append("Could not open the file: ");
+            // message.append(outputFileName);
+            // message.append("\n");
 
-            // TODO: change to `wrong input`
-            throw std::runtime_error(message);
+            throw std::runtime_error("wrong input");
         }
         int i = 0;
         for (; i < size - 1; i++) { file << array[i] << delimiter; }
@@ -198,13 +196,12 @@ class InputOutput {
         if (!file) {
 
             /* Could not open the file. Throw a message. */
-            std::string message;
-            message.append("Could not open the file: ");
-            message.append(OUTPUT_FILE_NAME);
-            message.append("\n");
+            // std::string message;
+            // message.append("Could not open the file: ");
+            // message.append(OUTPUT_FILE_NAME);
+            // message.append("\n");
 
-            // TODO: change to `wrong input`
-            throw std::runtime_error(message);
+            throw std::runtime_error("wrong input");
         }
 
         for (int i = 0; i < size; i++) { file << array[i] << " "; }
@@ -232,13 +229,12 @@ class InputOutput {
         if (!file) {
 
             /* Could not open the file. Throw a message. */
-            std::string message;
-            message.append("Could not open the file: ");
-            message.append(OUTPUT_FILE_NAME);
-            message.append("\n");
+            // std::string message;
+            // message.append("Could not open the file: ");
+            // message.append(OUTPUT_FILE_NAME);
+            // message.append("\n");
 
-            // TODO: change to `wrong input`
-            throw std::runtime_error(message);
+            throw std::runtime_error("wrong input");
         }
         int i = 0;
         for (; i < size - 1; i++) { file << array[i] << delimiter; }

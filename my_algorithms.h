@@ -160,14 +160,13 @@ class my_algorithms {
          * Both `indexToElement1` and `indexToElement2` are out-of-range.
          * Throw a message.
          */
-        std::string message;
-        message.append("Both of the indexes provided are out of range. "
-                       "There are ");
-        message.append(std::to_string(size));
-        message.append(" elements in the array.\n");
+        // std::string message;
+        // message.append("Both of the indexes provided are out of range. "
+        //                "There are ");
+        // message.append(std::to_string(size));
+        // message.append(" elements in the array.\n");
 
-        // TODO: change to `wrong input`
-        throw std::out_of_range(message);
+        throw std::out_of_range("wrong input");
     }
 
     /**
@@ -229,14 +228,13 @@ class my_algorithms {
          * Both `indexToElement1` and `indexToElement2` are out-of-range.
          * Throw a message.
          */
-        std::string message;
-        message.append("Both of the indexes provided are out of range. "
-                       "There are ");
-        message.append(std::to_string(size));
-        message.append(" elements in the array.\n");
+        // std::string message;
+        // message.append("Both of the indexes provided are out of range. "
+        //                "There are ");
+        // message.append(std::to_string(size));
+        // message.append(" elements in the array.\n");
 
-        // TODO: change to `wrong input`
-        throw std::out_of_range(message);
+        throw std::out_of_range("wrong input");
     }
 
 
