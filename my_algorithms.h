@@ -28,10 +28,10 @@ class my_algorithms {
      * @tparam T element of the array.
      * @param array the array to be sorted.
      * @param size the size of the given @p array.
-     * @see quickSortRecursive(T *, int, int)
-     * @see partition(T *, int, int, int)
+     * @see quickSortRecursive(T *, long int, long int)
+     * @see partition(T *, long int, long int, long int)
      */
-    template<typename T> static void quickSort(T *array, int size) {
+    template<typename T> static void quickSort(T *array, long int size) {
         quickSortRecursive(array, 0, size - 1);
     }
 
@@ -39,7 +39,7 @@ class my_algorithms {
     /**
      * @brief sorts an array using the `quick-sort` algorithm.
      *
-     * This done by using the @link partition(T *, int, int, int) @endlink
+     * This done by using the @link partition(T *, long int, long int, long int) @endlink
      * method, with the `pivot` index being the `first` index possible.
      * @warning this method doesn't check that the
      *          @p lowestIndexPossible and @p highestIndexPossible
@@ -48,13 +48,13 @@ class my_algorithms {
      * @param array the array to be sorted.
      * @param lowestIndexPossible the lowest index in the @p array given.
      * @param highestIndexPossible the highest index in the @p array given.
-     * @see partition(T *, int, int, int)
+     * @see partition(T *, long int, long int, long int)
      */
     template<typename T>
-    static void quickSortRecursive(T *array, int lowestIndexPossible,
-                                   int highestIndexPossible) {
+    static void quickSortRecursive(T *array, long int lowestIndexPossible,
+                                   long int highestIndexPossible) {
         if (lowestIndexPossible < highestIndexPossible) {
-            int pivot =
+            long int pivot =
                     partition(array, lowestIndexPossible,
                               highestIndexPossible); // pivot the `first` index.
             quickSortRecursive(array, lowestIndexPossible, pivot - 1);
@@ -77,18 +77,19 @@ class my_algorithms {
      *                                  `for-each` smaller array.
      */
     template<typename T>
-    static void divideArrayToKSmallerArrays(
-            T *array, int size, int k,
-            const std::function<void(T *, int)> &forEachSmallArrayFunction) {
+    static void
+    divideArrayToKSmallerArrays(T *array, long int size, long int k,
+                                const std::function<void(T *, long int)>
+                                        &forEachSmallArrayFunction) {
 
         /*
          * Save here the size of the last small array.
          * Attention: must initialize with `0`.
          */
-        int lastSmallArraySize = 0;
+        long int lastSmallArraySize = 0;
         while ((size > 0) && (k > 0)) {
-            int *currSmallArray     = array + lastSmallArraySize;
-            int  currSmallArraySize = ceil((double) size / k);
+            long int *currSmallArray     = array + lastSmallArraySize;
+            long int  currSmallArraySize = ceil((double) size / k);
 
             /* Do something to the current small array. */
             forEachSmallArrayFunction(currSmallArray, currSmallArraySize);
@@ -128,8 +129,8 @@ class my_algorithms {
      *         out of range.
      */
     template<class T>
-    static int max(T **array, int size, int indexToElement1,
-                   int indexToElement2) {
+    static long int max(T **array, long int size, long int indexToElement1,
+                        long int indexToElement2) {
         if (((indexToElement2 < size) && (0 <= indexToElement2)) &&
             ((indexToElement1 < size) && (0 <= indexToElement1))) {
 
@@ -196,8 +197,8 @@ class my_algorithms {
      *         out of range.
      */
     template<class T>
-    static int min(T **array, int size, int indexToElement1,
-                   int indexToElement2) {
+    static long int min(T **array, long int size, long int indexToElement1,
+                        long int indexToElement2) {
         if (((indexToElement2 < size) && (0 <= indexToElement2)) &&
             ((indexToElement1 < size) && (0 <= indexToElement1))) {
 
@@ -245,9 +246,9 @@ class my_algorithms {
      *
      * @returns the `new` copied array.
      */
-    template<class T> static T *copyArray(const T *array, int size) {
+    template<class T> static T *copyArray(const T *array, long int size) {
         auto *copiedArr = new T[size];
-        for (int i = 0; i < size; ++i) { copiedArr[i] = array[i]; }
+        for (long int i = 0; i < size; ++i) { copiedArr[i] = array[i]; }
         return copiedArr;
     }
 
@@ -259,7 +260,8 @@ class my_algorithms {
      * @param index1 the first element index to be swapped.
      * @param index2 the second element index to be swapped.
      */
-    template<class T> static void swap(T *array, int index1, int index2) {
+    template<class T>
+    static void swap(T *array, long int index1, long int index2) {
         T tmp         = array[index1];
         array[index1] = array[index2];
         array[index2] = tmp;
@@ -284,13 +286,13 @@ class my_algorithms {
      * @param array
      * @param size the size of the array.
      */
-    template<class T> static void sort_insertion(T *array, int size) {
+    template<class T> static void sort_insertion(T *array, long int size) {
         if (size <= 1) { return; }
 
-        for (int head_index = 1; head_index < size; ++head_index) {
-            int curr_head_index = head_index;
-            for (int predecessor_index = head_index - 1; predecessor_index >= 0;
-                 predecessor_index--) {
+        for (long int head_index = 1; head_index < size; ++head_index) {
+            long int curr_head_index = head_index;
+            for (long int predecessor_index = head_index - 1;
+                 predecessor_index >= 0; predecessor_index--) {
                 if ((array)[predecessor_index] > (array)[curr_head_index]) {
                     swap<T>((array), curr_head_index, predecessor_index);
                     curr_head_index = predecessor_index;
@@ -307,10 +309,10 @@ class my_algorithms {
      *
      * @param outputParameterForThisFunctionName output parameter
      *                                           to getChecked this function's name.
-     * @see sort_insertion (E *, int)
+     * @see sort_insertion (E *, long int)
      */
     template<class T>
-    static void sort_insertion_(T *array, int size,
+    static void sort_insertion_(T *array, long int size,
                                 char *&outputParameterForThisFunctionName) {
 
         // getChecked this function's name:
@@ -335,20 +337,20 @@ class my_algorithms {
      *                                     desired `index` for the `pivot`
      *                                     to be found.
      * @returns the pivot's index.
-     * @see swap(E *, int, int) - for swapping the elements in the array.
+     * @see swap(E *, long int, long int) - for swapping the elements in the array.
      * @see swap(E &, E &) - for swapping the elements' indexes in the array.
      */
     template<class T>
-    static int partition(T *array, int lowestIndexPossible,
-                         int highestIndexPossible,
-                         int indexOfElementToServeAsPivot = 0) {
+    static long int partition(T *array, long int lowestIndexPossible,
+                              long int highestIndexPossible,
+                              long int indexOfElementToServeAsPivot = 0) {
 
         /*
          * set initial-`pivotIndex` to be the `first` `element` in the array,
          * thus set the `nonPivotIndex` to be the `last` in the array.
          * This is set arbitrarily, but is not necessarily important.
          */
-        int pivotIndex = lowestIndexPossible;
+        long int pivotIndex = lowestIndexPossible;
         if (indexOfElementToServeAsPivot != 0) {
 
             /*
@@ -358,13 +360,13 @@ class my_algorithms {
              */
             swap<T>(array, pivotIndex, indexOfElementToServeAsPivot);
         }
-        int nonPivotIndex = highestIndexPossible;
+        long int nonPivotIndex = highestIndexPossible;
 
         while (true) {
             if (pivotIndex < nonPivotIndex) {
                 if (array[pivotIndex] > array[nonPivotIndex]) {
                     swap<T>(array, pivotIndex, nonPivotIndex);
-                    swap<int>(pivotIndex, nonPivotIndex);
+                    swap<long int>(pivotIndex, nonPivotIndex);
                     ++nonPivotIndex;
                 } else {
                     --nonPivotIndex;
@@ -372,7 +374,7 @@ class my_algorithms {
             } else if (nonPivotIndex < pivotIndex) {
                 if (array[nonPivotIndex] > array[pivotIndex]) {
                     swap<T>(array, pivotIndex, nonPivotIndex);
-                    swap<int>(pivotIndex, nonPivotIndex);
+                    swap<long int>(pivotIndex, nonPivotIndex);
                     --nonPivotIndex;
                 } else {
                     ++nonPivotIndex;
@@ -394,12 +396,12 @@ class my_algorithms {
      * @param serialSizeOfTheElementToLookFor The **serial size** of the element to look for.
      * @return the *value* of the element which
      *         @p serialSizeOfTheElementToLookFor is its **serial size**.
-     * @see  selectTheIthElementInItsSize_UnSecured(E *, int, int, int)
+     * @see  selectTheIthElementInItsSize_UnSecured(E *, long int, long int, long int)
      */
     template<class T>
     static T
-    selection_TheIthElementInItsSize(T *array, int size,
-                                     int serialSizeOfTheElementToLookFor) {
+    selection_TheIthElementInItsSize(T *array, long int size,
+                                     long int serialSizeOfTheElementToLookFor) {
         return selectTheIthElementInItsSize_UnSecured(
                 array, 0, size - 1, serialSizeOfTheElementToLookFor);
     }
@@ -410,11 +412,11 @@ class my_algorithms {
      *
      * @param outputParameterForThisFunctionName output parameter
      *                                           to getChecked this function's name.
-     * @see selection_TheIthElementInItsSize (E *, int, int)
+     * @see selection_TheIthElementInItsSize (E *, long int, long int)
      */
     template<class T>
     static T selection_TheIthElementInItsSize_(
-            T *array, int size, int serialSizeOfTheElementToLookFor,
+            T *array, long int size, long int serialSizeOfTheElementToLookFor,
             char *&outputParameterForThisFunctionName) {
 
         // getChecked this function's name:
@@ -430,9 +432,9 @@ class my_algorithms {
      * @param array the array to be sorted.
      * @param size the size of the given @p array.
      */
-    template<class T> static void bubbleSort(T *array, int size) {
-        for (int i = 0; i < size; ++i) {
-            for (int j = size - 1; j > i; --j) {
+    template<class T> static void bubbleSort(T *array, long int size) {
+        for (long int i = 0; i < size; ++i) {
+            for (long int j = size - 1; j > i; --j) {
                 if (array[i] > array[j]) { swap(array, i, j); }
             }
         }
@@ -450,17 +452,17 @@ class my_algorithms {
      * @return the *value* of the element which
      *         @p serialSizeOfTheElementToLookFor is its **serial size**.
      */
-    template<class T, int DIVISION>
+    template<class T, long int DIVISION>
     static T
-    division_TheIthElementInItsSize(T *array, int size,
-                                    int serialSizeOfTheElementToLookFor) {
+    division_TheIthElementInItsSize(T *array, long int size,
+                                    long int serialSizeOfTheElementToLookFor) {
         if (size <= DIVISION) {
             bubbleSort(array, size);
             return array[serialSizeOfTheElementToLookFor - 1];
         } else {
-            int divisionCounter      = 1;
-            int lastDividedArraySize = DIVISION;
-            int divisionInteger      = 1;
+            long int divisionCounter      = 1;
+            long int lastDividedArraySize = DIVISION;
+            long int divisionInteger      = 1;
             whileOfBubbleSort_division_TheIthElementInItsSize<T, DIVISION>(
                     array, size, divisionCounter, divisionInteger,
                     lastDividedArraySize);
@@ -468,7 +470,7 @@ class my_algorithms {
             getMiddleArray_division_TheIthElementInItsSize<T, DIVISION>(
                     array, takenMiddlesArray, divisionCounter,
                     lastDividedArraySize);
-            int k_index;
+            long int k_index;
             try {
                 getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize<
                         T, DIVISION>(array, size, takenMiddlesArray,
@@ -482,12 +484,11 @@ class my_algorithms {
 
     /**
      * implements `quintuplet_TheIthElementInItsSize` as @e DIVISION = 5.
-     * @see quintuplet_TheIthElementInItsSize (E *, int, int)
+     * @see quintuplet_TheIthElementInItsSize (E *, long int, long int)
      */
     template<class T>
-    static T
-    quintuplet_TheIthElementInItsSize(T *array, int size,
-                                      int serialSizeOfTheElementToLookFor) {
+    static T quintuplet_TheIthElementInItsSize(
+            T *array, long int size, long int serialSizeOfTheElementToLookFor) {
         return division_TheIthElementInItsSize<T, 5>(
                 array, size, serialSizeOfTheElementToLookFor);
     }
@@ -498,11 +499,11 @@ class my_algorithms {
      *
      * @param outputParameterForThisFunctionName output parameter
      *                                           to getChecked this function's name.
-     * @see quintuplet_TheIthElementInItsSize (E *, int, int)
+     * @see quintuplet_TheIthElementInItsSize (E *, long int, long int)
      */
     template<class T>
     static T quintuplet_TheIthElementInItsSize_(
-            T *array, int size, int serialSizeOfTheElementToLookFor,
+            T *array, long int size, long int serialSizeOfTheElementToLookFor,
             char *&outputParameterForThisFunctionName) {
 
         // getChecked this function's name:
@@ -512,10 +513,10 @@ class my_algorithms {
     }
 
   private:
-    template<class T, int DIVISION>
+    template<class T, long int DIVISION>
     static void whileOfBubbleSort_division_TheIthElementInItsSize(
-            T *array, int size, int &divisionCounter, int &divisionInteger,
-            int &lastDividedArraySize) {
+            T *array, long int size, long int &divisionCounter,
+            long int &divisionInteger, long int &lastDividedArraySize) {
         while (divisionInteger >= 1) {
             divisionInteger = (size / (divisionCounter * DIVISION));
             if (divisionInteger < 1) {
@@ -540,11 +541,11 @@ class my_algorithms {
         }
     }
 
-    template<class T, int DIVISION>
+    template<class T, long int DIVISION>
     static void getMiddleArray_division_TheIthElementInItsSize(
-            T *array, T *takenMiddlesArray, int divisionCounter,
-            int lastDividedArraySize) {
-        int i = 0;
+            T *array, T *takenMiddlesArray, long int divisionCounter,
+            long int lastDividedArraySize) {
+        long int i = 0;
         for (; i < divisionCounter - 1; ++i) {
 
             /*
@@ -560,11 +561,12 @@ class my_algorithms {
                 array + (i * DIVISION), lastDividedArraySize);
     }
 
-    template<class T, int DIVISION>
+    template<class T, long int DIVISION>
     static void
     getTakenMiddlesArrayPivotElementAndIndex_division_TheIthElementInItsSize(
-            T *array, int size, T *takenMiddlesArray, int divisionCounter,
-            int &takenMiddlesArray_medianPivotElement_indexInArray) {
+            T *array, long int size, T *takenMiddlesArray,
+            long int  divisionCounter,
+            long int &takenMiddlesArray_medianPivotElement_indexInArray) {
 
         /*
          * getting the median in `takenMiddlesArray`,
@@ -607,10 +609,11 @@ class my_algorithms {
                           takenMiddlesArray_medianPivotElement_indexInArray);
     }
 
-    template<class T, int DIVISION>
-    static T returnOf_division_TheIthElementInItsSize(T *array, int size, int i,
-                                                      int k_index) {
-        int i_index = i - 1;
+    template<class T, long int DIVISION>
+    static T returnOf_division_TheIthElementInItsSize(T *array, long int size,
+                                                      long int i,
+                                                      long int k_index) {
+        long int i_index = i - 1;
 
         if (i_index < k_index) {
             return division_TheIthElementInItsSize<T, DIVISION>(array, k_index,
@@ -647,20 +650,21 @@ class my_algorithms {
      *                                        element to look for.
      * @return the *value* of the element which
      *         @p serialSizeOfTheElementToLookFor is its **serial size**.
-     * @see partition(E *, int, int)
-     * @see selectTheIthElementInItsSize(E *, int, int)
+     * @see partition(E *, long int, long int)
+     * @see selectTheIthElementInItsSize(E *, long int, long int)
      */
     template<class T>
     static T selectTheIthElementInItsSize_UnSecured(
-            T *array, int lowestIndexToSearchAt, int highestIndexToSearchAt,
-            int serialSizeOfTheElementToLookFor) {
+            T *array, long int lowestIndexToSearchAt,
+            long int highestIndexToSearchAt,
+            long int serialSizeOfTheElementToLookFor) {
 
         // getChecked a pivotIndex:
-        int pivotIndex =
+        long int pivotIndex =
                 partition(array, lowestIndexToSearchAt, highestIndexToSearchAt);
 
         // note the `+1` to include the `pivot` element in the lowPartition:
-        int lowPartitionSize = pivotIndex - lowestIndexToSearchAt + 1;
+        long int lowPartitionSize = pivotIndex - lowestIndexToSearchAt + 1;
 
         // the `pivot` is the element we have searched for, thus return it:
         if (serialSizeOfTheElementToLookFor == lowPartitionSize) {
@@ -683,7 +687,7 @@ class my_algorithms {
     }
 
     template<class T>
-    static T getMiddleElementInASortedArray(T *array, int size) {
+    static T getMiddleElementInASortedArray(T *array, long int size) {
         return array[(size - 1) / 2];
     }
 };

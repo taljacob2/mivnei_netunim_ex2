@@ -19,13 +19,13 @@
 class InputOutput {
   private:
     /// The number of elements provided.
-    const int N;
+    const long int N;
 
     /**
      * The division parameter - to how many `small arrays` the
      * `given array` would be divided.
      */
-    const int K;
+    const long int K;
 
     /// The name of the `input` file.
     const std::string INPUT_FILE_NAME;
@@ -35,15 +35,15 @@ class InputOutput {
 
     /* -- Constructor & Destructor -- */
   public:
-    InputOutput(int &N, int &K, std::string &inputFileName,
+    InputOutput(long int &N, long int &K, std::string &inputFileName,
                 std::string &outputFileName);
 
     ~InputOutput();
 
     /* -- Getters -- */
   public:
-    int                getN() const;
-    int                getK() const;
+    long int           getN() const;
+    long int           getK() const;
     const std::string &getInputFileName() const;
     const std::string &getOutputFileName() const;
 
@@ -58,15 +58,16 @@ class InputOutput {
      * @param outputFileName
      * @throws std::runtime_error if an `input` is in an `illegal` format.
      */
-    static void receiveInput(int &N, int &K, std::string &inputFileName,
+    static void receiveInput(long int &N, long int &K,
+                             std::string &inputFileName,
                              std::string &outputFileName);
 
     /**
      * @brief This method serves as a **Factory** method.
      *
      * Receives input:
-     *      @li (int) N - the number of elements provided.
-     *      @li (int) K - the division parameter - to how many `small arrays`
+     *      @li (long int) N - the number of elements provided.
+     *      @li (long int) K - the division parameter - to how many `small arrays`
      *                    the `given array` would be divided.
      *      @li (std::string) INPUT_FILE_NAME - the name of the `inputFile`.
      *      @li (std::string) OUTPUT_FILE_NAME - the name of the `outputFile`.
@@ -78,8 +79,8 @@ class InputOutput {
      *         and returns it.
      * @throws std::runtime_error if an `input` is in an `illegal` format,
      *         when receiving input in the `receiveInput` method.
-     * @see InputOutput(int&, int&, std::string&, std::string&)
-     * @see receiveInput(int &, int &, std::string &, std::string &)
+     * @see InputOutput(long int&, long int&, std::string&, std::string&)
+     * @see receiveInput(long int &, long int &, std::string &, std::string &)
      */
     static InputOutput *factoryInputOutput();
 
@@ -87,14 +88,14 @@ class InputOutput {
      * @brief This method gets the `array` specified in the *INPUT_FILE*
      *        provided by the *INPUT_FILE_NAME*.
      *
-     * @return the *int* array specified in the *INPUT_FILE* .
+     * @return the *long int* array specified in the *INPUT_FILE* .
      * @throws std::runtime_error @li in case the *file* specified by the
      *                            name: `INPUT_FILE_NAME` could not be found.
      *                            @li in case the `N` provided in the *file*
      *                            is larger than the actual number of elements
      *                            provided in the *file*.
      */
-    int *getIntArrayFromInputFile();
+    long int *getLongIntArrayFromInputFile();
 
     /* -- Print Methods -- */
 
@@ -107,8 +108,8 @@ class InputOutput {
      * @param size the size of the @p array to be printed.
      */
     template<typename T>
-    static void printArray(std::ostream &os, T *array, int size) {
-        for (int i = 0; i < size; i++) { os << array[i] << " "; }
+    static void printArray(std::ostream &os, T *array, long int size) {
+        for (long int i = 0; i < size; i++) { os << array[i] << " "; }
         os << "\n";
     }
 
@@ -126,9 +127,9 @@ class InputOutput {
      *                  each element but the `last` element.
      */
     template<typename T>
-    static void printArray(std::ostream &os, T *array, int size,
+    static void printArray(std::ostream &os, T *array, long int size,
                            char delimiter) {
-        int i = 0;
+        long int i = 0;
         for (; i < size - 1; i++) { os << array[i] << delimiter; }
         os << array[i];
     }
@@ -144,7 +145,7 @@ class InputOutput {
      */
     template<typename T>
     static void printArrayToFile(std::string &outputFileName, T *array,
-                                 int size) {
+                                 long int size) {
         std::ofstream file(outputFileName);
         if (!file) {
 
@@ -157,7 +158,7 @@ class InputOutput {
             throw std::runtime_error("wrong input");
         }
 
-        for (int i = 0; i < size; i++) { file << array[i] << " "; }
+        for (long int i = 0; i < size; i++) { file << array[i] << " "; }
         file << "\n";
         file.close();
     }
@@ -180,7 +181,7 @@ class InputOutput {
      */
     template<typename T>
     static void printArrayToFile(std::string &outputFileName, T *array,
-                                 int size, char delimiter) {
+                                 long int size, char delimiter) {
         std::ofstream file(outputFileName);
         if (!file) {
 
@@ -192,7 +193,7 @@ class InputOutput {
 
             throw std::runtime_error("wrong input");
         }
-        int i = 0;
+        long int i = 0;
         for (; i < size - 1; i++) { file << array[i] << delimiter; }
         file << array[i];
         file.close();
@@ -207,7 +208,7 @@ class InputOutput {
      * @throws std::runtime_error in case the *file* specified by the
      *                            name: `OUTPUT_FILE_NAME` could not be opened.
      */
-    template<typename T> void printArrayToFile(T *array, int size) {
+    template<typename T> void printArrayToFile(T *array, long int size) {
         std::ofstream file(OUTPUT_FILE_NAME);
         if (!file) {
 
@@ -220,7 +221,7 @@ class InputOutput {
             throw std::runtime_error("wrong input");
         }
 
-        for (int i = 0; i < size; i++) { file << array[i] << " "; }
+        for (long int i = 0; i < size; i++) { file << array[i] << " "; }
         file << "\n";
         file.close();
     }
@@ -240,7 +241,7 @@ class InputOutput {
      *                            name: `OUTPUT_FILE_NAME` could not be opened.
      */
     template<typename T>
-    void printArrayToFile(T *array, int size, char delimiter) {
+    void printArrayToFile(T *array, long int size, char delimiter) {
         std::ofstream file(OUTPUT_FILE_NAME);
         if (!file) {
 
@@ -252,7 +253,7 @@ class InputOutput {
 
             throw std::runtime_error("wrong input");
         }
-        int i = 0;
+        long int i = 0;
         for (; i < size - 1; i++) { file << array[i] << delimiter; }
         file << array[i];
         file.close();
@@ -262,7 +263,7 @@ class InputOutput {
   public:
     /**
      * @brief This method receives an `input` from an `input-stream` and checks
-     *        whether it is a legal **Int**.
+     *        whether it is a legal **LongInt**.
      *
      * @li In case the `input` gotten is `legal / valid`, return in.
      * @li In case the `input` gotten is `illegal / invalid`, throw an
@@ -271,14 +272,14 @@ class InputOutput {
      * @return the `input` gotten from the `input-stream` @p is, after
      *         passing the checking validation.
      * @throws std::runtime_error if the `input` is in an `illegal` format.
-     * @see checkIntInput(std::string &)
+     * @see checkLongIntInput(std::string &)
      * @see getChecked
      */
-    static int getCheckedInt(std::istream &is);
+    static long int getCheckedLongInt(std::istream &is);
 
     /**
      * @brief This method receives an `input` from an `input-stream` and checks
-     *        whether it is a legal **UnsignedInt**.
+     *        whether it is a legal **UnsignedLongInt**.
      *
      * @li In case the `input` gotten is `legal / valid`, return in.
      * @li In case the `input` gotten is `illegal / invalid`, throw an
@@ -287,14 +288,14 @@ class InputOutput {
      * @return the `input` gotten from the `input-stream` @p is, after
      *         passing the checking validation.
      * @throws std::runtime_error if the `input` is in an `illegal` format.
-     * @see checkUnsignedIntInput(std::string &)
+     * @see checkUnsignedLongIntInput(std::string &)
      * @see getChecked
      */
-    static int getCheckedUnsignedInt(std::istream &is);
+    static long int getCheckedUnsignedLongInt(std::istream &is);
 
     /**
      * @brief This method receives an `input` from an `input-stream` and checks
-     *        whether it is a legal **PositiveInt**.
+     *        whether it is a legal **PositiveLongInt**.
      *
      * @li In case the `input` gotten is `legal / valid`, return in.
      * @li In case the `input` gotten is `illegal / invalid`, throw an
@@ -303,10 +304,10 @@ class InputOutput {
      * @return the `input` gotten from the `input-stream` @p is, after
      *         passing the checking validation.
      * @throws std::runtime_error if the `input` is in an `illegal` format.
-     * @see checkPositiveIntInput(std::string &)
+     * @see checkPositiveLongIntInput(std::string &)
      * @see getChecked
      */
-    static int getCheckedPositiveInt(std::istream &is);
+    static long int getCheckedPositiveLongInt(std::istream &is);
 
   private:
     /**
@@ -350,48 +351,48 @@ class InputOutput {
   private:
     /**
      * @brief This method receives as a parameter a `std::string` and checks
-     *        whether it is a legal **Int**.
+     *        whether it is a legal **LongInt**.
      *
      * This method is *private*, and is being used as a parameter for the
-     * invocation of @link getCheckedInt(std::string &) @endlink in
+     * invocation of @link getCheckedLongInt(std::string &) @endlink in
      * the body of @link getChecked @endlink method.
      * @param input the `input` gotten, that is needed to be checked.
      * @return @li `true` if the `input` is `legal / valid`.
      *         @li `false` if the `input` is `illegal / invalid`.
-     * @see getCheckedInt(std::istream &)
+     * @see getCheckedLongInt(std::istream &)
      * @see getChecked
      */
-    static bool checkIntInput(std::string &input);
+    static bool checkLongIntInput(std::string &input);
 
     /**
      * @brief This method receives as a parameter a `std::string` and checks
-     *        whether it is a legal **UnsignedInt**.
+     *        whether it is a legal **UnsignedLongInt**.
      *
      * This method is *private*, and is being used as a parameter for the
-     * invocation of @link getCheckedUnsignedInt(std::string &) @endlink in
+     * invocation of @link getCheckedUnsignedLongInt(std::string &) @endlink in
      * the body of @link getChecked @endlink method.
      * @param input the `input` gotten, that is needed to be checked.
      * @return @li `true` if the `input` is `legal / valid`.
      *         @li `false` if the `input` is `illegal / invalid`.
-     * @see getCheckedUnsignedInt(std::istream &)
+     * @see getCheckedUnsignedLongInt(std::istream &)
      * @see getChecked
      */
-    static bool checkUnsignedIntInput(std::string &input);
+    static bool checkUnsignedLongIntInput(std::string &input);
 
     /**
      * @brief This method receives as a parameter a `std::string` and checks
-     *        whether it is a legal **PositiveInt**.
+     *        whether it is a legal **PositiveLongInt**.
      *
      * This method is *private*, and is being used as a parameter for the
-     * invocation of @link getCheckedPositiveInt(std::string &) @endlink in
+     * invocation of @link getCheckedPositiveLongInt(std::string &) @endlink in
      * the body of @link getChecked @endlink method.
      * @param input the `input` gotten, that is needed to be checked.
      * @return @li `true` if the `input` is `legal / valid`.
      *         @li `false` if the `input` is `illegal / invalid`.
-     * @see getCheckedPositiveInt(std::istream &)
+     * @see getCheckedPositiveLongInt(std::istream &)
      * @see getChecked
      */
-    static bool checkPositiveIntInput(std::string &input);
+    static bool checkPositiveLongIntInput(std::string &input);
 };
 
 #endif //MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H

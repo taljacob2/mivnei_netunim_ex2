@@ -40,43 +40,43 @@ class AlgorithmsAndMinHeap {
      *      `smallArrayLocations`, but on each `remove` of a `first` element in
      *      a `small array`, set the location of the according `small array`
      *      to be `1` location ahead.
-     *      @li (int *) smallArraySizes - is an array that stores the `size` of
+     *      @li (long int *) smallArraySizes - is an array that stores the `size` of
      *      each `small array`.
      * The method creates a `MinHeap`:
      *      This `MinHeap`'s elements are pointers to `Entries` such that
      *      each `Entry` is composed of a `key` and a `value.
      *      Its `key`, stands for the smallest element in each `small array` -
-     *      and its `value` stands for an *int* number that determines the
+     *      and its `value` stands for an *long int* number that determines the
      *      specific `small array` from which that element came from.
      *
      * @note in case @p k is smaller than the @p size of the @p array given,
-     *       then the method invokes @link my_algorithms::quickSort(K *, int)
+     *       then the method invokes @link my_algorithms::quickSort(K *, long int)
      *       @endlink.
      * @note in case @p k is less than `2`, then the method invokes @link
-     *       my_algorithms::quickSort(K *, int) @endlink.
+     *       my_algorithms::quickSort(K *, long int) @endlink.
      * @note In case @p k equals to `2`, this algorithm is actually the known
      *       `MergeSort` algorithm.
      * @tparam K the `type` of the elements in the @p array given.
      * @param array the array to sort. *Must* be dynamically allocated.
      * @param size the size of the @p array to sort.
      * @param k the *division* parameter, when sorting the array.
-     * @see my_algorithms::quickSort(K *, int)
+     * @see my_algorithms::quickSort(K *, long int)
      * @see MinHeap
      * @see Entry
      */
     template<typename K>
-    static void kWayMergeSort(K *array, const unsigned int size,
-                              unsigned int k) {
+    static void kWayMergeSort(K *array, const unsigned long int size,
+                              unsigned long int k) {
         if ((size < k) || (k == 0) || (k == 1)) {
             my_algorithms::quickSort(array, size);
             return;
         }
 
-        K ** smallArrayLocations           = new K *[k];
-        K ** changeableSmallArrayLocations = new K *[k];
-        int *smallArraySizes               = new int[k];
+        K **      smallArrayLocations           = new K *[k];
+        K **      changeableSmallArrayLocations = new K *[k];
+        long int *smallArraySizes               = new long int[k];
 
-        MinHeap<K, int> minHeap(k);
+        MinHeap<K, long int> minHeap(k);
 
         /*
          * Divide the array to K `smaller arrays`.
@@ -94,7 +94,7 @@ class AlgorithmsAndMinHeap {
                                                 smallArraySizes, minHeap);
 
         /* Delete each `small array`. */
-        for (unsigned int i = 0; i < k; i++) {
+        for (unsigned long int i = 0; i < k; i++) {
             delete[] smallArrayLocations[i];
         }
         delete[] smallArrayLocations;
@@ -114,7 +114,7 @@ class AlgorithmsAndMinHeap {
      *            `small array` with a loop:
      *            @code
      *            // Delete each `small array`.
-     *            for (int i = 0; i < k; i++) { delete[] smallArrayLocations[i]; }
+     *            for (long int i = 0; i < k; i++) { delete[] smallArrayLocations[i]; }
      *            @endcode
      *
      * @note The method divides the given @p array such that the sizes of the
@@ -146,26 +146,26 @@ class AlgorithmsAndMinHeap {
      */
     template<typename K>
     static void divideArrayToKSmallerArrays(
-            K *array, unsigned int size, unsigned int k,
+            K *array, unsigned long int size, unsigned long int k,
             K **smallArrayLocations, K **changeableSmallArrayLocations,
-            int *smallArraySizes,
-            const std::function<void(K *, unsigned int, unsigned int)>
-                    &        forEachSmallArrayFunction,
-            MinHeap<K, int> &minHeap) {
+            long int *smallArraySizes,
+            const std::function<void(K *, unsigned long int, unsigned long int)>
+                    &             forEachSmallArrayFunction,
+            MinHeap<K, long int> &minHeap) {
 
         /*
          * Save here the size of the last `small array`.
          * Attention: must initialize with `0`.
          */
-        int lastSmallArraySize = 0;
-        int currK              = k;
+        long int lastSmallArraySize = 0;
+        long int currK              = k;
         while ((size > 0) && (currK > 0)) {
 
             /* Determines the current iteration. */
-            int kIndex = k - currK;
+            long int kIndex = k - currK;
 
             /* Get `currSmallArrayStartLocation` `size`. */
-            int currSmallArraySize = ceil((double) size / currK);
+            long int currSmallArraySize = ceil((double) size / currK);
 
             /*
              * Insert the `currSmallArrayStartLocation` `size` to the
@@ -199,7 +199,7 @@ class AlgorithmsAndMinHeap {
              * Attention: `Entry` must be `lvalue`.
              */
             auto *entryToInsert =
-                    new Entry<K, int>(currSmallArrayLocation[0], kIndex);
+                    new Entry<K, long int>(currSmallArrayLocation[0], kIndex);
             minHeap.insert(entryToInsert);
             stepAheadSmallArray(changeableSmallArrayLocations, smallArraySizes,
                                 entryToInsert);
@@ -239,12 +239,12 @@ class AlgorithmsAndMinHeap {
      */
     template<typename K>
     static void deleteMinAndCheckFromWhichSmallArray(
-            K *array, unsigned int size, K **changeableSmallArrayLocations,
-            int *smallArraySizes, MinHeap<K, int> &minHeap) {
-        for (unsigned int i = 0; i < size; i++) {
+            K *array, unsigned long int size, K **changeableSmallArrayLocations,
+            long int *smallArraySizes, MinHeap<K, long int> &minHeap) {
+        for (unsigned long int i = 0; i < size; i++) {
 
             /* Remove the minimal element from the heap. */
-            Entry<K, int> *deletedElement = minHeap.deleteMin();
+            Entry<K, long int> *deletedElement = minHeap.deleteMin();
 
             /* Insert minimal `key` to `resultArray`. */
             array[i] = deletedElement->getKey();
@@ -257,7 +257,7 @@ class AlgorithmsAndMinHeap {
                  * to the given `Minimum-Heap`.
                  * (= the `first` element in the small array).
                  */
-                auto *elementToInsert = new Entry<K, int>(
+                auto *elementToInsert = new Entry<K, long int>(
                         (changeableSmallArrayLocations
                                  [deletedElement->getValue()])[0],
                         deletedElement->getValue());
@@ -296,9 +296,9 @@ class AlgorithmsAndMinHeap {
      *                       generic `small-array`.
      */
     template<typename K>
-    static void stepAheadSmallArray(K ** changeableSmallArrayLocations,
-                                    int *smallArraySizes,
-                                    Entry<K, int> *deletedElement) {
+    static void stepAheadSmallArray(K **      changeableSmallArrayLocations,
+                                    long int *smallArraySizes,
+                                    Entry<K, long int> *deletedElement) {
 
         /*
          * Step ahead the `location` of the according small array,

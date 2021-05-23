@@ -6,11 +6,11 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(mivnei_netunim_ex2
-    AlgorithmsAndMinHeap.h
-    Entry.h
-    InputOutput.cpp
-    InputOutput.h
-    main.cpp
-    MinHeap.h
-    MinHeapADT.h
-    my_algorithms.h)
+        AlgorithmsAndMinHeap.h
+        Entry.h
+        InputOutput.cpp
+        InputOutput.h
+        main.cpp
+        MinHeap.h
+        MinHeapADT.h
+        my_algorithms.h)

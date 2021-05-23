@@ -17,7 +17,8 @@
  *        pointers to **lvalue `Entries`** that are composed of a *key* and a *value*.
  *
  * @li Once the heap has been built by @link buildHeap @endlink or
- * @link MinHeap(Entry<K, V> *,int) @endlink, its *physical-size* is treated
+ * @link MinHeap(Entry<K, V> *, long int) @endlink, its *physical-size* is
+ * treated
  * as a constant - thus unchangeable. In case the user wishes to change the
  * *physical-size* of the heap, there is a *must* to invoke @link buildHeap
  * @endlink again.
@@ -40,10 +41,10 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     Entry<K, V> **array = nullptr;
 
     /// The *physical-size* of the *array*. Initialized to `0`.
-    int physicalSize = 0;
+    long int physicalSize = 0;
 
     /// The *logical-size* of the *array*. Initialized to `0`.
-    int logicalSize = 0;
+    long int logicalSize = 0;
 
   public:
     /**
@@ -59,7 +60,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @see buildHeap
      */
     explicit MinHeap(Entry<K, V> *arrayToBuildFrom,
-                     int          sizeOfArrayToBuildFrom) {
+                     long int     sizeOfArrayToBuildFrom) {
         buildHeap(arrayToBuildFrom, sizeOfArrayToBuildFrom);
     }
 
@@ -70,7 +71,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      * @note the content of the *array* remains empty.
      * @param physicalSize set the `physicalSize` of the array to be this size.
      */
-    explicit MinHeap(int physicalSize) {
+    explicit MinHeap(long int physicalSize) {
         this->physicalSize = physicalSize;
         array              = new Entry<K, V> *[physicalSize];
     }
@@ -94,7 +95,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *            this method returns `null_ptr`.
      * @return the *minimal element* removed from the heap.
      * @throws std::logic_error in case the heap is already empty.
-     * @see fixHeap(int)
+     * @see fixHeap(long int)
      */
     Entry<K, V> *deleteMin() override { return deleteMin(true); }
 
@@ -112,7 +113,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *                             ensure that the heap is still valid.
      * @return the *minimal element* removed from the heap.
      * @throws std::logic_error in case the heap is already empty.
-     * @see fixHeap(int)
+     * @see fixHeap(long int)
      */
     Entry<K, V> *deleteMin(bool fixHeapAfterDeletion) {
 
@@ -150,7 +151,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *                             *fixHeap(0)* method, after deletion, to
      *                             ensure that the heap is still valid.
      * @see deleteMin()
-     * @see fixHeap(int)
+     * @see fixHeap(long int)
      */
     void deleteMinWhenThereAreTwoOrMoreElements(bool fixHeapAfterDeletion) {
 
@@ -217,7 +218,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         /* Add the `elementToInsert` as the `last` element in the array. */
         array[logicalSize++] = elementToInsert;
 
-        int currentIndex = logicalSize - 1;
+        long int currentIndex = logicalSize - 1;
 
         /*
          * Check upwards the heap, whether there is a need to `swap` the
@@ -266,7 +267,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *            will have no effect, as explained earlier.
      * @throws std::out_of_range in case the index provided is out of range.
      */
-    void fixHeap(int indexToFixFrom) override {
+    void fixHeap(long int indexToFixFrom) override {
 
         /* Check that `indexToFixFrom` is a legal index. */
         if ((indexToFixFrom < 0) || (logicalSize <= indexToFixFrom)) {
@@ -286,15 +287,15 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
     /**
      * @brief This method is a *private* method, that represents the
      *        case when the provided @p currentIndex is a legal index.
-     *        This method is being invoked by the @link fixHeap(int)
+     *        This method is being invoked by the @link fixHeap(long int)
      *        @endlink method.
      *
      * @param currentIndex has been checked as a legal index. should be
      *                     in between `0` and `(logicalSize / 2)`.
      *                     Represents the index to *fixHeap* from.
-     * @see fixHeap(int)
+     * @see fixHeap(long int)
      */
-    void fixHeapLegalIndex(int indexToFixFrom) {
+    void fixHeapLegalIndex(long int indexToFixFrom) {
 
         /*
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
@@ -303,7 +304,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
          * Attention: there is no use to give `indexToFixFrom` that is larger
          *            than `(logicalSize / 2)`.
          */
-        int currentIndex = indexToFixFrom;
+        long int currentIndex = indexToFixFrom;
         if (array[currentIndex] == nullptr) {
 
             /*
@@ -325,7 +326,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
 
     /**
      * @brief This method is a *private* method, that represents a `while`
-     *        that is being invoked by the @link fixHeap(int) @endlink method.
+     *        that is being invoked by the @link fixHeap(long int) @endlink method.
      *
      * The `while` loop has `2` stop conditions:
      *  @li there are no children to the `node` that is being iterated ( =
@@ -334,15 +335,15 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *  its children.
      * @param currentIndex should be in between `0` and `(logicalSize / 2)`.
      *                     Represents the index to *fixHeap* from.
-     * @see fixHeap(int)
+     * @see fixHeap(long int)
      */
-    void fixHeapWhile(int currentIndex) {
+    void fixHeapWhile(long int currentIndex) {
 
         /* array[currentIndex] is not `nullptr`. Thus, comparable. */
         while ((0 <= currentIndex) && (currentIndex < (logicalSize / 2))) {
 
             /* Get the index that points to the `minimal` element. */
-            int indexOfMinimalChildOfCurrentRoot =
+            long int indexOfMinimalChildOfCurrentRoot =
                     my_algorithms::min(array, logicalSize, currentIndex * 2 + 1,
                                        currentIndex * 2 + 2);
             if (array[indexOfMinimalChildOfCurrentRoot] != nullptr) {
@@ -400,7 +401,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
      *            **lvalues**.
      */
     void buildHeap(Entry<K, V> *arrayToBuildFrom,
-                   int          sizeOfArrayToBuildFrom) override {
+                   long int     sizeOfArrayToBuildFrom) override {
 
         /* Delete the old array if there is any. */
         delete[] array;
@@ -409,7 +410,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
         physicalSize = sizeOfArrayToBuildFrom;
         logicalSize  = sizeOfArrayToBuildFrom;
         array        = new Entry<K, V> *[sizeOfArrayToBuildFrom];
-        for (int i = 0; i < sizeOfArrayToBuildFrom; i++) {
+        for (long int i = 0; i < sizeOfArrayToBuildFrom; i++) {
             array[i] = &arrayToBuildFrom[i];
         }
 
@@ -417,8 +418,8 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
          * `currentIndex` should be in between `0` and `(logicalSize / 2)`.
          * Note: the almost last level has `(logicalSize / 2)` `nodes`.
          */
-        int lastIndex = logicalSize - 1;
-        for (int currentIndex = (lastIndex - 1) / 2; currentIndex >= 0;
+        long int lastIndex = logicalSize - 1;
+        for (long int currentIndex = (lastIndex - 1) / 2; currentIndex >= 0;
              currentIndex--) {
             fixHeap(currentIndex);
         }
@@ -449,7 +450,7 @@ template<typename K, typename V> class MinHeap : public MinHeapADT<K, V> {
             os << "The array is empty."
                << "\n";
         }
-        for (int i = 0; i < heap.logicalSize; i++) {
+        for (long int i = 0; i < heap.logicalSize; i++) {
             os << *heap.array[i] << ";";
             os << "\n";
         }

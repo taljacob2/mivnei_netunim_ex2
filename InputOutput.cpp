@@ -3,7 +3,7 @@
 
 /* -- Constructor & Destructor -- */
 
-InputOutput::InputOutput(int &N, int &K, std::string &inputFileName,
+InputOutput::InputOutput(long int &N, long int &K, std::string &inputFileName,
                          std::string &outputFileName)
     : N(N), K(K), INPUT_FILE_NAME(inputFileName),
       OUTPUT_FILE_NAME(outputFileName) {
@@ -17,9 +17,9 @@ InputOutput::~InputOutput() = default;
 
 /* -- Getters -- */
 
-int InputOutput::getN() const { return N; }
+long int InputOutput::getN() const { return N; }
 
-int InputOutput::getK() const { return K; }
+long int InputOutput::getK() const { return K; }
 
 const std::string &InputOutput::getInputFileName() const {
     return INPUT_FILE_NAME;
@@ -31,14 +31,15 @@ const std::string &InputOutput::getOutputFileName() const {
 
 /* -- Main Methods -- */
 
-void InputOutput::receiveInput(int &N, int &K, std::string &inputFileName,
+void InputOutput::receiveInput(long int &N, long int &K,
+                               std::string &inputFileName,
                                std::string &outputFileName) {
 
     /* Receive N */
-    N = getCheckedPositiveInt(std::cin);
+    N = getCheckedPositiveLongInt(std::cin);
 
     /* Receive K */
-    K = getCheckedPositiveInt(std::cin);
+    K = getCheckedPositiveLongInt(std::cin);
 
     /* Receive name of InputFile: */
     std::cin >> inputFileName; // TODO: need to check this somehow?
@@ -50,8 +51,8 @@ void InputOutput::receiveInput(int &N, int &K, std::string &inputFileName,
 InputOutput *InputOutput::factoryInputOutput() {
 
     /* Receive input: */
-    int         N;
-    int         K;
+    long int    N;
+    long int    K;
     std::string INPUT_FILE_NAME;
     std::string OUTPUT_FILE_NAME;
     InputOutput::receiveInput(N, K, INPUT_FILE_NAME, OUTPUT_FILE_NAME);
@@ -60,7 +61,7 @@ InputOutput *InputOutput::factoryInputOutput() {
     return new InputOutput(N, K, INPUT_FILE_NAME, OUTPUT_FILE_NAME);
 }
 
-int *InputOutput::getIntArrayFromInputFile() {
+long int *InputOutput::getLongIntArrayFromInputFile() {
     std::ifstream file(INPUT_FILE_NAME);
     if (!file) {
 
@@ -73,11 +74,11 @@ int *InputOutput::getIntArrayFromInputFile() {
         throw std::runtime_error("wrong input");
     }
 
-    auto *array = new int[N];
-    int   i     = 0;
+    auto *   array = new long int[N];
+    long int i     = 0;
     while ((i < N) && (!file.eof())) {
         try {
-            array[i] = getCheckedInt(file);
+            array[i] = getCheckedLongInt(file);
         } catch (std::exception &e) {
             delete[] array;
             throw;
@@ -111,24 +112,28 @@ int *InputOutput::getIntArrayFromInputFile() {
 
 /* -- Get Checkers -- */
 
-int InputOutput::getCheckedInt(std::istream &is) noexcept(false) {
-    return getChecked<int>(is, InputOutput::checkIntInput, atoi);
+long int InputOutput::getCheckedLongInt(std::istream &is) noexcept(false) {
+    return getChecked<long int>(is, InputOutput::checkLongIntInput, atoi);
 }
 
-int InputOutput::getCheckedUnsignedInt(std::istream &is) noexcept(false) {
-    return getChecked<int>(is, InputOutput::checkUnsignedIntInput, atoi);
+long int
+InputOutput::getCheckedUnsignedLongInt(std::istream &is) noexcept(false) {
+    return getChecked<long int>(is, InputOutput::checkUnsignedLongIntInput,
+                                atoi);
 }
 
-int InputOutput::getCheckedPositiveInt(std::istream &is) noexcept(false) {
-    return getChecked<int>(is, InputOutput::checkPositiveIntInput, atoi);
+long int
+InputOutput::getCheckedPositiveLongInt(std::istream &is) noexcept(false) {
+    return getChecked<long int>(is, InputOutput::checkPositiveLongIntInput,
+                                atoi);
 }
 
 /* -- Checkers -- */
 
-bool InputOutput::checkIntInput(std::string &input) {
-    bool returnValue = false;
-    int  i           = 0;
-    for (; i < (int) input.length(); i++) {
+bool InputOutput::checkLongIntInput(std::string &input) {
+    bool     returnValue = false;
+    long int i           = 0;
+    for (; i < (long int) input.length(); i++) {
         if ((input[i] == '+') || (input[i] == '-')) {
             if (i == 0) {
 
@@ -147,14 +152,14 @@ bool InputOutput::checkIntInput(std::string &input) {
     }
 
     /* Return `true` only if all iterations have passed successfully. */
-    if (i == (int) input.length()) { returnValue = true; }
+    if (i == (long int) input.length()) { returnValue = true; }
     return returnValue;
 }
 
-bool InputOutput::checkUnsignedIntInput(std::string &input) {
-    bool returnValue = false;
-    int  i           = 0;
-    for (; i < (int) input.length(); i++) {
+bool InputOutput::checkUnsignedLongIntInput(std::string &input) {
+    bool     returnValue = false;
+    long int i           = 0;
+    for (; i < (long int) input.length(); i++) {
         if (input[i] == '+') {
             if (i == 0) {
 
@@ -173,14 +178,14 @@ bool InputOutput::checkUnsignedIntInput(std::string &input) {
     }
 
     /* Return `true` only if all iterations have passed successfully. */
-    if (i == (int) input.length()) { returnValue = true; }
+    if (i == (long int) input.length()) { returnValue = true; }
     return returnValue;
 }
 
-bool InputOutput::checkPositiveIntInput(std::string &input) {
-    bool returnValue = false;
-    int  i           = 0;
-    for (; i < (int) input.length(); i++) {
+bool InputOutput::checkPositiveLongIntInput(std::string &input) {
+    bool     returnValue = false;
+    long int i           = 0;
+    for (; i < (long int) input.length(); i++) {
         if (input[i] == '+') {
             if (i == 0) {
 
@@ -210,6 +215,6 @@ bool InputOutput::checkPositiveIntInput(std::string &input) {
     }
 
     /* Return `true` only if all iterations have passed successfully. */
-    if (i == (int) input.length()) { returnValue = true; }
+    if (i == (long int) input.length()) { returnValue = true; }
     return returnValue;
 }

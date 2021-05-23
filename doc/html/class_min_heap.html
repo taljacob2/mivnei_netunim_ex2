@@ -2,28 +2,28 @@
         "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-    <meta name="generator" content="Doxygen 1.9.1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta content="text/xhtml;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="IE=9" http-equiv="X-UA-Compatible"/>
+    <meta content="Doxygen 1.9.1" name="generator"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>mivnei_netunim targil tichnuti 2: MinHeap&lt; K, V &gt; Class
         Template Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="dynsections.js"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="dynsections.js" type="text/javascript"></script>
     <link href="navtree.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="resize.js"></script>
-    <script type="text/javascript" src="navtreedata.js"></script>
-    <script type="text/javascript" src="navtree.js"></script>
+    <script src="resize.js" type="text/javascript"></script>
+    <script src="navtreedata.js" type="text/javascript"></script>
+    <script src="navtree.js" type="text/javascript"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="search/searchdata.js"></script>
-    <script type="text/javascript" src="search/search.js"></script>
+    <script src="search/searchdata.js" type="text/javascript"></script>
+    <script src="search/search.js" type="text/javascript"></script>
     <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
     <div id="titlearea">
-        <table cellspacing="0" cellpadding="0">
+        <table cellpadding="0" cellspacing="0">
             <tbody>
             <tr style="height: 56px;">
                 <td id="projectalign" style="padding-left: 0.5em;">
@@ -41,8 +41,8 @@
         var searchBox = new SearchBox("searchBox", "search", false, 'Search', '.html');
         /* @license-end */
     </script>
-    <script type="text/javascript" src="menudata.js"></script>
-    <script type="text/javascript" src="menu.js"></script>
+    <script src="menudata.js" type="text/javascript"></script>
+    <script src="menu.js" type="text/javascript"></script>
     <script type="text/javascript">
         /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
         $(function () {
@@ -54,14 +54,14 @@
         /* @license-end */</script>
     <div id="main-nav"></div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
+<div class="ui-resizable side-nav-resizable" id="side-nav">
     <div id="nav-tree">
         <div id="nav-tree-contents">
-            <div id="nav-sync" class="sync"></div>
+            <div class="sync" id="nav-sync"></div>
         </div>
     </div>
-    <div id="splitbar" style="-moz-user-select:none;"
-         class="ui-resizable-handle">
+    <div class="ui-resizable-handle" id="splitbar"
+         style="-moz-user-select:none;">
     </div>
 </div>
 <script type="text/javascript">
@@ -75,15 +75,15 @@
 <div id="doc-content">
     <!-- window showing the filter options -->
     <div id="MSearchSelectWindow"
-         onmouseover="return searchBox.OnSearchSelectShow()"
+         onkeydown="return searchBox.OnSearchSelectKey(event)"
          onmouseout="return searchBox.OnSearchSelectHide()"
-         onkeydown="return searchBox.OnSearchSelectKey(event)">
+         onmouseover="return searchBox.OnSearchSelectShow()">
     </div>
 
     <!-- iframe showing the search results (closed by default) -->
     <div id="MSearchResultsWindow">
-        <iframe src="javascript:void(0)" frameborder="0"
-                name="MSearchResults" id="MSearchResults">
+        <iframe frameborder="0" id="MSearchResults"
+                name="MSearchResults" src="javascript:void(0)">
         </iframe>
     </div>
 
@@ -113,14 +113,15 @@
         </div>
         <div class="dyncontent">
             <div class="center">
-                <img src="class_min_heap.png"
-                     usemap="#MinHeap_3C_20K_2C_20V_20_3E_map" alt=""/>
+                <img alt=""
+                     src="class_min_heap.png"
+                     usemap="#MinHeap_3C_20K_2C_20V_20_3E_map"/>
                 <map id="MinHeap_3C_20K_2C_20V_20_3E_map"
                      name="MinHeap_3C_20K_2C_20V_20_3E_map">
-                    <area href="class_min_heap_a_d_t.html"
-                          title="This class represents an abstract Minimum-Heap, which its elements are Entries that are composed by a..."
-                          alt="MinHeapADT&lt; K, V &gt;" shape="rect"
-                          coords="0,0,138,24"/>
+                    <area alt="MinHeapADT&lt; K, V &gt;"
+                          coords="0,0,138,24"
+                          href="class_min_heap_a_d_t.html" shape="rect"
+                          title="This class represents an abstract Minimum-Heap, which its elements are Entries that are composed by a..."/>
                 </map>
             </div>
         </div>
@@ -131,7 +132,7 @@
                     Public Member Functions</h2></td>
             </tr>
             <tr class="memitem:ad33a31874c9406b784c3c40a158cd501">
-                <td class="memItemLeft" align="right" valign="top">&#160;</td>
+                <td align="right" class="memItemLeft" valign="top">&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#ad33a31874c9406b784c3c40a158cd501">MinHeap</a>
                     (<a class="el" href="class_entry.html">Entry</a>&lt; K, V
@@ -149,7 +150,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:ad7b6335a707b33ba813911d9396c40a6">
-                <td class="memItemLeft" align="right" valign="top">&#160;</td>
+                <td align="right" class="memItemLeft" valign="top">&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#ad7b6335a707b33ba813911d9396c40a6">MinHeap</a>
                     (int <a class="el"
@@ -167,7 +168,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a8cfd4f3ec701187c24893f6d4a9063d8">
-                <td class="memItemLeft" align="right" valign="top">&#160;</td>
+                <td align="right" class="memItemLeft" valign="top">&#160;</td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a8cfd4f3ec701187c24893f6d4a9063d8">MinHeap</a>
                     ()=default
@@ -183,7 +184,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a6041d18dee6992810ede4a3444b31738">
-                <td class="memItemLeft" align="right" valign="top">
+                <td align="right" class="memItemLeft" valign="top">
                     virtual&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
@@ -201,7 +202,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a6f4be46b00c888580c5f3afe41865930">
-                <td class="memItemLeft" align="right" valign="top"><a class="el"
+                <td align="right" class="memItemLeft" valign="top"><a class="el"
                                                                       href="class_entry.html">Entry</a>&lt;
                     K, V &gt; *&#160;
                 </td>
@@ -221,7 +222,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a2774a39578ec0f31204e97df1645cd30">
-                <td class="memItemLeft" align="right" valign="top"><a class="el"
+                <td align="right" class="memItemLeft" valign="top"><a class="el"
                                                                       href="class_entry.html">Entry</a>&lt;
                     K, V &gt; *&#160;
                 </td>
@@ -241,7 +242,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:aeee64b5f9f692ab7023c26f49279ef16">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">insert</a>
@@ -260,7 +261,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:ab5f16032e4084a73454be12e70ee3878">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#ab5f16032e4084a73454be12e70ee3878">fixHeap</a>
@@ -285,7 +286,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a3aeffb1e6116afdbc3981e0b2280ecb3">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a3aeffb1e6116afdbc3981e0b2280ecb3">buildHeap</a>
@@ -305,7 +306,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a7edac6f943f3e143fbf45b529e70a8e4">
-                <td class="memItemLeft" align="right" valign="top">bool&#160;
+                <td align="right" class="memItemLeft" valign="top">bool&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a7edac6f943f3e143fbf45b529e70a8e4">isEmpty</a>
@@ -323,7 +324,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:ae6f21519950cc55c5b470d07ee01a062">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#ae6f21519950cc55c5b470d07ee01a062">makeEmpty</a>
@@ -347,7 +348,7 @@
                     Private Member Functions</h2></td>
             </tr>
             <tr class="memitem:a1b020a274541d1da5c5d34ab43515a19">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a1b020a274541d1da5c5d34ab43515a19">deleteMinWhenThereAreTwoOrMoreElements</a>
@@ -366,7 +367,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a658f6c362036350b5145178e88e57051">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a658f6c362036350b5145178e88e57051">insertWhenThereIsEnoughSpace</a>
@@ -387,7 +388,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:abf27ed86919364739d0c6d508a8ae9a5">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#abf27ed86919364739d0c6d508a8ae9a5">fixHeapLegalIndex</a>
@@ -409,7 +410,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a8f24129c56d65d760c4d0e4460e8d27a">
-                <td class="memItemLeft" align="right" valign="top">void&#160;
+                <td align="right" class="memItemLeft" valign="top">void&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a8f24129c56d65d760c4d0e4460e8d27a">fixHeapWhile</a>
@@ -437,7 +438,7 @@
                     Private Attributes</h2></td>
             </tr>
             <tr class="memitem:a889e4bc48d8430fa841532b25dc000e4">
-                <td class="memItemLeft" align="right" valign="top"><a class="el"
+                <td align="right" class="memItemLeft" valign="top"><a class="el"
                                                                       href="class_entry.html">Entry</a>&lt;
                     K, V &gt; **&#160;
                 </td>
@@ -450,7 +451,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:a6e37d28efb033ff005ad704809af28b4">
-                <td class="memItemLeft" align="right" valign="top">int&#160;
+                <td align="right" class="memItemLeft" valign="top">int&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#a6e37d28efb033ff005ad704809af28b4">physicalSize</a>
@@ -468,7 +469,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
             <tr class="memitem:aa5f4e762e12a9ea582b476c9520f2e91">
-                <td class="memItemLeft" align="right" valign="top">int&#160;
+                <td align="right" class="memItemLeft" valign="top">int&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
                                                             href="class_min_heap.html#aa5f4e762e12a9ea582b476c9520f2e91">logicalSize</a>
@@ -492,7 +493,7 @@
                     Friends</h2></td>
             </tr>
             <tr class="memitem:a81a7799f8217c5db84b7eec767932d2f">
-                <td class="memItemLeft" align="right" valign="top">std::ostream
+                <td align="right" class="memItemLeft" valign="top">std::ostream
                     &amp;&#160;
                 </td>
                 <td class="memItemRight" valign="bottom"><a class="el"
@@ -513,7 +514,7 @@
                 <td class="memSeparator" colspan="2">&#160;</td>
             </tr>
         </table>
-        <a name="details" id="details"></a>
+        <a id="details" name="details"></a>
         <h2 class="groupheader">Detailed Description</h2>
         <div class="textblock"><h3>template&lt;typename K, typename V&gt;<br/>
             class MinHeap&lt; K, V &gt;</h3>
@@ -1816,16 +1817,16 @@
     </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+<div class="navpath" id="nav-path"><!-- id is needed for treeview function! -->
     <ul>
         <li class="navelem"><a class="el" href="class_min_heap.html">MinHeap</a>
         </li>
         <li class="footer">Generated by <a
-                href="https://www.doxygen.org/index.html"><img class="footer"
-                                                               src="doxygen.svg"
-                                                               width="104"
+                href="https://www.doxygen.org/index.html"><img alt="doxygen"
+                                                               class="footer"
                                                                height="31"
-                                                               alt="doxygen"/></a>
+                                                               src="doxygen.svg"
+                                                               width="104"/></a>
             1.9.1
         </li>
     </ul>

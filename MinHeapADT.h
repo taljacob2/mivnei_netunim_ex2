@@ -46,7 +46,7 @@ template<typename K, typename V> class MinHeapADT {
      * @note this method will continue to run until the root is no longer
      *       larger than one of his children, or when the root is a leaf.
      */
-    virtual void fixHeap(int indexToFixFrom) = 0;
+    virtual void fixHeap(long int indexToFixFrom) = 0;
 
     /**
      * @brief Builds a **Minimum-Heap** by giving an arrayToBuildFrom of
@@ -56,7 +56,7 @@ template<typename K, typename V> class MinHeapADT {
      *                         heap from.
      */
     virtual void buildHeap(Entry<K, V> *arrayToBuildFrom,
-                           int          sizeOfArrayToBuildFrom) = 0;
+                           long int     sizeOfArrayToBuildFrom) = 0;
 
     /**
      * @brief boolean value whether this heap empty or not.

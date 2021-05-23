@@ -11,14 +11,15 @@
  */
 int main() {
     InputOutput *inputOutput                = nullptr;
-    int *        arrayReceivedFromInputFile = nullptr;
+    long int *   arrayReceivedFromInputFile = nullptr;
     try {
 
         /* Receive input, and create an InputOutput object. */
         inputOutput = InputOutput::factoryInputOutput();
 
         /* Extract array from the `input` file. */
-        arrayReceivedFromInputFile = inputOutput->getIntArrayFromInputFile();
+        arrayReceivedFromInputFile =
+                inputOutput->getLongIntArrayFromInputFile();
     } catch (std::exception &e) {
         std::cerr << e.what();
 
