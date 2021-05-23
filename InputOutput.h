@@ -326,8 +326,7 @@ class InputOutput {
             // if this is a legal input, return it.
             return returnFunction(stringInput.c_str());
         } else {
-            std::string msg = "wrong input";
-            throw std::runtime_error(msg);
+            throw std::runtime_error("wrong input");
         }
     }
 
