@@ -113,19 +113,19 @@ long int *InputOutput::getLongIntArrayFromInputFile() {
 /* -- Get Checkers -- */
 
 long int InputOutput::getCheckedLongInt(std::istream &is) noexcept(false) {
-    return getChecked<long int>(is, InputOutput::checkLongIntInput, atoi);
+    return getChecked<long int>(is, InputOutput::checkLongIntInput, atol);
 }
 
 long int
 InputOutput::getCheckedUnsignedLongInt(std::istream &is) noexcept(false) {
     return getChecked<long int>(is, InputOutput::checkUnsignedLongIntInput,
-                                atoi);
+                                atol);
 }
 
 long int
 InputOutput::getCheckedPositiveLongInt(std::istream &is) noexcept(false) {
     return getChecked<long int>(is, InputOutput::checkPositiveLongIntInput,
-                                atoi);
+                                atol);
 }
 
 /* -- Checkers -- */
