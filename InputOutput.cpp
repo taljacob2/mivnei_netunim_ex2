@@ -42,10 +42,10 @@ void InputOutput::receiveInput(long int &N, long int &K,
     K = getCheckedPositiveLongInt(std::cin);
 
     /* Receive name of InputFile: */
-    std::cin >> inputFileName; // TODO: need to check this somehow?
+    std::cin >> inputFileName;
 
     /* Receive name of OutputFile: */
-    std::cin >> outputFileName; // TODO: need to check this somehow?
+    std::cin >> outputFileName;
 }
 
 InputOutput *InputOutput::factoryInputOutput() {
