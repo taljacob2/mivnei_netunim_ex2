@@ -147,123 +147,440 @@ $(document).ready(function(){initNavTree('_algorithms_and_min_heap_8h_source.htm
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">         * Save here the size of the last `small array`.</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">         * Attention: must initialize with `0`.</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">int</span> lastSmallArraySize = 0;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">int</span> currK              = k;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">while</span> ((size &gt; 0) &amp;&amp; (currK &gt; 0)) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="comment">/* Determines the current iteration. */</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordtype">long</span> <span class="keywordtype">int</span> kIndex = k - currK;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="comment">/* Get `currSmallArrayStartLocation` `size`. */</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordtype">long</span> <span class="keywordtype">int</span> currSmallArraySize = ceil((<span class="keywordtype">double</span>) size / currK);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">             * Insert the `currSmallArrayStartLocation` `size` to the</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">             * `smallArraySizes` array.</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">             */</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            smallArraySizes[kIndex] = currSmallArraySize;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="comment">/* Get `currSmallArrayStartLocation` `location`. */</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            K *currSmallArrayStartLocation = array + lastSmallArraySize;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="comment">/* Copy the correct amount of elements to a `small array`. */</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            K *currSmallArrayLocation = <a class="code" href="classmy__algorithms.html#a49026173e7e05d46c3fe35f8f4da7610">my_algorithms::copyArray</a>(</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    currSmallArrayStartLocation, currSmallArraySize);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">             * Insert the `currSmallArrayStartLocation` to the</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">             * `smallArrayLocations` and `changeableSmallArrayLocations` arrays.</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">             */</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            smallArrayLocations[kIndex]           = currSmallArrayLocation;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            changeableSmallArrayLocations[kIndex] = currSmallArrayLocation;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="comment">/* Do something to the current small array. */</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            forEachSmallArrayFunction(currSmallArrayLocation,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                                      currSmallArraySize, k);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">             * Take the `first` element in the current small array,</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">             * and `insert` it to the `Minimum-Heap` as a `key` of an `Entry`,</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">             * and set this `Entry`&#39;s `value` to be the</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">             * `currSmallArrayStartLocation` iteration index.</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">             * Attention: `Entry` must be `lvalue`.</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">             */</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keyword">auto</span> *entryToInsert =</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="keyword">new</span> <a class="code" href="class_entry.html">Entry&lt;K, long int&gt;</a>(currSmallArrayLocation[0], kIndex);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            minHeap.<a class="code" href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">insert</a>(entryToInsert);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">stepAheadSmallArray</a>(changeableSmallArrayLocations, smallArraySizes,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                                entryToInsert);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="comment">/* Step ahead. */</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            size = size - currSmallArraySize;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            currK--;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            lastSmallArraySize += currSmallArraySize;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="class_algorithms_and_min_heap.html#ae0bcafc4de4c0f322f8bfcc0c14285c2">  242</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_algorithms_and_min_heap.html#ae0bcafc4de4c0f322f8bfcc0c14285c2">deleteMinAndCheckFromWhichSmallArray</a>(</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            K *array, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> size, K **changeableSmallArrayLocations,</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordtype">long</span> <span class="keywordtype">int</span> *smallArraySizes, <a class="code" href="class_min_heap.html">MinHeap&lt;K, long int&gt;</a> &amp;minHeap) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> i = 0; i &lt; size; i++) {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="comment">/* Remove the minimal element from the heap. */</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <a class="code" href="class_entry.html">Entry&lt;K, long int&gt;</a> *deletedElement = minHeap.<a class="code" href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">deleteMin</a>();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="comment">/* Insert minimal `key` to `resultArray`. */</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            array[i] = deletedElement-&gt;<a class="code" href="class_entry.html#a61500654198dacda3120c6cc0d644298">getKey</a>();</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="comment">/* If there are elements in the according array. */</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">if</span> ((smallArraySizes[deletedElement-&gt;<a class="code" href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()]) &gt; 0) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="comment">/*</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="comment">                 * `Insert` the next smaller element in the according small array</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">                 * to the given `Minimum-Heap`.</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="comment">                 * (= the `first` element in the small array).</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="keyword">auto</span> *elementToInsert = <span class="keyword">new</span> <a class="code" href="class_entry.html">Entry&lt;K, long int&gt;</a>(</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        (changeableSmallArrayLocations</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                 [deletedElement-&gt;<a class="code" href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()])[0],</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                        deletedElement-&gt;<a class="code" href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>());</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                minHeap.<a class="code" href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">insert</a>(elementToInsert);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <a class="code" href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">stepAheadSmallArray</a>(changeableSmallArrayLocations,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                    smallArraySizes, deletedElement);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            }</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="comment">/* Delete the element from memory. */</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keyword">delete</span> deletedElement;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> K&gt;</div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">  300</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">stepAheadSmallArray</a>(K **      changeableSmallArrayLocations,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                    <span class="keywordtype">long</span> <span class="keywordtype">int</span> *smallArraySizes,</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                    <a class="code" href="class_entry.html">Entry&lt;K, long int&gt;</a> *deletedElement) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">         * Step ahead the `location` of the according small array,</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment">         * to point to the next `smallest` element in the array.</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        changeableSmallArrayLocations[deletedElement-&gt;<a class="code" href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()]++;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="comment">/* Decrease the `size` of the according small array by `1`. */</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        smallArraySizes[deletedElement-&gt;<a class="code" href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()]--;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;};</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MIVNEI_NETUNIM_EX1_ALGORITHMSANDMINHEAP_H</span></div>
-<div class="ttc" id="a_min_heap_8h_html"><div class="ttname"><a href="_min_heap_8h.html">MinHeap.h</a></div></div>
-<div class="ttc" id="aclass_algorithms_and_min_heap_html"><div class="ttname"><a href="class_algorithms_and_min_heap.html">AlgorithmsAndMinHeap</a></div><div class="ttdoc">This class bundles all the methods that require to include the algorithm methods in the program,...</div><div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:19</div></div>
-<div class="ttc" id="aclass_algorithms_and_min_heap_html_a45269c64b3efd2950a850f7e45071b03"><div class="ttname"><a href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">AlgorithmsAndMinHeap::stepAheadSmallArray</a></div><div class="ttdeci">static void stepAheadSmallArray(K **changeableSmallArrayLocations, long int *smallArraySizes, Entry&lt; K, long int &gt; *deletedElement)</div><div class="ttdoc">This private method is invoked only when we have removed an element from a small-array....</div><div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:300</div></div>
-<div class="ttc" id="aclass_algorithms_and_min_heap_html_ac1ced91cd45c34a68ea0c3f9e94de015"><div class="ttname"><a href="class_algorithms_and_min_heap.html#ac1ced91cd45c34a68ea0c3f9e94de015">AlgorithmsAndMinHeap::kWayMergeSort</a></div><div class="ttdeci">static void kWayMergeSort(K *array, const unsigned long int size, unsigned long int k)</div><div class="ttdoc">This algorithm sorts the array given, by dividing it to k smaller arrays. Then for each small array:</div><div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:68</div></div>
-<div class="ttc" id="aclass_algorithms_and_min_heap_html_ad394d93363c0a1eea4ec8c1b30f4fd3e"><div class="ttname"><a href="class_algorithms_and_min_heap.html#ad394d93363c0a1eea4ec8c1b30f4fd3e">AlgorithmsAndMinHeap::divideArrayToKSmallerArrays</a></div><div class="ttdeci">static void divideArrayToKSmallerArrays(K *array, unsigned long int size, unsigned long int k, K **smallArrayLocations, K **changeableSmallArrayLocations, long int *smallArraySizes, const std::function&lt; void(K *, const unsigned long int, unsigned long int)&gt; &amp;forEachSmallArrayFunction, MinHeap&lt; K, long int &gt; &amp;minHeap)</div><div class="ttdoc">This method divides a given array to k smaller arrays, and invokes the forEachSmallArrayFunction func...</div><div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:148</div></div>
-<div class="ttc" id="aclass_algorithms_and_min_heap_html_ae0bcafc4de4c0f322f8bfcc0c14285c2"><div class="ttname"><a href="class_algorithms_and_min_heap.html#ae0bcafc4de4c0f322f8bfcc0c14285c2">AlgorithmsAndMinHeap::deleteMinAndCheckFromWhichSmallArray</a></div><div class="ttdeci">static void deleteMinAndCheckFromWhichSmallArray(K *array, unsigned long int size, K **changeableSmallArrayLocations, long int *smallArraySizes, MinHeap&lt; K, long int &gt; &amp;minHeap)</div><div class="ttdoc">This method, for size times, deletes the smallest element in the minHeap, and inserts it to the array...</div><div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:242</div></div>
-<div class="ttc" id="aclass_entry_html"><div class="ttname"><a href="class_entry.html">Entry</a></div><div class="ttdoc">This class represents a general entry, which is composed from a key and a value.</div><div class="ttdef"><b>Definition:</b> Entry.h:21</div></div>
-<div class="ttc" id="aclass_entry_html_a4278dda2b25de410992701fcf589f511"><div class="ttname"><a href="class_entry.html#a4278dda2b25de410992701fcf589f511">Entry::getValue</a></div><div class="ttdeci">V getValue() const</div><div class="ttdef"><b>Definition:</b> Entry.h:52</div></div>
-<div class="ttc" id="aclass_entry_html_a61500654198dacda3120c6cc0d644298"><div class="ttname"><a href="class_entry.html#a61500654198dacda3120c6cc0d644298">Entry::getKey</a></div><div class="ttdeci">K getKey() const</div><div class="ttdef"><b>Definition:</b> Entry.h:48</div></div>
-<div class="ttc" id="aclass_min_heap_html"><div class="ttname"><a href="class_min_heap.html">MinHeap</a></div><div class="ttdoc">This class implements a Minimum-Heap which its elements are pointers to lvalue Entries that are compo...</div><div class="ttdef"><b>Definition:</b> MinHeap.h:35</div></div>
+<div class="line"><a name="l00159"></a><span
+        class="lineno">  159</span>&#160;<span class="comment">         * Attention: must initialize with `0`.</span>
+</div>
+    <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span
+            class="comment">         */</span></div>
+    <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;
+        <span class="keywordtype">long</span> <span
+                class="keywordtype">int</span> lastSmallArraySize = 0;
+    </div>
+    <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;
+        <span class="keywordtype">long</span> <span
+                class="keywordtype">int</span> currK = k;
+    </div>
+    <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;
+        <span class="keywordflow">while</span> ((size &gt; 0) &amp;&amp; (currK
+        &gt; 0)) {
+    </div>
+    <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;
+    </div>
+    <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;
+        <span class="comment">/* Determines the current iteration. */</span>
+    </div>
+    <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;
+        <span class="keywordtype">long</span> <span
+                class="keywordtype">int</span> kIndex = k - currK;
+    </div>
+    <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;
+    </div>
+    <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;
+        <span class="comment">/* Get `currSmallArrayStartLocation` `size`. */</span>
+    </div>
+    <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;
+        <span class="keywordtype">long</span> <span
+                class="keywordtype">int</span> currSmallArraySize =
+    </div>
+    <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;
+        ceil(<span class="keyword">static_cast&lt;</span><span
+                class="keywordtype">double</span><span
+                class="keyword">&gt;</span>(size) / currK);
+    </div>
+    <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;
+    </div>
+    <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;
+        <span class="comment">/*</span></div>
+    <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span
+            class="comment">             * Insert the `currSmallArrayStartLocation` `size` to the</span>
+    </div>
+    <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span
+            class="comment">             * `smallArraySizes` array.</span></div>
+    <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span
+            class="comment">             */</span></div>
+    <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;
+        smallArraySizes[kIndex] = currSmallArraySize;
+    </div>
+    <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;
+    </div>
+    <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;
+        <span class="comment">/* Get `currSmallArrayStartLocation` `location`. */</span>
+    </div>
+    <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;
+        K *currSmallArrayStartLocation = array + lastSmallArraySize;
+    </div>
+    <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;
+    </div>
+    <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;
+        <span class="comment">/* Copy the correct amount of elements to a `small array`. */</span>
+    </div>
+    <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;
+        K *currSmallArrayLocation = <a class="code"
+                                       href="classmy__algorithms.html#a49026173e7e05d46c3fe35f8f4da7610">my_algorithms::copyArray</a>(
+    </div>
+    <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;
+        currSmallArrayStartLocation, currSmallArraySize);
+    </div>
+    <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;
+    </div>
+    <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;
+        <span class="comment">/*</span></div>
+    <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span
+            class="comment">             * Insert the `currSmallArrayStartLocation` to the</span>
+    </div>
+    <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span
+            class="comment">             * `smallArrayLocations` and `changeableSmallArrayLocations` arrays.</span>
+    </div>
+    <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span
+            class="comment">             */</span></div>
+    <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;
+        smallArrayLocations[kIndex] = currSmallArrayLocation;
+    </div>
+    <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;
+        changeableSmallArrayLocations[kIndex] = currSmallArrayLocation;
+    </div>
+    <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;
+    </div>
+    <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;
+        <span class="comment">/* Do something to the current small array. */</span>
+    </div>
+    <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;
+        forEachSmallArrayFunction(currSmallArrayLocation,
+    </div>
+    <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;
+        currSmallArraySize, k);
+    </div>
+    <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;
+    </div>
+    <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;
+        <span class="comment">/*</span></div>
+    <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span
+            class="comment">             * Take the `first` element in the current small array,</span>
+    </div>
+    <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span
+            class="comment">             * and `insert` it to the `Minimum-Heap` as a `key` of an `Entry`,</span>
+    </div>
+    <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span
+            class="comment">             * and set this `Entry`&#39;s `value` to be the</span>
+    </div>
+    <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span
+            class="comment">             * `currSmallArrayStartLocation` iteration index.</span>
+    </div>
+    <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span
+            class="comment">             * Attention: `Entry` must be `lvalue`.</span>
+    </div>
+    <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span
+            class="comment">             */</span></div>
+    <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;
+        <span class="keyword">auto</span> *entryToInsert =
+    </div>
+    <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;
+        <span class="keyword">new</span> <a class="code"
+                                            href="class_entry.html">Entry&lt;K,
+            long int&gt;</a>(currSmallArrayLocation[0], kIndex);
+    </div>
+    <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;
+        minHeap.<a class="code"
+                   href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">insert</a>(entryToInsert);
+    </div>
+    <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;
+        <a class="code"
+           href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">stepAheadSmallArray</a>(changeableSmallArrayLocations,
+        smallArraySizes,
+    </div>
+    <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;
+        entryToInsert);
+    </div>
+    <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;
+    </div>
+    <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;
+        <span class="comment">/* Step ahead. */</span></div>
+    <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;
+        size = size - currSmallArraySize;
+    </div>
+    <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;
+        currK--;
+    </div>
+    <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;
+        lastSmallArraySize += currSmallArraySize;
+    </div>
+    <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;
+        }
+    </div>
+    <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;
+        }
+    </div>
+    <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;
+    </div>
+    <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;
+        <span class="keyword">template</span>&lt;<span
+                class="keyword">typename</span> K&gt;
+    </div>
+    <div class="line"><a name="l00243"></a><span class="lineno"><a class="line"
+                                                                   href="class_algorithms_and_min_heap.html#ae0bcafc4de4c0f322f8bfcc0c14285c2">  243</a></span>&#160;
+        <span class="keyword">static</span> <span
+                class="keywordtype">void</span> <a class="code"
+                                                   href="class_algorithms_and_min_heap.html#ae0bcafc4de4c0f322f8bfcc0c14285c2">deleteMinAndCheckFromWhichSmallArray</a>(
+    </div>
+    <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;
+        K *array, <span class="keywordtype">unsigned</span> <span
+                class="keywordtype">long</span> <span
+                class="keywordtype">int</span> size, K
+        **changeableSmallArrayLocations,
+    </div>
+    <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;
+        <span class="keywordtype">long</span> <span
+                class="keywordtype">int</span> *smallArraySizes, <a class="code"
+                                                                    href="class_min_heap.html">MinHeap&lt;K,
+            long int&gt;</a> &amp;minHeap) {
+    </div>
+    <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;
+        <span class="keywordflow">for</span> (<span
+                class="keywordtype">unsigned</span> <span class="keywordtype">long</span>
+        <span class="keywordtype">int</span> i = 0; i &lt; size; i++) {
+    </div>
+    <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;
+    </div>
+    <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;
+        <span class="comment">/* Remove the minimal element from the heap. */</span>
+    </div>
+    <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;
+        <a class="code" href="class_entry.html">Entry&lt;K, long int&gt;</a>
+        *deletedElement = minHeap.<a class="code"
+                                     href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">deleteMin</a>();
+    </div>
+    <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;
+    </div>
+    <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;
+        <span class="comment">/* Insert minimal `key` to `resultArray`. */</span>
+    </div>
+    <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;
+        array[i] = deletedElement-&gt;<a class="code"
+                                         href="class_entry.html#a61500654198dacda3120c6cc0d644298">getKey</a>();
+    </div>
+    <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;
+    </div>
+    <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;
+        <span class="comment">/* If there are elements in the according array. */</span>
+    </div>
+    <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;
+        <span class="keywordflow">if</span> ((smallArraySizes[deletedElement-&gt;<a
+                class="code"
+                href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()])
+        &gt; 0) {
+    </div>
+    <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;
+    </div>
+    <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;
+        <span class="comment">/*</span></div>
+    <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span
+            class="comment">                 * `Insert` the next smaller element in the according small array</span>
+    </div>
+    <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span
+            class="comment">                 * to the given `Minimum-Heap`.</span>
+    </div>
+    <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span
+            class="comment">                 * (= the `first` element in the small array).</span>
+    </div>
+    <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span
+            class="comment">                 */</span></div>
+    <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;
+        <span class="keyword">auto</span> *elementToInsert = <span
+                class="keyword">new</span> <a class="code"
+                                              href="class_entry.html">Entry&lt;K,
+            long int&gt;</a>(
+    </div>
+    <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;
+        (changeableSmallArrayLocations
+    </div>
+    <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;
+        [deletedElement-&gt;<a class="code"
+                               href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()])[0],
+    </div>
+    <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;
+        deletedElement-&gt;<a class="code"
+                              href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>());
+    </div>
+    <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;
+        minHeap.<a class="code"
+                   href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">insert</a>(elementToInsert);
+    </div>
+    <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;
+        <a class="code"
+           href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">stepAheadSmallArray</a>(changeableSmallArrayLocations,
+    </div>
+    <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;
+        smallArraySizes, deletedElement);
+    </div>
+    <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;
+        }
+    </div>
+    <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;
+    </div>
+    <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;
+        <span class="comment">/* Delete the element from memory. */</span></div>
+    <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;
+        <span class="keyword">delete</span> deletedElement;
+    </div>
+    <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;
+        }
+    </div>
+    <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;
+        }
+    </div>
+    <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;
+    </div>
+    <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;
+        <span class="keyword">template</span>&lt;<span
+                class="keyword">typename</span> K&gt;
+    </div>
+    <div class="line"><a name="l00301"></a><span class="lineno"><a class="line"
+                                                                   href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">  301</a></span>&#160;
+        <span class="keyword">static</span> <span
+                class="keywordtype">void</span> <a class="code"
+                                                   href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">stepAheadSmallArray</a>(K
+        ** changeableSmallArrayLocations,
+    </div>
+    <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;
+        <span class="keywordtype">long</span> <span
+                class="keywordtype">int</span> *smallArraySizes,
+    </div>
+    <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;
+        <a class="code" href="class_entry.html">Entry&lt;K, long int&gt;</a>
+        *deletedElement) {
+    </div>
+    <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;
+    </div>
+    <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;
+        <span class="comment">/*</span></div>
+    <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span
+            class="comment">         * Step ahead the `location` of the according small array,</span>
+    </div>
+    <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span
+            class="comment">         * to point to the next `smallest` element in the array.</span>
+    </div>
+    <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span
+            class="comment">         */</span></div>
+    <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;
+        changeableSmallArrayLocations[deletedElement-&gt;<a class="code"
+                                                            href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()]++;
+    </div>
+    <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;
+    </div>
+    <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;
+        <span class="comment">/* Decrease the `size` of the according small array by `1`. */</span>
+    </div>
+    <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;
+        smallArraySizes[deletedElement-&gt;<a class="code"
+                                              href="class_entry.html#a4278dda2b25de410992701fcf589f511">getValue</a>()]--;
+    </div>
+    <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;
+        }
+    </div>
+    <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;};
+    </div>
+    <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;
+    </div>
+    <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span
+            class="preprocessor">#endif </span><span class="comment">//MIVNEI_NETUNIM_EX1_ALGORITHMSANDMINHEAP_H</span>
+    </div>
+    <div class="ttc" id="a_min_heap_8h_html">
+        <div class="ttname"><a href="_min_heap_8h.html">MinHeap.h</a></div>
+    </div>
+    <div class="ttc" id="aclass_algorithms_and_min_heap_html">
+        <div class="ttname"><a href="class_algorithms_and_min_heap.html">AlgorithmsAndMinHeap</a>
+        </div>
+        <div class="ttdoc">This class bundles all the methods that require to
+            include the algorithm methods in the program,...
+        </div>
+        <div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:19</div>
+    </div>
+    <div class="ttc"
+         id="aclass_algorithms_and_min_heap_html_a45269c64b3efd2950a850f7e45071b03">
+        <div class="ttname"><a
+                href="class_algorithms_and_min_heap.html#a45269c64b3efd2950a850f7e45071b03">AlgorithmsAndMinHeap::stepAheadSmallArray</a>
+        </div>
+        <div class="ttdeci">static void stepAheadSmallArray(K
+            **changeableSmallArrayLocations, long int *smallArraySizes, Entry&lt;
+            K, long int &gt; *deletedElement)
+        </div>
+        <div class="ttdoc">This private method is invoked only when we have
+            removed an element from a small-array....
+        </div>
+        <div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:301</div>
+    </div>
+    <div class="ttc"
+         id="aclass_algorithms_and_min_heap_html_ac1ced91cd45c34a68ea0c3f9e94de015">
+        <div class="ttname"><a
+                href="class_algorithms_and_min_heap.html#ac1ced91cd45c34a68ea0c3f9e94de015">AlgorithmsAndMinHeap::kWayMergeSort</a>
+        </div>
+        <div class="ttdeci">static void kWayMergeSort(K *array, const unsigned
+            long int size, unsigned long int k)
+        </div>
+        <div class="ttdoc">This algorithm sorts the array given, by dividing it
+            to k smaller arrays. Then for each small array:
+        </div>
+        <div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:68</div>
+    </div>
+    <div class="ttc"
+         id="aclass_algorithms_and_min_heap_html_ad394d93363c0a1eea4ec8c1b30f4fd3e">
+        <div class="ttname"><a
+                href="class_algorithms_and_min_heap.html#ad394d93363c0a1eea4ec8c1b30f4fd3e">AlgorithmsAndMinHeap::divideArrayToKSmallerArrays</a>
+        </div>
+        <div class="ttdeci">static void divideArrayToKSmallerArrays(K *array,
+            unsigned long int size, unsigned long int k, K
+            **smallArrayLocations, K **changeableSmallArrayLocations, long int
+            *smallArraySizes, const std::function&lt; void(K *, const unsigned
+            long int, unsigned long int)&gt; &amp;forEachSmallArrayFunction,
+            MinHeap&lt; K, long int &gt; &amp;minHeap)
+        </div>
+        <div class="ttdoc">This method divides a given array to k smaller
+            arrays, and invokes the forEachSmallArrayFunction func...
+        </div>
+        <div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:148</div>
+    </div>
+    <div class="ttc"
+         id="aclass_algorithms_and_min_heap_html_ae0bcafc4de4c0f322f8bfcc0c14285c2">
+        <div class="ttname"><a
+                href="class_algorithms_and_min_heap.html#ae0bcafc4de4c0f322f8bfcc0c14285c2">AlgorithmsAndMinHeap::deleteMinAndCheckFromWhichSmallArray</a>
+        </div>
+        <div class="ttdeci">static void deleteMinAndCheckFromWhichSmallArray(K
+            *array, unsigned long int size, K **changeableSmallArrayLocations,
+            long int *smallArraySizes, MinHeap&lt; K, long int &gt; &amp;minHeap)
+        </div>
+        <div class="ttdoc">This method, for size times, deletes the smallest
+            element in the minHeap, and inserts it to the array...
+        </div>
+        <div class="ttdef"><b>Definition:</b> AlgorithmsAndMinHeap.h:243</div>
+    </div>
+    <div class="ttc" id="aclass_entry_html">
+        <div class="ttname"><a href="class_entry.html">Entry</a></div>
+        <div class="ttdoc">This class represents a general entry, which is
+            composed from a key and a value.
+        </div>
+        <div class="ttdef"><b>Definition:</b> Entry.h:21</div>
+    </div>
+    <div class="ttc" id="aclass_entry_html_a4278dda2b25de410992701fcf589f511">
+        <div class="ttname"><a
+                href="class_entry.html#a4278dda2b25de410992701fcf589f511">Entry::getValue</a>
+        </div>
+        <div class="ttdeci">V getValue() const</div>
+        <div class="ttdef"><b>Definition:</b> Entry.h:52</div>
+    </div>
+    <div class="ttc" id="aclass_entry_html_a61500654198dacda3120c6cc0d644298">
+        <div class="ttname"><a
+                href="class_entry.html#a61500654198dacda3120c6cc0d644298">Entry::getKey</a>
+        </div>
+        <div class="ttdeci">K getKey() const</div>
+        <div class="ttdef"><b>Definition:</b> Entry.h:48</div>
+    </div>
+    <div class="ttc" id="aclass_min_heap_html">
+        <div class="ttname"><a href="class_min_heap.html">MinHeap</a></div>
+        <div class="ttdoc">This class implements a Minimum-Heap which its
+            elements are pointers to lvalue Entries that are compo...
+        </div>
+        <div class="ttdef"><b>Definition:</b> MinHeap.h:35</div>
+    </div>
 <div class="ttc" id="aclass_min_heap_html_a6f4be46b00c888580c5f3afe41865930"><div class="ttname"><a href="class_min_heap.html#a6f4be46b00c888580c5f3afe41865930">MinHeap::deleteMin</a></div><div class="ttdeci">Entry&lt; K, V &gt; * deleteMin() override</div><div class="ttdoc">Deletes the minimal element from the heap, and returns it.</div><div class="ttdef"><b>Definition:</b> MinHeap.h:100</div></div>
 <div class="ttc" id="aclass_min_heap_html_aeee64b5f9f692ab7023c26f49279ef16"><div class="ttname"><a href="class_min_heap.html#aeee64b5f9f692ab7023c26f49279ef16">MinHeap::insert</a></div><div class="ttdeci">void insert(Entry&lt; K, V &gt; *elementToInsert) override</div><div class="ttdoc">Inserts the elementToInsert to the heap.</div><div class="ttdef"><b>Definition:</b> MinHeap.h:189</div></div>
 <div class="ttc" id="aclassmy__algorithms_html_a49026173e7e05d46c3fe35f8f4da7610"><div class="ttname"><a href="classmy__algorithms.html#a49026173e7e05d46c3fe35f8f4da7610">my_algorithms::copyArray</a></div><div class="ttdeci">static T * copyArray(const T *array, long int size)</div><div class="ttdoc">generic algorithm to copy an array.</div><div class="ttdef"><b>Definition:</b> my_algorithms.h:249</div></div>

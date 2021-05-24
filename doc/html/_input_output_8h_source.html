@@ -85,26 +85,77 @@ $(document).ready(function(){initNavTree('_input_output_8h_source.html',''); ini
 <div class="title">InputOutput.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_input_output_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="my__algorithms_8h.html">my_algorithms.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_input_output.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_input_output.html">InputOutput</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_input_output.html#aeb7e70e6c01d4bf3cc36c188fb2b8128">   22</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="class_input_output.html#aeb7e70e6c01d4bf3cc36c188fb2b8128">N</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_input_output.html#a51a2513e6a31dd486249071edcff3cf8">   28</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="class_input_output.html#a51a2513e6a31dd486249071edcff3cf8">K</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f">   31</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f">INPUT_FILE_NAME</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_input_output.html#adc15a5fa052c379f0825da1cbca984a7">   34</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="class_input_output.html#adc15a5fa052c379f0825da1cbca984a7">OUTPUT_FILE_NAME</a>;</div>
+<a href="_input_output_8h.html">Go to the documentation of this file.</a>
+    <div class="fragment">
+        <div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;
+        </div>
+        <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span
+                class="preprocessor">#ifndef MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H</span>
+        </div>
+        <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span
+                class="preprocessor">#define MIVNEI_NETUNIM_EX2_INPUTOUTPUT_H</span>
+        </div>
+        <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;
+        </div>
+        <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span
+                class="preprocessor">#include &quot;<a class="code"
+                                                       href="my__algorithms_8h.html">my_algorithms.h</a>&quot;</span>
+        </div>
+        <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span
+                class="preprocessor">#include &lt;fstream&gt;</span></div>
+        <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span
+                class="preprocessor">#include &lt;functional&gt;</span></div>
+        <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span
+                class="preprocessor">#include &lt;iomanip&gt;</span></div>
+        <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span
+                class="preprocessor">#include &lt;iostream&gt;</span></div>
+        <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span
+                class="preprocessor">#include &lt;string&gt;</span></div>
+        <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;
+        </div>
+        <div class="line"><a name="l00019"></a><span class="lineno"><a
+                class="line" href="class_input_output.html">   19</a></span>&#160;<span
+                class="keyword">class </span><a class="code"
+                                                href="class_input_output.html">InputOutput</a>
+            {
+        </div>
+        <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;
+            <span class="keyword">private</span>:
+        </div>
+        <div class="line"><a name="l00022"></a><span class="lineno"><a
+                class="line"
+                href="class_input_output.html#aeb7e70e6c01d4bf3cc36c188fb2b8128">   22</a></span>&#160;
+            <span class="keyword">const</span> <span
+                    class="keywordtype">long</span> <span class="keywordtype">int</span>
+            <a class="code"
+               href="class_input_output.html#aeb7e70e6c01d4bf3cc36c188fb2b8128">N</a>;
+        </div>
+        <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;
+        </div>
+        <div class="line"><a name="l00028"></a><span class="lineno"><a
+                class="line"
+                href="class_input_output.html#a51a2513e6a31dd486249071edcff3cf8">   28</a></span>&#160;
+            <span class="keyword">const</span> <span
+                    class="keywordtype">long</span> <span class="keywordtype">int</span>
+            <a class="code"
+               href="class_input_output.html#a51a2513e6a31dd486249071edcff3cf8">K</a>;
+        </div>
+        <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;
+        </div>
+        <div class="line"><a name="l00031"></a><span class="lineno"><a
+                class="line"
+                href="class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f">   31</a></span>&#160;
+            <span class="keyword">const</span> std::string <a class="code"
+                                                              href="class_input_output.html#a1e526b2dd1e303454bcf57c566f3af2f">INPUT_FILE_NAME</a>;
+        </div>
+        <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;
+        </div>
+        <div class="line"><a name="l00034"></a><span class="lineno"><a
+                class="line"
+                href="class_input_output.html#adc15a5fa052c379f0825da1cbca984a7">   34</a></span>&#160;
+            <span class="keyword">const</span> std::string <a class="code"
+                                                              href="class_input_output.html#adc15a5fa052c379f0825da1cbca984a7">OUTPUT_FILE_NAME</a>;
+        </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/* -- Constructor &amp; Destructor -- */</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>

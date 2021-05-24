@@ -17,8 +17,6 @@ ostream
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
 my_algorithms.h
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
-chrono
--
 fstream
 -
 functional
@@ -26,6 +24,8 @@ functional
 iomanip
 -
 iostream
+-
+string
 -
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h

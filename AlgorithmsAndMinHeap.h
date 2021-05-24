@@ -166,7 +166,8 @@ class AlgorithmsAndMinHeap {
             long int kIndex = k - currK;
 
             /* Get `currSmallArrayStartLocation` `size`. */
-            long int currSmallArraySize = ceil((double) size / currK);
+            long int currSmallArraySize =
+                    ceil(static_cast<double>(size) / currK);
 
             /*
              * Insert the `currSmallArrayStartLocation` `size` to the
