@@ -6,13 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/AlgorithmsAndMinHeap.h
-MinHeap.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h
-ostream
--
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.cpp
+InputOutput.h
+/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
 my_algorithms.h
@@ -26,32 +22,6 @@ iomanip
 iostream
 -
 string
--
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeap.h
-MinHeapADT.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
-my_algorithms.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h
-exception
--
-ostream
--
-stdexcept
--
-string
--
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/MinHeapADT.h
-Entry.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/Entry.h
-
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/main.cpp
-AlgorithmsAndMinHeap.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/AlgorithmsAndMinHeap.h
-InputOutput.h
-/mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/InputOutput.h
-iostream
 -
 
 /mnt/c/Users/Tal/C_Code/cpp/mivnei_netunim_ex2/my_algorithms.h

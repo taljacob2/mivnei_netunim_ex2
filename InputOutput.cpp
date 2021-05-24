@@ -6,12 +6,7 @@
 InputOutput::InputOutput(long int &N, long int &K, std::string &inputFileName,
                          std::string &outputFileName)
     : N(N), K(K), INPUT_FILE_NAME(inputFileName),
-      OUTPUT_FILE_NAME(outputFileName) {
-
-    // sets the floating point precision of whole "cout" stream:
-    std::cout << std::setprecision(4);
-    std::cout << std::fixed;
-}
+      OUTPUT_FILE_NAME(outputFileName) {}
 
 InputOutput::~InputOutput() = default;
 
