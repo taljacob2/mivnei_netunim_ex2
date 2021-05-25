@@ -74,7 +74,7 @@ long int *InputOutput::getLongIntArrayFromInputFile() {
     while ((i < N) && (!file.eof())) {
         try {
             array[i] = getCheckedLongInt(file);
-        } catch (std::exception &e) {
+        } catch (std::exception e) {
             delete[] array;
             throw;
         }
